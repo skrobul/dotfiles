@@ -32,10 +32,10 @@ alias leftmost      move screenOriginX;screenOriginY                  screenSize
 alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
 
 # Quaters
-alias ltop          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
-alias lbottom       move screenOriginX;screenSizeY/2 screenSizeX/2;screenSizeY/2
-alias rtop          move screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
-alias rbottom       move screenSizeX/2;screenSizeY/2 screenSizeX/2;screenSizeY/2
+alias ltop          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2-10
+alias lbottom       move screenOriginX;screenSizeY/2+10 screenSizeX/2;screenSizeY/2
+alias rtop          move screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2-10
+alias rbottom       move screenSizeX/2;screenSizeY/2+10 screenSizeX/2;screenSizeY/2
 
 # Concrete positions
 alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
