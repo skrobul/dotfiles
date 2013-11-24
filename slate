@@ -89,10 +89,11 @@ bind pad7 ${ltop}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9:shift ${rightmost}
 bind pad9 ${rtop}
-bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
+#bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
+bind pad* grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
 bind pad+ throw next
 bind pad. focus behind
-bind pad* layout 2monitors
+#bind pad* layout 2monitors
 bind pad/ layout 1monitor
  
 
