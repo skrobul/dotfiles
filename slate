@@ -93,7 +93,7 @@ bind pad9 ${rtop}
 bind pad* grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
 bind pad+ throw next
 bind pad. focus behind
-#bind pad* layout 2monitors
+bind pad- layout 2monitors
 bind pad/ layout 1monitor
  
 
@@ -126,6 +126,6 @@ bind down:${hyper}     focus down
 bind b:${hyper} focus ${browser}
 bind u:${hyper} focus 'Sublime Text'
 bind x:${hyper} focus 'Xcode'
-bind g:${hyper} focus 'GitHub'
-bind m:${hyper} focus 'Mail'
+bind a:${hyper} focus 'Adium'
+bind m:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
