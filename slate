@@ -144,8 +144,14 @@ bind m:${hyper} focus 'Adium'
 bind o:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
 
-# Nudge 
-bind d:${hyper} nudge +10% +0
-bind a:${hyper}  nudge -10% +0
-bind w:${hyper}    nudge +0   -10%
-bind s:${hyper}  nudge +0   +10%
+# Resize
+bind d:${hyper} resize +5% +0
+bind a:${hyper} resize -5% +0
+bind w:${hyper} resize +0   -5%
+bind s:${hyper} resize +0   +5%
+
+# Nudge
+bind pad6:${hyper} nudge +5% +0
+bind pad4:${hyper} nudge -5% +0
+bind pad8:${hyper} nudge +0   -5%
+bind pad2:${hyper} nudge +0   +5%
