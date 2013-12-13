@@ -37,6 +37,13 @@ alias rtop          move screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
 alias lbottom       move screenOriginX;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
 alias rbottom       move screenSizeX/2;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
 
+# Thirds
+alias leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY
+alias righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY
+alias lefttwothirds move screenOriginX;screenOriginY 2*screenSizeX/3;screenSizeY
+alias rightthird move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+alias midthird move screenOriginX+screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+
 # Concrete positions
 alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
 alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
@@ -111,7 +118,14 @@ bind l:${hyper} ${lefthalf}
 bind f:${hyper} ${full}
 bind r:${hyper} ${righthalf}
 bind n:${hyper} throw next
- 
+
+# Location Thirds
+bind t:${hyper} ${leftthird}
+bind y:${hyper} ${righttwothirds}
+bind g:${hyper} ${lefttwothirds}
+bind h:${hyper} ${rightthird}
+bind j:${hyper} ${midthird}
+
 # Resize Bindings
 #bind r:${hyper} ${leftmost}
 #bind g:${hyper} ${rightmost}
