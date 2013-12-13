@@ -12,6 +12,7 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 #config windowHintsOrder persist
  
+
 # Monitor Aliases
 alias mon-laptop     0
 alias mon-samsung    1
@@ -139,7 +140,12 @@ bind down:${hyper}     focus down
 # App bindings
 bind b:${hyper} focus ${browser}
 bind u:${hyper} focus 'Sublime Text'
-bind x:${hyper} focus 'Xcode'
-bind a:${hyper} focus 'Adium'
-bind m:${hyper} focus 'Microsoft Outlook'
+bind m:${hyper} focus 'Adium'
+bind o:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
+
+# Nudge 
+bind d:${hyper} nudge +10% +0
+bind a:${hyper}  nudge -10% +0
+bind w:${hyper}    nudge +0   -10%
+bind s:${hyper}  nudge +0   +10%
