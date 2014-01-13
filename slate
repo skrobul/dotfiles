@@ -34,9 +34,10 @@ alias leftless      move screenOriginX;screenOriginY                  screenSize
 
 # Quaters
 alias ltop          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
-alias rtop          move screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+alias rtop          move screenOriginX+(screenSizeX/2);screenOriginY screenSizeX/2;screenSizeY/2
 alias lbottom       move screenOriginX;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
-alias rbottom       move screenSizeX/2;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
+alias rbottom       move screenOriginX+screenSizeX/2;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
+alias rbottom       move screenOriginX+screenSizeX/2;screenSizeY/2+20 screenSizeX/2;screenSizeY/2
 
 # Thirds
 alias leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY
