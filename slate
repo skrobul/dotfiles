@@ -11,18 +11,18 @@ config windowHintsIgnoreHiddenWindows false
 #config windowHintsDuration 5
 config windowHintsSpread true
 #config windowHintsOrder persist
- 
+
 
 # Monitor Aliases
 alias mon-laptop     0
 alias mon-samsung    1
- 
+
 # Misc Aliases
 alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
 alias editor 'Sublime Text'
- 
+
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
 alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
@@ -54,7 +54,7 @@ alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY  
 alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-samsung}
 alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-samsung}
 alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-samsung}
- 
+
 # 2 Monitor layout
 layout 2monitors 'iTerm':MAIN_FIRST                       ${2-rightbottom} | ${1-left}
 layout 2monitors 'Safari':REPEAT                          ${1-full}
@@ -66,7 +66,7 @@ layout 2monitors 'Path Finder':MAIN_FIRST                 ${2-righttop}
 layout 2monitors 'Xcode':REPEAT                           ${1-full}
 layout 2monitors 'Eclipse':REPEAT                         ${1-full}
 layout 2monitors 'iTunes':REPEAT                          ${1-full}
- 
+
 # 1 Monitor layout
 layout 1monitor 'iTerm':MAIN_FIRST                       ${1-right}
 layout 1monitor 'Sublime Text 2':MAIN_FIRST              ${1-left}
@@ -78,11 +78,11 @@ layout 1monitor 'Path Finder':MAIN_FIRST                 ${1-full}
 layout 1monitor 'Xcode':REPEAT                           ${1-full}
 layout 1monitor 'Eclipse':REPEAT                         ${1-full}
 layout 1monitor 'iTunes':REPEAT                          ${1-full}
- 
+
 # Default Layouts
 default 2monitors resolutions:${mon-laptop};${mon-samsung};
 default 1monitor  resolutions:${mon-laptop}
- 
+
 # Numpad location Bindings
 bind pad0 ${showHintsLeftHand}
 bind pad1:shift ${leftless}
@@ -104,15 +104,15 @@ bind pad+ throw next
 bind pad. focus behind
 bind pad- layout 2monitors
 bind pad/ layout 1monitor
- 
+
 
 
 # ======================================
 # The HYPER key
 # ======================================
- 
+
 alias hyper ctrl;shift;alt;cmd
- 
+
 bind e:${hyper}  ${showNormalHint}
 
 # Location bindings
@@ -131,22 +131,23 @@ bind j:${hyper} ${midthird}
 # Resize Bindings
 #bind r:${hyper} ${leftmost}
 #bind g:${hyper} ${rightmost}
- 
+
 # Focus Bindings
 bind right:${hyper}    focus right
 bind left:${hyper}     focus left
 bind up:${hyper}       focus up
 bind down:${hyper}     focus down
- 
+
 # App bindings
 bind b:${hyper} focus ${browser}
 bind u:${hyper} focus 'Sublime Text'
 bind m:${hyper} focus 'Adium'
 bind o:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
+bind d:${hyper} focus 'Dash'
 
-# Nudge 
-bind d:${hyper} nudge +10% +0
-bind a:${hyper}  nudge -10% +0
-bind w:${hyper}    nudge +0   -10%
-bind s:${hyper}  nudge +0   +10%
+# Nudge
+#bind d:${hyper} nudge +10% +0
+#bind a:${hyper}  nudge -10% +0
+#bind w:${hyper}    nudge +0   -10%
+#bind s:${hyper}  nudge +0   +10%
