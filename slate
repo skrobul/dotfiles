@@ -151,3 +151,8 @@ bind d:${hyper} focus 'Dash'
 #bind a:${hyper}  nudge -10% +0
 #bind w:${hyper}    nudge +0   -10%
 #bind s:${hyper}  nudge +0   +10%
+# Resize
+bind d:${hyper} resize +5% +0
+bind a:${hyper} resize -5% +0
+bind w:${hyper} resize +0   -5%
+bind s:${hyper} resize +0   +5%
