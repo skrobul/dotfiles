@@ -144,7 +144,7 @@ bind u:${hyper} focus 'Sublime Text'
 bind m:${hyper} focus 'Adium'
 bind o:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
-bind d:${hyper} focus 'Dash'
+#bind d:${hyper} focus 'Dash'
 
 # Nudge
 #bind d:${hyper} nudge +10% +0
