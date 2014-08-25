@@ -8,7 +8,7 @@ set fish_theme bobthefish
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
 #set fish_plugins autojump bundler git node rvm
-set fish_plugins rvm git bundler autojump
+set fish_plugins rvm git bundler
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -22,4 +22,10 @@ set -x DOCKER_HOST tcp://192.168.59.103:2375
 alias t="todo.sh"
 alias te="subl ~/Dropbox/todo/todo.txt"
 set -x TODOTXT_DEFAULT_ACTION ls
+
+
+# other aliases
+
+
+# private stuff...
 
