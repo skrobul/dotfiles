@@ -36,6 +36,5 @@ set PATH $PATH /Users/marek.skrobacki/bin/
 alias cbast="ssh cbast1.lon3.corp.rackspace.com"
 
 
-
 # private stuff...
-
+. $HOME/.config/fish/private.fish
