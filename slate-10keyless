@@ -21,7 +21,7 @@ alias mon-samsung    1
 alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
-alias editor 'Sublime Text'
+alias editor 'MacVim'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -146,7 +146,7 @@ bind down:${hyper}     focus down
 
 # App bindings
 bind b:${hyper} focus ${browser}
-bind u:${hyper} focus 'Sublime Text'
+bind u:${hyper} focus 'MacVim'
 bind m:${hyper} focus 'Adium'
 bind o:${hyper} focus 'Microsoft Outlook'
 bind i:${hyper} focus 'iTerm'
