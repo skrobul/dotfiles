@@ -90,4 +90,4 @@ export PATH="/Users/skrobul/.rvm/gems/ruby-2.1.2/bin:/Users/skrobul/.rvm/gems/ru
 # bindkey '^[[1;9D' backward-word]]
 set autolist
 set histignoredups
-
+DEFAULT_USER=skrobul
