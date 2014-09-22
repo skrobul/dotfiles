@@ -85,9 +85,6 @@ export PATH="/Users/skrobul/.rvm/gems/ruby-2.1.2/bin:/Users/skrobul/.rvm/gems/ru
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# bindkey -e
-# bindkey '^[[1;9C' forward-word
-# bindkey '^[[1;9D' backward-word]]
 set autolist
 set histignoredups
-DEFAULT_USER=skrobul
+DEFAULT_USER='marek.skrobacki'
