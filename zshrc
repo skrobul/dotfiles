@@ -50,14 +50,15 @@ plugins=(git rails ruby rvm tmux cap docker)
 
 # Plugin Options
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOSTART_ONCE=false
+ZSH_TMUX_ITERM2=false
+ZSH_TMUX_AUTOQUIT=false
 
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/skrobul/.rvm/gems/ruby-2.1.2/bin:/Users/skrobul/.rvm/gems/ruby-2.1.2@global/bin:/Users/skrobul/.rvm/rubies/ruby-2.1.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/skrobul/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -85,6 +86,13 @@ export PATH="/Users/skrobul/.rvm/gems/ruby-2.1.2/bin:/Users/skrobul/.rvm/gems/ru
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+# forward word
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
+#
 set autolist
 set histignoredups
-DEFAULT_USER='marek.skrobacki'
+
+# Store device specific settings like DEFAULT_USER
+source ~/.zshrc.local
