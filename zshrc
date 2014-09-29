@@ -96,3 +96,4 @@ set histignoredups
 
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
+source ~/.rvm/scripts/rvm
