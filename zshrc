@@ -7,7 +7,7 @@ source ~/dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # List of bundles to install
-antigen bundle <<EOBUNDLES
+antigen bundles <<EOBUNDLES
      git
      zsh-users/zsh-syntax-highlighting
       zsh-users/zsh-completions src
