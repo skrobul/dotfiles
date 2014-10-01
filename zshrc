@@ -10,6 +10,7 @@ antigen use oh-my-zsh
 antigen bundle <<EOBUNDLES
      git
      zsh-users/zsh-syntax-highlighting
+      zsh-users/zsh-completions src
      rails
      ruby
      rvm
