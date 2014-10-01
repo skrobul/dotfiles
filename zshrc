@@ -5,14 +5,20 @@ source ~/dotfiles/antigen/antigen.zsh
 
 #antigen config
 antigen use oh-my-zsh
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
+
+# List of bundles to install
+antigen bundle <<EOBUNDLES
+     git
+     zsh-users/zsh-syntax-highlighting
+     rails
+     ruby
+     rvm
+     tmux
+     docker
+EOBUNDLES
+
+# Theme
 antigen theme blinks
-antigen bundle rails
-antigen bundle ruby
-antigen bundle rvm
-antigen bundle tmux
-antigen bundle docker
 
 # apply
 antigen apply
