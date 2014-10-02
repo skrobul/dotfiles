@@ -16,10 +16,15 @@ antigen bundles <<EOBUNDLES
      rvm
      tmux
      docker
+     colored-man
+     Tarrasch/zsh-bd
+     autojump
 EOBUNDLES
 
 # Theme
-antigen theme blinks
+ZSH_POWERLINE_SHOW_IP=false
+ZSH_POWERLINE_SHOW_USER=false
+antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
 
 # apply
 antigen apply
@@ -62,6 +67,7 @@ ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=false
 ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOQUIT=false
+
 
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
