@@ -1,13 +1,35 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+bindkey -e
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+source ~/dotfiles/antigen/antigen.zsh
 
-# Uncomment the following line to use case-sensitive completion.
+#antigen config
+antigen use oh-my-zsh
+
+# List of bundles to install
+antigen bundles <<EOBUNDLES
+     git
+     zsh-users/zsh-syntax-highlighting
+      zsh-users/zsh-completions src
+     rails
+     ruby
+     rvm
+     tmux
+     docker
+     colored-man
+     Tarrasch/zsh-bd
+     autojump
+EOBUNDLES
+
+# Theme
+ZSH_POWERLINE_SHOW_IP=false
+ZSH_POWERLINE_SHOW_USER=false
+antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
+
+# apply
+antigen apply
+
+# core configuration
 CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -17,7 +39,7 @@ CASE_SENSITIVE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="false"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -26,7 +48,7 @@ CASE_SENSITIVE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -38,62 +60,19 @@ CASE_SENSITIVE="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby rvm tmux cap docker)
-
-
-# Plugin Options
+#
+# Plugins configuration
+#
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=false
 ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOQUIT=false
 
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# forward word
-bindkey -e
-bindkey '^[[1;9C' forward-word
-bindkey '^[[1;9D' backward-word
-#
-set autolist
-set histignoredups
-
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
 source ~/.rvm/scripts/rvm
+
+# Key mappings
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
