@@ -25,7 +25,7 @@ EOBUNDLES
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 # antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
-antigen theme apple
+antigen theme gozilla
 
 # apply
 antigen apply
