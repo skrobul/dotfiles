@@ -10,6 +10,10 @@ install nmap
 install xz
 install brew-cask
 
+# bugfixes
+install openssl
+link -f openssl
+
 ### end brewfile
 
 
