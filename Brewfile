@@ -1,7 +1,19 @@
-# install with:
-#  brew bundle Caskfile
-#  
-#
+### end brewfile
+# install with: brew bundle
+install reattach-to-user-namespace
+install tmux
+install encfs
+install fleetctl
+install irssi
+install git
+install nmap
+install xz
+install brew-cask
+
+### end brewfile
+
+
+### Start Caskfile
 
 # Install Cask
 install caskroom/cask/brew-cask
