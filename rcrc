@@ -1,2 +1,2 @@
-EXCLUDES="antigen README.md Brewfile"
+EXCLUDES="antigen README.md bootstrap_computer.sh"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
