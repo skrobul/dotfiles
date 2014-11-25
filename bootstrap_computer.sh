@@ -155,7 +155,7 @@ java
 skype
 "
 
-for cask in $CASKS_TO_INSTALL; do 
+for cask in $CASKS_TO_INSTALL; do
     fancy_echo "Installing cask $cask"
      brew cask install $cask
 done
@@ -179,8 +179,17 @@ brew install brew-cask
 brew install node
 brew install postgresql
 brew install imagemagick
+brew install cowsay
+brew install hub
+brew install gh
+brew install tig
+brew install pow
+brew install figlet
+brew install tree
 
 # bugfixes
 brew install openssl
 brew link -f openssl
+# Remove outdated versions from the cellar
+brew cleanup
 
