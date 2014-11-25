@@ -18,6 +18,7 @@ install xz
 install brew-cask
 install node
 install postgresql
+install imagemagick
 
 
 # bugfixes
