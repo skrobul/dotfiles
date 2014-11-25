@@ -9,6 +9,11 @@ install git
 install nmap
 install xz
 install brew-cask
+install node
+install postgresql
+install java
+install skype
+
 
 # bugfixes
 install openssl
