@@ -4,7 +4,7 @@
 ruby <(curl -fsS https://raw.githubusercontent.com/Homebrew/install/master/install)
 brew install rcm
 cd ~ ; git clone git@github.com:skrobul/dotfiles.git
-rcup -d ~/dotfiles/ -v
+env RCRC=$HOME/dotfiles/rcrc rcup -v
 ```
 
 ## Cask
