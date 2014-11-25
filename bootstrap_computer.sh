@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Loosely based on https://github.com/thoughtbot/laptop/blob/master/mac
 
 fancy_echo() {
@@ -119,6 +120,7 @@ env RCRC=$HOME/dotfiles/rcrc rcup -v
 
 # Cask
 brew tap caskroom/cask
+brew tap caskroom/fonts
 brew install brew-cask
 
 CASKS_TO_INSTALL="
@@ -141,7 +143,6 @@ box-sync
 spotify
 evernote
 seil
-karabiner
 macfusion
 disk-inventory-x
 macfusion
@@ -153,11 +154,26 @@ rescuetime
 skitch
 java
 skype
+teamviewer
+font-source-code-pro
+font-dejavu-sans-mono-for-powerline
+font-inconsolata-for-powerline
+font-inconsolata-dz-for-powerline
+font-sauce-code-powerline
+quicklook-csv
+quicklook-json
+qlmarkdown
 "
+#karabiner - needs 10.9, disabling for now
+CASKS_TO_LINK="alfred"
 
 for cask in $CASKS_TO_INSTALL; do
     fancy_echo "Installing cask $cask"
      brew cask install $cask
+done
+for cask in $CASKS_TO_LINK; do
+    fancy_echo "Linking cask $cask"
+    brew cask $cask link
 done
 # Brews...
 
