@@ -182,30 +182,31 @@ done
 brew tap thoughtbot/formulae
 
 # brews
-brew install rcm
-brew install reattach-to-user-namespace
-brew install tmux
-brew install encfs
-brew install fleetctl
-brew install irssi
-brew install git
-brew install nmap
-brew install xz
-brew install brew-cask
-brew install node
-brew install postgresql
-brew install imagemagick
-brew install cowsay
-brew install hub
-brew install gh
-brew install tig
-brew install pow
-brew install figlet
-brew install tree
+brew_install_or_upgrade rcm
+brew_install_or_upgrade reattach-to-user-namespace
+brew_install_or_upgrade tmux
+# brew_install_or_upgrade encfs - conflicts with macfusion binary
+brew_install_or_upgrade fleetctl
+brew_install_or_upgrade irssi
+brew_install_or_upgrade git
+brew_install_or_upgrade nmap
+brew_install_or_upgrade xz
+brew_install_or_upgrade brew-cask
+brew_install_or_upgrade node
+brew link node
+brew_install_or_upgrade postgresql
+brew_install_or_upgrade imagemagick
+brew_install_or_upgrade cowsay
+brew_install_or_upgrade hub
+brew_install_or_upgrade gh
+brew_install_or_upgrade tig
+brew_install_or_upgrade pow
+brew link pow
+brew_install_or_upgrade figlet
+brew_install_or_upgrade tree
 
 # bugfixes
-brew install openssl
+brew_install_or_upgrade openssl
 brew link -f openssl
 # Remove outdated versions from the cellar
 brew cleanup
-
