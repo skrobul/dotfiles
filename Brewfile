@@ -1,5 +1,12 @@
-### end brewfile
+### start brewfile
 # install with: brew bundle
+
+# custom taps
+
+tap thoughtbot/formulae
+
+# brews
+install rcm
 install reattach-to-user-namespace
 install tmux
 install encfs
