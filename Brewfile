@@ -18,8 +18,6 @@ install xz
 install brew-cask
 install node
 install postgresql
-install java
-install skype
 
 
 # bugfixes
@@ -73,3 +71,5 @@ cask install cord
 cask install keepassx
 cask install rescuetime
 cask install skitch
+cask install java
+cask install skype
