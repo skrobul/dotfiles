@@ -121,7 +121,7 @@ env RCRC=$HOME/dotfiles/rcrc rcup -v
 # Cask
 brew tap caskroom/cask
 brew tap caskroom/fonts
-brew install brew-cask
+brew_install_or_upgrade brew-cask
 
 CASKS_TO_INSTALL="
 alfred
