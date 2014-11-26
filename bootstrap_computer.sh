@@ -202,7 +202,7 @@ brew_install_or_upgrade gh
 brew_install_or_upgrade tig
 brew_install_or_upgrade pow
 brew link pow
-brew_install_or_upgrade figlet
+# brew_install_or_upgrade figlet
 brew_install_or_upgrade tree
 
 # bugfixes
