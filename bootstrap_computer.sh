@@ -2,7 +2,12 @@
 
 
 # Loosely based on https://github.com/thoughtbot/laptop/blob/master/mac
-
+check_xcode_installed() {
+    if ! gcc -v > /dev/null ; then
+        fancy_echo "XCODE is not installed, but it is required to compile VIM"
+        exit 1
+    fi
+}
 fancy_echo() {
   printf "\n%b\n" "$1"
 }
@@ -37,6 +42,8 @@ fi
 if [[ ! -f "$HOME/.zshrc" ]]; then
   touch "$HOME/.zshrc"
 fi
+
+check_xcode_installed
 
 append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
