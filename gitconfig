@@ -21,8 +21,8 @@
     prune-all = !git remote | xargs -n 1 git remote prune
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
-    pr = !gh pull-request
+    co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
+    pr = !hub pull-request
 
 
 [include]
@@ -33,3 +33,5 @@
 
 [commit]
     template = ~/.gitmessage
+[gh]
+    host = github.rackspace.com
