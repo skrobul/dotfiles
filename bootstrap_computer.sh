@@ -150,6 +150,7 @@ box-sync
 spotify
 evernote
 seil
+karabiner
 macfusion
 disk-inventory-x
 macfusion
