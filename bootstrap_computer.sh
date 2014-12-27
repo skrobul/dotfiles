@@ -112,7 +112,8 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
-
+# Pull submodules (vundle)
+git submodule update --init --recursive
 
 if ! command -v rcup >/dev/null; then
   fancy_echo "Installing rcm, to manage your dotfiles ..."
