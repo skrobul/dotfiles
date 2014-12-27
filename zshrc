@@ -79,3 +79,4 @@ bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
 export PATH="$HOME/.bin:$PATH"
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
