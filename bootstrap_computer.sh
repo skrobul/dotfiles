@@ -151,6 +151,7 @@ spotify
 evernote
 seil
 karabiner
+slate
 macfusion
 disk-inventory-x
 macfusion
