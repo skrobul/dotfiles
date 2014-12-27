@@ -25,7 +25,7 @@ EOBUNDLES
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 # antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
-antigen theme gallois
+antigen theme muse
 
 # apply
 antigen apply
@@ -77,3 +77,6 @@ source ~/.rvm/scripts/rvm
 # Key mappings
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
+
+export PATH="$HOME/.bin:$PATH"
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi

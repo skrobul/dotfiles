@@ -33,5 +33,5 @@
 
 [commit]
     template = ~/.gitmessage
-[gh]
+[hub]
     host = github.rackspace.com

@@ -130,9 +130,9 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 brew_install_or_upgrade brew-cask
 
-CASKS_TO_INSTALL="
+CASKS_TO_INSTALL=(
 alfred
-caffeine
+#caffeine
 flux
 virtualbox
 vagrant
@@ -150,6 +150,7 @@ box-sync
 spotify
 evernote
 seil
+karabiner
 macfusion
 disk-inventory-x
 macfusion
@@ -170,9 +171,9 @@ font-sauce-code-powerline
 quicklook-csv
 quicklook-json
 qlmarkdown
-"
+)
 #karabiner - needs 10.9, disabling for now
-CASKS_TO_LINK="alfred"
+CASKS_TO_LINK=(alfred)
 
 for cask in $CASKS_TO_INSTALL; do
     fancy_echo "Installing cask $cask"
@@ -180,7 +181,7 @@ for cask in $CASKS_TO_INSTALL; do
 done
 for cask in $CASKS_TO_LINK; do
     fancy_echo "Linking cask $cask"
-    brew cask $cask link
+    #brew cask $cask link
 done
 # Brews...
 
@@ -207,6 +208,7 @@ brew_install_or_upgrade cowsay
 brew_install_or_upgrade hub
 brew_install_or_upgrade gh
 brew_install_or_upgrade tig
+brew_install_or_upgrade gpg
 brew_install_or_upgrade pow
 brew link pow
 # brew_install_or_upgrade figlet
@@ -217,3 +219,10 @@ brew_install_or_upgrade openssl
 brew link -f openssl
 # Remove outdated versions from the cellar
 brew cleanup
+
+# Create empty local files
+touch ~/.zshrc.local
+touch ~/.gitconfig.local
+# Install rvm
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
