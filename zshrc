@@ -77,3 +77,5 @@ source ~/.rvm/scripts/rvm
 # Key mappings
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
+
+export PATH="$HOME/.bin:$PATH"
