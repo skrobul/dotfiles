@@ -56,7 +56,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'slim-template/vim-slim.git'
-Plugin 'MaxSt/FlatColor'
+" Plugin 'MaxSt/FlatColor'
 Plugin 'cseelus/vim-colors-clearance'
 
 " All of your Plugins must be added before the following line
@@ -100,10 +100,13 @@ endif
 " syntax highlighting
 syntax enable
 
-colorscheme grb256
 set bg=dark
-let g:rehash256 = 1
+" let g:rehash256 = 1
 set t_Co=256
+colorscheme grb256
+" to try after Jan 2015:
+" - codeschool
+" - candy
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
@@ -138,8 +141,8 @@ set modelines=0
 set complete-=k
 
 
-set number
-set relativenumber
+" set number
+" set relativenumber
 set hlsearch
 set ignorecase
 set smartcase
