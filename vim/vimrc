@@ -296,7 +296,7 @@ let g:pencil_terminal_italics = 1
 " dispatch.vim + rspec
 let g:rspec_command = ':Dispatch rspec {spec}'
 " key mappings for rspec
-map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>m :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>z :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
@@ -308,6 +308,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>w <Plug>(easymotion-w)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion"
 
@@ -363,7 +364,7 @@ nmap <silent> <leader>n :bnext<CR>
 " previous buffer
 nmap <silent> <leader>p :bprevious<CR>
 "close the buffer
-nmap <silent> <leader>w :bp <BAR> bd #<CR>
+nmap <silent> <leader>c :bp <BAR> bd #<CR>
 " show all open buffers in buffer explorer
 nmap <silent> <leader>b :ls<CR>
 
