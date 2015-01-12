@@ -10,6 +10,8 @@ call vundle#begin()"
 Plugin 'gmarik/Vundle.vim'  "vundle itself
 Plugin 'tpope/vim-fugitive' "git wrapper
 
+Plugin 'vim-scripts/CSApprox'
+
 "full path fuzzy finder
 Plugin 'kien/ctrlp.vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
@@ -22,7 +24,7 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 
 " Plugin 'flazz/vim-colorschemes'
-Plugin 'quanganhdo/grb256'
+Plugin 'skrobul/grb256'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'endwise.vim'
 Plugin 'kchmck/vim-coffee-script'
