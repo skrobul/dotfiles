@@ -59,6 +59,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'altercation/vim-colors-solarized'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
 
@@ -106,7 +107,7 @@ syntax enable
 set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme grb256
+colorscheme solarized
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -377,7 +378,9 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 if has("gui_running")
    let s:uname = system("uname")
    if s:uname == "Darwin\n"
-      set guifont=Inconsolata\ for\ Powerline:h15
+      " set guifont=Inconsolata\ for\ Powerline:h15
+      " https://github.com/abertsch/Menlo-for-Powerline
+      set guifont=Menlo\ for\ Powerline
       set guioptions-=r
    endif
 endif
