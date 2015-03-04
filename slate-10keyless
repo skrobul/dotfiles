@@ -31,6 +31,8 @@ alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY  screenSize
 alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSizeX*0.4;screenSizeY
 alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
 alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
+alias tophalf       move screenOriginX;screenOriginY                  screenSizeX;screenSizeY*0.5
+alias bottomhalf    move screenOriginX;screenOriginY+screenSizeY*0.5  screenSizeX;screenSizeY
 
 # Quaters
 alias ltop          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
@@ -126,6 +128,10 @@ bind l:${hyper} ${lefthalf}
 bind f:${hyper} ${full}
 bind r:${hyper} ${righthalf}
 bind n:${hyper} throw next
+
+# Vertical screen stuff
+bind q:${hyper} ${tophalf}
+bind z:${hyper} ${bottomhalf}
 
 # Location Thirds
 bind t:${hyper} ${leftthird}
