@@ -32,7 +32,7 @@ alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSize
 alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
 alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
 alias tophalf       move screenOriginX;screenOriginY                  screenSizeX;screenSizeY*0.5
-alias bottomhalf    move screenOriginX;screenOriginY+screenSizeY*0.5  screenSizeX;screenSizeY
+alias bottomhalf    move screenOriginX;screenOriginY+screenSizeY*0.5  screenSizeX;screenSizeY*0.5
 
 # Quaters
 alias ltop          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
