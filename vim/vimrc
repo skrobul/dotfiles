@@ -103,7 +103,7 @@ if has('autocmd')
     " autocmd BufWritePost *.coffee silent make!
     "
     " automatically generate ctags on write
-    au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
+    "au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
 endif
 
 " syntax highlighting
