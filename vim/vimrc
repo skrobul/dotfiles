@@ -23,7 +23,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 
-" Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'skrobul/grb256'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'endwise.vim'
@@ -44,7 +44,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'skrobul/vim-project'
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rstacruz/sparkup'
@@ -60,6 +60,8 @@ Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'blerins/flattown'
+Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
 
@@ -99,6 +101,9 @@ if has('autocmd')
     autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
     " autocmd BufWritePost *.coffee silent make!
+    "
+    " automatically generate ctags on write
+    au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
 endif
 
 " syntax highlighting
@@ -107,7 +112,7 @@ syntax enable
 set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme solarized
+colorscheme flattown
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -221,14 +226,15 @@ endfunction
 
 
 " tab navigation like firefox
-:nmap <C-S-tab> :tabprevious<CR>
-:nmap <C-tab> :tabnext<CR>
-:map <C-S-tab> :tabprevious<CR>
-:map <C-tab> :tabnext<CR>
-:imap <C-S-tab> <Esc>:tabprevious<CR>i
-:imap <C-tab> <Esc>:tabnext<CR>i
-:nmap <C-t> :tabnew<CR>
-:imap <C-t> <Esc>:tabnew<CR>
+"  temporary disabled - not really using tabs...
+" :nmap <C-S-tab> :tabprevious<CR>
+" :nmap <C-tab> :tabnext<CR>
+" :map <C-S-tab> :tabprevious<CR>
+" :map <C-tab> :tabnext<CR>
+" :imap <C-S-tab> <Esc>:tabprevious<CR>i
+" :imap <C-tab> <Esc>:tabnext<CR>i
+" :nmap <C-t> :tabnew<CR>
+" :imap <C-t> <Esc>:tabnew<CR>
 
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
@@ -288,6 +294,9 @@ let g:project_use_nerdtree = 1
 "NERDTree - autoclose when last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F4> :NERDTreeToggle<CR>
+" open NERDtree when no files are specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " pencil theme
 let g:pencil_higher_contrast = 1
@@ -378,9 +387,7 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 if has("gui_running")
    let s:uname = system("uname")
    if s:uname == "Darwin\n"
-      " set guifont=Inconsolata\ for\ Powerline:h15
-      " https://github.com/abertsch/Menlo-for-Powerline
-      set guifont=Menlo\ for\ Powerline
+      set guifont=Menlo\ for\ Powerline:h15
       set guioptions-=r
    endif
 endif
@@ -423,5 +430,5 @@ set list
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
-endif"
+endif
 
