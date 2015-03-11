@@ -368,7 +368,7 @@ let g:airline#extensions#tabline#enabled = 1
 " inoremap <C-k>  <Esc>:tabclose<CR>i
 
 
-set cursorline  "highlights current line
+" set cursorline  "highlights current line
 
 " make vundle compatible... (requires bash)"
 set shell=/bin/bash
@@ -441,6 +441,9 @@ endfunction
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+
+" faster redraws
+set lazyredraw=1
 
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
