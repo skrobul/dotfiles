@@ -10,7 +10,7 @@ call vundle#begin()"
 Plugin 'gmarik/Vundle.vim'  "vundle itself
 Plugin 'tpope/vim-fugitive' "git wrapper
 
-Plugin 'vim-scripts/CSApprox'
+" Plugin 'vim-scripts/CSApprox'
 
 "full path fuzzy finder
 Plugin 'kien/ctrlp.vim'
@@ -113,7 +113,21 @@ syntax enable
 set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme flattown
+colorscheme base16-railscasts
+highlight clear SignColumn
+highlight VertSplit    ctermbg=236
+highlight ColorColumn  ctermbg=237
+highlight LineNr       ctermbg=236 ctermfg=240
+highlight CursorLineNr ctermbg=236 ctermfg=240
+highlight CursorLine   ctermbg=236
+highlight StatusLineNC ctermbg=238 ctermfg=0
+highlight StatusLine   ctermbg=240 ctermfg=12
+highlight IncSearch    ctermbg=3   ctermfg=1
+highlight Search       ctermbg=1   ctermfg=3
+highlight Visual       ctermbg=3   ctermfg=0
+highlight Pmenu        ctermbg=240 ctermfg=12
+highlight PmenuSel     ctermbg=3   ctermfg=1
+highlight SpellBad     ctermbg=0   ctermfg=1
 " to try after Jan 2015:
 " - codeschool
 " - candy
