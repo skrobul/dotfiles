@@ -64,6 +64,7 @@ Plugin 'blerins/flattown'
 Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
