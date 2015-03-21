@@ -105,6 +105,9 @@ if has('autocmd')
     "
     " automatically generate ctags on write
     "au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
+
+    " enable spelling on GIT commit messages
+    autocmd FileType gitcommit setlocal spell
 endif
 
 " syntax highlighting
@@ -442,6 +445,7 @@ endfunction
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 set showbreak=↪
+
 
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
