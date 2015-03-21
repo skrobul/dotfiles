@@ -108,6 +108,10 @@ if has('autocmd')
 
     " enable spelling on GIT commit messages
     autocmd FileType gitcommit setlocal spell
+
+    " Automatically change into the directory of the buffer, when switching.
+    au BufEnter * silent! lcd %:p:h
+
 endif
 
 " syntax highlighting
@@ -148,8 +152,8 @@ set incsearch
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
 
 
-" Added to default to high security within Gentoo. Fixes bug #14088
-set modelines=0
+" check for vim settings in X lines of read file
+set modelines=5
 " autocompletion - disable dictionary based
 set complete-=k
 
