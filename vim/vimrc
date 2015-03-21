@@ -441,6 +441,7 @@ endfunction
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+set showbreak=↪
 
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
