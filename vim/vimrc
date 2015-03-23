@@ -443,7 +443,7 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
 " faster redraws
-set lazyredraw=1
+set lazyredraw
 
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
