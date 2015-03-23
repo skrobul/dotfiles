@@ -1,5 +1,4 @@
-set nocompatible              " be iMproved, required filetype off                  " required
-
+set nocompatible              " be iMproved, required filetype off
 
 " VUNDLE  - plugins
 " set the runtime path to include Vundle and initialize
@@ -59,8 +58,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'slim-template/vim-slim.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'blerins/flattown'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'blerins/flattown'
 Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
@@ -98,6 +97,7 @@ if has('autocmd')
     autocmd FileType coffee set sw=2 ts=2 tw=80
     " remove trailing whitespaces
     autocmd FileType cucumber,c,cpp,java,php,ruby,md autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     " automatically open quickfix window for cofee script
     autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
@@ -105,29 +105,18 @@ if has('autocmd')
     "
     " automatically generate ctags on write
     "au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
+
+    " enable spelling on GIT commit messages
+    autocmd FileType gitcommit setlocal spell
 endif
 
 " syntax highlighting
 syntax enable
 
-set bg=dark
+" set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme base16-railscasts
-highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=237
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
-highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
-highlight IncSearch    ctermbg=3   ctermfg=1
-highlight Search       ctermbg=1   ctermfg=3
-highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=3   ctermfg=1
-highlight SpellBad     ctermbg=0   ctermfg=1
+colorscheme smyck
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -272,6 +261,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=**/node_modules
 let g:ctrlp_open_new_file = "r"
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' } "fuzzy matching with ctrlp+cmatcher"
+let g:ctrlp_extensions = ['tag']
 
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
 " make YCM compatible with UltiSnips (using supertab)
@@ -313,10 +303,6 @@ map <F4> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" pencil theme
-let g:pencil_higher_contrast = 1
-let g:pencil_neutral_headings = 1
-let g:pencil_terminal_italics = 1
 
 " dispatch.vim + rspec
 let g:rspec_command = ':Dispatch rspec {spec}'
@@ -355,8 +341,8 @@ vmap <C-x> d
 vmap <C-v> p
 vmap <C-c> y
 " Tabs
-" let g:airline_theme='ir_black'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='murmur'
+let g:airline#extensions#tabline#enabled = 0
 " temporarily disable until I figure out better shortcuts
 " nnoremap <C-b>  :tabprevious<CR>
 " inoremap <C-b>  <Esc>:tabprevious<CR>i
@@ -441,6 +427,8 @@ endfunction
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+set showbreak=↪
+
 
 " faster redraws
 set lazyredraw
@@ -448,5 +436,5 @@ set lazyredraw
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
-endif"
+endif
 
