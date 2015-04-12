@@ -65,6 +65,7 @@ Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'cseelus/vim-colors-clearance'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
+Plugin 'wikitopian/hardmode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,6 +113,11 @@ if has('autocmd')
 
     " Automatically change into the directory of the buffer, when switching.
     au BufEnter * silent! lcd %:p:h
+    " Nerd tree auto commands
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " open NERDtree when no files are specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 endif
 
@@ -303,11 +309,7 @@ let g:vim_markdown_folding_disabled=0
 let g:project_use_nerdtree = 1
 
 "NERDTree - autoclose when last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F4> :NERDTreeToggle<CR>
-" open NERDtree when no files are specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " dispatch.vim + rspec
