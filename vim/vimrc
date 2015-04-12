@@ -118,6 +118,9 @@ if has('autocmd')
     " open NERDtree when no files are specified
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " hardmode plugin :)
+    " enable hard mode by default
+    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 endif
 
@@ -408,6 +411,9 @@ nnoremap <Leader>gb :Git branch<Space>
 nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Dispatch! git push<CR>
 nnoremap <Leader>gpl :Dispatch! git pull<CR>
+
+" hardmode mappings
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 
 " gui related stuff
