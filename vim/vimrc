@@ -429,7 +429,7 @@ Project '~/skrovim'
 set clipboard=unnamed
 
 " Make 81st column stand out
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=Green ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
 
