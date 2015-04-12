@@ -64,6 +64,7 @@ Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
 Plugin 'scrooloose/syntastic'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,7 +121,8 @@ syntax enable
 " set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme smyck
+let base16colorspace=256
+colorscheme base16-bright
 " to try after Jan 2015:
 " - codeschool
 " - candy
