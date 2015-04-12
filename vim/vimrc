@@ -65,6 +65,7 @@ Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'cseelus/vim-colors-clearance'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
+Plugin 'nelstrom/vim-markdown-folding'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
