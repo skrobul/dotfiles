@@ -33,10 +33,8 @@ Plugin 'plasticboy/vim-markdown' "markdown syntax
 
 Plugin 'tpope/vim-rails' "set of rails helpers
 
-" instant markdown preview requires few python modules
-" pip install bottle markdown pygments
 Plugin 'tpope/vim-repeat'
-Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
@@ -304,8 +302,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 
-" python-vim-instant-markdown
-python import sys; sys.path.append('/Library/Python/2.7/site-packages')
 
 " vim-markdown - no folding
 let g:vim_markdown_folding_disabled=0
