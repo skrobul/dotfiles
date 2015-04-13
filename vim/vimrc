@@ -22,8 +22,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 
-Plugin 'flazz/vim-colorschemes'
-Plugin 'skrobul/grb256'
+"Plugin 'flazz/vim-colorschemes'
+"Plugin 'skrobul/grb256'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'endwise.vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -64,6 +64,8 @@ Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'cseelus/vim-colors-clearance'
 Plugin 'scrooloose/syntastic'
+Plugin 'chriskempson/base16-vim'
+Plugin 'wikitopian/hardmode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,6 +112,18 @@ if has('autocmd')
     autocmd FileType gitcommit setlocal spell
     " enable auto word wrap in commit messages
     autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw
+
+    " Automatically change into the directory of the buffer, when switching.
+    au BufEnter * silent! lcd %:p:h
+    " Nerd tree auto commands
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " open NERDtree when no files are specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " hardmode plugin :)
+    " enable hard mode by default
+    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
 endif
 
 " syntax highlighting
@@ -118,7 +132,8 @@ syntax enable
 " set bg=dark
 " let g:rehash256 = 1
 set t_Co=256
-colorscheme smyck
+let base16colorspace=256
+colorscheme base16-bright
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -150,8 +165,8 @@ set incsearch
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
 
 
-" Added to default to high security within Gentoo. Fixes bug #14088
-set modelines=0
+" check for vim settings in X lines of read file
+set modelines=5
 " autocompletion - disable dictionary based
 set complete-=k
 
@@ -293,17 +308,13 @@ let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 python import sys; sys.path.append('/Library/Python/2.7/site-packages')
 
 " vim-markdown - no folding
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled=0
 
 " Projects config
 let g:project_use_nerdtree = 1
 
 "NERDTree - autoclose when last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F4> :NERDTreeToggle<CR>
-" open NERDtree when no files are specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " dispatch.vim + rspec
@@ -343,7 +354,7 @@ vmap <C-x> d
 vmap <C-v> p
 vmap <C-c> y
 " Tabs
-let g:airline_theme='murmur'
+let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 0
 " temporarily disable until I figure out better shortcuts
 " nnoremap <C-b>  :tabprevious<CR>
@@ -403,6 +414,9 @@ nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Dispatch! git push<CR>
 nnoremap <Leader>gpl :Dispatch! git pull<CR>
 
+" hardmode mappings
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
 
 " gui related stuff
 if has("gui_running")
@@ -425,13 +439,14 @@ Project '~/skrovim'
 set clipboard=unnamed
 
 " Make 81st column stand out
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=Green ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
 
 " This rewires n and N to do the highlighing...
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
+" Temporarily disabled
+"nnoremap <silent> n   n:call HLNext(0.4)<cr>
+"nnoremap <silent> N   N:call HLNext(0.4)<cr>
 highlight WhiteOnRed ctermbg=red ctermfg=white
 function! HLNext (blinktime)
     let [bufnum, lnum, col, off] = getpos('.')
