@@ -8,8 +8,7 @@
 [push]
 	default = current
 [core]
-	editor = /usr/bin/vim
-    excludesfile = ~/.gitignore
+	editor = /usr/local/bin/vim
 [alias]
     d  = diff
     dc = diff --cached
