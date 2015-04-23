@@ -18,14 +18,13 @@ antigen bundles <<EOBUNDLES
      docker
      colored-man
      Tarrasch/zsh-bd
-     autojump
 EOBUNDLES
 
 # Theme
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 # antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
-antigen theme muse
+antigen theme simple
 
 # apply
 antigen apply
