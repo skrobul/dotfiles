@@ -37,4 +37,4 @@
 [merge]
         tool = vim
 [mergetool "vim"]
-        cmd = vim \"+Gdiff\" $MERGED
+        cmd = vim \"+Gvdiff\" $MERGED

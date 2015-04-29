@@ -302,6 +302,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
 " vim-markdown - no folding
@@ -439,6 +440,9 @@ set clipboard=unnamed
 highlight ColorColumn ctermbg=Green ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
+"git merges
+map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
 
 " This rewires n and N to do the highlighing...
 " Temporarily disabled
