@@ -34,3 +34,7 @@
     template = ~/.gitmessage
 [hub]
     host = github.rackspace.com
+[merge]
+        tool = vim
+[mergetool "vim"]
+        cmd = vim \"+Gdiff\" $MERGED
