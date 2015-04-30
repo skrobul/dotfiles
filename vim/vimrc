@@ -474,3 +474,6 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+" move focus to correct place after the split
+set splitbelow
+set splitright
