@@ -50,6 +50,7 @@ alias midthird move screenOriginX+screenSizeX/3;screenOriginY screenSizeX/3;scre
 
 # Concrete positions
 alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
+alias 2-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-samsung}
 alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
 alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
 alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-samsung}
@@ -58,16 +59,8 @@ alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2
 alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-samsung}
 
 # 2 Monitor layout
-layout 2monitors 'iTerm':MAIN_FIRST                       ${2-rightbottom} | ${1-left}
-layout 2monitors 'Safari':REPEAT                          ${1-full}
-layout 2monitors 'Nightly':REPEAT                          ${1-full}
-layout 2monitors 'Sublime Text':REPEAT              ${1-full}
-layout 2monitors 'MacVim':REPEAT                      ${1-full}
-layout 2monitors 'Mail':MAIN_FIRST                        ${2-left}
-layout 2monitors 'Path Finder':MAIN_FIRST                 ${2-righttop}
-layout 2monitors 'Xcode':REPEAT                           ${1-full}
-layout 2monitors 'Eclipse':REPEAT                         ${1-full}
-layout 2monitors 'iTunes':REPEAT                          ${1-full}
+layout 2monitors 'iTerm':MAIN_FIRST                       ${2-full} | ${1-left}
+layout 2monitors ${browser}:REPEAT                          ${1-full}
 
 # 1 Monitor layout
 layout 1monitor 'iTerm':MAIN_FIRST                       ${1-right}
@@ -106,7 +99,7 @@ bind pad+ throw next
 bind pad. focus behind
 bind pad- layout 2monitors
 bind pad/ layout 1monitor
-
+bind f13 layout 2monitors
 
 
 # ======================================
