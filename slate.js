@@ -17,12 +17,10 @@ var hintFull = slate.operation("hint", {
   "characters" : "AOEUIDHTNSYXFBPKGMCW"
 });
 
-var browser = 'Google Chrome';
-var editor = 'MacVim';
 var monLaptop = "1280x800";
 var monLeftDell = "2560x1024";
 var monRightDell = "2560x1024";
-
+var monHome = "2560x1440";
 var absFull = slate.operation("move", {
   "x": "screenOriginX",
   "y": "screenOriginY",
@@ -157,6 +155,10 @@ var con_leftdell_right_chat = slate.operation("push", {
   "style" : "bar-resize:screenSizeX/9"
 });
 
+/* home monitor */
+var con_home_right_chat = con_leftdell_right_chat.dup({"screen": monHome });
+var con_home_left_bottom = absBottomLeft.dup({"screen" : monHome });
+
 /* layouts */
 
 function hideApp(appName) {
@@ -172,7 +174,7 @@ var macbookOnly = slate.layout("macbook", {
   "Adium": {
     "operations": hideApp("Adium")
   },
-  browser: {
+  "Google Chrome": {
     "operations": con_lap_left,
     "repeat": true,
   },
@@ -197,7 +199,7 @@ var twoMonitors = slate.layout("twoMonitors", {
   "iTerm2": {
     "operations": [con_rightdell_left, con_rightdell_right]
   },
-  browser: {
+  "Google Chrome": {
     "operations" : con_leftdell_full,
     "main-last": true,
     "repeat": true
@@ -218,10 +220,28 @@ var twoMonitors = slate.layout("twoMonitors", {
     "operations" : [con_rightdell_full]
   }
 });
-
+var homeLayout = slate.layout("homeLayout", {
+  "iTerm2" : {
+    "operations": [absRightHalf],
+  },
+  "Google Chrome": {
+    "operations": [absTopLeft, absBottomLeft],
+  },
+  "Adium" : {
+    "operations" :  [con_home_right_chat, con_home_left_bottom],
+    "ignore-fail": true,
+    "title-order": ["Contacts"],
+    "repeat-last": true
+  },
+  "Todoist" : {
+    "operations" : absBottomLeft
+  },
+});
 /* apply layouts when specific monitors are connected */
 slate.default(["1280x800"], macbookOnly);
 slate.default(["2560x1400", "2560x1400?"], twoMonitors);
+slate.default(["2560x1440"], homeLayout);
+
 
 // # Numpad location Bindings
 // bind pad0 ${showHintsLeftHand}
@@ -273,7 +293,7 @@ bindings = {};
   bindings["up" + hyper] = focusUp;
   bindings["down" + hyper] = focusDown;
   // Focus (app specific)
-  bindings["b" + hyper] = focusApp(browser);
+  bindings["b" + hyper] = focusApp("Google Chrome");
   bindings["m" + hyper] = focusApp("Adium");
   bindings["o" + hyper] = focusApp("Microsoft Outlook");
   bindings["v" + hyper] = focusApp("VidyoDesktop");
@@ -283,3 +303,5 @@ bindings = {};
   bindings["e" + hyper] = hintLeftHand;
   bindings["p" + hyper] = slate.operation("relaunch");
 slate.bindAll(bindings);
+
+/* vim:set ts=2 sw=2 sts=2 et */
