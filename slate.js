@@ -165,7 +165,7 @@ function hideApp(appName) {
 
 /*   macbook  only */
 var macbookOnly = slate.layout("macbook", {
-  "iTerm": {
+  "iTerm2": {
     "operations": con_lap_right,
     "main-first": true
   },
@@ -194,7 +194,7 @@ var macbookOnly = slate.layout("macbook", {
 });
 
 var twoMonitors = slate.layout("twoMonitors", {
-  "iTerm": {
+  "iTerm2": {
     "operations": [con_rightdell_left, con_rightdell_right]
   },
   browser: {
@@ -277,7 +277,7 @@ bindings = {};
   bindings["m" + hyper] = focusApp("Adium");
   bindings["o" + hyper] = focusApp("Microsoft Outlook");
   bindings["v" + hyper] = focusApp("VidyoDesktop");
-  bindings["i" + hyper] = focusApp("iTerm");
+  bindings["i" + hyper] = focusApp("iTerm2");
   // Other
   bindings["n" + hyper] = showGrid;
   bindings["e" + hyper] = hintLeftHand;
