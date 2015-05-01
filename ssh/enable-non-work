@@ -1,2 +1,2 @@
 #!/bin/bash
-mv ~/.ssh/config.non-work ~/.ssh/config
+cp ~/.ssh/config.non-work ~/.ssh/config
