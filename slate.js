@@ -277,6 +277,7 @@ bindings = {};
   bindings["m" + hyper] = focusApp("Adium");
   bindings["o" + hyper] = focusApp("Microsoft Outlook");
   bindings["v" + hyper] = focusApp("VidyoDesktop");
+  bindings["i" + hyper] = focusApp("iTerm");
   // Other
   bindings["n" + hyper] = showGrid;
   bindings["e" + hyper] = hintLeftHand;
