@@ -121,7 +121,7 @@ if has('autocmd')
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     " hardmode plugin :)
     " enable hard mode by default
-    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+    " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 endif
 
