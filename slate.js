@@ -278,7 +278,7 @@ bindings = {};
   bindings["o" + hyper] = focusApp("Microsoft Outlook");
   bindings["v" + hyper] = focusApp("VidyoDesktop");
   // Other
-  bindings["i" + hyper] = showGrid;
+  bindings["n" + hyper] = showGrid;
   bindings["e" + hyper] = hintLeftHand;
   bindings["p" + hyper] = slate.operation("relaunch");
 slate.bindAll(bindings);
