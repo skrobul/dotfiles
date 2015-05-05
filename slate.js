@@ -69,7 +69,7 @@ var absTopRight = absTopLeft.dup({ "direction": "top-right" });
 var absBottomLeft = absTopLeft.dup({"direction": "bottom-left"});
 var absBottomRight = absTopLeft.dup({"direction": "bottom-right"});
 
-// var throwToNextScreen = slate.operation("throw", "next");
+var throwToNextScreen = slate.operation("throw", { "screen" : "next" });
 
 /* focus operations */
 var focusUp = slate.operation( "focus", { "direction" : "up" });
@@ -282,7 +282,7 @@ bindings = {};
   bindings["f" + hyper] = absFull;
   bindings["r" + hyper] = absRightHalf;
   bindings["l" + hyper] = absLeftHalf;
-  // bindings["n" + hyper] = throwToNextScreen;
+  bindings["n" + hyper] = throwToNextScreen;
   bindings["q" + hyper] = absTopHalf;
   bindings["z" + hyper] = absBottomHalf;
   bindings["t" + hyper] = absLeftThird;
@@ -302,7 +302,7 @@ bindings = {};
   bindings["v" + hyper] = focusApp("VidyoDesktop");
   bindings["i" + hyper] = focusApp("iTerm2");
   // Other
-  bindings["n" + hyper] = showGrid;
+  bindings["0" + hyper] = showGrid;
   bindings["e" + hyper] = hintLeftHand;
   bindings["p" + hyper] = slate.operation("relaunch");
 slate.bindAll(bindings);
