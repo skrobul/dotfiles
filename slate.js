@@ -21,8 +21,8 @@ var hintFull = slate.operation("hint", {
 });
 
 var monLaptop = "1280x800";
-var monLeftDell = "2560x1024";
-var monRightDell = "2560x1024";
+var monLeftDell = "1920x1080";
+var monRightDell = "1920x1080";
 var monHome = "2560x1440";
 var absFull = slate.operation("move", {
   "x": "screenOriginX",
