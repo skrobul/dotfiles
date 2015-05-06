@@ -317,6 +317,8 @@ map <F4> :NERDTreeToggle<CR>
 
 " syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubylint', 'rubocop']
+let g:syntastic_always_populate_loc_list = 1
+
 " dispatch.vim + rspec
 let g:rspec_command = ':Dispatch rspec {spec}'
 " key mappings for rspec
