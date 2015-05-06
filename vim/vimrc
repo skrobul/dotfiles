@@ -113,13 +113,11 @@ if has('autocmd')
     " enable auto word wrap in commit messages
     autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw
 
-    " Automatically change into the directory of the buffer, when switching.
-    au BufEnter * silent! lcd %:p:h
     " Nerd tree auto commands
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " open NERDtree when no files are specified
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " autocmd StdinReadPre * let s:std_in=1
+    " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     " hardmode plugin :)
     " enable hard mode by default
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -316,12 +314,12 @@ let g:project_use_nerdtree = 1
 map <F4> :NERDTreeToggle<CR>
 
 " syntastic
-let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri'] ", 'rubylint', 'rubocop']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-map <Leader>y :SyntasticCheck reek ruby-lint<CR>
+map <Leader>y :SyntasticCheck reek ruby-lint rubocop<CR>
 
 
 
@@ -376,9 +374,6 @@ let g:airline#extensions#tabline#enabled = 0
 
 
 " set cursorline  "highlights current line
-
-" make vundle compatible... (requires bash)"
-set shell=/bin/bash
 
 
 
