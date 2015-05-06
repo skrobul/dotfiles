@@ -318,9 +318,9 @@ map <F4> :NERDTreeToggle<CR>
 " syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 map <Leader>y :SyntasticCheck reek ruby-lint<CR>
 
 
