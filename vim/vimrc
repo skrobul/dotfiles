@@ -315,7 +315,8 @@ let g:project_use_nerdtree = 1
 "NERDTree - autoclose when last buffer
 map <F4> :NERDTreeToggle<CR>
 
-
+" syntastic
+let g:syntastic_ruby_checkers = ['mri', 'rubylint', 'rubocop']
 " dispatch.vim + rspec
 let g:rspec_command = ':Dispatch rspec {spec}'
 " key mappings for rspec
