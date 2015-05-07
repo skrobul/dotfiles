@@ -66,6 +66,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
 Plugin 'wikitopian/hardmode'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'henrik/vim-qargs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
