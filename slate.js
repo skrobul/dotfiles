@@ -21,8 +21,8 @@ var hintFull = slate.operation("hint", {
 });
 
 var monLaptop = "1280x800";
-var monLeftDell = "2560x1024";
-var monRightDell = "2560x1024";
+var monLeftDell = "1920x1080";
+var monRightDell = "1920x1080";
 var monHome = "2560x1440";
 var absFull = slate.operation("move", {
   "x": "screenOriginX",
@@ -69,7 +69,7 @@ var absTopRight = absTopLeft.dup({ "direction": "top-right" });
 var absBottomLeft = absTopLeft.dup({"direction": "bottom-left"});
 var absBottomRight = absTopLeft.dup({"direction": "bottom-right"});
 
-// var throwToNextScreen = slate.operation("throw", "next");
+var throwToNextScreen = slate.operation("throw", { "screen" : "next" });
 
 /* focus operations */
 var focusUp = slate.operation( "focus", { "direction" : "up" });
@@ -170,7 +170,7 @@ function hideApp(appName) {
 
 /*   macbook  only */
 var macbookOnly = slate.layout("macbook", {
-  "iTerm2": {
+  "iTerm": {
     "operations": con_lap_right,
     "main-first": true
   },
@@ -199,7 +199,7 @@ var macbookOnly = slate.layout("macbook", {
 });
 
 var twoMonitors = slate.layout("twoMonitors", {
-  "iTerm2": {
+  "iTerm": {
     "operations": [con_rightdell_left, con_rightdell_right]
   },
   "Google Chrome": {
@@ -224,7 +224,7 @@ var twoMonitors = slate.layout("twoMonitors", {
   }
 });
 var homeLayout = slate.layout("homeLayout", {
-  "iTerm2" : {
+  "iTerm" : {
     "operations": [absRightHalf],
   },
   "Google Chrome": {
@@ -282,7 +282,7 @@ bindings = {};
   bindings["f" + hyper] = absFull;
   bindings["r" + hyper] = absRightHalf;
   bindings["l" + hyper] = absLeftHalf;
-  // bindings["n" + hyper] = throwToNextScreen;
+  bindings["n" + hyper] = throwToNextScreen;
   bindings["q" + hyper] = absTopHalf;
   bindings["z" + hyper] = absBottomHalf;
   bindings["t" + hyper] = absLeftThird;
@@ -300,9 +300,9 @@ bindings = {};
   bindings["m" + hyper] = focusApp("Adium");
   bindings["o" + hyper] = focusApp("Microsoft Outlook");
   bindings["v" + hyper] = focusApp("VidyoDesktop");
-  bindings["i" + hyper] = focusApp("iTerm2");
+  bindings["i" + hyper] = focusApp("iTerm");
   // Other
-  bindings["n" + hyper] = showGrid;
+  bindings["0" + hyper] = showGrid;
   bindings["e" + hyper] = hintLeftHand;
   bindings["p" + hyper] = slate.operation("relaunch");
 slate.bindAll(bindings);
