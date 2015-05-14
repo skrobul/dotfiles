@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required filetype off
 
 " VUNDLE  - plugins
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()"
 
 
@@ -55,7 +55,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-bundler'
-Plugin 'rizzatti/dash.vim'
+" Plugin 'rizzatti/dash.vim' - disabled  - took way too long to startup
 Plugin 'slim-template/vim-slim.git'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'blerins/flattown'
@@ -102,7 +102,7 @@ if has('autocmd')
     autocmd FileType cucumber,c,cpp,java,php,ruby,md autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     " automatically open quickfix window for cofee script
-    autocmd QuickFixCmdPost * nested cwindow | redraw!
+    "autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
     " autocmd BufWritePost *.coffee silent make!
     "
@@ -316,7 +316,7 @@ map <F4> :NERDTreeToggle<CR>
 
 " syntastic
 let g:syntastic_ruby_checkers = ['mri'] ", 'rubylint', 'rubocop']
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
@@ -374,6 +374,8 @@ let g:airline#extensions#tabline#enabled = 0
 " inoremap <C-k>  <Esc>:tabclose<CR>i
 
 
+" instant markdown
+let g:instant_markdown_slow = 1
 " set cursorline  "highlights current line
 
 
@@ -473,7 +475,7 @@ set showbreak=↪
 
 
 " faster redraws
-set lazyredraw
+" set lazyredraw
 
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
