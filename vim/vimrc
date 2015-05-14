@@ -20,7 +20,7 @@ Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'SirVer/ultisnips'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'skrobul/grb256'
