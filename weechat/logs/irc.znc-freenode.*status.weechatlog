@@ -1,0 +1,196 @@
+2015-05-17 23:51:04	*status	Network (freebode) doesn't exist.
+2015-05-17 23:52:17	--	irc: disconnected from server
+2015-05-17 23:52:19	*status	Network (freebode) doesn't exist.
+2015-05-17 23:52:33	*status	Network (freebode) doesn't exist.
+2015-05-17 23:56:37	skrobul	listnetworks
+2015-05-17 23:56:37	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:56:37	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                | Channels |
+2015-05-17 23:56:37	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:56:37	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP | 3        |
+2015-05-17 23:56:37	*status	| raxbb    | No    |                            |                                                         |          |
+2015-05-17 23:56:37	*status	| freenode | No    |                            |                                                         |          |
+2015-05-17 23:56:37	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:33	skrobul	help
+2015-05-17 23:58:33	*status	In the following list all occurrences of <#chan> support wildcards (* and ?)
+2015-05-17 23:58:33	*status	(Except ListNicks)
+2015-05-17 23:58:33	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-17 23:58:33	*status	| Command                | Arguments                             | Description                                                                      |
+2015-05-17 23:58:33	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-17 23:58:33	*status	| Version                |                                       | Print which version of ZNC this is                                               |
+2015-05-17 23:58:33	*status	| ListMods               |                                       | List all loaded modules                                                          |
+2015-05-17 23:58:33	*status	| ListAvailMods          |                                       | List all available modules                                                       |
+2015-05-17 23:58:33	*status	| ListNicks              | <#chan>                               | List all nicks on a channel                                                      |
+2015-05-17 23:58:33	*status	| ListServers            |                                       | List all servers of current IRC network                                          |
+2015-05-17 23:58:33	*status	| AddNetwork             | <name>                                | Add a network to your user                                                       |
+2015-05-17 23:58:33	*status	| DelNetwork             | <name>                                | Delete a network from your user                                                  |
+2015-05-17 23:58:33	*status	| ListNetworks           |                                       | List all networks                                                                |
+2015-05-17 23:58:33	*status	| MoveNetwork            | old-user old-net new-user [new-net]   | Move an IRC network from one user to another                                     |
+2015-05-17 23:58:33	*status	| JumpNetwork            | <network>                             | Jump to another network                                                          |
+2015-05-17 23:58:33	*status	| AddServer              | <host> [[+]port] [pass]               | Add a server to the list of alternate/backup servers of current IRC network.     |
+2015-05-17 23:58:33	*status	| DelServer              | <host> [port] [pass]                  | Remove a server from the list of alternate/backup servers of current IRC network |
+2015-05-17 23:58:33	*status	| Enablechan             | <#chan>                               | Enable the channel                                                               |
+2015-05-17 23:58:33	*status	| Detach                 | <#chan>                               | Detach from the channel                                                          |
+2015-05-17 23:58:33	*status	| Topics                 |                                       | Show topics in all your channels                                                 |
+2015-05-17 23:58:33	*status	| PlayBuffer             | <#chan>                               | Play back the buffer for a given channel                                         |
+2015-05-17 23:58:33	*status	| ClearBuffer            | <#chan>                               | Clear the buffer for a given channel                                             |
+2015-05-17 23:58:33	*status	| ClearAllChannelBuffers |                                       | Clear the channel buffers                                                        |
+2015-05-17 23:58:33	*status	| SetBuffer              | <#chan> [linecount]                   | Set the buffer count for a channel                                               |
+2015-05-17 23:58:33	*status	| AddBindHost            | <host (IP preferred)>                 | Adds a bind host for normal users to use                                         |
+2015-05-17 23:58:33	*status	| DelBindHost            | <host>                                | Removes a bind host from the list                                                |
+2015-05-17 23:58:33	*status	| ListBindHosts          |                                       | Shows the configured list of bind hosts                                          |
+2015-05-17 23:58:33	*status	| SetBindHost            | <host (IP preferred)>                 | Set the bind host for this connection                                            |
+2015-05-17 23:58:33	*status	| SetUserBindHost        | <host (IP preferred)>                 | Set the default bind host for this user                                          |
+2015-05-17 23:58:33	*status	| ClearBindHost          |                                       | Clear the bind host for this connection                                          |
+2015-05-17 23:58:33	*status	| ClearUserBindHost      |                                       | Clear the default bind host for this user                                        |
+2015-05-17 23:58:33	*status	| ShowBindHost           |                                       | Show currently selected bind host                                                |
+2015-05-17 23:58:33	*status	| Jump [server]          |                                       | Jump to the next or the specified server                                         |
+2015-05-17 23:58:33	*status	| Disconnect             | [message]                             | Disconnect from IRC                                                              |
+2015-05-17 23:58:33	*status	| Connect                |                                       | Reconnect to IRC                                                                 |
+2015-05-17 23:58:33	*status	| Uptime                 |                                       | Show for how long ZNC has been running                                           |
+2015-05-17 23:58:33	*status	| LoadMod                | [--type=global|user|network] <module> | Load a module                                                                    |
+2015-05-17 23:58:33	*status	| UnloadMod              | [--type=global|user|network] <module> | Unload a module                                                                  |
+2015-05-17 23:58:33	*status	| ReloadMod              | [--type=global|user|network] <module> | Reload a module                                                                  |
+2015-05-17 23:58:33	*status	| UpdateMod              | <module>                              | Reload a module everywhere                                                       |
+2015-05-17 23:58:34	*status	| ShowMOTD               |                                       | Show ZNC's message of the day                                                    |
+2015-05-17 23:58:34	*status	| SetMOTD                | <Message>                             | Set ZNC's message of the day                                                     |
+2015-05-17 23:58:34	*status	| AddMOTD                | <Message>                             | Append <Message> to ZNC's MOTD                                                   |
+2015-05-17 23:58:34	*status	| ClearMOTD              |                                       | Clear ZNC's MOTD                                                                 |
+2015-05-17 23:58:34	*status	| ListPorts              |                                       | Show all active listeners                                                        |
+2015-05-17 23:58:34	*status	| AddPort                | <arguments>                           | Add another port for ZNC to listen on                                            |
+2015-05-17 23:58:34	*status	| DelPort                | <arguments>                           | Remove a port from ZNC                                                           |
+2015-05-17 23:58:34	*status	| Rehash                 |                                       | Reload znc.conf from disk                                                        |
+2015-05-17 23:58:34	*status	| SaveConfig             |                                       | Save the current settings to disk                                                |
+2015-05-17 23:58:34	*status	| ListUsers              |                                       | List all ZNC users and their connection status                                   |
+2015-05-17 23:58:34	*status	| ListAllUserNetworks    |                                       | List all ZNC users and their networks                                            |
+2015-05-17 23:58:34	*status	| ListChans              | [User <network>]                      | List all channels                                                                |
+2015-05-17 23:58:34	*status	| ListClients            | [User]                                | List all connected clients                                                       |
+2015-05-17 23:58:34	*status	| Traffic                |                                       | Show basic traffic stats for all ZNC users                                       |
+2015-05-17 23:58:34	*status	| Broadcast              | [message]                             | Broadcast a message to all ZNC users                                             |
+2015-05-17 23:58:34	*status	| Shutdown               | [message]                             | Shut down ZNC completely                                                         |
+2015-05-17 23:58:34	*status	| Restart                | [message]                             | Restart ZNC                                                                      |
+2015-05-17 23:58:34	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-17 23:58:36	skrobul	listnetworks
+2015-05-17 23:58:36	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:37	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                | Channels |
+2015-05-17 23:58:37	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:37	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP | 3        |
+2015-05-17 23:58:37	*status	| raxbb    | No    |                            |                                                         |          |
+2015-05-17 23:58:37	*status	| freenode | No    |                            |                                                         |          |
+2015-05-17 23:58:37	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:43	skrobul	listservers
+2015-05-17 23:58:44	*status	You must be connected with a network to use this command
+2015-05-17 23:58:54	skrobul	ListNetworks
+2015-05-17 23:58:54	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:54	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                | Channels |
+2015-05-17 23:58:54	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:58:54	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP | 3        |
+2015-05-17 23:58:54	*status	| raxbb    | No    |                            |                                                         |          |
+2015-05-17 23:58:54	*status	| freenode | No    |                            |                                                         |          |
+2015-05-17 23:58:54	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-17 23:59:39	--	irc: disconnected from server
+2015-05-18 00:00:38	--	irc: disconnected from server
+2015-05-18 00:00:55	skrobul	ListNetworks
+2015-05-18 00:00:56	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 00:00:56	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                | Channels |
+2015-05-18 00:00:56	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 00:00:56	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP | 3        |
+2015-05-18 00:00:56	*status	| raxbb    | No    |                            |                                                         |          |
+2015-05-18 00:00:56	*status	| freenode | No    |                            |                                                         |          |
+2015-05-18 00:00:56	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 00:02:52	*status	Connected!
+2015-05-18 00:04:08	mskrobacki	listnetworks
+2015-05-18 00:04:08	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:04:08	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                    | Channels |
+2015-05-18 00:04:08	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:04:08	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP     | 3        |
+2015-05-18 00:04:08	*status	| freenode | Yes   | holmes.freenode.net        | mskrobacki!~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b | 0        |
+2015-05-18 00:04:08	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:07:26	*status	In the following list all occurrences of <#chan> support wildcards (* and ?)
+2015-05-18 00:07:26	*status	(Except ListNicks)
+2015-05-18 00:07:26	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-18 00:07:26	*status	| Command                | Arguments                             | Description                                                                      |
+2015-05-18 00:07:26	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-18 00:07:26	*status	| Version                |                                       | Print which version of ZNC this is                                               |
+2015-05-18 00:07:26	*status	| ListMods               |                                       | List all loaded modules                                                          |
+2015-05-18 00:07:26	*status	| ListAvailMods          |                                       | List all available modules                                                       |
+2015-05-18 00:07:26	*status	| ListNicks              | <#chan>                               | List all nicks on a channel                                                      |
+2015-05-18 00:07:26	*status	| ListServers            |                                       | List all servers of current IRC network                                          |
+2015-05-18 00:07:26	*status	| AddNetwork             | <name>                                | Add a network to your user                                                       |
+2015-05-18 00:07:26	*status	| DelNetwork             | <name>                                | Delete a network from your user                                                  |
+2015-05-18 00:07:26	*status	| ListNetworks           |                                       | List all networks                                                                |
+2015-05-18 00:07:26	*status	| MoveNetwork            | old-user old-net new-user [new-net]   | Move an IRC network from one user to another                                     |
+2015-05-18 00:07:26	*status	| JumpNetwork            | <network>                             | Jump to another network                                                          |
+2015-05-18 00:07:26	*status	| AddServer              | <host> [[+]port] [pass]               | Add a server to the list of alternate/backup servers of current IRC network.     |
+2015-05-18 00:07:26	*status	| DelServer              | <host> [port] [pass]                  | Remove a server from the list of alternate/backup servers of current IRC network |
+2015-05-18 00:07:26	*status	| Enablechan             | <#chan>                               | Enable the channel                                                               |
+2015-05-18 00:07:26	*status	| Detach                 | <#chan>                               | Detach from the channel                                                          |
+2015-05-18 00:07:26	*status	| Topics                 |                                       | Show topics in all your channels                                                 |
+2015-05-18 00:07:26	*status	| PlayBuffer             | <#chan>                               | Play back the buffer for a given channel                                         |
+2015-05-18 00:07:26	*status	| ClearBuffer            | <#chan>                               | Clear the buffer for a given channel                                             |
+2015-05-18 00:07:26	*status	| ClearAllChannelBuffers |                                       | Clear the channel buffers                                                        |
+2015-05-18 00:07:26	*status	| SetBuffer              | <#chan> [linecount]                   | Set the buffer count for a channel                                               |
+2015-05-18 00:07:26	*status	| AddBindHost            | <host (IP preferred)>                 | Adds a bind host for normal users to use                                         |
+2015-05-18 00:07:26	*status	| DelBindHost            | <host>                                | Removes a bind host from the list                                                |
+2015-05-18 00:07:26	*status	| ListBindHosts          |                                       | Shows the configured list of bind hosts                                          |
+2015-05-18 00:07:26	*status	| SetBindHost            | <host (IP preferred)>                 | Set the bind host for this connection                                            |
+2015-05-18 00:07:26	*status	| SetUserBindHost        | <host (IP preferred)>                 | Set the default bind host for this user                                          |
+2015-05-18 00:07:26	*status	| ClearBindHost          |                                       | Clear the bind host for this connection                                          |
+2015-05-18 00:07:26	*status	| ClearUserBindHost      |                                       | Clear the default bind host for this user                                        |
+2015-05-18 00:07:26	*status	| ShowBindHost           |                                       | Show currently selected bind host                                                |
+2015-05-18 00:07:26	*status	| Jump [server]          |                                       | Jump to the next or the specified server                                         |
+2015-05-18 00:07:26	*status	| Disconnect             | [message]                             | Disconnect from IRC                                                              |
+2015-05-18 00:07:26	*status	| Connect                |                                       | Reconnect to IRC                                                                 |
+2015-05-18 00:07:26	*status	| Uptime                 |                                       | Show for how long ZNC has been running                                           |
+2015-05-18 00:07:26	*status	| LoadMod                | [--type=global|user|network] <module> | Load a module                                                                    |
+2015-05-18 00:07:26	*status	| UnloadMod              | [--type=global|user|network] <module> | Unload a module                                                                  |
+2015-05-18 00:07:26	*status	| ReloadMod              | [--type=global|user|network] <module> | Reload a module                                                                  |
+2015-05-18 00:07:26	*status	| UpdateMod              | <module>                              | Reload a module everywhere                                                       |
+2015-05-18 00:07:26	*status	| ShowMOTD               |                                       | Show ZNC's message of the day                                                    |
+2015-05-18 00:07:26	*status	| SetMOTD                | <Message>                             | Set ZNC's message of the day                                                     |
+2015-05-18 00:07:26	*status	| AddMOTD                | <Message>                             | Append <Message> to ZNC's MOTD                                                   |
+2015-05-18 00:07:26	*status	| ClearMOTD              |                                       | Clear ZNC's MOTD                                                                 |
+2015-05-18 00:07:26	*status	| ListPorts              |                                       | Show all active listeners                                                        |
+2015-05-18 00:07:26	*status	| AddPort                | <arguments>                           | Add another port for ZNC to listen on                                            |
+2015-05-18 00:07:26	*status	| DelPort                | <arguments>                           | Remove a port from ZNC                                                           |
+2015-05-18 00:07:26	*status	| Rehash                 |                                       | Reload znc.conf from disk                                                        |
+2015-05-18 00:07:26	*status	| SaveConfig             |                                       | Save the current settings to disk                                                |
+2015-05-18 00:07:26	*status	| ListUsers              |                                       | List all ZNC users and their connection status                                   |
+2015-05-18 00:07:26	*status	| ListAllUserNetworks    |                                       | List all ZNC users and their networks                                            |
+2015-05-18 00:07:26	*status	| ListChans              | [User <network>]                      | List all channels                                                                |
+2015-05-18 00:07:26	*status	| ListClients            | [User]                                | List all connected clients                                                       |
+2015-05-18 00:07:26	*status	| Traffic                |                                       | Show basic traffic stats for all ZNC users                                       |
+2015-05-18 00:07:26	*status	| Broadcast              | [message]                             | Broadcast a message to all ZNC users                                             |
+2015-05-18 00:07:26	*status	| Shutdown               | [message]                             | Shut down ZNC completely                                                         |
+2015-05-18 00:07:26	*status	| Restart                | [message]                             | Restart ZNC                                                                      |
+2015-05-18 00:07:26	*status	+------------------------+---------------------------------------+----------------------------------------------------------------------------------+
+2015-05-18 00:07:36	mskrobacki	ListNetworks
+2015-05-18 00:07:37	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:07:37	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                    | Channels |
+2015-05-18 00:07:37	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:07:37	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP     | 3        |
+2015-05-18 00:07:37	*status	| freenode | Yes   | holmes.freenode.net        | mskrobacki!~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b | 0        |
+2015-05-18 00:07:37	*status	+----------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:08:12	mskrobacki	ListNicks
+2015-05-18 00:08:12	*status	Usage: ListNicks <#chan>
+2015-05-18 00:08:15	mskrobacki	ListNicks #coreos
+2015-05-18 00:08:15	*status	You are not on [#coreos]
+2015-05-18 00:08:28	mskrobacki	ListAllUserNetworks
+2015-05-18 00:08:28	*status	+----------+----------+---------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:08:28	*status	| Username | Network  | Clients | OnIRC | IRC Server                 | IRC User                                                    | Channels |
+2015-05-18 00:08:28	*status	+----------+----------+---------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:08:28	*status	| skrobul  | N/A      | 0       |       |                            |                                                             |          |
+2015-05-18 00:08:28	*status	| |-       | rax      | 2       | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP     | 3        |
+2015-05-18 00:08:28	*status	| `-       | freenode | 1       | Yes   | holmes.freenode.net        | mskrobacki!~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b | 0        |
+2015-05-18 00:08:28	*status	+----------+----------+---------+-------+----------------------------+-------------------------------------------------------------+----------+
+2015-05-18 00:08:54	mskrobacki	Jump
+2015-05-18 00:08:54	*status	Jumping to the next server in the list...
+2015-05-18 00:08:54	*status	Disconnected from IRC. Reconnecting...
+2015-05-18 00:08:55	*status	Connected!
+2015-05-18 00:09:59	skrobul	listNetworks
+2015-05-18 00:09:59	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 00:09:59	*status	| Network  | OnIRC | IRC Server                 | IRC User                                                | Channels |
+2015-05-18 00:09:59	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 00:09:59	*status	| rax      | Yes   | external.irc.rackspace.com | mskrobacki!marek.skrobacki@rackspace-0sn.pfa.209.162.IP | 3        |
+2015-05-18 00:09:59	*status	| freenode | Yes   | holmes.freenode.net        | skrobul!~skrobul@2001:4801:7820:75:6163:bd55:ff10:ca7b  | 1        |
+2015-05-18 00:09:59	*status	+----------+-------+----------------------------+---------------------------------------------------------+----------+
+2015-05-18 08:42:43	--	irc: disconnected from server

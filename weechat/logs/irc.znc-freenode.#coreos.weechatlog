@@ -1,0 +1,144 @@
+2015-05-18 00:03:23	-->	mskrobacki (~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b) has joined #coreos
+2015-05-18 00:03:23	--	Topic for #coreos is "etcd 2.0 Release! https://coreos.com/blog/etcd-2.0-release-first-major-stable-release/ :: IRC logs https://botbot.me/freenode/coreos/"
+2015-05-18 00:03:23	--	Topic set by marineam (~marineam@osuosl/staff/marineam) on Thu, 12 Feb 2015 21:44:08
+2015-05-18 00:03:23	--	Channel #coreos: 563 nicks (2 ops, 2 voices, 559 normals)
+2015-05-18 00:03:24	--	Channel created on Thu, 21 Mar 2013 23:10:05
+2015-05-18 00:03:38	--	PvNotice(ChanServ): Welcome to #coreos! Channel logs are available here: https://botbot.me/freenode/coreos/
+2015-05-18 00:04:01	<--	mskrobacki (~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b) has left #coreos
+2015-05-18 00:07:44	-->	mskrobacki (~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b) has joined #coreos
+2015-05-18 00:07:44	--	Topic for #coreos is "etcd 2.0 Release! https://coreos.com/blog/etcd-2.0-release-first-major-stable-release/ :: IRC logs https://botbot.me/freenode/coreos/"
+2015-05-18 00:07:44	--	Topic set by marineam (~marineam@osuosl/staff/marineam) on Thu, 12 Feb 2015 21:44:08
+2015-05-18 00:07:44	--	Channel #coreos: 563 nicks (2 ops, 2 voices, 559 normals)
+2015-05-18 00:07:44	--	PvNotice(ChanServ): Welcome to #coreos! Channel logs are available here: https://botbot.me/freenode/coreos/
+2015-05-18 00:07:45	--	Channel created on Thu, 21 Mar 2013 23:10:05
+2015-05-18 00:07:49	<--	mskrobacki (~marek.skr@2001:4801:7820:75:6163:bd55:ff10:ca7b) has left #coreos
+2015-05-18 00:09:12	-->	skrobul (~skrobul@2001:4801:7820:75:6163:bd55:ff10:ca7b) has joined #coreos
+2015-05-18 00:09:12	--	Topic for #coreos is "etcd 2.0 Release! https://coreos.com/blog/etcd-2.0-release-first-major-stable-release/ :: IRC logs https://botbot.me/freenode/coreos/"
+2015-05-18 00:09:12	--	Topic set by marineam (~marineam@osuosl/staff/marineam) on Thu, 12 Feb 2015 21:44:08
+2015-05-18 00:09:12	--	Channel #coreos: 563 nicks (2 ops, 2 voices, 559 normals)
+2015-05-18 00:09:12	--	PvNotice(ChanServ): Welcome to #coreos! Channel logs are available here: https://botbot.me/freenode/coreos/
+2015-05-18 00:09:14	--	Channel created on Thu, 21 Mar 2013 23:10:05
+2015-05-18 00:11:23	-->	julim (~julim@207.194.223.3) has joined #coreos
+2015-05-18 00:12:18	-->	cromark (~cromark@c-24-63-99-219.hsd1.ct.comcast.net) has joined #coreos
+2015-05-18 00:13:24	<--	julim (~julim@207.194.223.3) has quit (Client Quit)
+2015-05-18 00:13:40	-->	Cidan (~cidan@conspiracy/developer/Cidan) has joined #coreos
+2015-05-18 00:17:02	<--	tleyden (~textual@142-254-54-204.dsl.dynamic.fusionbroadband.com) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2015-05-18 00:17:42	<--	cromark (~cromark@c-24-63-99-219.hsd1.ct.comcast.net) has quit (Ping timeout: 276 seconds)
+2015-05-18 00:18:47	-->	errordeveloper (~ilya@90.200.54.199) has joined #coreos
+2015-05-18 00:19:35	<--	wc_s2352 (68db9f0b@gateway/web/freenode/ip.104.219.159.11) has quit (Quit: Page closed)
+2015-05-18 00:20:49	<--	crecca (53112e96@gateway/web/freenode/ip.83.17.46.150) has quit (Ping timeout: 246 seconds)
+2015-05-18 00:20:59	-->	tleyden (~textual@142-254-54-204.dsl.dynamic.fusionbroadband.com) has joined #coreos
+2015-05-18 00:21:07	-->	julim (~julim@207.194.223.3) has joined #coreos
+2015-05-18 00:21:17	<--	Cidan (~cidan@conspiracy/developer/Cidan) has quit (Ping timeout: 250 seconds)
+2015-05-18 00:21:24	<--	tarnfeld (~tom@cpc11-colc6-2-0-cust116.7-4.cable.virginm.net) has quit (Quit: tarnfeld)
+2015-05-18 00:21:31	-->	duck_cpd (~duck_cpd@207-181-235-15.c3-0.mct-ubr1.chi-mct.il.cable.rcn.com) has joined #coreos
+2015-05-18 00:21:31	<--	duck_cpd (~duck_cpd@207-181-235-15.c3-0.mct-ubr1.chi-mct.il.cable.rcn.com) has quit (Client Quit)
+2015-05-18 00:23:59	<--	errordeveloper (~ilya@90.200.54.199) has quit (Ping timeout: 244 seconds)
+2015-05-18 00:24:03	<--	Nitro (~textual@unaffiliated/nitro) has quit (Ping timeout: 265 seconds)
+2015-05-18 00:26:19	<--	dylanmei (~textual@c-98-237-177-9.hsd1.wa.comcast.net) has quit (Ping timeout: 258 seconds)
+2015-05-18 00:26:23	<--	jfoy (~jfoy@c-67-183-140-95.hsd1.wa.comcast.net) has quit (Quit: jfoy)
+2015-05-18 00:31:03	-->	jonmorehouse (~jonmoreho@2605:e000:5ac8:6f00:99c2:808d:83b3:7d05) has joined #coreos
+2015-05-18 00:31:37	-->	kylemathews (~kylemathe@2602:304:6e44:ebb0:35ae:39f8:cc9e:5b0d) has joined #coreos
+2015-05-18 00:31:55	-->	dylanmei (~textual@c-98-237-177-9.hsd1.wa.comcast.net) has joined #coreos
+2015-05-18 08:42:43	--	irc: disconnected from server
+2015-05-18 08:43:15	-->	skrobul (~skrobul@2001:4801:7820:75:6163:bd55:ff10:ca7b) has joined #coreos
+2015-05-18 08:43:15	--	Topic for #coreos is "etcd 2.0 Release! https://coreos.com/blog/etcd-2.0-release-first-major-stable-release/ :: IRC logs https://botbot.me/freenode/coreos/"
+2015-05-18 08:43:15	--	Topic set by marineam (~marineam@osuosl/staff/marineam) on Thu, 12 Feb 2015 21:44:08
+2015-05-18 08:43:15	--	Channel #coreos: 569 nicks (2 ops, 2 voices, 565 normals)
+2015-05-18 08:43:15	***	Buffer Playback...
+2015-05-18 08:43:15	zalmoxes	[01:37:47] hi, all the flannel examples show communication between a cloud provider like AWS and your local baremetal datacenter. what's the security in this picture? is communication with flannel somehow encrypted or is there another recommended method?
+2015-05-18 08:43:15	pkircher	[01:39:40] non
+2015-05-18 08:43:15	pkircher	[01:39:47] flannel is not a vpn
+2015-05-18 08:43:15	pkircher	[01:39:56] nor a replacement for it
+2015-05-18 08:43:15	pkircher	[01:40:08] nor does it come with any security what so ever
+2015-05-18 08:43:15	pkircher	[01:40:20] its a simple udp overlay
+2015-05-18 08:43:15	zalmoxes	[01:40:45] so how are people actually setting up clusters across public clouds? with vpn?
+2015-05-18 08:43:15	pkircher	[01:40:46] and it does not show cross provider anything
+2015-05-18 08:43:15	pkircher	[01:41:03] not with flannel for sure
+2015-05-18 08:43:15	pkircher	[01:41:04] :)
+2015-05-18 08:43:15	zalmoxes	[01:42:03] here's one example http://i.imgur.com/4laAPMN.jpg
+2015-05-18 08:43:15	pkircher	[01:42:23] red_beard: !
+2015-05-18 08:43:15	pkircher	[01:42:33] brian your presentation is missleading
+2015-05-18 08:43:15	pkircher	[01:43:09] no flannel has no ipsec or anything else .. use it in the scope of a privat network
+2015-05-18 08:43:15	steveeJ	[01:47:43] zalmoxes: you can have a look at tinc
+2015-05-18 08:43:15	pkircher	[01:51:22] steveeJ: ever dont tinc >
+2015-05-18 08:43:15	pkircher	[01:51:25] done*
+2015-05-18 08:43:15	pkircher	[01:51:42] its nice but a pain to get up right .. and then you still need the overlay internaly
+2015-05-18 08:43:15	steveeJ	[01:51:42] yes, but not inside containers
+2015-05-18 08:43:16	pkircher	[01:51:54] .. gre +ipsec works just fine
+2015-05-18 08:43:16	zalmoxes	[01:52:14] setting up a hardware vpn connection between AWS and your local site works fine
+2015-05-18 08:43:16	pkircher	[01:52:14] ovs managed overlay
+2015-05-18 08:43:16	steveeJ	[01:52:18] that sounds like a good idea, since it's probably faster than tinc
+2015-05-18 08:43:16	zalmoxes	[01:52:32] i don't use aws atm though. was hoping I could do the same thing with digital ocean
+2015-05-18 08:43:16	steveeJ	[01:53:05] which userspace utilities are you using for ipsec?
+2015-05-18 08:43:16	pkircher	[01:53:22] containerized ovs ..
+2015-05-18 08:43:16	pkircher	[01:53:31] which does the pki stuff and gre tunnels
+2015-05-18 08:43:16	pkircher	[01:53:48] of for the flows .. to avoind stp
+2015-05-18 08:43:16	pkircher	[01:53:57] avoid*
+2015-05-18 08:43:16	pkircher	[01:54:07] but thats my setup ..
+2015-05-18 08:43:16	pkircher	[01:54:21] essentialy i spin them up .. and inject nics into containers ..
+2015-05-18 08:43:16	pkircher	[01:54:49] all kernel bridged instead of userland
+2015-05-18 08:43:16	pkircher	[01:55:07] the gre ipsec is x509 cert based
+2015-05-18 08:43:16	pkircher	[01:55:37] basicaly the same way you handle that stuff with openstack
+2015-05-18 08:43:16	steveeJ	[01:58:06] the nic injection part sounds kind of fiddly
+2015-05-18 08:43:16	pkircher	[01:58:27] nah got that automated
+2015-05-18 08:43:16	pkircher	[01:58:41] i dont want docker to manage just a cider and assingn it
+2015-05-18 08:43:16	pkircher	[01:58:56] i need to have it persistent for some services
+2015-05-18 08:43:16	pkircher	[01:59:03] aka floating ips for docker if you want ..
+2015-05-18 08:43:16	steveeJ	[01:59:10] what's the timeline for running a container with ovs network access?
+2015-05-18 08:43:16	pkircher	[01:59:12] special for internal QoS
+2015-05-18 08:43:16	pkircher	[01:59:33] to get from 0 to where i am ?
+2015-05-18 08:43:16	pkircher	[01:59:44] i spend about 1.5 months on it
+2015-05-18 08:43:16	steveeJ	[01:59:50] I should've used lifecycle
+2015-05-18 08:43:16	steveeJ	[02:00:05] is the network available to the container on startup?
+2015-05-18 08:43:16	pkircher	[02:00:21] nah containers start without any nic
+2015-05-18 08:43:16	steveeJ	[02:00:37] what if they're process requires network access right away?
+2015-05-18 08:43:16	pkircher	[02:00:48] they dont :)
+2015-05-18 08:43:16	steveeJ	[02:00:51] their
+2015-05-18 08:43:16	pkircher	[02:01:12] it has its internal lo interface
+2015-05-18 08:43:16	zalmoxes	[02:01:18] ah got to the point where brian talks about there being no encryption and that flannel is designed for a single cloud provider
+2015-05-18 08:43:16	pkircher	[02:01:20] so it has a network stack
+2015-05-18 08:43:16	steveeJ	[02:01:30] I see
+2015-05-18 08:43:16	steveeJ	[02:01:40] sounds fiddly ;)
+2015-05-18 08:43:16	pkircher	[02:02:16] its not :)
+2015-05-18 08:43:16	steveeJ	[02:02:27] I wanna try to use ipsec with rkt
+2015-05-18 08:43:16	red_beard	[02:31:16] zalmoxes. yup, its all a part of us doing gifee (Google's infrastructure for everyone else)
+2015-05-18 08:43:16	red_beard	[02:31:53] and in that case you don't really have tightly coupled components taking over a WAN
+2015-05-18 08:43:16	red_beard	[02:32:03] *talking
+2015-05-18 08:43:16	red_beard	[02:32:15] sorry, on my phone on the subway
+2015-05-18 08:43:16	pkircher	[02:32:56] brian is the training stuff gone for good ?
+2015-05-18 08:43:16	red_beard	[02:33:05] zalmoxes: also, who's this "Brian" guy. ;)
+2015-05-18 08:43:16	red_beard	[02:33:42] pkircher: nope, but the folks I tried to hire full time to do the writing side didn't work out and my written words are garbage
+2015-05-18 08:43:16	red_beard	[02:34:06] me speak eloquent. me write bad.
+2015-05-18 08:43:16	pkircher	[02:34:11] want me to read over what you have ?
+2015-05-18 08:43:16	red_beard	[02:34:51] nah. it's fine at the moment. its just a lot of things to do.
+2015-05-18 08:43:16	pkircher	[02:35:08] sure, understood
+2015-05-18 08:43:16	red_beard	[02:35:24] I'm also a kindof PM on tectonic so there's always too much to do
+2015-05-18 08:43:16	pkircher	[02:35:34] oh dear
+2015-05-18 08:43:16	pkircher	[02:35:50] well you not take the lowhanging fruit do you
+2015-05-18 08:43:16	pkircher	[02:35:55] do*
+2015-05-18 08:43:16	red_beard	[02:37:50] i like seeing things done well and I'm picky about my team. things are on track for me getting another FTE soon assuming the next round of interviews go well
+2015-05-18 08:43:16	red_beard	[02:38:03] so I can duplicate myself
+2015-05-18 08:43:16	red_beard	[02:47:18] ok folks. need to drop off to finish heading to the airport.
+2015-05-18 08:43:16	songgao	[03:39:56] rkt run --pod-manifest .... fails with error: run: error setting up stage0: error setting up image {<nil> - []}: error rendering ACI: wrong key
+2015-05-18 08:43:16	songgao	[03:40:35] any idea how/where I should try to fix it?
+2015-05-18 08:43:16	songgao	[03:41:00] sorry the message is: run: error setting up stage0: error setting up image {<nil> - []}: error rendering ACI: wrong key prefix
+2015-05-18 08:43:16	songgao	[03:41:44] I altered the ResolveKey function to include the key in the error, and the key turns out to be "-"
+2015-05-18 08:43:16	songgao	[03:42:04] the same rkt works fine when running an ACI directly
+2015-05-18 08:43:16	Freman	[05:13:16] etcdctl set /platform/maintenance/enabled true
+2015-05-18 08:43:16	 *	Freman [05:13:22] sits back and watches the world burn
+2015-05-18 08:43:16	AlecTaylor	[07:10:29] hi
+2015-05-18 08:43:16	***	Playback Complete.
+2015-05-18 08:43:18	--	Channel created on Thu, 21 Mar 2013 23:10:05
+2015-05-18 08:43:43	-->	AcidCrash (~acidcrash@83.216.171.50) has joined #coreos
+2015-05-18 08:45:42	<--	AcidCrash (~acidcrash@83.216.171.50) has quit (Remote host closed the connection)
+2015-05-18 08:46:24	-->	[GoerN] (~goern@2001:6f8:131e:beef:5e51:4fff:fead:9463) has joined #coreos
+2015-05-18 08:46:24	-->	remix (~remix@cpe-66-8-236-251.hawaii.res.rr.com) has joined #coreos
+2015-05-18 08:46:44	<--	Industrial (~industria@ip-213-127-162-6.ip.prioritytelecom.net) has quit (Client Quit)
+2015-05-18 08:47:23	<--	achanda (~abhishek@c-98-234-181-87.hsd1.ca.comcast.net) has quit (Remote host closed the connection)
+2015-05-18 08:47:40	-->	jasonkuhrt (~jasonkuhr@modemcable022.139-83-70.mc.videotron.ca) has joined #coreos
+2015-05-18 08:47:48	-->	AcidCrash (~acidcrash@83.216.171.50) has joined #coreos
+2015-05-18 08:48:01	<--	AcidCrash (~acidcrash@83.216.171.50) has quit (Remote host closed the connection)
+2015-05-18 08:48:17	-->	AcidCrash (~acidcrash@83.216.171.50) has joined #coreos
+2015-05-18 08:50:14	<--	fedexo (~quassel@2601:9:4980:6af:98a8:980d:2182:bc27) has quit (Ping timeout: 256 seconds)
+2015-05-18 08:50:15	-->	yaronr (~yaronr@213.57.18.146) has joined #coreos

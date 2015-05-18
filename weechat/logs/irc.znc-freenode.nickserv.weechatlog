@@ -1,0 +1,41 @@
+2015-05-18 00:11:42	skrobul	help
+2015-05-18 00:11:42	--	NickServ: ***** NickServ Help *****
+2015-05-18 00:11:42	--	NickServ: NickServ allows users to 'register' a nickname, and stop
+2015-05-18 00:11:42	--	NickServ: others from using that nick. NickServ allows the owner of a
+2015-05-18 00:11:42	--	NickServ: nickname to disconnect a user from the network that is using
+2015-05-18 00:11:42	--	NickServ: their nickname.
+2015-05-18 00:11:42	--	NickServ:  
+2015-05-18 00:11:42	--	NickServ: For more information on a command, type:
+2015-05-18 00:11:42	--	NickServ: /msg NickServ help <command>
+2015-05-18 00:11:42	--	NickServ: For a verbose listing of all commands, type:
+2015-05-18 00:11:42	--	NickServ: /msg NickServ help commands
+2015-05-18 00:11:42	--	NickServ:  
+2015-05-18 00:11:42	--	NickServ: The following commands are available:
+2015-05-18 00:11:42	--	NickServ: GHOST           Reclaims use of a nickname.
+2015-05-18 00:11:42	--	NickServ: IDENTIFY        Identifies to services for a nickname.
+2015-05-18 00:11:42	--	NickServ: INFO            Displays information on registrations.
+2015-05-18 00:11:42	--	NickServ: LISTCHANS       Lists channels that you have access to.
+2015-05-18 00:11:42	--	NickServ: REGISTER        Registers a nickname.
+2015-05-18 00:11:42	--	NickServ: RELEASE         Releases a services enforcer.
+2015-05-18 00:11:42	--	NickServ: SENDPASS        Email registration passwords.
+2015-05-18 00:11:42	--	NickServ:  
+2015-05-18 00:11:42	--	NickServ: Other commands: ACC, ACCESS, CERT, DROP, HELP, LOGOUT, 
+2015-05-18 00:11:42	--	NickServ:                 REGAIN, SETPASS, STATUS, TAXONOMY, VERIFY
+2015-05-18 00:11:42	--	NickServ: ***** End of Help *****
+2015-05-18 00:11:46	skrobul	register
+2015-05-18 00:11:46	--	NickServ: Insufficient parameters for REGISTER.
+2015-05-18 00:11:46	--	NickServ: Syntax: REGISTER <password> <email>
+2015-05-18 00:11:54	skrobul	register wp13cwz skrobul@skrobul.com
+2015-05-18 00:11:54	--	NickServ: An email containing nickname activation instructions has been sent to skrobul@skrobul.com.
+2015-05-18 00:11:55	--	NickServ: If you do not complete registration within one day, your nickname will expire.
+2015-05-18 00:11:55	--	NickServ: skrobul is now registered to skrobul@skrobul.com, with the password wp13cwz.
+2015-05-18 00:11:55	--	NickServ:  
+2015-05-18 00:11:55	--	NickServ: For frequently-asked questions about the network, please see the
+2015-05-18 00:11:55	--	NickServ: FAQ page (http://freenode.net/faq.shtml). Should you need more
+2015-05-18 00:11:55	--	NickServ: help you can /join #freenode to find network staff.
+2015-05-18 00:12:20	skrobul	VERIFY REGISTER skrobul ioagrgozxtui
+2015-05-18 00:12:20	--	NickServ: skrobul has now been verified.
+2015-05-18 00:12:21	--	NickServ: Thank you for verifying your e-mail address! You have taken steps in ensuring that your registrations are not exploited.
+2015-05-18 00:12:27	skrobul	register mskrobacki
+2015-05-18 00:12:27	--	NickServ: You are already logged in as skrobul.
+2015-05-18 08:42:43	--	irc: disconnected from server

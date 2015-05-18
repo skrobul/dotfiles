@@ -1,0 +1,603 @@
+2015-05-17 22:42:03	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:42:03	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:42:03	--	gnutls: receiving 1 certificate
+2015-05-17 22:42:03	--	 - certificate[1] info:
+2015-05-17 22:42:03	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:42:03	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:42:03	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:42:03	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:42:03	=!=	irc: TLS handshake failed
+2015-05-17 22:42:03	=!=	irc: error: Error in the certificate.
+2015-05-17 22:42:03	--	irc: reconnecting to server in 10 seconds
+2015-05-17 22:42:13	--	irc: reconnecting to server...
+2015-05-17 22:42:13	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:42:13	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:42:13	--	gnutls: receiving 1 certificate
+2015-05-17 22:42:13	--	 - certificate[1] info:
+2015-05-17 22:42:13	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:42:13	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:42:13	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:42:13	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:42:13	=!=	irc: TLS handshake failed
+2015-05-17 22:42:13	=!=	irc: error: Error in the certificate.
+2015-05-17 22:42:13	--	irc: reconnecting to server in 20 seconds
+2015-05-17 22:42:33	--	irc: reconnecting to server...
+2015-05-17 22:42:33	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:42:33	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:42:33	--	gnutls: receiving 1 certificate
+2015-05-17 22:42:33	--	 - certificate[1] info:
+2015-05-17 22:42:33	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:42:33	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:42:33	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:42:33	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:42:33	=!=	irc: TLS handshake failed
+2015-05-17 22:42:33	=!=	irc: error: Error in the certificate.
+2015-05-17 22:42:33	--	irc: reconnecting to server in 40 seconds
+2015-05-17 22:43:13	--	irc: reconnecting to server...
+2015-05-17 22:43:13	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:43:13	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:43:13	--	gnutls: receiving 1 certificate
+2015-05-17 22:43:13	--	 - certificate[1] info:
+2015-05-17 22:43:13	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:43:13	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:43:13	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:43:13	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:43:13	=!=	irc: TLS handshake failed
+2015-05-17 22:43:13	=!=	irc: error: Error in the certificate.
+2015-05-17 22:43:13	--	irc: reconnecting to server in 1 minute, 20 seconds
+2015-05-17 22:43:44		irc: auto-reconnection is cancelled
+2015-05-17 22:43:44	--	irc: disconnected from server
+2015-05-17 22:46:00	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:46:00	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:46:00	--	gnutls: receiving 1 certificate
+2015-05-17 22:46:00	--	 - certificate[1] info:
+2015-05-17 22:46:00	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:46:00	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:46:00	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:46:00	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:46:01	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 22:46:01	--	Invalid Password
+2015-05-17 22:46:01	=!=	irc: reading data on socket: error 0 (connection closed by peer)
+2015-05-17 22:46:01	--	irc: disconnecting from server...
+2015-05-17 22:46:01	--	irc: disconnected from server
+2015-05-17 22:46:01	--	irc: reconnecting to server in 10 seconds
+2015-05-17 22:46:11	--	irc: reconnecting to server...
+2015-05-17 22:46:11	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:46:11	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:46:11	--	gnutls: receiving 1 certificate
+2015-05-17 22:46:11	--	 - certificate[1] info:
+2015-05-17 22:46:11	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:46:11	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:46:11	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:46:11	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:46:11	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 22:46:12	--	Invalid Password
+2015-05-17 22:46:12	=!=	irc: reading data on socket: error 0 (connection closed by peer)
+2015-05-17 22:46:12	--	irc: disconnecting from server...
+2015-05-17 22:46:12	--	irc: disconnected from server
+2015-05-17 22:46:12	--	irc: reconnecting to server in 20 seconds
+2015-05-17 22:46:35	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 22:46:35	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 22:46:35	--	gnutls: receiving 1 certificate
+2015-05-17 22:46:35	--	 - certificate[1] info:
+2015-05-17 22:46:35	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 22:46:35	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 22:46:35	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 22:46:35	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 22:46:35	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 22:46:35	--	*status (znc@znc.in): You have several networks configured, but no network was specified for the connection.
+2015-05-17 22:46:35	--	*status (znc@znc.in): Selecting network [rax]. To see list of all configured networks, use /znc ListNetworks
+2015-05-17 22:46:36	--	*status (znc@znc.in): If you want to choose another network, use /znc JumpNetwork <network>, or connect to ZNC with username skrobul/<network> (instead of just skrobul)
+2015-05-17 22:46:36	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 22:46:36	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 22:46:36	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 22:46:36	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 22:46:36	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 22:46:36	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 22:46:36	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 22:46:36	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 22:46:36	--	14 :operator(s) online
+2015-05-17 22:46:36	--	609 :channels formed
+2015-05-17 22:46:36	--	I have 229 clients and 2 servers
+2015-05-17 22:46:36	--	Current Local Users: 229  Max: 298
+2015-05-17 22:46:36	--	Current Global Users: 847  Max: 1328
+2015-05-17 22:46:36	--	You are now known as mskrobacki
+2015-05-17 22:46:36	--	external.irc.rackspace.com message of the day
+2015-05-17 22:46:36	--	- Major says: "Click safe, my friends."
+2015-05-17 22:46:36	--	- - The most secure man in the world
+2015-05-17 22:46:36	--	-
+2015-05-17 22:46:36	--	-  ____            _
+2015-05-17 22:46:36	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 22:46:36	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 22:46:36	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 22:46:36	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 22:46:36	--	-                          |_|
+2015-05-17 22:46:36	--	-
+2015-05-17 22:46:36	--	- This external IRC server requires registration while on
+2015-05-17 22:46:36	--	- the corporate network.
+2015-05-17 22:46:36	--	-
+2015-05-17 22:46:36	--	- https://register.irc.rackspace.com
+2015-05-17 22:46:36	--	-
+2015-05-17 22:46:36	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 22:46:36	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 22:46:36	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 22:46:36	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 22:46:36	--	End of message of the day.
+2015-05-17 22:46:36	--	User mode [+x] by mskrobacki
+2015-05-17 23:43:30	--	MSG(*status): help
+2015-05-17 23:45:36	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:45:37	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:45:37	--	gnutls: receiving 1 certificate
+2015-05-17 23:45:37	--	 - certificate[1] info:
+2015-05-17 23:45:37	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:45:37	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:45:37	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:45:37	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:45:37	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:45:37	--	*status (znc@znc.in): You have several networks configured, but no network was specified for the connection.
+2015-05-17 23:45:37	--	*status (znc@znc.in): Selecting network [rax]. To see list of all configured networks, use /znc ListNetworks
+2015-05-17 23:45:37	--	*status (znc@znc.in): If you want to choose another network, use /znc JumpNetwork <network>, or connect to ZNC with username skrobul/<network> (instead of just skrobul)
+2015-05-17 23:45:37	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:45:37	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:45:37	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:45:37	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:45:37	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:45:37	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:45:37	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:45:37	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:45:37	--	14 :operator(s) online
+2015-05-17 23:45:37	--	609 :channels formed
+2015-05-17 23:45:37	--	I have 229 clients and 2 servers
+2015-05-17 23:45:37	--	Current Local Users: 229  Max: 298
+2015-05-17 23:45:37	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:45:37	--	You are now known as mskrobacki
+2015-05-17 23:45:37	--	external.irc.rackspace.com message of the day
+2015-05-17 23:45:37	--	- Major says: "Click safe, my friends."
+2015-05-17 23:45:37	--	- - The most secure man in the world
+2015-05-17 23:45:37	--	-
+2015-05-17 23:45:37	--	-  ____            _
+2015-05-17 23:45:37	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:45:37	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:45:37	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:45:37	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:45:37	--	-                          |_|
+2015-05-17 23:45:37	--	-
+2015-05-17 23:45:37	--	- This external IRC server requires registration while on
+2015-05-17 23:45:37	--	- the corporate network.
+2015-05-17 23:45:37	--	-
+2015-05-17 23:45:37	--	- https://register.irc.rackspace.com
+2015-05-17 23:45:37	--	-
+2015-05-17 23:45:37	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:45:37	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:45:37	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:45:37	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:45:37	--	End of message of the day.
+2015-05-17 23:45:37	--	User mode [+x] by mskrobacki
+2015-05-17 23:47:20	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:47:20	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:47:20	--	gnutls: receiving 1 certificate
+2015-05-17 23:47:20	--	 - certificate[1] info:
+2015-05-17 23:47:20	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:47:20	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:47:20	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:47:20	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:47:20	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:47:20	--	*status (znc@znc.in): You have several networks configured, but no network was specified for the connection.
+2015-05-17 23:47:20	--	*status (znc@znc.in): Selecting network [rax]. To see list of all configured networks, use /znc ListNetworks
+2015-05-17 23:47:20	--	*status (znc@znc.in): If you want to choose another network, use /znc JumpNetwork <network>, or connect to ZNC with username skrobul/<network> (instead of just skrobul)
+2015-05-17 23:47:21	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:47:21	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:47:21	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:47:21	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:47:21	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:47:21	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:47:21	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:47:21	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:47:21	--	14 :operator(s) online
+2015-05-17 23:47:21	--	609 :channels formed
+2015-05-17 23:47:21	--	I have 229 clients and 2 servers
+2015-05-17 23:47:21	--	Current Local Users: 229  Max: 298
+2015-05-17 23:47:21	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:47:21	--	You are now known as mskrobacki
+2015-05-17 23:47:21	--	external.irc.rackspace.com message of the day
+2015-05-17 23:47:21	--	- Major says: "Click safe, my friends."
+2015-05-17 23:47:21	--	- - The most secure man in the world
+2015-05-17 23:47:21	--	-
+2015-05-17 23:47:21	--	-  ____            _
+2015-05-17 23:47:21	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:47:21	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:47:21	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:47:21	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:47:21	--	-                          |_|
+2015-05-17 23:47:21	--	-
+2015-05-17 23:47:21	--	- This external IRC server requires registration while on
+2015-05-17 23:47:21	--	- the corporate network.
+2015-05-17 23:47:21	--	-
+2015-05-17 23:47:21	--	- https://register.irc.rackspace.com
+2015-05-17 23:47:21	--	-
+2015-05-17 23:47:21	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:47:21	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:47:21	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:47:21	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:47:21	--	End of message of the day.
+2015-05-17 23:47:21	--	User mode [+x] by mskrobacki
+2015-05-17 23:47:39	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:47:40	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:47:40	--	gnutls: receiving 1 certificate
+2015-05-17 23:47:40	--	 - certificate[1] info:
+2015-05-17 23:47:40	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:47:40	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:47:40	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:47:40	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:47:40	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:47:40	--	*status (znc@znc.in): You have several networks configured, but no network was specified for the connection.
+2015-05-17 23:47:40	--	*status (znc@znc.in): Selecting network [rax]. To see list of all configured networks, use /znc ListNetworks
+2015-05-17 23:47:40	--	*status (znc@znc.in): If you want to choose another network, use /znc JumpNetwork <network>, or connect to ZNC with username skrobul/<network> (instead of just skrobul)
+2015-05-17 23:47:40	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:47:40	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:47:40	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:47:40	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:47:40	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:47:40	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:47:40	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:47:40	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:47:40	--	14 :operator(s) online
+2015-05-17 23:47:40	--	609 :channels formed
+2015-05-17 23:47:40	--	I have 229 clients and 2 servers
+2015-05-17 23:47:40	--	Current Local Users: 229  Max: 298
+2015-05-17 23:47:40	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:47:40	--	You are now known as mskrobacki
+2015-05-17 23:47:40	--	external.irc.rackspace.com message of the day
+2015-05-17 23:47:40	--	- Major says: "Click safe, my friends."
+2015-05-17 23:47:40	--	- - The most secure man in the world
+2015-05-17 23:47:40	--	-
+2015-05-17 23:47:40	--	-  ____            _
+2015-05-17 23:47:40	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:47:40	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:47:40	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:47:40	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:47:40	--	-                          |_|
+2015-05-17 23:47:40	--	-
+2015-05-17 23:47:40	--	- This external IRC server requires registration while on
+2015-05-17 23:47:40	--	- the corporate network.
+2015-05-17 23:47:40	--	-
+2015-05-17 23:47:40	--	- https://register.irc.rackspace.com
+2015-05-17 23:47:40	--	-
+2015-05-17 23:47:40	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:47:40	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:47:40	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:47:40	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:47:40	--	End of message of the day.
+2015-05-17 23:47:40	--	User mode [+x] by mskrobacki
+2015-05-17 23:49:56	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:49:57	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:49:57	--	gnutls: receiving 1 certificate
+2015-05-17 23:49:57	--	 - certificate[1] info:
+2015-05-17 23:49:57	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:49:57	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:49:57	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:49:57	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:49:57	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:49:57	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:49:57	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:49:57	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:49:57	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:49:57	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:49:57	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:49:57	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:49:57	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:49:57	--	14 :operator(s) online
+2015-05-17 23:49:57	--	609 :channels formed
+2015-05-17 23:49:57	--	I have 229 clients and 2 servers
+2015-05-17 23:49:57	--	Current Local Users: 229  Max: 298
+2015-05-17 23:49:57	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:49:57	--	You are now known as mskrobacki
+2015-05-17 23:49:57	--	external.irc.rackspace.com message of the day
+2015-05-17 23:49:57	--	- Major says: "Click safe, my friends."
+2015-05-17 23:49:57	--	- - The most secure man in the world
+2015-05-17 23:49:57	--	-
+2015-05-17 23:49:57	--	-  ____            _
+2015-05-17 23:49:57	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:49:57	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:49:57	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:49:57	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:49:57	--	-                          |_|
+2015-05-17 23:49:57	--	-
+2015-05-17 23:49:57	--	- This external IRC server requires registration while on
+2015-05-17 23:49:57	--	- the corporate network.
+2015-05-17 23:49:57	--	-
+2015-05-17 23:49:57	--	- https://register.irc.rackspace.com
+2015-05-17 23:49:57	--	-
+2015-05-17 23:49:57	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:49:57	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:49:57	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:49:57	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:49:57	--	End of message of the day.
+2015-05-17 23:49:57	--	User mode [+x] by mskrobacki
+2015-05-17 23:51:03	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:51:04	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:51:04	--	gnutls: receiving 1 certificate
+2015-05-17 23:51:04	--	 - certificate[1] info:
+2015-05-17 23:51:04	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:51:04	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:51:04	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:51:04	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:51:04	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:51:04	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:51:04	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:51:04	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:51:04	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:51:04	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:51:04	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:51:04	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:51:04	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:51:04	--	14 :operator(s) online
+2015-05-17 23:51:04	--	609 :channels formed
+2015-05-17 23:51:04	--	I have 229 clients and 2 servers
+2015-05-17 23:51:04	--	Current Local Users: 229  Max: 298
+2015-05-17 23:51:04	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:51:04	--	You are now known as mskrobacki
+2015-05-17 23:51:04	--	external.irc.rackspace.com message of the day
+2015-05-17 23:51:04	--	- Major says: "Click safe, my friends."
+2015-05-17 23:51:04	--	- - The most secure man in the world
+2015-05-17 23:51:04	--	-
+2015-05-17 23:51:04	--	-  ____            _
+2015-05-17 23:51:04	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:51:04	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:51:04	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:51:04	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:51:04	--	-                          |_|
+2015-05-17 23:51:04	--	-
+2015-05-17 23:51:04	--	- This external IRC server requires registration while on
+2015-05-17 23:51:04	--	- the corporate network.
+2015-05-17 23:51:04	--	-
+2015-05-17 23:51:04	--	- https://register.irc.rackspace.com
+2015-05-17 23:51:04	--	-
+2015-05-17 23:51:04	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:51:04	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:51:04	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:51:04	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:51:04	--	End of message of the day.
+2015-05-17 23:51:04	--	User mode [+x] by mskrobacki
+2015-05-17 23:52:17	=!=	irc: disconnecting from server because upgrade can't work for servers connected via SSL
+2015-05-17 23:52:17	--	irc: disconnected from server
+2015-05-17 23:52:18	--	irc: reconnecting to server...
+2015-05-17 23:52:18	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:52:18	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:52:18	--	gnutls: receiving 1 certificate
+2015-05-17 23:52:18	--	 - certificate[1] info:
+2015-05-17 23:52:18	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:52:18	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:52:18	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:52:18	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:52:18	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:52:19	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:52:19	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:52:19	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:52:19	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:52:19	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:52:19	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:52:19	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:52:19	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:52:19	--	14 :operator(s) online
+2015-05-17 23:52:19	--	609 :channels formed
+2015-05-17 23:52:19	--	I have 229 clients and 2 servers
+2015-05-17 23:52:19	--	Current Local Users: 229  Max: 298
+2015-05-17 23:52:19	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:52:19	--	You are now known as mskrobacki
+2015-05-17 23:52:19	--	external.irc.rackspace.com message of the day
+2015-05-17 23:52:19	--	- Major says: "Click safe, my friends."
+2015-05-17 23:52:19	--	- - The most secure man in the world
+2015-05-17 23:52:19	--	-
+2015-05-17 23:52:19	--	-  ____            _
+2015-05-17 23:52:19	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:52:19	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:52:19	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:52:19	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:52:19	--	-                          |_|
+2015-05-17 23:52:19	--	-
+2015-05-17 23:52:19	--	- This external IRC server requires registration while on
+2015-05-17 23:52:19	--	- the corporate network.
+2015-05-17 23:52:19	--	-
+2015-05-17 23:52:19	--	- https://register.irc.rackspace.com
+2015-05-17 23:52:19	--	-
+2015-05-17 23:52:19	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:52:19	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:52:19	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:52:19	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:52:19	--	End of message of the day.
+2015-05-17 23:52:19	--	User mode [+x] by mskrobacki
+2015-05-17 23:52:32	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-17 23:52:32	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-17 23:52:32	--	gnutls: receiving 1 certificate
+2015-05-17 23:52:32	--	 - certificate[1] info:
+2015-05-17 23:52:32	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-17 23:52:32	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-17 23:52:32	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-17 23:52:32	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-17 23:52:32	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-17 23:52:33	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-17 23:52:33	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-17 23:52:33	--	This server was created 18:38:09 Jun  4 2014
+2015-05-17 23:52:33	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-17 23:52:33	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-17 23:52:33	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-17 23:52:33	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-17 23:52:33	--	There are 837 users and 10 invisible on 3 servers
+2015-05-17 23:52:33	--	14 :operator(s) online
+2015-05-17 23:52:33	--	609 :channels formed
+2015-05-17 23:52:33	--	I have 229 clients and 2 servers
+2015-05-17 23:52:33	--	Current Local Users: 229  Max: 298
+2015-05-17 23:52:33	--	Current Global Users: 847  Max: 1328
+2015-05-17 23:52:33	--	You are now known as mskrobacki
+2015-05-17 23:52:33	--	external.irc.rackspace.com message of the day
+2015-05-17 23:52:33	--	- Major says: "Click safe, my friends."
+2015-05-17 23:52:33	--	- - The most secure man in the world
+2015-05-17 23:52:33	--	-
+2015-05-17 23:52:33	--	-  ____            _
+2015-05-17 23:52:33	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-17 23:52:33	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-17 23:52:33	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-17 23:52:33	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-17 23:52:33	--	-                          |_|
+2015-05-17 23:52:33	--	-
+2015-05-17 23:52:33	--	- This external IRC server requires registration while on
+2015-05-17 23:52:33	--	- the corporate network.
+2015-05-17 23:52:33	--	-
+2015-05-17 23:52:33	--	- https://register.irc.rackspace.com
+2015-05-17 23:52:33	--	-
+2015-05-17 23:52:33	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-17 23:52:33	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-17 23:52:33	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-17 23:52:33	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-17 23:52:33	--	End of message of the day.
+2015-05-17 23:52:33	--	User mode [+x] by mskrobacki
+2015-05-18 00:04:31	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-18 00:04:31	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-18 00:04:31	--	gnutls: receiving 1 certificate
+2015-05-18 00:04:31	--	 - certificate[1] info:
+2015-05-18 00:04:31	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-18 00:04:31	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-18 00:04:31	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-18 00:04:31	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-18 00:04:31	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-18 00:04:31	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-18 00:04:31	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-18 00:04:31	--	This server was created 18:38:09 Jun  4 2014
+2015-05-18 00:04:31	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-18 00:04:31	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-18 00:04:31	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-18 00:04:31	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-18 00:04:31	--	There are 837 users and 10 invisible on 3 servers
+2015-05-18 00:04:31	--	14 :operator(s) online
+2015-05-18 00:04:31	--	609 :channels formed
+2015-05-18 00:04:31	--	I have 229 clients and 2 servers
+2015-05-18 00:04:31	--	Current Local Users: 229  Max: 298
+2015-05-18 00:04:31	--	Current Global Users: 847  Max: 1328
+2015-05-18 00:04:31	--	You are now known as mskrobacki
+2015-05-18 00:04:31	--	external.irc.rackspace.com message of the day
+2015-05-18 00:04:31	--	- Major says: "Click safe, my friends."
+2015-05-18 00:04:31	--	- - The most secure man in the world
+2015-05-18 00:04:31	--	-
+2015-05-18 00:04:31	--	-  ____            _
+2015-05-18 00:04:31	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-18 00:04:32	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-18 00:04:32	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-18 00:04:32	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-18 00:04:32	--	-                          |_|
+2015-05-18 00:04:32	--	-
+2015-05-18 00:04:32	--	- This external IRC server requires registration while on
+2015-05-18 00:04:32	--	- the corporate network.
+2015-05-18 00:04:32	--	-
+2015-05-18 00:04:32	--	- https://register.irc.rackspace.com
+2015-05-18 00:04:32	--	-
+2015-05-18 00:04:32	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-18 00:04:32	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-18 00:04:32	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-18 00:04:32	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-18 00:04:32	--	End of message of the day.
+2015-05-18 00:04:32	--	User mode [+x] by mskrobacki
+2015-05-18 00:05:24	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-18 00:05:24	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-18 00:05:24	--	gnutls: receiving 1 certificate
+2015-05-18 00:05:24	--	 - certificate[1] info:
+2015-05-18 00:05:24	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-18 00:05:24	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-18 00:05:24	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-18 00:05:24	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-18 00:05:24	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-18 00:05:25	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-18 00:05:25	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-18 00:05:25	--	This server was created 18:38:09 Jun  4 2014
+2015-05-18 00:05:25	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-18 00:05:25	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-18 00:05:25	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-18 00:05:25	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-18 00:05:25	--	There are 837 users and 10 invisible on 3 servers
+2015-05-18 00:05:25	--	14 :operator(s) online
+2015-05-18 00:05:25	--	609 :channels formed
+2015-05-18 00:05:25	--	I have 229 clients and 2 servers
+2015-05-18 00:05:25	--	Current Local Users: 229  Max: 298
+2015-05-18 00:05:25	--	Current Global Users: 847  Max: 1328
+2015-05-18 00:05:25	--	You are now known as mskrobacki
+2015-05-18 00:05:25	--	external.irc.rackspace.com message of the day
+2015-05-18 00:05:25	--	- Major says: "Click safe, my friends."
+2015-05-18 00:05:25	--	- - The most secure man in the world
+2015-05-18 00:05:25	--	-
+2015-05-18 00:05:25	--	-  ____            _
+2015-05-18 00:05:25	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-18 00:05:25	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-18 00:05:25	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-18 00:05:25	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-18 00:05:25	--	-                          |_|
+2015-05-18 00:05:25	--	-
+2015-05-18 00:05:25	--	- This external IRC server requires registration while on
+2015-05-18 00:05:25	--	- the corporate network.
+2015-05-18 00:05:25	--	-
+2015-05-18 00:05:25	--	- https://register.irc.rackspace.com
+2015-05-18 00:05:25	--	-
+2015-05-18 00:05:25	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-18 00:05:25	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-18 00:05:25	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-18 00:05:25	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-18 00:05:25	--	End of message of the day.
+2015-05-18 00:05:25	--	User mode [+x] by mskrobacki
+2015-05-18 08:42:43	=!=	irc: reading data on socket: error -54 Error in the pull function.
+2015-05-18 08:42:43	--	irc: disconnecting from server...
+2015-05-18 08:42:43	--	irc: disconnected from server
+2015-05-18 08:42:43	--	irc: reconnecting to server in 10 seconds
+2015-05-18 08:42:53	--	irc: reconnecting to server...
+2015-05-18 08:42:53	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-18 08:42:53	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-18 08:42:53	--	gnutls: receiving 1 certificate
+2015-05-18 08:42:53	--	 - certificate[1] info:
+2015-05-18 08:42:53	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-18 08:42:53	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-18 08:42:53	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-18 08:42:53	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-18 08:42:53	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-18 08:43:14	--	irc: connecting to server cloud.skrobul.com/7777 (SSL)...
+2015-05-18 08:43:14	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2015-05-18 08:43:14	--	gnutls: receiving 1 certificate
+2015-05-18 08:43:14	--	 - certificate[1] info:
+2015-05-18 08:43:14	--	   - subject `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', issuer `C=US,ST=SomeState,L=SomeCity,O=SomeCompany,OU=skrobul,CN=host.unknown,EMAIL=skrobul@host.unknown', RSA key 2048 bits, signed using RSA-SHA1, activated `2014-04-07 17:14:38 UTC', expires `2024-04-04 17:14:38 UTC', SHA-1 fingerprint `fe5fa76e11f49cfe64dbe6fb4c04176cba5b95a2'
+2015-05-18 08:43:14	=!=	gnutls: the hostname in the certificate does NOT match "cloud.skrobul.com"
+2015-05-18 08:43:14	=!=	gnutls: peer's certificate is NOT trusted
+2015-05-18 08:43:14	=!=	gnutls: peer's certificate issuer is unknown
+2015-05-18 08:43:14	--	irc: connected to cloud.skrobul.com/7777 (162.209.58.234)
+2015-05-18 08:43:14	--	Welcome to the Rackspace IRC Network MarekSkrobacki!~marek.skrobacki@162.209.58.234
+2015-05-18 08:43:14	--	Your host is external.irc.rackspace.com, running version InspIRCd-2.0
+2015-05-18 08:43:14	--	This server was created 18:38:09 Jun  4 2014
+2015-05-18 08:43:14	--	external.irc.rackspace.com InspIRCd-2.0 BIRSWiorswx IKMOPRSbeiklmnoprstuvyz Ibeklovy
+2015-05-18 08:43:14	--	AWAYLEN=200 CASEMAPPING=rfc1459 CHANMODES=Ibe,k,l,KMOPRSimnprstuz CHANNELLEN=64 CHANTYPES=# CHARSET=ascii ELIST=MU EXCEPTS=e EXTBAN=,ORSUz FNC INVEX=I KICKLEN=255 MAP :are supported by this server
+2015-05-18 08:43:14	--	MAXBANS=60 MAXCHANNELS=60 MAXPARA=32 MAXTARGETS=20 MODES=20 NETWORK=Rackspace NICKLEN=31 PREFIX=(yov)!@+ SSL=192.168.100.149:6697 STARTTLS STATUSMSG=!@+ TOPICLEN=307 VBANLIST :are supported by this server
+2015-05-18 08:43:14	--	WALLCHOPS WALLVOICES WATCH=32 :are supported by this server
+2015-05-18 08:43:14	--	There are 837 users and 10 invisible on 3 servers
+2015-05-18 08:43:14	--	14 :operator(s) online
+2015-05-18 08:43:14	--	609 :channels formed
+2015-05-18 08:43:15	--	I have 229 clients and 2 servers
+2015-05-18 08:43:15	--	Current Local Users: 229  Max: 298
+2015-05-18 08:43:15	--	Current Global Users: 847  Max: 1328
+2015-05-18 08:43:15	--	You are now known as mskrobacki
+2015-05-18 08:43:15	--	external.irc.rackspace.com message of the day
+2015-05-18 08:43:15	--	- Major says: "Click safe, my friends."
+2015-05-18 08:43:15	--	- - The most secure man in the world
+2015-05-18 08:43:15	--	-
+2015-05-18 08:43:15	--	-  ____            _
+2015-05-18 08:43:15	--	- |  _ \ __ _  ___| | _____ _ __   __ _  ___ ___
+2015-05-18 08:43:15	--	- | |_) / _` |/ __| |/ / __| '_ \ / _` |/ __/ _ \
+2015-05-18 08:43:15	--	- |  _ < (_| | (__|   <\__ \ |_) | (_| | (_|  __/
+2015-05-18 08:43:15	--	- |_| \_\__,_|\___|_|\_\___/ .__/ \__,_|\___\___|
+2015-05-18 08:43:15	--	-                          |_|
+2015-05-18 08:43:15	--	-
+2015-05-18 08:43:15	--	- This external IRC server requires registration while on
+2015-05-18 08:43:15	--	- the corporate network.
+2015-05-18 08:43:15	--	-
+2015-05-18 08:43:15	--	- https://register.irc.rackspace.com
+2015-05-18 08:43:15	--	-
+2015-05-18 08:43:15	--	- NetAdmin: ormandj <david.orman@rackspace.com>
+2015-05-18 08:43:15	--	- NetAdmin: zonker <efulton@rackspace.com>
+2015-05-18 08:43:15	--	- NetAdmin: inappropriate <kevin.mancuso@rackspace.com>
+2015-05-18 08:43:15	--	- NetAdmin: dobby <jkoelker@rackspace.com>
+2015-05-18 08:43:15	--	End of message of the day.
+2015-05-18 08:43:15	--	User mode [+x] by mskrobacki
