@@ -29,7 +29,6 @@
 
 [user]
     name = Marek Skrobacki
-	email = skrobul@skrobul.com
 
 [commit]
     template = ~/.gitmessage
