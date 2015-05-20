@@ -101,6 +101,7 @@ if has('autocmd')
     " remove trailing whitespaces
     autocmd FileType cucumber,c,cpp,java,php,ruby,md autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
+    autocmd FileType markdown set tw=80 wrap
     " automatically open quickfix window for cofee script
     "autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
@@ -113,6 +114,8 @@ if has('autocmd')
     autocmd FileType gitcommit setlocal spell
     " enable auto word wrap in commit messages
     autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw
+    " enable spelling and autowrap on pull requests
+    autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown
 
     " Nerd tree auto commands
     " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
