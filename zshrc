@@ -42,7 +42,7 @@ CASE_SENSITIVE="true"
 DISABLE_LS_COLORS="false"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -87,3 +87,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 
 # Shared tmux widnow
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
+
+ssh() {
+  tmux rename-window "$*"
+  command ssh "$@"
+  tmux rename-window "zsh (exited ssh)"
+  tmux set automatic-rename on > /dev/null 2>&1
+}
+
