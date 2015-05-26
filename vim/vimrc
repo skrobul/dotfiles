@@ -151,7 +151,7 @@ set sw=4
 set softtabstop=4     "makes backspacing over spaced out tabs work real nice
 set expandtab           "expand tabs to spaces
 set ignorecase
-"set background=dark     "awesome for terminals with crappy colors (putty!)
+set background=dark     "awesome for terminals with crappy colors (putty!)
 set tagstack            "lets you push and pop your jumps with ctrl+]
 set pastetoggle=<F11>   "when you're pasting stuff this keeps it from getting
                         "all whacked out with indentation
@@ -488,3 +488,6 @@ endif
 " move focus to correct place after the split
 set splitbelow
 set splitright
+
+" fix search highlight color
+hi Search cterm=NONE ctermfg=0 ctermbg=153
