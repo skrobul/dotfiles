@@ -41,7 +41,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 
 Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'skrobul/vim-project'
+" Plugin 'skrobul/vim-project'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -312,7 +312,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:vim_markdown_folding_disabled=0
 
 " Projects config
-let g:project_use_nerdtree = 1
+" let g:project_use_nerdtree = 1
 
 "NERDTree - autoclose when last buffer
 map <F4> :NERDTreeToggle<CR>
@@ -438,12 +438,12 @@ endif
 
 
 " Projects init
-set rtp+=~/.vim/bundle/vim-project
-call project#rc("~/devel")
+" set rtp+=~/.vim/bundle/vim-project
+" call project#rc("~/devel")
 
 
 "Projects shared across all computers. Define non-shared in local vimrc
-Project '~/skrovim'
+" Project '~/skrovim'
 
 set clipboard=unnamed
 
