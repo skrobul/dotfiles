@@ -93,9 +93,9 @@ if has('autocmd')
     "autocmd VimEnter * wincmd p
     " ruby completion
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-    " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-    " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
     autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
     autocmd FileType coffee set sw=2 ts=2 tw=80
     " remove trailing whitespaces
@@ -113,7 +113,7 @@ if has('autocmd')
     " enable spelling on GIT commit messages
     autocmd FileType gitcommit setlocal spell
     " enable auto word wrap in commit messages
-    autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw
+    autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw complete+=k
     " enable spelling and autowrap on pull requests
     autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown
 
@@ -318,12 +318,13 @@ let g:vim_markdown_folding_disabled=0
 map <F4> :NERDTreeToggle<CR>
 
 " syntastic
-let g:syntastic_ruby_checkers = ['mri'] ", 'rubylint', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
+let g:syntastic_ruby_rubocop_exec = '/Users/marek.skrobacki/.rvm//gems/ruby-2.2.2/wrappers/rubocop'
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-map <Leader>y :SyntasticCheck reek ruby-lint rubocop<CR>
+map <silent> <Leader>y :SyntasticSetLoclist<CR>
 
 
 
@@ -476,6 +477,8 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 set showbreak=↪
 
+"ruby context endings
+nmap <Leader>z /end%y$%A # p:nohlsearch
 
 " faster redraws
 " set lazyredraw
