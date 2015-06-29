@@ -135,7 +135,7 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-tomorrow
+colorscheme base16-chalk
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -325,7 +325,6 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 map <silent> <Leader>y :SyntasticSetLoclist<CR>
-
 
 
 " dispatch.vim + rspec
