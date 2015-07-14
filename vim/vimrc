@@ -31,7 +31,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular' "dependency for vim-markdown
 Plugin 'plasticboy/vim-markdown' "markdown syntax
 
-Plugin 'tpope/vim-rails' "set of rails helpers
+" Plugin 'tpope/vim-rails' "set of rails helpers
 
 Plugin 'tpope/vim-repeat'
 " npm -g install instant-markdown-d
@@ -67,6 +67,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'wikitopian/hardmode'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'henrik/vim-qargs'
+Plugin 'majutsushi/tagbar'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,6 +89,7 @@ if has('autocmd')
     autocmd BufNewFile,BufRead *.sls set ft=yaml sw=2 ts=2
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType python set ts=4 sw=4 et
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -166,6 +169,8 @@ set incsearch
 " Use <C-L> to clear the highlighting of :set hlsearch.
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
 
+" Replace all occurences of word under cursor
+:nnoremap <Leader>z :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " check for vim settings in X lines of read file
 set modelines=5
@@ -331,9 +336,9 @@ map <silent> <Leader>y :SyntasticSetLoclist<CR>
 let g:rspec_command = ':Dispatch rspec {spec}'
 " key mappings for rspec
 map <Leader>m :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>z :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>z :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 
 "let g:rspec_runner = "os_x_iterm"
 
@@ -436,7 +441,7 @@ if has("gui_running")
    endif
 endif
 
-
+nmap <Leader>a :TagbarToggle<CR>
 " Projects init
 " set rtp+=~/.vim/bundle/vim-project
 " call project#rc("~/devel")
