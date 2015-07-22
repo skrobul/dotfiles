@@ -302,10 +302,16 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 " vim-airline
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 0
+
+" disable file format and encoding
+let g:airline_section_y = ''
+" display
+let g:airline_section_z = '%l,%c'
 
 
 " vim-markdown - no folding
@@ -364,8 +370,6 @@ vmap <C-x> d
 vmap <C-v> p
 vmap <C-c> y
 " Tabs
-let g:airline_theme='base16'
-let g:airline#extensions#tabline#enabled = 0
 " temporarily disable until I figure out better shortcuts
 " nnoremap <C-b>  :tabprevious<CR>
 " inoremap <C-b>  <Esc>:tabprevious<CR>i
