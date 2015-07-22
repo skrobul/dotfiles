@@ -24,6 +24,7 @@ Plugin 'bling/vim-airline'
 
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'skrobul/grb256'
+Plugin 'romainl/Apprentice'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'endwise.vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -135,10 +136,7 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-tomorrow
-" to try after Jan 2015:
-" - codeschool
-" - candy
+colorscheme base16-ocean
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
