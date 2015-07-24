@@ -9,9 +9,12 @@ slate.configAll({
     "windowHintsShowIcons": true,
     "windowHintsIgnoreHiddenWindows": false,
     "windowHintsSpread": true,
-    "windowHintsWidth": 120,
-    "windowHintsHeight": 120,
+    "windowHintsSpreadSearchWidth": 300,
+    "windowHintsWidth": 80,
+    "windowHintsHeight": 80,
     "windowHintsDuration": 5,
+    "windowHintsFontSize": 80,
+    "windowHintsFontColor": [128, 128, 255, 1.0]
 });
 var hintLeftHand = slate.operation("hint", {
   "characters" : 'AOEUIYQJKX'
