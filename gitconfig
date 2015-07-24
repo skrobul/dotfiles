@@ -1,14 +1,14 @@
 [pivotal]
-	full-name = Marek Skrobacki
-	only-mine = true
-	append-name = true
-	integration-branch = development
+    full-name = Marek Skrobacki
+    only-mine = true
+    append-name = true
+    integration-branch = development
 [color]
-	ui = true
+    ui = true
 [push]
-	default = current
+    default = current
 [core]
-	editor = /usr/local/bin/vim
+    editor = /usr/local/bin/vim
 [alias]
     d  = diff
     dc = diff --cached
@@ -22,6 +22,7 @@
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     pr = !hub pull-request
+    aa = add --all
 
 
 [include]
@@ -39,6 +40,6 @@
 [mergetool "vim"]
         cmd = vim \"+Gvdiff\" $MERGED
 [github]
-	user = skrobul
+    user = skrobul
 [mergetool]
-	keepBackup = false
+    keepBackup = false
