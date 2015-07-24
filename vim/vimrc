@@ -95,9 +95,9 @@ if has('autocmd')
     "autocmd VimEnter * wincmd p
     " ruby completion
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+    " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+    " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+    " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
     autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
     autocmd FileType coffee set sw=2 ts=2 tw=80
     " remove trailing whitespaces
@@ -138,9 +138,6 @@ syntax enable
 set t_Co=256
 let base16colorspace=256
 colorscheme base16-ocean
-" to try after Jan 2015:
-" - codeschool
-" - candy
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
@@ -306,12 +303,14 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 " vim-airline
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_section_x = ''
-let g_airline_section_y = '%l,%c'
+
+" disable file format and encoding
+let g:airline_section_y = ''
+" display
+let g:airline_section_z = '%l,%c'
 
 
 " vim-markdown - no folding
