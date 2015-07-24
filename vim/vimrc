@@ -67,7 +67,6 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'wikitopian/hardmode'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'henrik/vim-qargs'
-Plugin 'majutsushi/tagbar'
 Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
@@ -138,7 +137,7 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-chalk
+colorscheme base16-ocean
 " to try after Jan 2015:
 " - codeschool
 " - candy
@@ -311,6 +310,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_section_x = ''
+let g_airline_section_y = '%l,%c'
 
 
 " vim-markdown - no folding
@@ -368,18 +369,6 @@ vmap <C-w> S
 vmap <C-x> d
 vmap <C-v> p
 vmap <C-c> y
-" Tabs
-let g:airline_theme='base16'
-let g:airline#extensions#tabline#enabled = 0
-" temporarily disable until I figure out better shortcuts
-" nnoremap <C-b>  :tabprevious<CR>
-" inoremap <C-b>  <Esc>:tabprevious<CR>i
-" nnoremap <C-n>  :tabnext<CR>
-" inoremap <C-n>  <Esc>:tabnext<CR>i
-" nnoremap <C-t>  :tabnew<CR>
-" inoremap <C-t>  <Esc>:tabnew<CR>i
-" nnoremap <C-k>  :tabclose<CR>
-" inoremap <C-k>  <Esc>:tabclose<CR>i
 
 
 " instant markdown
@@ -441,7 +430,6 @@ if has("gui_running")
    endif
 endif
 
-nmap <Leader>a :TagbarToggle<CR>
 " Projects init
 " set rtp+=~/.vim/bundle/vim-project
 " call project#rc("~/devel")
