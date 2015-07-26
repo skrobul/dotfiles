@@ -325,11 +325,11 @@ map <F4> :NERDTreeToggle<CR>
 " syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
 let g:syntastic_ruby_rubocop_exec = '/Users/marek.skrobacki/.rvm//gems/ruby-2.2.2/wrappers/rubocop'
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-map <silent> <Leader>y :SyntasticSetLoclist<CR>
+let g:syntastic_check_on_wq = 0
+map <silent> <Leader>s :SyntasticSetLoclist<CR>
 
 
 " dispatch.vim + rspec
