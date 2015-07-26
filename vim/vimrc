@@ -5,70 +5,59 @@ set nocompatible              " be iMproved, required filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()"
 
-
 Plugin 'gmarik/Vundle.vim'  "vundle itself
 Plugin 'tpope/vim-fugitive' "git wrapper
-
-" Plugin 'vim-scripts/CSApprox'
-
-"full path fuzzy finder
-Plugin 'kien/ctrlp.vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
+Plugin 'JazzCore/ctrlp-cmatcher' "c extension to improve search speed
 " remember to compile cmatcher binary
 " https://github.com/JazzCore/ctrlp-cmatcher#installation
-
-Plugin 'SirVer/ultisnips'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'bling/vim-airline'
-" Plugin 'airblade/vim-gitgutter'
-
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'skrobul/grb256'
-Plugin 'jwhitley/vim-matchit'
-Plugin 'endwise.vim'
-Plugin 'kchmck/vim-coffee-script'
-
-Plugin 'godlygeek/tabular' "dependency for vim-markdown
-Plugin 'plasticboy/vim-markdown' "markdown syntax
-
-" Plugin 'tpope/vim-rails' "set of rails helpers
-
-Plugin 'tpope/vim-repeat'
+Plugin 'SirVer/ultisnips'        " code snippets
+Plugin 'honza/vim-snippets'      " actual snippets
+Plugin 'ervandew/supertab'       " allows TAB to be used for auto completion
+Plugin 'scrooloose/syntastic'    " syntastic color checking
+Plugin 'Valloric/YouCompleteMe'  " auto completion engine
+Plugin 'tomtom/tcomment_vim'     " easy comments
+Plugin 'rstacruz/sparkup'        " parser for condensed HTML
+Plugin 'bling/vim-airline'       " nice statusline
+Plugin 'jwhitley/vim-matchit'     " better jumping with %
+Plugin 'endwise.vim'              " wisely 'end' functions etc
+Plugin 'kchmck/vim-coffee-script' " coffe script support
+Plugin 'godlygeek/tabular'        "dependency for vim-markdown
+Plugin 'plasticboy/vim-markdown'  "markdown syntax
+Plugin 'tpope/vim-repeat' " extend support for repeating with .
 " npm -g install instant-markdown-d
-Plugin 'suan/vim-instant-markdown'
-Plugin 'honza/vim-snippets'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-surround'
+Plugin 'suan/vim-instant-markdown' " instant markdown preview
+Plugin 'Raimondi/delimitMate'      " insert mode completion for quotes, etc
+Plugin 'tpope/vim-surround'        " quickly surround
+Plugin 'ecomba/vim-ruby-refactoring' " ruby refactoring functions
+Plugin 'scrooloose/nerdtree'         " file manager
+Plugin 'thoughtbot/vim-rspec'       " rspec runner
+Plugin 'tpope/vim-dispatch'          " start stuff in background
+Plugin 'nelstrom/vim-textobj-rubyblock' " text object for selecting ruby blocks
+Plugin 'christoomey/vim-tmux-navigator' " seamless navigation between tmux panes and splits
+Plugin 'Lokaltog/vim-easymotion'      " easy motion
+Plugin 'slim-template/vim-slim.git'   " slim templating support
+Plugin 'neilagabriel/vim-geeknote'    " evernote vim support
+Plugin 'chriskempson/base16-vim'      " base16 colors
+Plugin 'tpope/vim-unimpaired'         " set of movement mappings
+Plugin 'henrik/vim-qargs'             " adds :Qargs command
+Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
 
-Plugin 'ecomba/vim-ruby-refactoring'
-" Plugin 'skrobul/vim-project'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rstacruz/sparkup'
+""" DISABLED Plugins
+" Plugin 'cseelus/vim-colors-clearance'
+" Plugin 'MaxSt/FlatColor'
+" Plugin 'blerins/flattown'
+" Plugin 'rizzatti/dash.vim' - disabled  - took way too long to startup
+" Plugin 'tpope/vim-bundler' " probably not needed (Jul 2015)
+" Plugin 'kana/vim-textobj-user'
 " Plugin 'mattly/iterm-colors-pencil'
 " Plugin 'reedes/vim-colors-pencil'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-bundler'
-" Plugin 'rizzatti/dash.vim' - disabled  - took way too long to startup
-Plugin 'slim-template/vim-slim.git'
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'blerins/flattown'
-Plugin 'neilagabriel/vim-geeknote'
-" Plugin 'MaxSt/FlatColor'
-" Plugin 'cseelus/vim-colors-clearance'
-Plugin 'scrooloose/syntastic'
-Plugin 'chriskempson/base16-vim'
-Plugin 'wikitopian/hardmode'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'henrik/vim-qargs'
-Plugin 'dhruvasagar/vim-table-mode'
-
+" Plugin 'tpope/vim-rails' "set of rails helpers
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'flazz/vim-colorschemes'  " all colorschemes
+" Plugin 'skrobul/grb256'          " my version of grb256
+" Plugin 'vim-scripts/CSApprox'
+"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
