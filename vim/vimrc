@@ -34,6 +34,7 @@ Plugin 'scrooloose/nerdtree'         " file manager
 Plugin 'thoughtbot/vim-rspec'       " rspec runner
 Plugin 'tpope/vim-dispatch'          " start stuff in background
 Plugin 'nelstrom/vim-textobj-rubyblock' " text object for selecting ruby blocks
+Plugin 'kana/vim-textobj-user'          " dependency for vim-textobj-rubyblock
 Plugin 'christoomey/vim-tmux-navigator' " seamless navigation between tmux panes and splits
 Plugin 'Lokaltog/vim-easymotion'      " easy motion
 Plugin 'slim-template/vim-slim.git'   " slim templating support
@@ -49,7 +50,6 @@ Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
 " Plugin 'blerins/flattown'
 " Plugin 'rizzatti/dash.vim' - disabled  - took way too long to startup
 " Plugin 'tpope/vim-bundler' " probably not needed (Jul 2015)
-" Plugin 'kana/vim-textobj-user'
 " Plugin 'mattly/iterm-colors-pencil'
 " Plugin 'reedes/vim-colors-pencil'
 " Plugin 'tpope/vim-rails' "set of rails helpers
