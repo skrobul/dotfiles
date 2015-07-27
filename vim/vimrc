@@ -43,6 +43,7 @@ Plugin 'chriskempson/base16-vim'      " base16 colors
 Plugin 'tpope/vim-unimpaired'         " set of movement mappings
 Plugin 'henrik/vim-qargs'             " adds :Qargs command
 Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
+Plugin 'tpope/vim-rvm'                " RVM support
 
 """ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
@@ -318,7 +319,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-map <silent> <Leader>s :SyntasticSetLoclist<CR>
+map <silent> <Leader>s :SyntasticCheck<CR>
 
 
 " dispatch.vim + rspec
