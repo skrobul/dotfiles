@@ -44,6 +44,7 @@ Plugin 'tpope/vim-unimpaired'         " set of movement mappings
 Plugin 'henrik/vim-qargs'             " adds :Qargs command
 Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
 Plugin 'tpope/vim-rvm'                " RVM support
+Plugin 'mrtazz/simplenote.vim'          " simplenote support
 
 """ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
@@ -94,6 +95,8 @@ if has('autocmd')
     autocmd FileType cucumber,c,cpp,java,php,ruby,md autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     autocmd FileType markdown set tw=80 wrap
+    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown set complete+=k
     " automatically open quickfix window for cofee script
     "autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
@@ -504,4 +507,5 @@ nnoremap <Leader>a :Ag<SPACE>
 " json prettyfiy
 command JSONPretty %!python -m json.tool
 
-
+" Geeknote markdown by default
+let g:GeeknoteFormat="markdown"
