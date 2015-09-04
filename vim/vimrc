@@ -46,6 +46,8 @@ Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
 Plugin 'tpope/vim-rvm'                " RVM support
 Plugin 'mrtazz/simplenote.vim'          " simplenote support
 
+Plugin 'tpope/vim-obsession'          "session management
+Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
 """ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
 " Plugin 'MaxSt/FlatColor'
