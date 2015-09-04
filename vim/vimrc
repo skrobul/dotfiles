@@ -156,7 +156,7 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 set incsearch
-
+set spellfile=~/.vim/spell/en.utf-8.add
 " Use <C-L> to clear the highlighting of :set hlsearch.
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
 nnoremap <CR> :noh<CR><CR>
@@ -511,3 +511,7 @@ command JSONPretty %!python -m json.tool
 
 " Geeknote markdown by default
 let g:GeeknoteFormat="markdown"
+
+" prosession configuration
+let g:prosession_dir = '~/.vim/session/'
+let g:prosession_tmux_title = 1
