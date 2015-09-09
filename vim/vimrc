@@ -50,6 +50,7 @@ Plugin 'tpope/vim-obsession'          "session management
 Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
 
 Plugin 'benmills/vimux'               "interact with tmux
+Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
 
 
 """ DISABLED Plugins
@@ -160,6 +161,7 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 set incsearch
+set ttyfast " faster redrawing"
 set spellfile=~/.vim/spell/en.utf-8.add
 " Use <C-L> to clear the highlighting of :set hlsearch.
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
@@ -338,9 +340,9 @@ map <silent> <Leader>s :SyntasticCheck<CR>
 
 
 " dispatch.vim + rspec
-let g:rspec_command = ':Dispatch rspec {spec}'
+" let g:rspec_command = ':Dispatch rspec {spec}'
 " key mappings for rspec
-map <Leader>m :call RunCurrentSpecFile()<CR>
+" map <Leader>m :call RunCurrentSpecFile()<CR>
 " map <Leader>s :call RunNearestSpec()<CR>
 " map <Leader>z :call RunLastSpec()<CR>
 " map <Leader>a :call RunAllSpecs()<CR>
@@ -469,7 +471,9 @@ function! HLNext (blinktime)
 endfunction
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+"exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
+highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set list
 set showbreak=↪
 
