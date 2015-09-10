@@ -7,8 +7,8 @@ call vundle#begin()"
 
 Plugin 'gmarik/Vundle.vim'  "vundle itself
 Plugin 'tpope/vim-fugitive' "git wrapper
-Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
-Plugin 'JazzCore/ctrlp-cmatcher' "c extension to improve search speed
+" Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
+" Plugin 'JazzCore/ctrlp-cmatcher' "c extension to improve search speed
 " remember to compile cmatcher binary
 " https://github.com/JazzCore/ctrlp-cmatcher#installation
 Plugin 'SirVer/ultisnips'        " code snippets
@@ -51,6 +51,9 @@ Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
 
 Plugin 'benmills/vimux'               "interact with tmux
 Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
+
+Plugin 'git@github.com:Shougo/vimproc.vim.git'
+Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
 
 
 """ DISABLED Plugins
@@ -280,11 +283,11 @@ set completeopt=menuone,longest,preview
 " Plugins config
 "
 " CtrlP
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=**/node_modules
-let g:ctrlp_open_new_file = "r"
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' } "fuzzy matching with ctrlp+cmatcher"
-let g:ctrlp_extensions = ['tag']
+" let g:ctrlp_open_new_file = "r"
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' } "fuzzy matching with ctrlp+cmatcher"
+" let g:ctrlp_extensions = ['tag']
 
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
 " make YCM compatible with UltiSnips (using supertab)
@@ -339,22 +342,15 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 map <silent> <Leader>s :SyntasticCheck<CR>
 
 
-" dispatch.vim + rspec
-" let g:rspec_command = ':Dispatch rspec {spec}'
-" key mappings for rspec
-" map <Leader>m :call RunCurrentSpecFile()<CR>
-" map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>z :call RunLastSpec()<CR>
-" map <Leader>a :call RunAllSpecs()<CR>
 
 "let g:rspec_runner = "os_x_iterm"
 
 " EasyMotion
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>w <Plug>(easymotion-w)
+map <Space>j <Plug>(easymotion-j)
+map <Space>k <Plug>(easymotion-k)
+map <Space>l <Plug>(easymotion-lineforward)
+map <Space>h <Plug>(easymotion-linebackward)
+map <Space>w <Plug>(easymotion-w)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion"
 
@@ -523,3 +519,10 @@ let g:GeeknoteFormat="markdown"
 " prosession configuration
 let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
+
+" unite.vim configuration
+nnoremap <C-p> :Unite  -no-split -buffer-name=files -start-insert file_rec/async<cr>
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+nnoremap <leader>` :Unite -quick-match buffer<cr>
