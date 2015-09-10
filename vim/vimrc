@@ -54,6 +54,7 @@ Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
 
 Plugin 'git@github.com:Shougo/vimproc.vim.git'
 Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
+Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
 
 
 """ DISABLED Plugins
@@ -521,8 +522,13 @@ let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
 
 " unite.vim configuration
-nnoremap <C-p> :Unite  -no-split -buffer-name=files -start-insert file_rec/async<cr>
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 nnoremap <leader>` :Unite -quick-match buffer<cr>
+" Build the ctrlp function, using projectroot to define the
+function! Unite_ctrlp()
+  execute ':Unite  -buffer-name=files -start-insert buffer file_rec/async:'.ProjectRootGuess().'/'
+endfunction
+nnoremap <C-P> :call Unite_ctrlp()<cr>'
+"end of  unite.vim configuration
