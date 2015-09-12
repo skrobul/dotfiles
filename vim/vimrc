@@ -530,5 +530,5 @@ nnoremap <leader>` :Unite -quick-match buffer<cr>
 function! Unite_ctrlp()
   execute ':Unite  -buffer-name=files -start-insert buffer file_rec/async:'.ProjectRootGuess().'/'
 endfunction
-nnoremap <C-P> :call Unite_ctrlp()<cr>'
+nnoremap <C-P> :call Unite_ctrlp()<cr>
 "end of  unite.vim configuration
