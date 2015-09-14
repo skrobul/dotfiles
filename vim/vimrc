@@ -25,8 +25,8 @@ Plugin 'kchmck/vim-coffee-script' " coffe script support
 Plugin 'godlygeek/tabular'        "dependency for vim-markdown
 Plugin 'plasticboy/vim-markdown'  "markdown syntax
 Plugin 'tpope/vim-repeat' " extend support for repeating with .
-" npm -g install instant-markdown-d
-Plugin 'suan/vim-instant-markdown' " instant markdown preview
+" " npm -g install instant-markdown-d
+" Plugin 'suan/vim-instant-markdown' " instant markdown preview
 Plugin 'Raimondi/delimitMate'      " insert mode completion for quotes, etc
 Plugin 'tpope/vim-surround'        " quickly surround
 Plugin 'ecomba/vim-ruby-refactoring' " ruby refactoring functions
