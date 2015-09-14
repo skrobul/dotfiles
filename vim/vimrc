@@ -56,6 +56,7 @@ Plugin 'git@github.com:Shougo/vimproc.vim.git'
 Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
 Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
 
+Plugin 'fmoralesc/vim-pad'
 
 """ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
@@ -275,9 +276,6 @@ nnoremap <S-F12> :bp<CR>
 
 "wyszukiwanie w menu
 set completeopt=menuone,longest,preview
-
-" map control-backspace to delete the previous word
-:imap <C-BS> <C-W>
 
 
 "
@@ -532,3 +530,12 @@ function! Unite_ctrlp()
 endfunction
 nnoremap <C-P> :call Unite_ctrlp()<cr>
 "end of  unite.vim configuration
+
+" vim-pad
+let g:pad#dir = '~/Dropbox/notes'
+let g:pad#maps#new = "<leader>1"
+
+" vim-notes
+let g:notes_directories = ['~/Dropbox/notes']
+let g:notes_suffix = '.md'
+
