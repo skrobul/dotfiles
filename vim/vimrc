@@ -52,6 +52,7 @@ Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
 
 Plugin 'fmoralesc/vim-pad'
 
+
 """ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
 " Plugin 'MaxSt/FlatColor'
