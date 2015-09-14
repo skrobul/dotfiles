@@ -1,1 +1,10 @@
-markdown.snippets
+extends markdown
+snippet meetingnotes "Meeting notes template" b
+# Meeting notes: ${1:Title} - `!v strftime("%Y-%m-%d")`
+
+## Notes
+$2
+
+## Action items
+$3
+endsnippet
