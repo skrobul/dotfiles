@@ -7,10 +7,6 @@ call vundle#begin()"
 
 Plugin 'gmarik/Vundle.vim'  "vundle itself
 Plugin 'tpope/vim-fugitive' "git wrapper
-" Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
-" Plugin 'JazzCore/ctrlp-cmatcher' "c extension to improve search speed
-" remember to compile cmatcher binary
-" https://github.com/JazzCore/ctrlp-cmatcher#installation
 Plugin 'SirVer/ultisnips'        " code snippets
 Plugin 'honza/vim-snippets'      " actual snippets
 Plugin 'ervandew/supertab'       " allows TAB to be used for auto completion
@@ -36,8 +32,6 @@ Plugin 'tpope/vim-dispatch'          " start stuff in background
 Plugin 'nelstrom/vim-textobj-rubyblock' " text object for selecting ruby blocks
 Plugin 'kana/vim-textobj-user'          " dependency for vim-textobj-rubyblock
 Plugin 'christoomey/vim-tmux-navigator' " seamless navigation between tmux panes and splits
-Plugin 'Lokaltog/vim-easymotion'      " easy motion
-Plugin 'slim-template/vim-slim.git'   " slim templating support
 Plugin 'neilagabriel/vim-geeknote'    " evernote vim support
 Plugin 'chriskempson/base16-vim'      " base16 colors
 Plugin 'tpope/vim-unimpaired'         " set of movement mappings
@@ -71,6 +65,13 @@ Plugin 'fmoralesc/vim-pad'
 " Plugin 'flazz/vim-colorschemes'  " all colorschemes
 " Plugin 'skrobul/grb256'          " my version of grb256
 " Plugin 'vim-scripts/CSApprox'
+" Plugin 'Lokaltog/vim-easymotion'      " easy motion
+" Plugin 'slim-template/vim-slim.git'   " slim templating support
+"
+" Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
+" Plugin 'JazzCore/ctrlp-cmatcher' "c extension to improve search speed
+" remember to compile cmatcher binary
+" https://github.com/JazzCore/ctrlp-cmatcher#installation
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -534,6 +535,7 @@ nnoremap <C-P> :call Unite_ctrlp()<cr>
 " vim-pad
 let g:pad#dir = '~/Dropbox/notes'
 let g:pad#maps#new = "<leader>1"
+let g:pad#search_backend = 'ag'
 
 " vim-notes
 let g:notes_directories = ['~/Dropbox/notes']
