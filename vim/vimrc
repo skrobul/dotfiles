@@ -106,7 +106,7 @@ if has('autocmd')
     autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
     autocmd FileType coffee set sw=2 ts=2 tw=80
     " remove trailing whitespaces
-    autocmd FileType cucumber,c,cpp,java,php,ruby,md autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd BufWritePre * :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     autocmd FileType markdown set tw=80 wrap
     autocmd FileType markdown setlocal spell
@@ -537,8 +537,9 @@ nnoremap <C-P> :call Unite_ctrlp()<cr>
 let g:pad#dir = '~/Dropbox/notes'
 let g:pad#maps#new = "<leader>1"
 let g:pad#search_backend = 'ag'
+let g:pad#default_format = "markdown"
+let g:pad#default_file_extension = '.md'
 
 " vim-notes
 let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_suffix = '.md'
-
