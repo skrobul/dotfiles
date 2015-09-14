@@ -543,3 +543,6 @@ let g:pad#default_file_extension = '.md'
 " vim-notes
 let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_suffix = '.md'
+
+" markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
