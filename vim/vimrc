@@ -40,8 +40,8 @@ Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
 Plugin 'tpope/vim-rvm'                " RVM support
 Plugin 'mrtazz/simplenote.vim'          " simplenote support
 
-Plugin 'tpope/vim-obsession'          "session management
-Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
+" Plugin 'tpope/vim-obsession'          "session management
+" Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
 
 Plugin 'benmills/vimux'               "interact with tmux
 Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
@@ -539,10 +539,7 @@ let g:pad#maps#new = "<leader>1"
 let g:pad#search_backend = 'ag'
 let g:pad#default_format = "markdown"
 let g:pad#default_file_extension = '.md'
-
-" vim-notes
-let g:notes_directories = ['~/Dropbox/notes']
-let g:notes_suffix = '.md'
-
+let g:pad#window_height = 25
+"
 " markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
