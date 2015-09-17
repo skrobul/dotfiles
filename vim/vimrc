@@ -540,6 +540,8 @@ let g:pad#search_backend = 'ag'
 let g:pad#default_format = "markdown"
 let g:pad#default_file_extension = '.md'
 let g:pad#window_height = 25
+let g:pad#open_in_split = 0   " open in main window
+
 "
 " markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
