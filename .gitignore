@@ -1,3 +1,4 @@
 weechat/logs
 weechat/*.log
-weechat/otr/*.fpr
+weechat/otr
+weechat/sec.conf
