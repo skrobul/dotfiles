@@ -1,2 +1,3 @@
 weechat/logs
 weechat/*.log
+weechat/otr/*.fpr
