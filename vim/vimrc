@@ -398,7 +398,8 @@ nmap <silent> <leader>p :bprevious<CR>
 "close the buffer
 nmap <silent> <leader>c :bp <BAR> bd #<CR>
 " show all open buffers in buffer explorer
-nmap <silent> <leader>b :ls<CR>
+" nmap <silent> <leader>b :ls<CR>
+nmap <silent> <leader>b :CtrlPBuf<cr>
 
 " ruby - convert hashes to 1.9+ syntax
 command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
