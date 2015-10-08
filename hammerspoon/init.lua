@@ -138,3 +138,23 @@ hs.hotkey.bind(mash.focus, "'", function() hs.fnutils.map(hs.window.visibleWindo
 -- multi monitor
 hs.hotkey.bind(mash.hyper, 'N', hs.grid.pushWindowNextScreen)
 hs.hotkey.bind(mash.hyper, 'P', hs.grid.pushWindowPrevScreen)
+
+-- microphone
+hs.hotkey.bind(mash.hyper, '\\', function()
+    hs.applescript.applescript([[
+    set inputVolume to input volume of (get volume settings)
+    if inputVolume = 0 then
+        set inputVolume to 100
+        set displayNotification to "Microphone Unmuted"
+    else
+        set inputVolume to 0
+        set displayNotification to "Microphone muted"
+    end if
+    set volume input volume inputVolume
+    display notification displayNotification
+    delay 1
+    return
+    ]])
+
+end
+)
