@@ -94,7 +94,23 @@ hs.hotkey.bind(mash.hyper, "f", adjustCenterTop(1, 1))
 -- stoken
 hs.hotkey.bind(mash.hyper, "m", stoken)
 
+-- config reload
 hs.hotkey.bind(mash.hyper, "0", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
+
+-- window hints
+hs.hotkey.bind(mash.hyper, "e", hs.hints.windowHints)
+
+-- application specific shortcuts
+local function focusApp(app)
+    return function()
+        hs.application.launchOrFocus(app)
+    end
+end
+
+hs.hotkey.bind(mash.hyper, "i", focusApp("iTerm"))
+hs.hotkey.bind(mash.hyper, "b", focusApp("Google Chrome"))
+hs.hotkey.bind(mash.hyper, "v", focusApp("VidyoDesktop"))
+
