@@ -126,8 +126,8 @@ hs.hotkey.bind(mash.focus, 'L', hs.grid.pushWindowRight)
 
 -- resize windows
 hs.hotkey.bind(mash.focus, 'Y', hs.grid.resizeWindowThinner)
-hs.hotkey.bind(mash.focus, 'U', hs.grid.resizeWindowShorter)
-hs.hotkey.bind(mash.focus, 'I', hs.grid.resizeWindowTaller)
+hs.hotkey.bind(mash.focus, 'U', hs.grid.resizeWindowTaller)
+hs.hotkey.bind(mash.focus, 'I', hs.grid.resizeWindowShorter)
 hs.hotkey.bind(mash.focus, 'O', hs.grid.resizeWindowWider)
 
 -- global operations
