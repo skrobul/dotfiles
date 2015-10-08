@@ -71,7 +71,7 @@ hs.hotkey.bind(mash.hyper, "t", adjust(0, 0, 1, 0.5))
 hs.hotkey.bind(mash.hyper, "r", adjust(0.5, 0, 0.5, 1))
 
 -- bottom half
-hs.hotkey.bind(mash.hyper, "b", adjust(0, 0.5, 1, 0.5))
+hs.hotkey.bind(mash.hyper, "d", adjust(0, 0.5, 1, 0.5))
 
 -- left half
 hs.hotkey.bind(mash.hyper, "l", adjust(0, 0, 0.5, 1))
@@ -104,13 +104,13 @@ hs.alert.show("Config loaded")
 hs.hotkey.bind(mash.hyper, "e", hs.hints.windowHints)
 
 -- application specific shortcuts
-local function focusApp(app)
-    return function()
-        hs.application.launchOrFocus(app)
-    end
-end
+apps = {
+    i = 'iTerm',
+    b = 'Google Chrome',
+    v = 'VidyoDesktop'
+}
 
-hs.hotkey.bind(mash.hyper, "i", focusApp("iTerm"))
-hs.hotkey.bind(mash.hyper, "b", focusApp("Google Chrome"))
-hs.hotkey.bind(mash.hyper, "v", focusApp("VidyoDesktop"))
+for key, app in pairs(apps) do
+    hs.hotkey.bind(mash.hyper, key, function() hs.application.launchOrFocus(app) end)
+end
 
