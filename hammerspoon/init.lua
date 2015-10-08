@@ -1,5 +1,4 @@
 
-
 local mash = {
   split   = {"ctrl", "alt", "cmd"},
   corner  = {"ctrl", "alt", "shift"},
@@ -8,8 +7,7 @@ local mash = {
   hyper   = {"ctrl", "alt", "cmd", "shift" }
 }
 
-
-local animationDuration = 0
+-- hs.window.animationDuration = 0
 
 
 -- Focus windows
@@ -114,3 +112,29 @@ for key, app in pairs(apps) do
     hs.hotkey.bind(mash.hyper, key, function() hs.application.launchOrFocus(app) end)
 end
 
+
+-- grid
+hs.grid.MARGINX     = 0
+hs.grid.MARGINY     = 0
+hs.grid.GRIDWIDTH   = 7
+hs.grid.GRIDHEIGHT  = 3
+
+hs.hotkey.bind(mash.focus, 'H', hs.grid.pushWindowLeft)
+hs.hotkey.bind(mash.focus, 'J', hs.grid.pushWindowDown)
+hs.hotkey.bind(mash.focus, 'K', hs.grid.pushWindowUp)
+hs.hotkey.bind(mash.focus, 'L', hs.grid.pushWindowRight)
+
+-- resize windows
+hs.hotkey.bind(mash.focus, 'Y', hs.grid.resizeWindowThinner)
+hs.hotkey.bind(mash.focus, 'U', hs.grid.resizeWindowShorter)
+hs.hotkey.bind(mash.focus, 'I', hs.grid.resizeWindowTaller)
+hs.hotkey.bind(mash.focus, 'O', hs.grid.resizeWindowWider)
+
+-- global operations
+hs.hotkey.bind(mash.focus, ';', function() hs.grid.snap(hs.window.focusedWindow()) end)
+hs.hotkey.bind(mash.focus, "'", function() hs.fnutils.map(hs.window.visibleWindows(), hs.grid.snap) end)
+
+
+-- multi monitor
+hs.hotkey.bind(mash.hyper, 'N', hs.grid.pushWindowNextScreen)
+hs.hotkey.bind(mash.hyper, 'P', hs.grid.pushWindowPrevScreen)
