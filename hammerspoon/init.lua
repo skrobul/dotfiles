@@ -140,21 +140,34 @@ hs.hotkey.bind(mash.hyper, 'N', hs.grid.pushWindowNextScreen)
 hs.hotkey.bind(mash.hyper, 'P', hs.grid.pushWindowPrevScreen)
 
 -- microphone
-hs.hotkey.bind(mash.hyper, '\\', function()
-    hs.applescript.applescript([[
-    set inputVolume to input volume of (get volume settings)
-    if inputVolume = 0 then
-        set inputVolume to 100
-        set displayNotification to "Microphone Unmuted"
-    else
-        set inputVolume to 0
-        set displayNotification to "Microphone muted"
-    end if
-    set volume input volume inputVolume
-    display notification displayNotification
-    delay 1
-    return
-    ]])
-
+local function getmicvolume()
+    local _, res = hs.applescript.applescript('input volume of (get volume settings)')
+    return tonumber(res)
 end
-)
+
+local function update_mic_bar(vol)
+    if vol > 5 then
+        micBar:setTitle('UNMUTED!')
+    else
+        micBar:setTitle('Muted')
+    end
+end
+local function setMicVol(vol)
+    hs.applescript.applescript('set volume input volume  ' .. tostring(vol))
+end
+
+local function toggleMic()
+    local vol = getmicvolume()
+    if vol > 0 then
+        hs.alert("Muted")
+        setMicVol(0)
+        update_mic_bar(0)
+    else
+        hs.alert("ON-AIR")
+        setMicVol(98)
+        update_mic_bar(98)
+    end
+end
+micBar = hs.menubar.new()
+update_mic_bar(getmicvolume())
+hs.hotkey.bind(mash.hyper, '\\', toggleMic)
