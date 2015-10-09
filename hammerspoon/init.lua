@@ -56,6 +56,18 @@ local function adjustCenterTop(w, h)
   end
 end
 
+local frameCache = {}
+local function maximize()
+    local win = hs.window.focusedWindow()
+    if frameCache[win:id()] then
+        win:setFrame(frameCache[win:id()])
+        frameCache[win:id()] = nil
+    else
+        frameCache[win:id()] = win:frame()
+        win:maximize()
+    end
+end
+
 local function stoken()
     os.execute("~/bin/rsa")
     hs.alert.show("Token pasted")
@@ -87,7 +99,7 @@ hs.hotkey.bind(mash.hyper, "3", adjust(0, 0.5, 0.5, 0.5))
 hs.hotkey.bind(mash.hyper, "4", adjust(0.5, 0.5, 0.5, 0.5))
 
 -- fullscreen
-hs.hotkey.bind(mash.hyper, "f", adjustCenterTop(1, 1))
+hs.hotkey.bind(mash.hyper, "f", maximize)
 
 -- stoken
 hs.hotkey.bind(mash.hyper, "m", stoken)
