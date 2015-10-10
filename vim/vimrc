@@ -210,8 +210,9 @@ map <C-K> <C-W>k<C-W>_
 let g:explVertical=1	" Split vertically
 let g:explSplitRight=1    " Put new window to the right of the explorer
 
-"space bar folding
+" space bar folding
 nnoremap  <silent>  <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
+set foldlevelstart=5
 
 
 "switching between tabs
