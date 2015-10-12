@@ -7,7 +7,7 @@ local mash = {
   hyper   = {"ctrl", "alt", "cmd", "shift" }
 }
 
--- hs.window.animationDuration = 0
+hs.window.animationDuration = 0
 
 
 -- Focus windows
