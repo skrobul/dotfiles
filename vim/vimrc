@@ -110,6 +110,8 @@ if has('autocmd')
     autocmd FileType markdown set tw=80 wrap
     autocmd FileType markdown setlocal spell
     autocmd FileType markdown set complete+=k
+    " markdown
+    au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
     " automatically open quickfix window for cofee script
     "autocmd QuickFixCmdPost * nested cwindow | redraw!
     " recompile file on write
@@ -134,6 +136,11 @@ if has('autocmd')
     " enable hard mode by default
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
+    augroup ansible
+        autocmd BufRead,BufNewFile */host_vars/* set ft=yaml
+        autocmd BufRead,BufNewFile */group_vars/* set ft=yaml
+        autocmd BufRead,BufNewFile *.j2 set ft=jinja2
+    augroup END
 endif
 
 " syntax highlighting
@@ -534,5 +541,4 @@ let g:pad#window_height = 25
 " let g:pad#open_in_split = 0   " open in main window
 let g:pad#title_first_line = 1
 "
-" markdown
-au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
+
