@@ -1,61 +1,51 @@
 set nocompatible              " be iMproved, required filetype off
 
-" VUNDLE  - plugins
+" {{{ VUNDLE - enabled plugins
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()"
 
-Plugin 'gmarik/Vundle.vim'  "vundle itself
-Plugin 'tpope/vim-fugitive' "git wrapper
-Plugin 'SirVer/ultisnips'        " code snippets
-Plugin 'honza/vim-snippets'      " actual snippets
-Plugin 'ervandew/supertab'       " allows TAB to be used for auto completion
-Plugin 'scrooloose/syntastic'    " syntastic color checking
-Plugin 'Valloric/YouCompleteMe'  " auto completion engine
-Plugin 'tomtom/tcomment_vim'     " easy comments
-Plugin 'rstacruz/sparkup'        " parser for condensed HTML
-Plugin 'bling/vim-airline'       " nice statusline
-Plugin 'jwhitley/vim-matchit'     " better jumping with %
-Plugin 'endwise.vim'              " wisely 'end' functions etc
-Plugin 'kchmck/vim-coffee-script' " coffe script support
-Plugin 'godlygeek/tabular'        "dependency for vim-markdown
-Plugin 'plasticboy/vim-markdown'  "markdown syntax
-Plugin 'tpope/vim-repeat' " extend support for repeating with .
+Plugin 'gmarik/Vundle.vim'              " vundle itself
+Plugin 'tpope/vim-fugitive'             " git wrapper
+Plugin 'SirVer/ultisnips'               " code snippets
+Plugin 'honza/vim-snippets'             " actual snippets
+Plugin 'ervandew/supertab'              " allows TAB to be used for auto completion
+Plugin 'scrooloose/syntastic'           " syntastic color checking
+Plugin 'Valloric/YouCompleteMe'         " auto completion engine
+Plugin 'tomtom/tcomment_vim'            " easy comments
+Plugin 'rstacruz/sparkup'               " parser for condensed HTML
+Plugin 'bling/vim-airline'              " nice statusline
+Plugin 'jwhitley/vim-matchit'           " better jumping with %
+Plugin 'endwise.vim'                    " wisely 'end' functions etc
+Plugin 'kchmck/vim-coffee-script'       " coffe script support
+Plugin 'godlygeek/tabular'              " dependency for vim-markdown
+Plugin 'plasticboy/vim-markdown'        " markdown syntax
+Plugin 'tpope/vim-repeat'               " extend support for repeating with .
 " " npm -g install instant-markdown-d
-" Plugin 'suan/vim-instant-markdown' " instant markdown preview
-Plugin 'Raimondi/delimitMate'      " insert mode completion for quotes, etc
-Plugin 'tpope/vim-surround'        " quickly surround
-Plugin 'ecomba/vim-ruby-refactoring' " ruby refactoring functions
-Plugin 'scrooloose/nerdtree'         " file manager
-Plugin 'thoughtbot/vim-rspec'       " rspec runner
-Plugin 'tpope/vim-dispatch'          " start stuff in background
+" Plugin 'suan/vim-instant-markdown'    " instant markdown preview
+Plugin 'Raimondi/delimitMate'           " insert mode completion for quotes, etc
+Plugin 'tpope/vim-surround'             " quickly surround
+Plugin 'ecomba/vim-ruby-refactoring'    " ruby refactoring functions
+Plugin 'scrooloose/nerdtree'            " file manager
+Plugin 'thoughtbot/vim-rspec'           " rspec runner
+Plugin 'tpope/vim-dispatch'             " start stuff in background
 Plugin 'nelstrom/vim-textobj-rubyblock' " text object for selecting ruby blocks
 Plugin 'kana/vim-textobj-user'          " dependency for vim-textobj-rubyblock
 Plugin 'christoomey/vim-tmux-navigator' " seamless navigation between tmux panes and splits
-Plugin 'neilagabriel/vim-geeknote'    " evernote vim support
-Plugin 'chriskempson/base16-vim'      " base16 colors
-Plugin 'tpope/vim-unimpaired'         " set of movement mappings
-Plugin 'henrik/vim-qargs'             " adds :Qargs command
-Plugin 'dhruvasagar/vim-table-mode'   " helps with creating tables
-Plugin 'tpope/vim-rvm'                " RVM support
+Plugin 'neilagabriel/vim-geeknote'      " evernote vim support
+Plugin 'chriskempson/base16-vim'        " base16 colors
+Plugin 'tpope/vim-unimpaired'           " set of movement mappings
+Plugin 'henrik/vim-qargs'               " adds :Qargs command
+Plugin 'dhruvasagar/vim-table-mode'     " helps with creating tables
+Plugin 'tpope/vim-rvm'                  " RVM support
 Plugin 'mrtazz/simplenote.vim'          " simplenote support
+Plugin 'benmills/vimux'                 " interact with tmux
+Plugin 'jgdavey/vim-turbux'             " Turbo Ruby testing with tmux
+Plugin 'fmoralesc/vim-pad'              " Evernote replacement
+Plugin 'kien/ctrlp.vim'                 " full path fuzzy finder
 
-" Plugin 'tpope/vim-obsession'          "session management
-" Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
-
-Plugin 'benmills/vimux'               "interact with tmux
-Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
-
-" Plugin 'git@github.com:Shougo/vimproc.vim.git'
-" Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
-" Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
-" Plugin 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
-
-Plugin 'fmoralesc/vim-pad'
-
-
-
-""" DISABLED Plugins
+"}}}
+" {{{ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
 " Plugin 'MaxSt/FlatColor'
 " Plugin 'blerins/flattown'
@@ -70,15 +60,18 @@ Plugin 'fmoralesc/vim-pad'
 " Plugin 'vim-scripts/CSApprox'
 " Plugin 'Lokaltog/vim-easymotion'      " easy motion
 " Plugin 'slim-template/vim-slim.git'   " slim templating support
-"
-Plugin 'kien/ctrlp.vim'           "full path fuzzy finder
-"
+" Plugin 'git@github.com:Shougo/vimproc.vim.git'
+" Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
+" Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
+" Plugin 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
+" Plugin 'tpope/vim-obsession'          "session management
+" Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+" }}}
 
-" VUNDLE end
 
+" Autocmd {{{
 if has('autocmd')
     filetype plugin indent on
     "don't expand tabs if we're in a makefile
@@ -141,7 +134,7 @@ if has('autocmd')
         autocmd BufRead,BufNewFile */group_vars/* set ft=yaml
         autocmd BufRead,BufNewFile *.j2 set ft=jinja2
     augroup END
-endif
+endif " }}}
 
 " syntax highlighting
 syntax enable
@@ -207,12 +200,6 @@ if has('mouse')
   set mouse=a
 endif
 
-
-"collapsing window splits
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-
-
 " explorer
 let g:explVertical=1	" Split vertically
 let g:explSplitRight=1    " Put new window to the right of the explorer
@@ -255,42 +242,16 @@ set nowritebackup
 set noswapfile
 set fileformats=unix,dos,mac
 
-" Format the statusline
-"set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-
-
-function! CurDir()
-    let curdir = substitute(getcwd(), '/home/skrobul/', "~/", "g")
-    return curdir
-endfunction
-
-
-
-" tab navigation like firefox
-"  temporary disabled - not really using tabs...
-" :nmap <C-S-tab> :tabprevious<CR>
-" :nmap <C-tab> :tabnext<CR>
-" :map <C-S-tab> :tabprevious<CR>
-" :map <C-tab> :tabnext<CR>
-" :imap <C-S-tab> <Esc>:tabprevious<CR>i
-" :imap <C-tab> <Esc>:tabnext<CR>i
-" :nmap <C-t> :tabnew<CR>
-" :imap <C-t> <Esc>:tabnew<CR>
-
-
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
-nnoremap <M-F12> :BufExplorer<CR>
 nnoremap <F12> :bn<CR>
 nnoremap <S-F12> :bp<CR>
 
-"wyszukiwanie w menu
+" Searching in the menu
 set completeopt=menuone,longest,preview
 
-
+" Plugins config {{{
 "
-" Plugins config
-"
-" CtrlP
+" CtrlP {{{
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=**/node_modules
 " let g:ctrlp_open_new_file = "r"
@@ -298,13 +259,14 @@ set wildignore+=**/node_modules
 let g:ctrlp_extensions = ['tag']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 nmap <C-S-p> :CtrlPMixed<CR>
+" }}}
 
+" Completion plugins (YCM/UltiSnip/Supertab) {{{
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
 
 " YCM: pre-populate completion with language syntax
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -317,28 +279,25 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-"
-" vim-airline
+"}}}
+
+" vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
 " disable file format and encoding
 let g:airline_section_y = ''
 " display
 let g:airline_section_z = '%l,%c'
-
+" }}}
 
 " vim-markdown - no folding
 let g:vim_markdown_folding_disabled=0
 
-" Projects config
-" let g:project_use_nerdtree = 1
-
-"NERDTree - autoclose when last buffer
+"NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
-
-" syntastic
+" }}}
+" syntastic {{{
 let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
 let g:syntastic_ruby_rubocop_exec = '/Users/marek.skrobacki/.rvm//gems/ruby-2.2.2/wrappers/rubocop'
 let g:syntastic_always_populate_loc_list = 1
@@ -350,19 +309,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 map <silent> <Leader>s :SyntasticCheck<CR>
+" }}}
 
+" instant markdown {{{
+let g:instant_markdown_slow = 1
+" "}}}
 
+" end of plugin config }}}
 
-"let g:rspec_runner = "os_x_iterm"
-
-" EasyMotion
-map <Space>j <Plug>(easymotion-j)
-map <Space>k <Plug>(easymotion-k)
-map <Space>l <Plug>(easymotion-lineforward)
-map <Space>h <Plug>(easymotion-linebackward)
-map <Space>w <Plug>(easymotion-w)
-
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion"
 
 " mapping for dash
 nmap <silent> <leader>d <Plug>DashSearch
@@ -383,11 +337,7 @@ vmap <C-v> p
 vmap <C-c> y
 
 
-" instant markdown
-let g:instant_markdown_slow = 1
 " set cursorline  "highlights current line
-
-
 
 " disable arrows
 noremap <Up> <Nop>
@@ -408,12 +358,8 @@ nmap <silent> <leader>c :bp <BAR> bd #<CR>
 " nmap <silent> <leader>b :ls<CR>
 nmap <silent> <leader>b :CtrlPBuffer<cr>
 
-" ruby - convert hashes to 1.9+ syntax
-command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
-" retab to n spaces
-command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
-" fugitive mappings
+" fugitive plugin configurations {{{
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit -v -q<CR>
@@ -429,6 +375,10 @@ nnoremap <Leader>gb :Git branch<Space>
 nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Dispatch! git push<CR>
 nnoremap <Leader>gpl :Dispatch! git pull<CR>
+" git merges
+map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
+" }}}
 
 " hardmode mappings
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
@@ -443,23 +393,11 @@ if has("gui_running")
    endif
 endif
 
-" Projects init
-" set rtp+=~/.vim/bundle/vim-project
-" call project#rc("~/devel")
-
-
-"Projects shared across all computers. Define non-shared in local vimrc
-" Project '~/skrovim'
-
 set clipboard=unnamed
-"blabalblabldabusdjaiodjasiojdijaidjaiodjiadjioajdiojiajdioadjioajdioajdioajdiojaidjaoid
 " Make 81st column stand out
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
-"git merges
-map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
-map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
 
 " This rewires n and N to do the highlighing...
 " Temporarily disabled
@@ -489,12 +427,6 @@ nmap <Leader>z /end%y$%A # p:nohlsearch
 
 " faster redraws
 " set lazyredraw
-
-" this machine config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 " move focus to correct place after the split
 set splitbelow
 set splitright
@@ -502,7 +434,7 @@ set splitright
 " fix search highlight color
 hi Search cterm=NONE ctermfg=0 ctermbg=153
 
-"ag
+" ag
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
@@ -515,24 +447,27 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-" bind \ (backward slash) to grep shortcut
+" custom commands {{{
+" bind \a (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " map ag to leader a
 nnoremap <Leader>a :Ag<SPACE>
+
 " json prettyfiy
 command! JSONPretty %!python -m json.tool
-
-" Geeknote markdown by default
+" ruby - convert hashes to 1.9+ syntax
+command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
+" retab to n spaces
+command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+" }}}
+" Geeknote markdown by default {{{2
 let g:GeeknoteFormat="markdown"
-
-" prosession configuration
+"}}}
+" {{{2 prosession configuration
 let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
-
-
-" vim-pad
+"}}}
+" vim-pad {{{2
 let g:pad#dir = '~/Dropbox/notes'
 let g:pad#maps#new = "<leader>1"
 let g:pad#search_backend = 'ag'
@@ -541,5 +476,13 @@ let g:pad#default_file_extension = '.md'
 let g:pad#window_height = 25
 " let g:pad#open_in_split = 0   " open in main window
 let g:pad#title_first_line = 1
-"
+"}}}
 
+
+
+" local machine config {{{
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+"}}}
+" vim: foldmethod=marker foldlevel=0
