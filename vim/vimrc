@@ -295,7 +295,7 @@ set completeopt=menuone,longest,preview
 set wildignore+=**/node_modules
 " let g:ctrlp_open_new_file = "r"
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' } "fuzzy matching with ctrlp+cmatcher"
-" let g:ctrlp_extensions = ['tag']
+let g:ctrlp_extensions = ['tag']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 nmap <C-S-p> :CtrlPMixed<CR>
 
