@@ -223,8 +223,6 @@ highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set list
 set showbreak=↪
 
-" fix search highlight color
-hi Search cterm=NONE ctermfg=0 ctermbg=153
 
 " move focus to correct place after the split
 set splitbelow " open splits below current pane
@@ -438,6 +436,11 @@ command! JSONPretty %!python -m json.tool
 command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
 " retab to n spaces
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+
+" fix search highlight color
+" This has to be placed after plugins.
+hi Search cterm=NONE ctermfg=0 ctermbg=153
+
 " }}}
 
 " local machine config {{{
