@@ -43,8 +43,10 @@ Plugin 'benmills/vimux'                 " interact with tmux
 Plugin 'jgdavey/vim-turbux'             " Turbo Ruby testing with tmux
 Plugin 'fmoralesc/vim-pad'              " Evernote replacement
 Plugin 'kien/ctrlp.vim'                 " full path fuzzy finder
+Plugin 'gregsexton/gitv'                " gitk for vim
 
 "}}}
+
 " {{{ DISABLED Plugins
 " Plugin 'cseelus/vim-colors-clearance'
 " Plugin 'MaxSt/FlatColor'
@@ -135,6 +137,7 @@ if has('autocmd')
     augroup END
 endif " }}}
 
+" VIM Settings {{{
 " syntax highlighting
 syntax enable
 
@@ -226,6 +229,8 @@ hi Search cterm=NONE ctermfg=0 ctermbg=153
 " move focus to correct place after the split
 set splitbelow " open splits below current pane
 set splitright " ... to the right of current pane
+
+" }}}
 
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
