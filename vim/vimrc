@@ -169,31 +169,13 @@ set ttimeoutlen=100
 set incsearch
 set ttyfast " faster redrawing"
 set spellfile=~/.vim/spell/en.utf-8.add
-" Use <C-L> to clear the highlighting of :set hlsearch.
-nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
-nnoremap <CR> :noh<CR><CR>
-
-
-" Replace all occurences of word under cursor
-nnoremap <Leader>z :%s/\<<C-r><C-w>\>//g<Left><Left>
-
-" check for vim settings in X lines of read file
-set modelines=5
-" autocompletion - disable dictionary based
-set complete-=k
-
-
-" set number
-" set relativenumber
+set modelines=5         " check for vim settings in X lines of read file
+set complete-=k         " autocompletion - disable dictionary based
 set hlsearch
 set ignorecase
 set smartcase
-
 set hidden " do not save history when leaving buffer
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
+set foldlevelstart=5
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -201,26 +183,8 @@ if has('mouse')
 endif
 
 " explorer
-let g:explVertical=1	" Split vertically
+let g:explVertical=1      " Split vertically
 let g:explSplitRight=1    " Put new window to the right of the explorer
-
-" space bar folding
-nnoremap  <silent>  <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-set foldlevelstart=5
-
-
-"switching between tabs
-
-:nmap Z :tabprev<CR>
-:nmap X :tabnext<CR>
-
-
-" Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 
 """"""""""""""""""""""""""""""
 " => Statusline
@@ -242,15 +206,75 @@ set nowritebackup
 set noswapfile
 set fileformats=unix,dos,mac
 
+" Searching in the menu
+set completeopt=menuone,longest,preview
+
+" normal mode mappings (general) {{{
+nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
+nnoremap <CR> :noh<CR><CR>
+
+" Replace all occurences of word under cursor
+nnoremap <Leader>z :%s/\<<C-r><C-w>\>//g<Left><Left>
+" space bar folding
+nnoremap  <silent>  <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
+
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <F12> :bn<CR>
 nnoremap <S-F12> :bp<CR>
 
-" Searching in the menu
-set completeopt=menuone,longest,preview
+" disable arrows
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" lookup in Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
+" buffer navigation
+" new buffer (empty)
+nmap <silent> <leader>t :enew<CR>
+" next buffer
+nmap <silent> <leader>n :bnext<CR>
+" previous buffer
+nmap <silent> <leader>p :bprevious<CR>
+"close the buffer
+nmap <silent> <leader>c :bp <BAR> bd #<CR>
+" show all open buffers in buffer explorer
+" nmap <silent> <leader>b :ls<CR>
+nmap <silent> <leader>b :CtrlPBuffer<cr>
+
+" ruby context endings - insert marks
+nmap <Leader>z /end%y$%A # p:nohlsearch
+
+" }}}
+
+" visual mode mappings {{{
+
+" indent / deindent after selecting the text with (⇧ v), (.) to repeat.
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+" comment / decomment & normal comment behavior
+vmap <C-m> gc
+" Text wrap simpler, then type the open tag or ',"
+vmap <C-w> S
+" Cut, Paste, Copy
+vmap <C-x> d
+vmap <C-v> p
+vmap <C-c> y
+
+" "}}}
 
 " Plugins config {{{
-"
 " CtrlP {{{
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=**/node_modules
@@ -260,7 +284,6 @@ let g:ctrlp_extensions = ['tag']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 nmap <C-S-p> :CtrlPMixed<CR>
 " }}}
-
 " Completion plugins (YCM/UltiSnip/Supertab) {{{
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
 " make YCM compatible with UltiSnips (using supertab)
@@ -280,7 +303,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
-
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -290,11 +312,10 @@ let g:airline_section_y = ''
 " display
 let g:airline_section_z = '%l,%c'
 " }}}
-
-" vim-markdown - no folding
+" {{{ vim-markdown - no folding
 let g:vim_markdown_folding_disabled=0
-
-"NERDTree - autoclose when last buffer {{{
+" }}}
+" NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
 " }}}
 " syntastic {{{
@@ -310,56 +331,13 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 map <silent> <Leader>s :SyntasticCheck<CR>
 " }}}
-
 " instant markdown {{{
 let g:instant_markdown_slow = 1
 " "}}}
-
-" end of plugin config }}}
-
-
-" mapping for dash
-nmap <silent> <leader>d <Plug>DashSearch
-
-" keymaps to help with transition back to vim
-" indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap <Tab> >
-vnoremap <S-Tab> <
-" comment / decomment & normal comment behavior
-vmap <C-m> gc
-" Disable tComment to escape some entities
+" tcomment {{{
 let g:tcomment#replacements_xml={}
-" Text wrap simpler, then type the open tag or ',"
-vmap <C-w> S
-" Cut, Paste, Copy
-vmap <C-x> d
-vmap <C-v> p
-vmap <C-c> y
-
-
-" set cursorline  "highlights current line
-
-" disable arrows
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" buffer navigation
-" new buffer (empty)
-nmap <silent> <leader>t :enew<CR>
-" next buffer
-nmap <silent> <leader>n :bnext<CR>
-" previous buffer
-nmap <silent> <leader>p :bprevious<CR>
-"close the buffer
-nmap <silent> <leader>c :bp <BAR> bd #<CR>
-" show all open buffers in buffer explorer
-" nmap <silent> <leader>b :ls<CR>
-nmap <silent> <leader>b :CtrlPBuffer<cr>
-
-
-" fugitive plugin configurations {{{
+" }}}
+" fugitive {{{
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit -v -q<CR>
@@ -379,12 +357,26 @@ nnoremap <Leader>gpl :Dispatch! git pull<CR>
 map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
 " }}}
+" Geeknote markdown by default {{{2
+let g:GeeknoteFormat="markdown"
+"}}}
+" {{{2 prosession configuration
+let g:prosession_dir = '~/.vim/session/'
+let g:prosession_tmux_title = 1
+"}}}
+" vim-pad {{{2
+let g:pad#dir = '~/Dropbox/notes'
+let g:pad#maps#new = "<leader>1"
+let g:pad#search_backend = 'ag'
+let g:pad#default_format = "markdown"
+let g:pad#default_file_extension = '.md'
+let g:pad#window_height = 25
+" let g:pad#open_in_split = 0   " open in main window
+let g:pad#title_first_line = 1
+"}}}
+" end of plugin config }}}
 
-" hardmode mappings
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
-
-" gui related stuff
+" gui related stuff {{{
 if has("gui_running")
    let s:uname = system("uname")
    if s:uname == "Darwin\n"
@@ -392,28 +384,12 @@ if has("gui_running")
       set guioptions-=r
    endif
 endif
+" }}}
 
 set clipboard=unnamed
 " Make 81st column stand out
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
-
-
-" This rewires n and N to do the highlighing...
-" Temporarily disabled
-"nnoremap <silent> n   n:call HLNext(0.4)<cr>
-"nnoremap <silent> N   N:call HLNext(0.4)<cr>
-highlight WhiteOnRed ctermbg=red ctermfg=white
-function! HLNext (blinktime)
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#\%('.@/.'\)'
-    let ring = matchadd('WhiteOnRed', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 "exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -422,8 +398,6 @@ highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set list
 set showbreak=↪
 
-"ruby context endings
-nmap <Leader>z /end%y$%A # p:nohlsearch
 
 " faster redraws
 " set lazyredraw
@@ -460,29 +434,11 @@ command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
 " retab to n spaces
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 " }}}
-" Geeknote markdown by default {{{2
-let g:GeeknoteFormat="markdown"
-"}}}
-" {{{2 prosession configuration
-let g:prosession_dir = '~/.vim/session/'
-let g:prosession_tmux_title = 1
-"}}}
-" vim-pad {{{2
-let g:pad#dir = '~/Dropbox/notes'
-let g:pad#maps#new = "<leader>1"
-let g:pad#search_backend = 'ag'
-let g:pad#default_format = "markdown"
-let g:pad#default_file_extension = '.md'
-let g:pad#window_height = 25
-" let g:pad#open_in_split = 0   " open in main window
-let g:pad#title_first_line = 1
-"}}}
-
-
 
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 "}}}
+
 " vim: foldmethod=marker foldlevel=0
