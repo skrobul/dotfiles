@@ -379,6 +379,10 @@ nnoremap <Leader>gpl :Dispatch! git pull<CR>
 " git merges
 map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
+" gitv
+nnoremap <Leader>gv :Gitv --all<CR>
+nnoremap <Leader>gV :Gitv! --all<CR>
+
 " }}}
 " Geeknote markdown by default {{{2
 let g:GeeknoteFormat="markdown"
