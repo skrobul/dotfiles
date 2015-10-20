@@ -70,7 +70,6 @@ Plugin 'kien/ctrlp.vim'                 " full path fuzzy finder
 call vundle#end()            " required
 " }}}
 
-
 " Autocmd {{{
 if has('autocmd')
     filetype plugin indent on
@@ -208,6 +207,25 @@ set fileformats=unix,dos,mac
 
 " Searching in the menu
 set completeopt=menuone,longest,preview
+
+set clipboard=unnamed
+" Make 81st column stand out
+highlight ColorColumn ctermbg=Brown ctermfg=Black
+call matchadd('ColorColumn', '\%81v', 100)
+
+"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
+"exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
+highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
+set list
+set showbreak=↪
+
+" fix search highlight color
+hi Search cterm=NONE ctermfg=0 ctermbg=153
+
+" move focus to correct place after the split
+set splitbelow " open splits below current pane
+set splitright " ... to the right of current pane
 
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
@@ -386,30 +404,7 @@ if has("gui_running")
 endif
 " }}}
 
-set clipboard=unnamed
-" Make 81st column stand out
-highlight ColorColumn ctermbg=Brown ctermfg=Black
-call matchadd('ColorColumn', '\%81v', 100)
-
-"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-"exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
-highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set list
-set showbreak=↪
-
-
-" faster redraws
-" set lazyredraw
-" move focus to correct place after the split
-set splitbelow
-set splitright
-
-" fix search highlight color
-hi Search cterm=NONE ctermfg=0 ctermbg=153
-
-" ag
-" The Silver Searcher
+" ag - The Silver Searcher {{{
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -420,6 +415,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+" }}}
 
 " custom commands {{{
 " bind \a (backward slash) to grep shortcut
