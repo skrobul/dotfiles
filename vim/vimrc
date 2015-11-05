@@ -136,15 +136,7 @@ if has('autocmd')
         autocmd BufRead,BufNewFile *.j2 set ft=jinja2
     augroup END
 
-    function RebaseActionToggle()
-        let line = getline(".")
-        let result = matchstr(line, "^\\a")
-        let transitions = {'p': 'squash', 's': 'edit', 'e': 'fixup', 'f': 'pick'}
-        execute "normal! ^cw" . transitions[result]
-        execute "normal! ^"
-    endfunction
-
-    autocmd FileType gitrebase noremap <CR> :call RebaseActionToggle()<CR>
+    autocmd FileType gitrebase noremap <CR> :Cycle<CR>
 endif " }}}
 
 " VIM Settings {{{
