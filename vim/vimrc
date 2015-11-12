@@ -5,45 +5,46 @@ set nocompatible              " be iMproved, required filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()"
 
-Plugin 'gmarik/Vundle.vim'              " vundle itself
-Plugin 'tpope/vim-fugitive'             " git wrapper
-Plugin 'SirVer/ultisnips'               " code snippets
-Plugin 'honza/vim-snippets'             " actual snippets
-Plugin 'ervandew/supertab'              " allows TAB to be used for auto completion
-Plugin 'scrooloose/syntastic'           " syntastic color checking
-Plugin 'Valloric/YouCompleteMe'         " auto completion engine
-Plugin 'tomtom/tcomment_vim'            " easy comments
-Plugin 'rstacruz/sparkup'               " parser for condensed HTML
-Plugin 'bling/vim-airline'              " nice statusline
-Plugin 'jwhitley/vim-matchit'           " better jumping with %
-Plugin 'endwise.vim'                    " wisely 'end' functions etc
-Plugin 'kchmck/vim-coffee-script'       " coffe script support
-Plugin 'godlygeek/tabular'              " dependency for vim-markdown
-Plugin 'plasticboy/vim-markdown'        " markdown syntax
-Plugin 'tpope/vim-repeat'               " extend support for repeating with .
+Plugin 'gmarik/Vundle.vim'               " vundle itself
+Plugin 'tpope/vim-fugitive'              " git wrapper
+Plugin 'SirVer/ultisnips'                " code snippets
+Plugin 'honza/vim-snippets'              " actual snippets
+Plugin 'ervandew/supertab'               " allows TAB to be used for auto completion
+Plugin 'scrooloose/syntastic'            " syntastic color checking
+Plugin 'Valloric/YouCompleteMe'          " auto completion engine
+Plugin 'tomtom/tcomment_vim'             " easy comments
+Plugin 'rstacruz/sparkup'                " parser for condensed HTML
+Plugin 'bling/vim-airline'               " nice statusline
+Plugin 'jwhitley/vim-matchit'            " better jumping with %
+Plugin 'endwise.vim'                     " wisely 'end' functions etc
+Plugin 'kchmck/vim-coffee-script'        " coffe script support
+Plugin 'godlygeek/tabular'               " dependency for vim-markdown
+Plugin 'plasticboy/vim-markdown'         " markdown syntax
+Plugin 'tpope/vim-repeat'                " extend support for repeating with .
 " " npm -g install instant-markdown-d
-" Plugin 'suan/vim-instant-markdown'    " instant markdown preview
-Plugin 'Raimondi/delimitMate'           " insert mode completion for quotes, etc
-Plugin 'tpope/vim-surround'             " quickly surround
-Plugin 'ecomba/vim-ruby-refactoring'    " ruby refactoring functions
-Plugin 'scrooloose/nerdtree'            " file manager
-Plugin 'thoughtbot/vim-rspec'           " rspec runner
-Plugin 'tpope/vim-dispatch'             " start stuff in background
-Plugin 'nelstrom/vim-textobj-rubyblock' " text object for selecting ruby blocks
-Plugin 'kana/vim-textobj-user'          " dependency for vim-textobj-rubyblock
-Plugin 'christoomey/vim-tmux-navigator' " seamless navigation between tmux panes and splits
-Plugin 'neilagabriel/vim-geeknote'      " evernote vim support
-Plugin 'chriskempson/base16-vim'        " base16 colors
-Plugin 'tpope/vim-unimpaired'           " set of movement mappings
-Plugin 'henrik/vim-qargs'               " adds :Qargs command
-Plugin 'dhruvasagar/vim-table-mode'     " helps with creating tables
-Plugin 'tpope/vim-rvm'                  " RVM support
-Plugin 'mrtazz/simplenote.vim'          " simplenote support
-Plugin 'benmills/vimux'                 " interact with tmux
-Plugin 'jgdavey/vim-turbux'             " Turbo Ruby testing with tmux
-Plugin 'fmoralesc/vim-pad'              " Evernote replacement
-Plugin 'kien/ctrlp.vim'                 " full path fuzzy finder
-Plugin 'gregsexton/gitv'                " gitk for vim
+" Plugin 'suan/vim-instant-markdown'     " instant markdown preview
+Plugin 'Raimondi/delimitMate'            " insert mode completion for quotes, etc
+Plugin 'tpope/vim-surround'              " quickly surround
+Plugin 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
+Plugin 'scrooloose/nerdtree'             " file manager
+Plugin 'thoughtbot/vim-rspec'            " rspec runner
+Plugin 'tpope/vim-dispatch'              " start stuff in background
+Plugin 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
+Plugin 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
+Plugin 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
+Plugin 'neilagabriel/vim-geeknote'       " evernote vim support
+Plugin 'chriskempson/base16-vim'         " base16 colors
+Plugin 'tpope/vim-unimpaired'            " set of movement mappings
+Plugin 'henrik/vim-qargs'                " adds :Qargs command
+Plugin 'dhruvasagar/vim-table-mode'      " helps with creating tables
+Plugin 'tpope/vim-rvm'                   " RVM support
+Plugin 'mrtazz/simplenote.vim'           " simplenote support
+Plugin 'benmills/vimux'                  " interact with tmux
+Plugin 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
+Plugin 'fmoralesc/vim-pad'               " Evernote replacement
+Plugin 'kien/ctrlp.vim'                  " full path fuzzy finder
+Plugin 'gregsexton/gitv'                 " gitk for vim
+Plugin 'nathanaelkane/vim-indent-guides' " visual indent
 
 "}}}
 
