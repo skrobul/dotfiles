@@ -45,7 +45,7 @@ Plugin 'fmoralesc/vim-pad'               " Evernote replacement
 Plugin 'kien/ctrlp.vim'                  " full path fuzzy finder
 Plugin 'gregsexton/gitv'                 " gitk for vim
 Plugin 'nathanaelkane/vim-indent-guides' " visual indent
-
+Plugin 'idanarye/vim-merginal'           " help with merges and rebase
 "}}}
 
 " {{{ DISABLED Plugins
