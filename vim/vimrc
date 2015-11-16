@@ -1,76 +1,96 @@
 set nocompatible              " be iMproved, required filetype off
 
-" {{{ VUNDLE - enabled plugins
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()"
+" {{{ vim-plug auto installation
+"
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+" }}}
 
-Plugin 'gmarik/Vundle.vim'               " vundle itself
-Plugin 'tpope/vim-fugitive'              " git wrapper
-Plugin 'SirVer/ultisnips'                " code snippets
-Plugin 'honza/vim-snippets'              " actual snippets
-Plugin 'ervandew/supertab'               " allows TAB to be used for auto completion
-Plugin 'scrooloose/syntastic'            " syntastic color checking
-Plugin 'Valloric/YouCompleteMe'          " auto completion engine
-Plugin 'tomtom/tcomment_vim'             " easy comments
-Plugin 'rstacruz/sparkup'                " parser for condensed HTML
-Plugin 'bling/vim-airline'               " nice statusline
-Plugin 'jwhitley/vim-matchit'            " better jumping with %
-Plugin 'endwise.vim'                     " wisely 'end' functions etc
-Plugin 'kchmck/vim-coffee-script'        " coffe script support
-Plugin 'godlygeek/tabular'               " dependency for vim-markdown
-Plugin 'plasticboy/vim-markdown'         " markdown syntax
-Plugin 'tpope/vim-repeat'                " extend support for repeating with .
+" {{{  Enabled plugins
+" set the runtime path to include Vundle and initialize
+
+call plug#begin('~/.vim/bundle')
+
+Plug 'gmarik/Vundle.vim'               " vundle itself
+Plug 'tpope/vim-fugitive'              " git wrapper
+Plug 'honza/vim-snippets'              " actual snippets
+Plug 'ervandew/supertab'               " allows TAB to be used for auto completion
+Plug 'scrooloose/syntastic', { 'on' : [] }       " syntastic color checking
+Plug 'Valloric/YouCompleteMe', { 'on' : [] }     " auto completion engine
+Plug 'SirVer/ultisnips', { 'on' : [] }           " code snippets
+Plug 'tomtom/tcomment_vim'             " easy comments
+Plug 'rstacruz/sparkup'                " parser for condensed HTML
+Plug 'bling/vim-airline'               " nice statusline
+Plug 'jwhitley/vim-matchit'            " better jumping with %
+Plug 'endwise.vim'                     " wisely 'end' functions etc
+Plug 'kchmck/vim-coffee-script'        " coffe script support
+Plug 'godlygeek/tabular'               " dependency for vim-markdown
+Plug 'plasticboy/vim-markdown'         " markdown syntax
+Plug 'tpope/vim-repeat'                " extend support for repeating with .
 " " npm -g install instant-markdown-d
-" Plugin 'suan/vim-instant-markdown'     " instant markdown preview
-Plugin 'Raimondi/delimitMate'            " insert mode completion for quotes, etc
-Plugin 'tpope/vim-surround'              " quickly surround
-Plugin 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
-Plugin 'scrooloose/nerdtree'             " file manager
-Plugin 'thoughtbot/vim-rspec'            " rspec runner
-Plugin 'tpope/vim-dispatch'              " start stuff in background
-Plugin 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
-Plugin 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
-Plugin 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
-Plugin 'neilagabriel/vim-geeknote'       " evernote vim support
-Plugin 'chriskempson/base16-vim'         " base16 colors
-Plugin 'tpope/vim-unimpaired'            " set of movement mappings
-Plugin 'henrik/vim-qargs'                " adds :Qargs command
-Plugin 'dhruvasagar/vim-table-mode'      " helps with creating tables
-Plugin 'tpope/vim-rvm'                   " RVM support
-Plugin 'mrtazz/simplenote.vim'           " simplenote support
-Plugin 'benmills/vimux'                  " interact with tmux
-Plugin 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
-Plugin 'fmoralesc/vim-pad'               " Evernote replacement
-Plugin 'kien/ctrlp.vim'                  " full path fuzzy finder
-Plugin 'gregsexton/gitv'                 " gitk for vim
-Plugin 'nathanaelkane/vim-indent-guides' " visual indent
-Plugin 'idanarye/vim-merginal'           " help with merges and rebase
+" Plug 'suan/vim-instant-markdown'     " instant markdown preview
+Plug 'Raimondi/delimitMate'            " insert mode completion for quotes, etc
+Plug 'tpope/vim-surround'              " quickly surround
+Plug 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
+Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
+Plug 'thoughtbot/vim-rspec'            " rspec runner
+Plug 'tpope/vim-dispatch'              " start stuff in background
+Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
+Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
+Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
+Plug 'neilagabriel/vim-geeknote'       " evernote vim support
+Plug 'chriskempson/base16-vim'         " base16 colors
+Plug 'tpope/vim-unimpaired'            " set of movement mappings
+Plug 'henrik/vim-qargs'                " adds :Qargs command
+Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
+Plug 'tpope/vim-rvm'                   " RVM support
+Plug 'mrtazz/simplenote.vim'           " simplenote support
+Plug 'benmills/vimux'                  " interact with tmux
+Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
+Plug 'fmoralesc/vim-pad'               " Evernote replacement
+Plug 'kien/ctrlp.vim'                  " full path fuzzy finder
+Plug 'gregsexton/gitv'                 " gitk for vim
+Plug 'nathanaelkane/vim-indent-guides' " visual indent
+Plug 'idanarye/vim-merginal'           " help with merges and rebase
+
+
+" lazy loading of some plugins
+"
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe', 'syntastic')
+                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
+augroup END
+
 "}}}
 
-" {{{ DISABLED Plugins
-" Plugin 'cseelus/vim-colors-clearance'
-" Plugin 'MaxSt/FlatColor'
-" Plugin 'blerins/flattown'
-" Plugin 'rizzatti/dash.vim' - disabled  - took way too long to startup
-" Plugin 'tpope/vim-bundler' " probably not needed (Jul 2015)
-" Plugin 'mattly/iterm-colors-pencil'
-" Plugin 'reedes/vim-colors-pencil'
-" Plugin 'tpope/vim-rails' "set of rails helpers
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'flazz/vim-colorschemes'  " all colorschemes
-" Plugin 'skrobul/grb256'          " my version of grb256
-" Plugin 'vim-scripts/CSApprox'
-" Plugin 'Lokaltog/vim-easymotion'      " easy motion
-" Plugin 'slim-template/vim-slim.git'   " slim templating support
-" Plugin 'git@github.com:Shougo/vimproc.vim.git'
-" Plugin 'Shougo/unite.vim'             " maybe ctrlp replacement
-" Plugin 'dbakker/vim-projectroot'      " necessarry to guess project root
-" Plugin 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
-" Plugin 'tpope/vim-obsession'          "session management
-" Plugin 'dhruvasagar/vim-prosession'   "switch between sessions
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" {{{ DISABLED Plugs
+" Plug 'cseelus/vim-colors-clearance'
+" Plug 'MaxSt/FlatColor'
+" Plug 'blerins/flattown'
+" Plug 'rizzatti/dash.vim' - disabled  - took way too long to startup
+" Plug 'tpope/vim-bundler' " probably not needed (Jul 2015)
+" Plug 'mattly/iterm-colors-pencil'
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'tpope/vim-rails' "set of rails helpers
+" Plug 'airblade/vim-gitgutter'
+" Plug 'flazz/vim-colorschemes'  " all colorschemes
+" Plug 'skrobul/grb256'          " my version of grb256
+" Plug 'vim-scripts/CSApprox'
+" Plug 'Lokaltog/vim-easymotion'      " easy motion
+" Plug 'slim-template/vim-slim.git'   " slim templating support
+" Plug 'git@github.com:Shougo/vimproc.vim.git'
+" Plug 'Shougo/unite.vim'             " maybe ctrlp replacement
+" Plug 'dbakker/vim-projectroot'      " necessarry to guess project root
+" Plug 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
+" Plug 'tpope/vim-obsession'          "session management
+" Plug 'dhruvasagar/vim-prosession'   "switch between sessions
+" All of your Plugs must be added before the following line
+
+call plug#end()
 " }}}
 
 " Autocmd {{{
