@@ -53,6 +53,7 @@ Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
 
 Plugin 'fmoralesc/vim-pad'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'epeli/slimux'
 
 
 
@@ -151,7 +152,7 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme gotham
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
@@ -501,7 +502,7 @@ set splitbelow
 set splitright
 
 " fix search highlight color
-hi Search cterm=NONE ctermfg=0 ctermbg=153
+" hi Search cterm=NONE ctermfg=0 ctermbg=153
 
 "ag
 " The Silver Searcher
