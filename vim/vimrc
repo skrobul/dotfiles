@@ -52,6 +52,7 @@ Plugin 'jgdavey/vim-turbux'           "Turbo Ruby testing with tmux
 " Plugin 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
 
 Plugin 'fmoralesc/vim-pad'
+Plugin 'whatyouhide/vim-gotham'
 
 
 
@@ -155,6 +156,7 @@ colorscheme base16-ocean
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
+set si
 "set backup             " Keep a backup file
 "set viminfo='20,\"50    " read/write a .viminfo file -- limit to only 50
 set history=50          " keep 50 lines of command history
