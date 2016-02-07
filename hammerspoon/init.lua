@@ -116,7 +116,8 @@ hs.hotkey.bind(mash.hyper, "e", hs.hints.windowHints)
 apps = {
     i = 'iTerm',
     b = 'Google Chrome',
-    v = 'VidyoDesktop'
+    v = 'VidyoDesktop',
+    o = 'MacVim'
 }
 
 for key, app in pairs(apps) do
