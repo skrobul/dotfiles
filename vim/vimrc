@@ -56,7 +56,7 @@ Plug 'nathanaelkane/vim-indent-guides' " visual indent
 Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'whatyouhide/vim-gotham'
-
+Plug 'epeli/slimux'                    " start interactive session
 
 " lazy loading of some plugins
 "
@@ -457,6 +457,12 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+" }}}
+
+" slimux - interactive sessions started directly from vim {{{
+map <Leader>l :SlimuxREPLSendLine<CR>
+vmap <Leader>l :SlimuxREPLSendSelection<CR>
+
 " }}}
 
 " custom commands {{{
