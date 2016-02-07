@@ -69,9 +69,8 @@ local function maximize()
 end
 
 local function stoken()
-    os.execute("~/bin/rsa")
-    hs.alert.show("Token pasted")
-    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+    local x = hs.execute("bash -l /Users/marek.skrobacki/bin/rsa -v")
+    hs.eventtap.keyStrokes(x)
 end
 
 -- top half
@@ -159,9 +158,9 @@ end
 
 local function update_mic_bar(vol)
     if vol > 5 then
-        micBar:setTitle('UNMUTED!')
+        micBar:setTitle('U!')
     else
-        micBar:setTitle('Muted')
+        micBar:setTitle('M')
     end
 end
 local function setMicVol(vol)

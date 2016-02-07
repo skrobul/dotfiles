@@ -71,7 +71,6 @@ ZSH_TMUX_AUTOQUIT=false
 
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
-source ~/.rvm/scripts/rvm
 
 # Key mappings
 bindkey '^[[1;9C' forward-word
