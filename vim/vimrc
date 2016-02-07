@@ -55,6 +55,8 @@ Plug 'gregsexton/gitv'                 " gitk for vim
 Plug 'nathanaelkane/vim-indent-guides' " visual indent
 Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
+Plug 'whatyouhide/vim-gotham'
+
 
 " lazy loading of some plugins
 "
@@ -167,7 +169,7 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme gotham
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
