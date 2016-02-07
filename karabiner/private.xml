@@ -1,5 +1,17 @@
 <?xml version="1.0"?>
 <root>
+
+ <devicevendordef>
+        <vendorname>CM_Storm</vendorname>
+        <vendorid>0x2516</vendorid>
+    </devicevendordef>
+
+    <deviceproductdef>
+        <productname>QuickFire_TK</productname>
+        <productid>0x0011</productid>
+    </deviceproductdef>
+
+
 <item>
     <name>Remap Caps Lock to Hyper</name>
     <appendix>OS X doesn't have a Hyper. This maps Left Control to Control + Shift + Option + Command.</appendix>
@@ -13,5 +25,30 @@
         KeyCode::COMMAND_L,
         ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
     </autogen>
+
 </item>
+
+
+
+    <item>
+        <name>Quickfire TK</name>
+        <identifier>private.quickfiretk</identifier>
+        <device_only>DeviceVendor::CM_Storm, DeviceProduct::QuickFire_TK</device_only>
+        <autogen>
+            __KeyToKey__ KeyCode::KEYPAD_CLEAR, KeyCode::VK_IOHIKEYBOARD_TOGGLE_NUMLOCK
+        </autogen>
+    </item>
+
+  <item>
+    <name>ctrl+f-keys to media keys</name>
+    <identifier>mediakeys</identifier>
+    <autogen>__KeyToKey__ KeyCode::F1, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::F7, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_MUSIC_PREV</autogen>
+    <autogen>__KeyToKey__ KeyCode::F5, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_MUSIC_PLAY</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_MUSIC_NEXT</autogen>
+    <autogen>__KeyToKey__ KeyCode::F10, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_VOLUME_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::F11, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONSUMERKEY_VOLUME_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L</autogen>
+  </item>
+
 </root>
