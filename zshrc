@@ -79,9 +79,9 @@ bindkey '^[[1;9D' backward-word
 export PATH="$HOME/.bin:$PATH"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
-# base16
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+# # base16
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 
 # Shared tmux widnow

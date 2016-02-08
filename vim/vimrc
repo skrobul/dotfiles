@@ -57,6 +57,8 @@ Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'mattn/gist-vim'                  " create GIST from vim
 Plug 'mattn/webapi-vim'                " create GIST from vim
+Plug 'whatyouhide/vim-gotham'          " gotham color scheme
+Plug 'epeli/slimux'                    " start interactive session
 
 " lazy loading of some plugins
 "
@@ -169,11 +171,12 @@ syntax enable
 " let g:rehash256 = 1
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme gotham
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
+set si
 "set backup             " Keep a backup file
 "set viminfo='20,\"50    " read/write a .viminfo file -- limit to only 50
 set history=50          " keep 50 lines of command history
@@ -460,6 +463,12 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+" }}}
+
+" slimux - interactive sessions started directly from vim {{{
+map <Leader>l :SlimuxREPLSendLine<CR>
+vmap <Leader>l :SlimuxREPLSendSelection<CR>
+
 " }}}
 
 " custom commands {{{
