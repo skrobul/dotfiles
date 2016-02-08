@@ -18,6 +18,7 @@ antigen bundles <<EOBUNDLES
      docker
      colored-man
      Tarrasch/zsh-bd
+     halfo/lambda-mod-zsh-theme
 EOBUNDLES
 
 # Theme
