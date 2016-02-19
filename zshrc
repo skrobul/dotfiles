@@ -102,3 +102,4 @@ alias nscli="~/devel/nscli/ns_cli.py"
 
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
+alias weather="curl -4 http://wttr.in/London"
