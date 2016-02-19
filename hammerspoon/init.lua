@@ -39,6 +39,26 @@ local function adjust(x, y, w, h)
     win:setFrame(f)
   end
 end
+local function twoscreen()
+    return function()
+        local win = hs.window.focusedWindow()
+        if not win then return end
+
+        local s = win:screen()
+        local screenpos_x, screenpos_y = s:position()
+        if screenpos_x == 0 then
+            hs.grid.pushWindowNextScreen()
+        end
+        local f = win:frame()
+        local max = win:screen():frame()
+
+        f.w = math.floor(max.w * 2)
+        f.h = math.floor(max.h) - 20
+        f.x = max.x
+        f.y = 20
+        win:setFrame(f)
+    end
+end
 
 local function adjustCenterTop(w, h)
   return function()
@@ -99,6 +119,10 @@ hs.hotkey.bind(mash.hyper, "4", adjust(0.5, 0.5, 0.5, 0.5))
 
 -- fullscreen
 hs.hotkey.bind(mash.hyper, "f", maximize)
+
+
+-- twoscreen
+hs.hotkey.bind(mash.hyper, "g", twoscreen())
 
 -- stoken
 hs.hotkey.bind(mash.hyper, "m", stoken)

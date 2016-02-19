@@ -55,7 +55,9 @@ Plug 'gregsexton/gitv'                 " gitk for vim
 Plug 'nathanaelkane/vim-indent-guides' " visual indent
 Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
-Plug 'whatyouhide/vim-gotham'
+Plug 'mattn/gist-vim'                  " create GIST from vim
+Plug 'mattn/webapi-vim'                " create GIST from vim
+Plug 'whatyouhide/vim-gotham'          " gotham color scheme
 Plug 'epeli/slimux'                    " start interactive session
 
 " lazy loading of some plugins
@@ -431,6 +433,10 @@ xmap ga <Plug>(EasyAlign)
 "
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+""}}}
+" vim-gist {{{2
+let g:gist_api_url = 'https://github.rackspace.com/api/v3'
+let g:gist_post_private = 1
 ""}}}
 
 
