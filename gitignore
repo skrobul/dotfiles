@@ -12,3 +12,17 @@ tmp/**/*
 !tmp/cache/.keep
 **/*.pyc
 *.pyc
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out

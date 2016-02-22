@@ -9,6 +9,7 @@
     default = current
 [core]
     editor = /usr/local/bin/vim
+	excludesfile = ~/.gitignore
 [alias]
     d  = diff
     dc = diff --cached
