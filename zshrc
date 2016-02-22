@@ -25,7 +25,7 @@ EOBUNDLES
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 # antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
-antigen theme simple
+antigen theme lambda
 
 # apply
 antigen apply
@@ -95,7 +95,7 @@ alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
 #   tmux set automatic-rename on > /dev/null 2>&1
 # }
 
-
+alias ag='ag --color-path "1;36"'
 
 # Netsec aliases
 alias ns-cli="~/devel/nscli/ns_cli.py"
@@ -103,3 +103,5 @@ alias nscli="~/devel/nscli/ns_cli.py"
 
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
