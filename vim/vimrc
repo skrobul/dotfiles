@@ -17,7 +17,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'honza/vim-snippets'              " actual snippets
 Plug 'ervandew/supertab'               " allows TAB to be used for auto completion
-Plug 'scrooloose/syntastic', { 'on' : [] }       " syntastic color checking
+Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Valloric/YouCompleteMe', { 'on' : [] }     " auto completion engine
 Plug 'SirVer/ultisnips', { 'on' : [] }           " code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
@@ -31,7 +31,7 @@ Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
 " " npm -g install instant-markdown-d
 " Plug 'suan/vim-instant-markdown'     " instant markdown preview
-Plug 'Raimondi/delimitMate'            " insert mode completion for quotes, etc
+Plug 'jiangmiao/auto-pairs'            " insert mode completion for quotes, etc
 Plug 'tpope/vim-surround'              " quickly surround
 Plug 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
@@ -45,8 +45,6 @@ Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
-Plug 'tpope/vim-rvm'                   " RVM support
-Plug 'mrtazz/simplenote.vim'           " simplenote support
 Plug 'benmills/vimux'                  " interact with tmux
 Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
 Plug 'fmoralesc/vim-pad'               " Evernote replacement
@@ -67,13 +65,15 @@ Plug 'justinmk/vim-sneak'
 "
 augroup load_us_ycm
   autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe', 'syntastic')
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
                      \| call youcompleteme#Enable() | autocmd! load_us_ycm
 augroup END
 
 "}}}
 
 " {{{ DISABLED Plugs
+" Plug 'tpope/vim-rvm'                   " RVM support
+" Plug 'mrtazz/simplenote.vim'           " simplenote support
 " Plug 'cseelus/vim-colors-clearance'
 " Plug 'MaxSt/FlatColor'
 " Plug 'blerins/flattown'
@@ -165,6 +165,11 @@ if has('autocmd')
     augroup END
 
     autocmd FileType gitrebase noremap <CR> :Cycle<CR>
+
+    " run neomake on every write
+    " autocmd! BufWritePost ruby,eruby Neomake
+    autocmd! BufWritePost * Neomake
+
 endif " }}}
 
 " VIM Settings {{{
@@ -370,18 +375,9 @@ let g:vim_markdown_folding_disabled=0
 " NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
 " }}}
-" syntastic {{{
-let g:syntastic_ruby_checkers = ['mri', 'rubocop'] ", 'rubylint', 'rubocop']
-let g:syntastic_ruby_rubocop_exec = '/Users/marek.skrobacki/.rvm//gems/ruby-2.2.2/wrappers/rubocop'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-" switch syntastic to passive mode by default. active mode can be switched on
-" with ctrl-w e. alternatively, single check can be triggered by LeaderS
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-map <silent> <Leader>s :SyntasticCheck<CR>
+" neomake {{{
+map <silent> <Leader>s :NeoMake<CR>
+
 " }}}
 " instant markdown {{{
 let g:instant_markdown_slow = 1
