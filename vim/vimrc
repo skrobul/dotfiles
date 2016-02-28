@@ -1,12 +1,12 @@
-set nocompatible              " be iMproved, required filetype off
-
 " {{{ vim-plug auto installation
 "
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+          autocmd VimEnter * PlugInstall
+      endif
+call plug#begin('~/.config/nvim/plugged')
+
 " }}}
 
 " {{{  Enabled plugins
@@ -16,10 +16,10 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'honza/vim-snippets'              " actual snippets
-Plug 'ervandew/supertab'               " allows TAB to be used for auto completion
 Plug 'benekastah/neomake'              " syntastic replacement
-Plug 'Valloric/YouCompleteMe', { 'on' : [] }     " auto completion engine
-Plug 'SirVer/ultisnips', { 'on' : [] }           " code snippets
+Plug 'Shougo/deoplete.nvim'             " completion
+Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
+Plug 'ervandew/supertab'
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
 Plug 'bling/vim-airline'               " nice statusline
@@ -33,6 +33,7 @@ Plug 'tpope/vim-repeat'                " extend support for repeating with .
 " Plug 'suan/vim-instant-markdown'     " instant markdown preview
 Plug 'jiangmiao/auto-pairs'            " insert mode completion for quotes, etc
 Plug 'tpope/vim-surround'              " quickly surround
+Plug 'vim-ruby/vim-ruby'               " needed because...neovim
 Plug 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
 Plug 'thoughtbot/vim-rspec'            " rspec runner
@@ -61,13 +62,6 @@ Plug 'rking/ag.vim'                    " vim-ag
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
-" lazy loading of some plugins
-"
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
-                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
-augroup END
 
 "}}}
 
@@ -83,7 +77,7 @@ augroup END
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'tpope/vim-rails' "set of rails helpers
 " Plug 'airblade/vim-gitgutter'
-" Plug 'flazz/vim-colorschemes'  " all colorschemes
+Plug 'flazz/vim-colorschemes'  " all colorschemes
 " Plug 'skrobul/grb256'          " my version of grb256
 " Plug 'vim-scripts/CSApprox'
 " Plug 'Lokaltog/vim-easymotion'      " easy motion
@@ -178,9 +172,9 @@ syntax enable
 
 " set bg=dark
 " let g:rehash256 = 1
-set t_Co=256
-let base16colorspace=256
-colorscheme gotham
+" set t_Co=256
+" let base16colorspace=256
+" colorscheme gotham
 
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
@@ -343,18 +337,7 @@ nmap <C-S-p> :CtrlPMixed<CR>
 " }}}
 " Completion plugins (YCM/UltiSnip/Supertab) {{{
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" YCM: pre-populate completion with language syntax
-let g:ycm_seed_identifiers_with_syntax = 1
-
-" YCM: seed identifier databse with your files
-" disable this if your tags are on network drive
-let g:ycm_collect_identifiers_from_tags_files = 1
-
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -439,6 +422,15 @@ let g:gist_api_url = 'https://github.rackspace.com/api/v3'
 let g:gist_post_private = 1
 ""}}}
 
+" deoplete {{{{
+let g:deoplete#enable_at_startup = 1
+" tab completion
+" inoremap <Leader><Tab> <Tab>
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+
+
+" }}}}
+
 
 " end of plugin config }}}
 
@@ -480,6 +472,10 @@ vmap <C-p> :FZF<CR>
 map <Leader>b :Buffers<CR>
 vmap <Leader>b :Buffers<CR>
 " }}}
+
+"{{{ colorscheme
+colorscheme molokai
+"}}}
 
 " custom commands {{{
 " bind \a (backward slash) to grep shortcut
