@@ -18,8 +18,8 @@ Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'honza/vim-snippets'              " actual snippets
 Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Shougo/deoplete.nvim'             " completion
-Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
 Plug 'bling/vim-airline'               " nice statusline
