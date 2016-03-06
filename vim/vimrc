@@ -178,9 +178,7 @@ set bg=dark
 let g:rehash256 = 1
 set t_Co=256
 " let base16colorspace=256
-" colorscheme gotham
 
-set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
 set si
@@ -203,7 +201,6 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 set incsearch
-set ttyfast " faster redrawing"
 set spellfile=~/.vim/spell/en.utf-8.add
 set modelines=5         " check for vim settings in X lines of read file
 set complete-=k         " autocompletion - disable dictionary based
@@ -352,7 +349,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " disable file format and encoding
-let g:airline_section_y = ''
+" let g:airline_section_y = ''
 " display
 let g:airline_section_z = '%l,%c'
 " }}}
@@ -480,7 +477,7 @@ vmap <Leader>b :Buffers<CR>
 " }}}
 
 "{{{ colorscheme
-colorscheme molokai
+colorscheme gotham
 "}}}
 
 " custom commands {{{
@@ -498,7 +495,7 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
 " fix search highlight color
 " This has to be placed after plugins.
-hi Search cterm=NONE ctermfg=0 ctermbg=153
+hi Search cterm=NONE ctermfg=0 ctermbg=24
 
 " create file with subdirectories if needed :E
 function! s:MKDir(...)
