@@ -22,7 +22,8 @@ Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'ervandew/supertab'
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
-Plug 'bling/vim-airline'               " nice statusline
+Plug 'vim-airline/vim-airline'         " nice statusline
+Plug 'vim-airline/vim-airline-themes'  " nice statusline - themes
 Plug 'jwhitley/vim-matchit'            " better jumping with %
 Plug 'endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
@@ -42,7 +43,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
 Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
 Plug 'neilagabriel/vim-geeknote'       " evernote vim support
-Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
@@ -55,13 +55,17 @@ Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'mattn/gist-vim'                  " create GIST from vim
 Plug 'mattn/webapi-vim'                " create GIST from vim
-Plug 'whatyouhide/vim-gotham'          " gotham color scheme
 Plug 'epeli/slimux'                    " start interactive session
 Plug 'rking/ag.vim'                    " vim-ag
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
+
+" color packages
+Plug 'chriskempson/base16-vim'         " base16 colors
+Plug 'mhinz/vim-janah'
+Plug 'whatyouhide/vim-gotham'          " gotham color scheme
 
 "}}}
 
@@ -170,9 +174,9 @@ endif " }}}
 " syntax highlighting
 syntax enable
 
-" set bg=dark
-" let g:rehash256 = 1
-" set t_Co=256
+set bg=dark
+let g:rehash256 = 1
+set t_Co=256
 " let base16colorspace=256
 " colorscheme gotham
 
@@ -230,7 +234,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 set autoread " reads the file when it has been changed outside vim
-set encoding=utf-8
+" set encoding=utf-8
 
 " files related
 set nobackup
@@ -497,7 +501,7 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 hi Search cterm=NONE ctermfg=0 ctermbg=153
 
 " create file with subdirectories if needed :E
-function s:MKDir(...)
+function! s:MKDir(...)
     if         !a:0
            \|| stridx('`+', a:1[0])!=-1
            \|| a:1=~#'\v\\@<![ *?[%#]'
@@ -508,7 +512,7 @@ function s:MKDir(...)
     endif
     return mkdir(fnamemodify(a:1, ':p:h'), 'p')
 endfunction
-command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
+command! -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
 " }}}
 
 " local machine config {{{
