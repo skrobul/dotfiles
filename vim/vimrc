@@ -427,6 +427,8 @@ let g:deoplete#enable_at_startup = 1
 " tab completion
 " inoremap <Leader><Tab> <Tab>
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 
 " }}}}
