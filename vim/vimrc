@@ -147,14 +147,16 @@ if has('autocmd')
     " enable spelling and autowrap on pull requests
     autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown
 
-    " Nerd tree auto commands
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    " open NERDtree when no files are specified
-    " autocmd StdinReadPre * let s:std_in=1
-    " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    " hardmode plugin :)
-    " enable hard mode by default
-    " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+    " jump to the last cursor position
+    augroup resCur
+      autocmd!
+      autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
+
+    augroup END
+
 
     augroup ansible
         autocmd BufRead,BufNewFile */host_vars/* set ft=yaml
@@ -183,7 +185,7 @@ set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
 set si
 "set backup             " Keep a backup file
-"set viminfo='20,\"50    " read/write a .viminfo file -- limit to only 50
+"set viminfo='20,\"50   " read/write a .viminfo file -- limit to only 50
 set history=50          " keep 50 lines of command history
 set ts=4                " 4 space wide tabs
 set sw=4
@@ -209,6 +211,7 @@ set ignorecase
 set smartcase
 set hidden " do not save history when leaving buffer
 set foldlevelstart=5
+set formatoptions=tcrqnj
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -511,6 +514,30 @@ function! s:MKDir(...)
     return mkdir(fnamemodify(a:1, ':p:h'), 'p')
 endfunction
 command! -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
+
+" Useful trick when I've forgotten to `sudo' before editing a file:
+cmap w!! w !sudo tee % >/dev/null
+
+
+" }}}
+
+" custom bindings {{{
+
+" Map `kj` to ESC
+imap kj <ESC>
+
+" automatically insert a \v before any search string, so search uses normal regexes
+nnoremap / /\v
+vnoremap / /\v
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" Easy reloading of vimrc
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+
 " }}}
 
 " local machine config {{{
