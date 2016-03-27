@@ -481,7 +481,7 @@ vmap <Leader>b :Buffers<CR>
 " }}}
 
 "{{{ colorscheme
-colorscheme gotham
+colorscheme base16-ocean
 "}}}
 
 " custom commands {{{
