@@ -18,14 +18,13 @@ antigen bundles <<EOBUNDLES
      docker
      colored-man
      Tarrasch/zsh-bd
-     halfo/lambda-mod-zsh-theme
 EOBUNDLES
 
 # Theme
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 # antigen theme skrobul/oh-my-zsh-solarized-powerline-theme solarized-powerline
-antigen theme lambda
+antigen theme pure
 
 # apply
 antigen apply
@@ -81,8 +80,8 @@ export PATH="$HOME/.bin:$PATH"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 # # base16
-# BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 
 # Shared tmux widnow
