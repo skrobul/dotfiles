@@ -357,7 +357,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_section_z = '%l,%c'
 " }}}
 " {{{ vim-markdown - no folding
-let g:vim_markdown_folding_disabled=0
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_new_list_item_indent = 2
 " }}}
 " NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
