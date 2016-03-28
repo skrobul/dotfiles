@@ -65,7 +65,6 @@ Plug 'justinmk/vim-sneak'
 " color packages
 Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'mhinz/vim-janah'
-Plug 'whatyouhide/vim-gotham'          " gotham color scheme
 
 "}}}
 
@@ -177,9 +176,8 @@ endif " }}}
 syntax enable
 
 set bg=dark
-let g:rehash256 = 1
 set t_Co=256
-" let base16colorspace=256
+let base16colorspace=256
 
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
@@ -348,6 +346,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
+let g:airline_theme = 'base16_ocean'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -481,6 +480,7 @@ vmap <Leader>b :Buffers<CR>
 " }}}
 
 "{{{ colorscheme
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-ocean
 "}}}
 
