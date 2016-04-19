@@ -173,6 +173,7 @@ font-sauce-code-powerline
 quicklook-csv
 quicklook-json
 qlmarkdown
+caskroom/fonts/font-hack
 )
 #karabiner - needs 10.9, disabling for now
 CASKS_TO_LINK=(alfred)
