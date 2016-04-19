@@ -347,7 +347,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'monochrome'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -491,7 +491,7 @@ vmap <Leader>b :Buffers<CR>
 
 "{{{ colorscheme
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-ocean
+colorscheme mustang
 "}}}
 
 " custom commands {{{
