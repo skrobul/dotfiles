@@ -42,7 +42,7 @@ Plug 'tpope/vim-dispatch'              " start stuff in background
 Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
 Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
-Plug 'neilagabriel/vim-geeknote'       " evernote vim support
+" Plug 'neilagabriel/vim-geeknote'       " evernote vim support
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
@@ -61,10 +61,12 @@ Plug 'rking/ag.vim'                    " vim-ag
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
-
+Plug 'slim-template/vim-slim'   " slim templating support
+Plug 'amiorin/vim-project'
 " color packages
 Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'mhinz/vim-janah'
+Plug 'flazz/vim-colorschemes'  " all colorschemes
 
 "}}}
 
@@ -80,11 +82,10 @@ Plug 'mhinz/vim-janah'
 " Plug 'reedes/vim-colors-pencil'
 " Plug 'tpope/vim-rails' "set of rails helpers
 " Plug 'airblade/vim-gitgutter'
-Plug 'flazz/vim-colorschemes'  " all colorschemes
 " Plug 'skrobul/grb256'          " my version of grb256
 " Plug 'vim-scripts/CSApprox'
 " Plug 'Lokaltog/vim-easymotion'      " easy motion
-" Plug 'slim-template/vim-slim.git'   " slim templating support
+
 " Plug 'git@github.com:Shougo/vimproc.vim.git'
 " Plug 'Shougo/unite.vim'             " maybe ctrlp replacement
 " Plug 'dbakker/vim-projectroot'      " necessarry to guess project root
@@ -176,8 +177,8 @@ endif " }}}
 syntax enable
 
 set bg=dark
-set t_Co=256
-let base16colorspace=256
+" set t_Co=256
+" let base16colorspace=256
 
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
@@ -346,7 +347,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'monochrome'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -472,6 +473,14 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 
 " }}}
 
+" {{{ tabular
+if exists(':Tabularize')
+    AddTabularPattern first_comma /^[^,]*\zs,/r0c0l0
+    AddTabularPattern first_colon /^[^:]*\zs:/r1c0l0
+    AddTabularPattern rocket /^[^=>]*\zs=>/l1
+end
+" }}}
+
 " fzf - fuzzy search {{{
 map <C-p> :FZF<CR>
 vmap <C-p> :FZF<CR>
@@ -539,6 +548,14 @@ nmap Q gqap
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 
+" }}}
+
+" projects {{{
+let g:project_use_nerdtree = 0
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/devel")
+Project 'scratch'
+Project '~/dotfiles'
 " }}}
 
 " local machine config {{{
