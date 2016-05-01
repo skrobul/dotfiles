@@ -216,6 +216,7 @@ brew_install_or_upgrade pow
 brew link pow
 # brew_install_or_upgrade figlet
 brew_install_or_upgrade tree
+brew_install_or_upgrade taskwarrior
 
 # bugfixes
 brew_install_or_upgrade openssl
