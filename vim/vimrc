@@ -127,7 +127,7 @@ if has('autocmd')
     " remove trailing whitespaces
     autocmd BufWritePre * :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
-    autocmd FileType markdown set tw=80 wrap
+    autocmd FileType markdown set tw=80 conceallevel=2 wrap
     autocmd FileType markdown setlocal spell
     autocmd FileType markdown set complete+=k
     " markdown
@@ -349,7 +349,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " vim-airline {{{
 let g:airline_theme = 'monochrome'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " disable file format and encoding
@@ -407,7 +407,7 @@ let g:prosession_tmux_title = 1
 "}}}
 " vim-pad {{{2
 let g:pad#dir = '~/Dropbox/notes'
-let g:pad#maps#new = "<leader>1"
+let g:pad#maps#new = "<meta>n"
 let g:pad#search_backend = 'ag'
 let g:pad#default_format = "markdown"
 let g:pad#default_file_extension = '.md'
@@ -546,6 +546,10 @@ nmap Q gqap
 
 " Easy reloading of vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+
+nmap <silent> <F1> :Pad ls<CR>
+nmap <silent> <F2> :Pad new<CR>
 
 
 " }}}
