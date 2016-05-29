@@ -490,8 +490,8 @@ vmap <Leader>b :Buffers<CR>
 " }}}
 
 "{{{ colorscheme
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme mustang
+let g:hybrid_reduced_contrast = 1
+colorscheme hybrid
 "}}}
 
 " custom commands {{{
