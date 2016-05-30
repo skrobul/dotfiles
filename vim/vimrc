@@ -212,6 +212,7 @@ set smartcase
 set hidden " do not save history when leaving buffer
 set foldlevelstart=5
 set formatoptions=tcrqnj
+set diffopt=horizontal,filler
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -552,6 +553,10 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 nmap <silent> <F1> :Pad ls<CR>
 nmap <silent> <F2> :Pad new<CR>
+
+" Switch to alternative file quickly
+nnoremap <Tab><Tab> <C-^>
+
 
 
 " }}}
