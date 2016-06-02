@@ -107,3 +107,5 @@ PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
 export FZF_DEFAULT_COMMAND='ag -g ""'
 alias weather="curl -4 http://wttr.in/London"
 alias t="task"
+
+RPROMPT=`hostname``git_dirty`%F{241}$vcs_info_msg_0_%f `git_arrows``suspended_jobs`
