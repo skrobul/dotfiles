@@ -66,7 +66,7 @@ Plug 'amiorin/vim-project'
 " color packages
 Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'mhinz/vim-janah'
-Plug 'flazz/vim-colorschemes'  " all colorschemes
+" Plug 'flazz/vim-colorschemes'  " all colorschemes
 Plug 'w0ng/vim-hybrid'   "vim-hybrid
 
 "}}}
