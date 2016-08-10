@@ -139,7 +139,7 @@ hs.hotkey.bind(mash.hyper, "e", hs.hints.windowHints)
 -- application specific shortcuts
 apps = {
     i = 'iTerm',
-    b = 'Google Chrome',
+    b = 'Firefox',
     v = 'VidyoDesktop',
     o = 'MacVim'
 }
