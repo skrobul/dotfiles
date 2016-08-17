@@ -68,7 +68,7 @@ Plug 'chriskempson/base16-vim'         " base16 colors
 Plug 'mhinz/vim-janah'
 " Plug 'flazz/vim-colorschemes'  " all colorschemes
 Plug 'w0ng/vim-hybrid'   "vim-hybrid
-
+Plug 'vimoutliner/vimoutliner'
 "}}}
 
 " {{{ DISABLED Plugs
@@ -411,8 +411,8 @@ let g:prosession_tmux_title = 1
 let g:pad#dir = '~/Dropbox/notes'
 let g:pad#maps#new = "<meta>n"
 let g:pad#search_backend = 'ag'
-let g:pad#default_format = "markdown"
-let g:pad#default_file_extension = '.md'
+let g:pad#default_format = "votl"
+let g:pad#default_file_extension = '.otl'
 let g:pad#window_height = 25
 " let g:pad#open_in_split = 0   " open in main window
 let g:pad#title_first_line = 1
@@ -591,6 +591,12 @@ set rtp+=~/.vim/bundle/vim-project/
 call project#rc("~/devel")
 Project 'scratch'
 Project '~/dotfiles'
+" }}}
+
+
+" vim-outliner {{{
+autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
+
 " }}}
 
 " local machine config {{{
