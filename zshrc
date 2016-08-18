@@ -1,5 +1,5 @@
 bindkey -e
-
+ZGEN_AUTOLOAD_COMPINIT=false
 #########################
 # Zgen plugin manager
 #########################
@@ -8,9 +8,9 @@ source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
   # specify plugins here
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/gitfast
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
+  zgen oh-my-zsh plugins/gitfast
   zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/tmux
   zgen oh-my-zsh plugins/docker
