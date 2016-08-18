@@ -210,7 +210,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set hidden " do not save history when leaving buffer
-set foldlevelstart=5
+set foldlevelstart=2
 set formatoptions=tcrqnj
 set diffopt=horizontal,filler
 
@@ -361,8 +361,10 @@ let g:airline_section_z = '%l,%c'
 " }}}
 " {{{ vim-markdown - no folding
 " let g:vim_markdown_folding_disabled=0
+let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_new_list_item_indent = 2
 " }}}
+
 " NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
 " }}}
@@ -597,7 +599,9 @@ Project '~/dotfiles'
 
 
 " vim-outliner {{{
-autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
+" autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
+autocmd! FileType votl inoremap <C-n> <Esc>:call UltiSnips#ExpandSnippetOrJump()<CR>
+autocmd! FileType votl set nolist
 
 " }}}
 
