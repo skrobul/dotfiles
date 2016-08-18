@@ -8,24 +8,21 @@ source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
   # specify plugins here
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/gitfast
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
-  zgen oh-my-zsh plugins/rails
-  zgen oh-my-zsh plugins/ruby
   zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/tmux
   zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/colored-man
+  zgen oh-my-zsh plugins/colored-man-pages
+
+  # Theme
+  zgen oh-my-zsh themes/arrow
+
   # generate the init script from plugins above
   zgen save
 fi
 
-
-# Theme and prompt
-ZSH_POWERLINE_SHOW_IP=false
-ZSH_POWERLINE_SHOW_USER=false
-. ~/dotfiles/zsh/prompt.zsh
 
 #########################
 # visual command edit
