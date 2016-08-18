@@ -29,6 +29,9 @@ ZSH_POWERLINE_SHOW_USER=false
 # apply
 antigen apply
 autoload -Uz compinit
+export VISUAL=vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 # core configuration
 CASE_SENSITIVE="true"
 
