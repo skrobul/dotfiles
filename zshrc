@@ -1,6 +1,4 @@
-zmodload zsh/zprof
 bindkey -e
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 source ~/dotfiles/antigen/antigen.zsh
 
@@ -35,12 +33,6 @@ bindkey -M vicmd v edit-command-line
 # core configuration
 CASE_SENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
 # Uncomment the following line to disable colors in ls.
 DISABLE_LS_COLORS="false"
 
@@ -56,12 +48,8 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
 
 #
 # Plugins configuration
@@ -79,24 +67,12 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-export PATH="$HOME/.bin:$PATH"
+# RVM
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-
-# # base16
-# BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
+export PATH="$HOME/.bin:$PATH:$HOME/.rvm/bin"
 
 # Shared tmux widnow
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
-
-# ssh() {
-#   tmux rename-window "$*"
-#   command ssh "$@"
-#   tmux rename-window "zsh (exited ssh)"
-#   tmux set automatic-rename on > /dev/null 2>&1
-# }
-
 alias ag='ag --color-path "1;36"'
 
 # Netsec aliases
