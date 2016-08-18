@@ -1,32 +1,35 @@
 bindkey -e
 
-source ~/dotfiles/antigen/antigen.zsh
+#########################
+# Zgen plugin manager
+#########################
+source "${HOME}/.zgen/zgen.zsh"
+# if the init scipt doesn't exist
+if ! zgen saved; then
+  # specify plugins here
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions src
+  zgen oh-my-zsh plugins/rails
+  zgen oh-my-zsh plugins/ruby
+  zgen oh-my-zsh plugins/rvm
+  zgen oh-my-zsh plugins/tmux
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/colored-man
+  # generate the init script from plugins above
+  zgen save
+fi
 
-#antigen config
-antigen use oh-my-zsh
 
-# List of bundles to install
-antigen bundles <<EOBUNDLES
-     git
-     zsh-users/zsh-syntax-highlighting
-     zsh-users/zsh-completions src
-     rails
-     ruby
-     rvm
-     tmux
-     docker
-     colored-man
-EOBUNDLES
-
-# Theme
+# Theme and prompt
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SHOW_USER=false
 . ~/dotfiles/zsh/prompt.zsh
 
-
-# apply
-antigen apply
-autoload -Uz compinit
+#########################
+# visual command edit
+#########################
 export VISUAL=vim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
