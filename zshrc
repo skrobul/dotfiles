@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 bindkey -e
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
@@ -17,7 +18,6 @@ antigen bundles <<EOBUNDLES
      tmux
      docker
      colored-man
-     Tarrasch/zsh-bd
 EOBUNDLES
 
 # Theme
