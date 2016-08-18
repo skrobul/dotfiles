@@ -17,7 +17,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/colored-man-pages
 
   # Theme
-  zgen oh-my-zsh themes/arrow
+  zgen oh-my-zsh themes/af-magic
 
   # generate the init script from plugins above
   zgen save
