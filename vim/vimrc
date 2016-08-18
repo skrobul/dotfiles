@@ -511,6 +511,8 @@ command! JSONPretty %!python -m json.tool
 command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
 " retab to n spaces
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+" load all feature branch commits into buffer
+command! PRlog Glog master..HEAD --reverse --
 
 " fix search highlight color
 " This has to be placed after plugins.
