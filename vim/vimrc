@@ -210,7 +210,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set hidden " do not save history when leaving buffer
-set foldlevelstart=2
+set foldlevelstart=1
 set formatoptions=tcrqnj
 set diffopt=horizontal,filler
 
@@ -564,25 +564,15 @@ nmap <silent> <F2> :Pad new<CR>
 nnoremap <Tab><Tab> <C-^>
 
 " neovim's terminal
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+nnoremap <C-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-
-" neovim's terminal
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
 
 autocmd BufEnter term://* startinsert
 
@@ -601,7 +591,7 @@ Project '~/dotfiles'
 " vim-outliner {{{
 " autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
 autocmd! FileType votl inoremap <C-n> <Esc>:call UltiSnips#ExpandSnippetOrJump()<CR>
-autocmd! FileType votl set nolist
+autocmd! FileType votl set nolist foldlevel=1
 
 " }}}
 
