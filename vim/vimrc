@@ -61,14 +61,17 @@ Plug 'rking/ag.vim'                    " vim-ag
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'slim-template/vim-slim'   " slim templating support
+Plug 'slim-template/vim-slim'           " slim templating support
 Plug 'amiorin/vim-project'
 " color packages
-Plug 'chriskempson/base16-vim'         " base16 colors
+Plug 'chriskempson/base16-vim'          " base16 colors
 Plug 'mhinz/vim-janah'
-" Plug 'flazz/vim-colorschemes'  " all colorschemes
-Plug 'w0ng/vim-hybrid'   "vim-hybrid
-Plug 'vimoutliner/vimoutliner'
+" Plug 'flazz/vim-colorschemes'         " all colorschemes
+Plug 'w0ng/vim-hybrid'                  " vim-hybrid
+Plug 'vimoutliner/vimoutliner'          " vim outliner
+Plug 'leafgarland/typescript-vim'       " Typescript syntax
+Plug 'Shougo/vimproc.vim'               " Dependency for tsuquyomi
+Plug 'Quramy/tsuquyomi'                 " typescript completion
 "}}}
 
 " {{{ DISABLED Plugs
