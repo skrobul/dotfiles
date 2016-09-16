@@ -499,7 +499,7 @@ vmap <Leader>b :Buffers<CR>
 
 "{{{ colorscheme
 let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
+let g:hybrid_reduced_contrast = 0
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 colorscheme hybrid
 "}}}
@@ -588,6 +588,10 @@ set rtp+=~/.vim/bundle/vim-project/
 call project#rc("~/devel")
 Project 'scratch'
 Project '~/dotfiles'
+Project '~/devel/unipede'
+Project '~/devel/bbauth'
+Project '~/devel/config-gen'
+Project '~/devel/salt-secrets'
 " }}}
 
 
