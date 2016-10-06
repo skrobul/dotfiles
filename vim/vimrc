@@ -72,6 +72,7 @@ Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
 Plug 'Shougo/vimproc.vim'               " Dependency for tsuquyomi
 Plug 'Quramy/tsuquyomi'                 " typescript completion
+Plug 'KabbAmine/vCoolor.vim'            " color picker
 "}}}
 
 " {{{ DISABLED Plugs
