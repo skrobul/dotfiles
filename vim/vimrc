@@ -66,11 +66,10 @@ Plug 'amiorin/vim-project'
 " color packages
 Plug 'chriskempson/base16-vim'          " base16 colors
 Plug 'mhinz/vim-janah'
-" Plug 'flazz/vim-colorschemes'         " all colorschemes
 Plug 'w0ng/vim-hybrid'                  " vim-hybrid
 Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
-Plug 'Shougo/vimproc.vim'               " Dependency for tsuquyomi
+Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
 Plug 'Quramy/tsuquyomi'                 " typescript completion
 Plug 'KabbAmine/vCoolor.vim'            " color picker
 "}}}
@@ -584,15 +583,17 @@ autocmd BufEnter term://* startinsert
 " }}}
 
 " projects {{{
-let g:project_use_nerdtree = 0
+let g:project_use_nerdtree = 1
 set rtp+=~/.vim/bundle/vim-project/
 call project#rc("~/devel")
 Project 'scratch'
 Project '~/dotfiles'
-Project '~/devel/unipede'
-Project '~/devel/bbauth'
-Project '~/devel/config-gen'
-Project '~/devel/salt-secrets'
+Project 'unipede'
+Project 'config-gen'
+Project 'salt-secrets'
+Project 'salt-marek'
+Project 'salt'
+Project 'bbauth'
 " }}}
 
 " vim-outliner {{{
