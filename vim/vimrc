@@ -603,6 +603,12 @@ autocmd! FileType votl set nolist foldlevel=1
 
 " }}}
 
+" tququyomi {{{
+" disable neomake makers for typescript to avoid duplication
+let g:neomake_typescript_enabled_makers = []
+
+" }}}
+
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
