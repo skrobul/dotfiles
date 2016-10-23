@@ -69,7 +69,7 @@ bindkey '^[[1;9D' backward-word
 
 # RVM
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-export PATH="$HOME/.bin:$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:node_modules/.bin:$HOME/.bin:$HOME/bin"
 
 # Shared tmux widnow
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
