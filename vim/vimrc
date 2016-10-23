@@ -129,7 +129,7 @@ if has('autocmd')
     autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
     autocmd FileType coffee set sw=2 ts=2 tw=80
     " remove trailing whitespaces
-    autocmd BufWritePre * :%s/\s\+$//e
+    autocmd BufWritePre ruby,eruby,markdown,yaml,yml,javascript,python :%s/\s\+$//e
     autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     autocmd FileType markdown set tw=80 conceallevel=2 wrap
     autocmd FileType markdown setlocal spell
@@ -215,7 +215,7 @@ set smartcase
 set hidden " do not save history when leaving buffer
 set foldlevelstart=1
 set formatoptions=tcrqnj
-set diffopt=horizontal,filler
+set diffopt=filler
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -398,8 +398,8 @@ nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gpl :Gpull<CR>
 " git merges
-map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
-map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
+map <silent> <leader>2 :diffget LOCAL<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget REMOTE<CR> :diffupdate<CR>
 " gitv
 nnoremap <Leader>gv :Gitv --all<CR>
 nnoremap <Leader>gV :Gitv! --all<CR>
@@ -603,9 +603,10 @@ autocmd! FileType votl set nolist foldlevel=1
 
 " }}}
 
-" tququyomi {{{
+" tsuquyomi {{{
 " disable neomake makers for typescript to avoid duplication
 let g:neomake_typescript_enabled_makers = []
+let g:tsuquyomi_disable_default_mappings = 1
 
 " }}}
 

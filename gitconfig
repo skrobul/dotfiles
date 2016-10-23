@@ -36,13 +36,15 @@
     template = ~/.gitmessage
 [hub]
     host = github.rackspace.com
-[merge]
-        tool = vim
-[mergetool "vim"]
-        cmd = vim \"+Gvdiff\" $MERGED
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd b' -c 'wincmd J'
 [github]
     user = skrobul
-[mergetool]
-    keepBackup = false
+
 [url "https://"]
 	insteadOf = git://
+[gui]
+	recentrepo = /Users/skrobul/devel/unipede
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
