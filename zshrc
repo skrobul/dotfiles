@@ -11,7 +11,6 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
   zgen oh-my-zsh plugins/gitfast
-  zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/tmux
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/colored-man-pages
@@ -67,9 +66,7 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-# RVM
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-export PATH="$PATH:$HOME/.rvm/bin:node_modules/.bin:$HOME/.bin:$HOME/bin"
+export PATH="$PATH:node_modules/.bin:$HOME/.bin:$HOME/bin"
 
 # Shared tmux widnow
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
