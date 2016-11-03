@@ -291,10 +291,10 @@ noremap <Right> <Nop>
 map Q gq
 
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" map <C-j> <C-W>j
+" map <C-k> <C-W>k
+" map <C-h> <C-W>h
+" map <C-l> <C-W>l
 
 " lookup in Dash
 nmap <silent> <leader>d <Plug>DashSearch
@@ -442,10 +442,11 @@ let g:deoplete#file#enable_buffer_path = 1
 " inoremap <Leader><Tab> <Tab>
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-
-
 " }}}}
+
+" vim-ruby {{{
+let g:ruby_indent_block_style = 'do'
+" }}}
 
 
 " end of plugin config }}}
@@ -571,7 +572,7 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
-nnoremap <C-h> <C-w>h
+nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
@@ -607,7 +608,13 @@ autocmd! FileType votl set nolist foldlevel=1
 " disable neomake makers for typescript to avoid duplication
 let g:neomake_typescript_enabled_makers = []
 let g:tsuquyomi_disable_default_mappings = 1
+" }}}
 
+" tmux-navigate {{{
+" temp fix for https://github.com/neovim/neovim/issues/2048
+if has('nvim')
+    nmap <silent> <BS> :TmuxNavigateLeft<CR>
+endif
 " }}}
 
 " local machine config {{{
