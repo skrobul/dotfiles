@@ -215,7 +215,7 @@ set hidden " do not save history when leaving buffer
 set foldlevelstart=1
 set formatoptions=tcrqnj
 set diffopt=filler
-
+set lazyredraw
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
@@ -402,6 +402,7 @@ map <silent> <leader>3 :diffget REMOTE<CR> :diffupdate<CR>
 " gitv
 nnoremap <Leader>gv :Gitv --all<CR>
 nnoremap <Leader>gV :Gitv! --all<CR>
+vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
 " Geeknote markdown by default {{{2
