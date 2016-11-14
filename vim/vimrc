@@ -216,6 +216,7 @@ set foldlevelstart=1
 set formatoptions=tcrqnj
 set diffopt=filler
 set lazyredraw
+set number
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
@@ -300,13 +301,15 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 " buffer navigation
 " new buffer (empty)
-nmap <silent> <leader>t :enew<CR>
+nmap <silent> <leader>bt :enew<CR>
 " next buffer
-nmap <silent> <leader>n :bnext<CR>
+nmap <silent> <leader>bn :bnext<CR>
 " previous buffer
-nmap <silent> <leader>p :bprevious<CR>
+nmap <silent> <leader>bp :bprevious<CR>
+"close the buffer and replace with previous
+nmap <silent> <leader>br :bp <BAR> bd #<CR>
 "close the buffer
-nmap <silent> <leader>c :bp <BAR> bd #<CR>
+nmap <silent> <leader>bc :bd<CR>
 " show all open buffers in buffer explorer
 " nmap <silent> <leader>b :ls<CR>
 " nmap <silent> <leader>b :CtrlPBuffer<cr>
@@ -421,6 +424,19 @@ let g:pad#default_file_extension = '.otl'
 let g:pad#window_height = 25
 " let g:pad#open_in_split = 0   " open in main window
 let g:pad#title_first_line = 1
+
+" switching between markdown and otl
+function! PadMarkdown()
+    let g:pad#default_format = "markdown"
+    let g:pad#default_file_extension = '.md'
+endfunction
+command! -bar PadMarkdown call PadMarkdown()
+
+function! PadOTL()
+    let g:pad#default_format = "votl"
+    let g:pad#default_file_extension = '.otl'
+endfunction
+command! -bar PadOTL call PadMarkdown()
 "}}}
 " easy align{{{2
 "
@@ -607,6 +623,10 @@ let g:tsuquyomi_disable_default_mappings = 1
 if has('nvim')
     nmap <silent> <BS> :TmuxNavigateLeft<CR>
 endif
+" }}}
+
+" {{{ tableize / table mode
+let g:table_mode_map_prefix = "<leader>y"
 " }}}
 
 " local machine config {{{
