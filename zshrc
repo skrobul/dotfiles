@@ -84,3 +84,5 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 alias weather="curl -4 http://wttr.in/London"
 alias t="task"
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
