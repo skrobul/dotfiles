@@ -304,9 +304,9 @@ nmap <silent> <leader>d <Plug>DashSearch
 " new buffer (empty)
 nmap <silent> <leader>bt :enew<CR>
 " next buffer
-nmap <silent> <leader>bn :bnext<CR>
+nmap <silent> <leader>n :bnext<CR>
 " previous buffer
-nmap <silent> <leader>bp :bprevious<CR>
+nmap <silent> <leader>p :bprevious<CR>
 "close the buffer and replace with previous
 nmap <silent> <leader>br :bp <BAR> bd #<CR>
 "close the buffer
