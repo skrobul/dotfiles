@@ -49,3 +49,5 @@
 	recentrepo = /Users/skrobul/devel/unipede
 [merge]
 	tool = vimdiff
+[mergetool]
+	keepBackup = false
