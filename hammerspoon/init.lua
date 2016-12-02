@@ -210,18 +210,18 @@ hs.hotkey.bind(mash.hyper, '\\', toggleMic)
 
 
 -- tiling
-local tiling = require "hs.tiling"
-local hotkey = require "hs.hotkey"
-local skey = {"ctrl", "alt"}
-
-hotkey.bind(skey, "c", function() tiling.cycleLayout() end)
-hotkey.bind(skey, "j", function() tiling.cycle(1) end)
-hotkey.bind(skey, "k", function() tiling.cycle(-1) end)
-hotkey.bind(skey, "space", function() tiling.promote() end)
-hotkey.bind(skey, "f", function() tiling.goToLayout("fullscreen") end)
-
--- If you want to set the layouts that are enabled
-tiling.set('layouts', {
-  'fullscreen', 'main-vertical', 'main-horizontal', 'rows', 'columns', 'gp-vertical', 'gp-horizontal'
-})
-
+-- local tiling = require "hs.tiling"
+-- local hotkey = require "hs.hotkey"
+-- local skey = {"ctrl", "alt"}
+--
+-- hotkey.bind(skey, "c", function() tiling.cycleLayout() end)
+-- hotkey.bind(skey, "j", function() tiling.cycle(1) end)
+-- hotkey.bind(skey, "k", function() tiling.cycle(-1) end)
+-- hotkey.bind(skey, "space", function() tiling.promote() end)
+-- hotkey.bind(skey, "f", function() tiling.goToLayout("fullscreen") end)
+--
+-- -- If you want to set the layouts that are enabled
+-- tiling.set('layouts', {
+--   'fullscreen', 'main-vertical', 'main-horizontal', 'rows', 'columns', 'gp-vertical', 'gp-horizontal'
+-- })
+--
