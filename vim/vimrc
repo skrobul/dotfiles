@@ -47,7 +47,6 @@ Plug 'tpope/vim-unimpaired'            " set of movement mappings
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
 Plug 'benmills/vimux'                  " interact with tmux
-Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
 Plug 'fmoralesc/vim-pad'               " Evernote replacement
 Plug 'gregsexton/gitv'                 " gitk for vim
 Plug 'nathanaelkane/vim-indent-guides' " visual indent
@@ -97,6 +96,8 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'tpope/vim-obsession'          "session management
 " Plug 'dhruvasagar/vim-prosession'   "switch between sessions
 " Plug 'kien/ctrlp.vim'                  " full path fuzzy finder
+" vim-turbux disabled in favor of vim-rspec
+" Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
 " All of your Plugs must be added before the following line
 
 call plug#end()
@@ -314,6 +315,8 @@ nmap <silent> <leader>bc :bd<CR>
 " show all open buffers in buffer explorer
 " nmap <silent> <leader>b :ls<CR>
 " nmap <silent> <leader>b :CtrlPBuffer<cr>
+map <Leader>bl :Buffers<CR>
+vmap <Leader>bl :Buffers<CR>
 
 " ruby context endings - insert marks
 nmap <Leader>z /end%y$%A # p:nohlsearch
@@ -355,7 +358,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'monochrome'
+let g:airline_theme = 'raven'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -504,8 +507,6 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 map <C-p> :FZF<CR>
 vmap <C-p> :FZF<CR>
 
-map <Leader>b :Buffers<CR>
-vmap <Leader>b :Buffers<CR>
 " }}}
 
 "{{{ colorscheme
@@ -638,6 +639,14 @@ endif
 
 " {{{ tableize / table mode
 let g:table_mode_map_prefix = "<leader>y"
+" }}}
+
+" {{{ vim-rspec
+map <Leader>tl :call RunNearestSpec()<CR>
+map <Leader>tr :call RunLastSpec()<CR> 
+map <Leader>ta :call RunAllSpecs()<CR>
+map <Leader>tw :call RunCurrentSpecFile()<CR>
+let g:rspec_command = "Dispatch rspec {spec}"
 " }}}
 
 " local machine config {{{
