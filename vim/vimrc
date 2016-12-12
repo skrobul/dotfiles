@@ -72,6 +72,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
 Plug 'Quramy/tsuquyomi'                 " typescript completion
 Plug 'KabbAmine/vCoolor.vim'            " color picker
 Plug 'airblade/vim-gitgutter'
+Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 "}}}
 
 " {{{ DISABLED Plugs
@@ -643,12 +644,29 @@ let g:table_mode_map_prefix = "<leader>y"
 
 " {{{ vim-rspec
 map <Leader>tl :call RunNearestSpec()<CR>
-map <Leader>tr :call RunLastSpec()<CR> 
+map <Leader>tr :call RunLastSpec()<CR>
 map <Leader>ta :call RunAllSpecs()<CR>
 map <Leader>tw :call RunCurrentSpecFile()<CR>
 let g:rspec_command = "Dispatch rspec {spec}"
 " }}}
 
+" {{{ seeing is believing
+"" Enable seeing-is-believing mappings only for Ruby
+augroup seeingIsBelievingSettings
+  autocmd!
+
+  autocmd FileType ruby nmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
+  autocmd FileType ruby xmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
+
+  autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+
+  autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
+  autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
+augroup END
+" }}}
+"
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
