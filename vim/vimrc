@@ -108,51 +108,53 @@ call plug#end()
 " Autocmd {{{
 if has('autocmd')
     filetype plugin indent on
-    "don't expand tabs if we're in a makefile
-    autocmd BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
-    "wrap lines in TeX
-    autocmd BufRead,BufNewFile *.tex set tw=80
-    "wrap lines in .txt files
-    autocmd BufNewFile,BufRead *.txt set tw=78
-    autocmd BufNewFile,BufRead *.md set tw=78
-    " salt states are just yaml files
-    autocmd BufNewFile,BufRead *.sls set ft=yaml sw=2 ts=2
+    augroup indentations
+        "don't expand tabs if we're in a makefile
+        autocmd BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
+        "wrap lines in TeX
+        autocmd BufRead,BufNewFile *.tex set tw=80
+        "wrap lines in .txt files
+        autocmd BufNewFile,BufRead *.txt set tw=78
+        autocmd BufNewFile,BufRead *.md set tw=78
+        " salt states are just yaml files
+        autocmd BufNewFile,BufRead *.sls set ft=yaml sw=2 ts=2
+        autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
+        autocmd FileType coffee set sw=2 ts=2 tw=80
+        autocmd FileType python set ts=4 sw=4 et
+        autocmd FileType markdown set tw=80 conceallevel=2 wrap
+        autocmd FileType yaml,yml set sw=2 ts=2 tw=80
+    augroup END
+    augroup completions
+        autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+        autocmd FileType python set omnifunc=pythoncomplete#Complete
+        autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+    augroup END
 
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType python set ts=4 sw=4 et
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    "autocmd VimEnter * wincmd p
-    " ruby completion
-    autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-    " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-    " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-    autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
-    autocmd FileType coffee set sw=2 ts=2 tw=80
-    " remove trailing whitespaces
-    autocmd BufWritePre ruby,eruby,markdown,yaml,yml,javascript,python :%s/\s\+$//e
-    autocmd FileType yaml,yml set sw=2 ts=2 tw=80
-    autocmd FileType markdown set tw=80 conceallevel=2 wrap
-    autocmd FileType markdown setlocal spell
-    autocmd FileType markdown set complete+=k
-    " markdown
-    au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
-    " automatically open quickfix window for cofee script
-    "autocmd QuickFixCmdPost * nested cwindow | redraw!
-    " recompile file on write
-    " autocmd BufWritePost *.coffee silent make!
-    "
-    " automatically generate ctags on write
-    "au BufWritePost *.c,*.cpp,*.h,*.rb,*.js silent! !ctags -R &
+    augroup autocorrections
+        autocmd!
+        " remove trailing whitespaces
+        autocmd BufWritePre ruby,eruby,markdown,yaml,yml,javascript,python :%s/\s\+$//e
+    augroup END
 
-    " enable spelling on GIT commit messages
-    autocmd FileType gitcommit setlocal spell
-    " enable auto word wrap in commit messages
-    autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw complete+=k
-    " enable spelling and autowrap on pull requests
-    autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown
+    augroup markdown
+        autocmd!
+        autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
+        autocmd FileType markdown setlocal spell
+        autocmd FileType markdown set complete+=k
+    augroup end
+
+    augroup git
+        autocmd!
+        " enable spelling on GIT commit messages
+        autocmd FileType gitcommit setlocal spell
+        " enable auto word wrap in commit messages
+        autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw complete+=k
+        " enable spelling and autowrap on pull requests
+        autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown
+        autocmd FileType gitrebase noremap <CR> :Cycle<CR>
+    augroup end
 
     " jump to the last cursor position
     augroup resCur
@@ -161,9 +163,7 @@ if has('autocmd')
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \   exe "normal g`\"" |
             \ endif
-
     augroup END
-
 
     augroup ansible
         autocmd BufRead,BufNewFile */host_vars/* set ft=yaml
@@ -171,11 +171,12 @@ if has('autocmd')
         autocmd BufRead,BufNewFile *.j2 set ft=jinja2
     augroup END
 
-    autocmd FileType gitrebase noremap <CR> :Cycle<CR>
-
-    " run neomake on every write
-    " autocmd! BufWritePost ruby,eruby Neomake
-    autocmd! BufWritePost * Neomake
+    augroup neomake
+        autocmd!
+        " run neomake on every write
+        " autocmd! BufWritePost ruby,eruby Neomake
+        autocmd! BufWritePost * Neomake
+    augroup end
 
 endif " }}}
 
