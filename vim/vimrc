@@ -523,7 +523,12 @@ colorscheme hybrid
 "command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " map ag to leader a
 nnoremap <Leader>a :Ag<SPACE>
-
+function! ArrayConvertToW()
+    execute "normal /=\s+<cr>evf]"
+    s/\%V,/ /ge
+    s/\v\[(.*)\]/%w(\1)/
+ endfunction
+ command! ArrayConvertToW :call ArrayConvertToW()<cr>
 " json prettyfiy
 command! JSONPretty %!python -m json.tool
 " ruby - convert hashes to 1.9+ syntax
@@ -591,7 +596,7 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 
-autocmd BufEnter term://* startinsert
+" autocmd BufEnter term://* startinsert
 
 
 " }}}
@@ -681,6 +686,7 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
 "}}}
+
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
