@@ -9,6 +9,10 @@ local mash = {
 
 hs.window.animationDuration = 0
 
+-- A global variable for the Hyper Mode
+k = hs.hotkey.modal.new({}, "F17")
+
+
 
 -- Focus windows
 local function focus(direction)
@@ -94,47 +98,47 @@ local function stoken()
 end
 
 -- top half
-hs.hotkey.bind(mash.hyper, "t", adjust(0, 0, 1, 0.5))
+k:bind({}, "t", adjust(0, 0, 1, 0.5))
 
 -- right half
-hs.hotkey.bind(mash.hyper, "r", adjust(0.5, 0, 0.5, 1))
+k:bind({}, "r", adjust(0.5, 0, 0.5, 1))
 
 -- bottom half
-hs.hotkey.bind(mash.hyper, "d", adjust(0, 0.5, 1, 0.5))
+k:bind({}, "d", adjust(0, 0.5, 1, 0.5))
 
 -- left half
-hs.hotkey.bind(mash.hyper, "l", adjust(0, 0, 0.5, 1))
+k:bind({}, "l", adjust(0, 0, 0.5, 1))
 
 -- top left
-hs.hotkey.bind(mash.hyper, "1", adjust(0, 0, 0.5, 0.5))
+k:bind({}, "1", adjust(0, 0, 0.5, 0.5))
 
 -- top right
-hs.hotkey.bind(mash.hyper, "2", adjust(0.5, 0, 0.5, 0.5))
+k:bind({}, "2", adjust(0.5, 0, 0.5, 0.5))
 
 -- bottom left
-hs.hotkey.bind(mash.hyper, "3", adjust(0, 0.5, 0.5, 0.5))
+k:bind({}, "3", adjust(0, 0.5, 0.5, 0.5))
 
 -- bottom right
-hs.hotkey.bind(mash.hyper, "4", adjust(0.5, 0.5, 0.5, 0.5))
+k:bind({}, "4", adjust(0.5, 0.5, 0.5, 0.5))
 
 -- fullscreen
-hs.hotkey.bind(mash.hyper, "f", maximize)
+k:bind({}, "f", maximize)
 
 
 -- twoscreen
-hs.hotkey.bind(mash.hyper, "g", twoscreen())
+k:bind({}, "g", twoscreen())
 
 -- stoken
-hs.hotkey.bind(mash.hyper, "m", stoken)
+k:bind({}, "m", stoken)
 
 -- config reload
-hs.hotkey.bind(mash.hyper, "0", function()
+k:bind({}, "0", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
 
 -- window hints
-hs.hotkey.bind(mash.hyper, "e", hs.hints.windowHints)
+k:bind({}, "e", hs.hints.windowHints)
 
 -- application specific shortcuts
 apps = {
@@ -145,7 +149,7 @@ apps = {
 }
 
 for key, app in pairs(apps) do
-    hs.hotkey.bind(mash.hyper, key, function() hs.application.launchOrFocus(app) end)
+    k:bind({}, key, function() hs.application.launchOrFocus(app) end)
 end
 
 
@@ -172,8 +176,8 @@ hs.hotkey.bind(mash.focus, "'", function() hs.fnutils.map(hs.window.visibleWindo
 
 
 -- multi monitor
-hs.hotkey.bind(mash.hyper, 'N', hs.grid.pushWindowNextScreen)
-hs.hotkey.bind(mash.hyper, 'P', hs.grid.pushWindowPrevScreen)
+k:bind({}, 'N', hs.grid.pushWindowNextScreen)
+k:bind({}, 'P', hs.grid.pushWindowPrevScreen)
 
 -- microphone
 local function getmicvolume()
@@ -206,22 +210,23 @@ local function toggleMic()
 end
 micBar = hs.menubar.new()
 update_mic_bar(getmicvolume())
-hs.hotkey.bind(mash.hyper, '\\', toggleMic)
+k:bind({}, '\\', toggleMic)
 
 
--- tiling
--- local tiling = require "hs.tiling"
--- local hotkey = require "hs.hotkey"
--- local skey = {"ctrl", "alt"}
---
--- hotkey.bind(skey, "c", function() tiling.cycleLayout() end)
--- hotkey.bind(skey, "j", function() tiling.cycle(1) end)
--- hotkey.bind(skey, "k", function() tiling.cycle(-1) end)
--- hotkey.bind(skey, "space", function() tiling.promote() end)
--- hotkey.bind(skey, "f", function() tiling.goToLayout("fullscreen") end)
---
--- -- If you want to set the layouts that are enabled
--- tiling.set('layouts', {
---   'fullscreen', 'main-vertical', 'main-horizontal', 'rows', 'columns', 'gp-vertical', 'gp-horizontal'
--- })
---
+-- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
+pressedF18 = function()
+  k.triggered = false
+  k:enter()
+end
+
+-- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
+--   send ESCAPE if no other keys are pressed.
+releasedF18 = function()
+  k:exit()
+  if not k.triggered then
+    hs.eventtap.keyStroke({}, 'ESCAPE')
+  end
+end
+
+-- Bind the Hyper key
+f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
