@@ -68,21 +68,16 @@ bindkey '^[[1;9D' backward-word
 
 export PATH="$PATH:node_modules/.bin:$HOME/.bin:$HOME/bin"
 
-# Shared tmux widnow
-alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
-alias ag='ag --color-path "1;36"'
-
-# Netsec aliases
-alias ns-cli="~/devel/nscli/ns_cli.py"
-alias nscli="~/devel/nscli/ns_cli.py"
-
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
-alias weather="curl -4 http://wttr.in/London"
-alias t="task"
-
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
+alias ag='ag --color-path "1;36"'
+alias ns-cli="~/devel/nscli/ns_cli.py"
+alias nscli="~/devel/nscli/ns_cli.py"
+alias weather="curl -4 http://wttr.in/London"
+alias push_and_open_pr="git push -u marek && hub pull-request"
