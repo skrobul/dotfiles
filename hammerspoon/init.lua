@@ -185,34 +185,6 @@ local function getmicvolume()
     return tonumber(res)
 end
 
-local function update_mic_bar(vol)
-    if vol > 5 then
-        micBar:setTitle('U!')
-    else
-        micBar:setTitle('M')
-    end
-end
-local function setMicVol(vol)
-    hs.applescript.applescript('set volume input volume  ' .. tostring(vol))
-end
-
-local function toggleMic()
-    local vol = getmicvolume()
-    if vol > 0 then
-        hs.alert("Muted")
-        setMicVol(0)
-        update_mic_bar(0)
-    else
-        hs.alert("ON-AIR")
-        setMicVol(98)
-        update_mic_bar(98)
-    end
-end
-micBar = hs.menubar.new()
-update_mic_bar(getmicvolume())
-k:bind({}, '\\', toggleMic)
-
-
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 pressedF18 = function()
   k.triggered = false
