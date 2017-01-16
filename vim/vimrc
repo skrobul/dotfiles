@@ -178,6 +178,10 @@ if has('autocmd')
         autocmd! BufWritePost * Neomake
     augroup end
 
+    augroup BWCCreateDir
+        autocmd!
+        autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+    augroup END
 endif " }}}
 
 " VIM Settings {{{
@@ -258,6 +262,8 @@ set clipboard=unnamed
 " Make 81st column stand out
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
+
+let &colorcolumn=join(range(81,999),",")
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 "exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -557,6 +563,14 @@ function! s:MKDir(...)
 endfunction
 command! -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
 
+function! s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
 " Useful trick when I've forgotten to `sudo' before editing a file:
 cmap w!! w !sudo tee % >/dev/null
 
