@@ -224,7 +224,7 @@ set hidden " do not save history when leaving buffer
 set foldlevelstart=1
 set formatoptions=tcrqnj
 set diffopt=filler
-set lazyredraw
+" set lazyredraw
 set number
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
