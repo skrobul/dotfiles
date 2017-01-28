@@ -387,7 +387,7 @@ let g:vim_markdown_new_list_item_indent = 2
 map <F4> :NERDTreeToggle<CR>
 " }}}
 " neomake {{{
-map <silent> <Leader>s :NeoMake<CR>
+map <silent> <Leader>s :Neomake<CR>
 " let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek', 'rubylint']
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 " }}}
