@@ -74,6 +74,7 @@ Plug 'KabbAmine/vCoolor.vim'            " color picker
 Plug 'airblade/vim-gitgutter'
 Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
+Plug 'janko-m/vim-test'                 "vim-test
 "}}}
 
 " {{{ DISABLED Plugs
@@ -689,10 +690,11 @@ augroup END
 " }}}
 
 " {{{ neoterm
-nnoremap <silent> ,rt :call neoterm#test#run('all')<cr>
-nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
-nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
-nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
+nnoremap <silent> ,rt :TestSuite<cr>
+nnoremap <silent> ,rf :TestFile<cr>
+nnoremap <silent> ,rn :TestNearest<cr>
+nnoremap <silent> ,rr :TestLast<cr>
+nnoremap <silent> ,rv :TestVisit<cr>
 " Useful maps
 " hide/close terminal
 nnoremap <silent> ,th :call neoterm#close()<cr>
@@ -701,6 +703,10 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
 "}}}
+
+" {{{ vim-test
+let test#strategy = "neoterm"
+" }}}
 
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
