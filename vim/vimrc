@@ -34,8 +34,6 @@ Plug 'tpope/vim-repeat'                " extend support for repeating with .
 " Plug 'suan/vim-instant-markdown'     " instant markdown preview
 Plug 'jiangmiao/auto-pairs'            " insert mode completion for quotes, etc
 Plug 'tpope/vim-surround'              " quickly surround
-Plug 'vim-ruby/vim-ruby'               " needed because...neovim
-Plug 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
 Plug 'tpope/vim-dispatch'              " start stuff in background
 Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
