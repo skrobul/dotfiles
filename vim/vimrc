@@ -37,7 +37,6 @@ Plug 'tpope/vim-surround'              " quickly surround
 Plug 'vim-ruby/vim-ruby'               " needed because...neovim
 Plug 'ecomba/vim-ruby-refactoring'     " ruby refactoring functions
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
-Plug 'thoughtbot/vim-rspec'            " rspec runner
 Plug 'tpope/vim-dispatch'              " start stuff in background
 Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
@@ -99,7 +98,6 @@ Plug 'janko-m/vim-test'                 "vim-test
 " Plug 'tpope/vim-obsession'          "session management
 " Plug 'dhruvasagar/vim-prosession'   "switch between sessions
 " Plug 'kien/ctrlp.vim'                  " full path fuzzy finder
-" vim-turbux disabled in favor of vim-rspec
 " Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
 " All of your Plugs must be added before the following line
 
@@ -264,10 +262,10 @@ set clipboard=unnamed
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
-let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn=join(range(81,999),",")
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-"exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+"exec "set listchars=tab:\uBB\uBB,trail:•,nbsp:~"
 set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set list
@@ -631,15 +629,6 @@ Project 'salt'
 Project 'bbauth'
 " }}}
 
-" {{{ vim-rspec
-map ,t :call RunCurrentSpecFile()<CR>
-map ,s :call RunNearestSpec()<CR>
-map ,l :call RunLastSpec()<CR>
-map ,a :call RunAllSpecs()<CR>
-
-let g:rspec_command = "!bundle exec rspec --drb {spec}"
-" }}}
-
 " vim-outliner {{{
 " autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
 autocmd! FileType votl inoremap <C-n> <Esc>:call UltiSnips#ExpandSnippetOrJump()<CR>
@@ -664,14 +653,6 @@ endif
 let g:table_mode_map_prefix = "<leader>y"
 " }}}
 
-" {{{ vim-rspec
-map <Leader>tl :call RunNearestSpec()<CR>
-map <Leader>tr :call RunLastSpec()<CR>
-map <Leader>ta :call RunAllSpecs()<CR>
-map <Leader>tw :call RunCurrentSpecFile()<CR>
-let g:rspec_command = "Dispatch rspec {spec}"
-" }}}
-
 " {{{ seeing is believing
 "" Enable seeing-is-believing mappings only for Ruby
 augroup seeingIsBelievingSettings
@@ -689,7 +670,7 @@ augroup seeingIsBelievingSettings
 augroup END
 " }}}
 
-" {{{ neoterm
+" {{{ vim-test neoterm
 nnoremap <silent> ,rt :TestSuite<cr>
 nnoremap <silent> ,rf :TestFile<cr>
 nnoremap <silent> ,rn :TestNearest<cr>
@@ -705,7 +686,7 @@ nnoremap <silent> ,tc :call neoterm#kill()<cr>
 "}}}
 
 " {{{ vim-test
-let test#strategy = "neoterm"
+let test#strategy = "dispatch"
 " }}}
 
 " local machine config {{{
