@@ -516,9 +516,9 @@ vmap <C-p> :FZF<CR>
 " }}}
 
 "{{{ colorscheme
-let g:hybrid_custom_term_colors = 1
+" let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 0
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR = 0
 colorscheme hybrid
 "}}}
 
