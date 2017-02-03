@@ -177,8 +177,9 @@ for_window [class="Vpnui"] floating enable
 for_window [class="^Chrome$" title=" - Chrome"] border none
 
 # app assignments
-assign [class="Vpnui"] 9
 assign [class="VidyoDesktop"] 5
+assign [class="Spotify"] 8
+assign [class="Vpnui"] 9
 
 # Audio
 bindsym XF86AudioRaiseVolume exec amixer -c3 -q set Speaker 5%+ unmute && killall -USR1 i3status
@@ -187,4 +188,5 @@ bindsym XF86AudioMute exec amixer -c3 -q set Speaker toggle && killall -SIGUSR1 
 
 # Screenshot
 bindsym $mod+Shift+m exec ~/bin/rsa
-bindsym $mod+Shift+Print exec scrot -s
+bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
+bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
