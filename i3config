@@ -190,3 +190,6 @@ bindsym XF86AudioMute exec amixer -c3 -q set Speaker toggle && killall -SIGUSR1 
 bindsym $mod+Shift+m exec ~/bin/rsa
 bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
+
+# Apps
+bindsym $mod+t exec tuxcmd
