@@ -1,0 +1,7 @@
+#!/bin/bash
+ip route | grep -q cscotun0
+if [ $? -eq 0 ]; then
+    echo "vpn: ON"
+else
+    echo "vpn: OFF"
+fi
