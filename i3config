@@ -179,5 +179,7 @@ bindsym $mod+Shift+m exec ~/bin/rsa
 bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
+# Suspend
+bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/i3exit suspend
 # Apps
 bindsym $mod+t exec tuxcmd
