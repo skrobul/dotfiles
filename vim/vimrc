@@ -72,6 +72,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
+Plug 'shime/vim-livedown'
 "}}}
 
 " {{{ DISABLED Plugs
@@ -685,6 +686,19 @@ nnoremap <silent> ,tc :call neoterm#kill()<cr>
 
 " {{{ vim-test
 let test#strategy = "dispatch"
+" }}}
+
+" vim-livedown {{{
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+nmap gm :LivedownToggle<CR>
 " }}}
 
 " local machine config {{{
