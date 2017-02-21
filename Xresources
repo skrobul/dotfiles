@@ -1,10 +1,11 @@
-Xft.autohint: 0
-Xft.dpi: 109
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
+! Xft.autohint: 0
+! ! Xft.dpi: 180
+Xft.dpi: 108
+! Xft.antialias: true
+! Xft.rgba: rgb
+! Xft.hinting: true
+! Xft.hintstyle: hintfull
+! Xft.lcdfilter: lcddefault
 
 
 
