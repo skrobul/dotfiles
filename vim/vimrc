@@ -52,10 +52,10 @@ Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'mattn/gist-vim'                  " create GIST from vim
 Plug 'mattn/webapi-vim'                " create GIST from vim
 Plug 'epeli/slimux'                    " start interactive session
-Plug 'rking/ag.vim'                    " vim-ag
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'                    " vim-ag
 Plug 'justinmk/vim-sneak'
 Plug 'slim-template/vim-slim'           " slim templating support
 Plug 'amiorin/vim-project'
@@ -501,7 +501,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-let g:ag_prg="/usr/local/bin/ag --vimgrep"
+" let g:ag_prg="/usr/local/bin/ag --vimgrep"
 
 " }}}
 
@@ -514,6 +514,8 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 " fzf - fuzzy search {{{
 map <C-p> :FZF<CR>
 vmap <C-p> :FZF<CR>
+" https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
+let g:fzf_command_prefix = 'Fzf'
 
 " }}}
 
