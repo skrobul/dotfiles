@@ -174,6 +174,12 @@ bindsym XF86AudioRaiseVolume exec amixer -c3 -q set Speaker 5%+ unmute && killal
 bindsym XF86AudioLowerVolume exec amixer -c3 -q set Speaker 5%- unmute && killall -USR1 i3status
 bindsym XF86AudioMute exec amixer -c3 -q set Speaker toggle && killall -SIGUSR1 i3status
 
+# Spotify media keys
+bindsym Ctrl+F5 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym Ctrl+F6 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+bindsym Ctrl+F7 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym Ctrl+F8 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
 # Screenshot
 bindsym $mod+Shift+m exec ~/bin/rsa
 bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
