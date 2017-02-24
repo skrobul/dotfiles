@@ -60,9 +60,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'slim-template/vim-slim'           " slim templating support
 Plug 'amiorin/vim-project'
 " color packages
-Plug 'chriskempson/base16-vim'          " base16 colors
 Plug 'mhinz/vim-janah'
-Plug 'w0ng/vim-hybrid'                  " vim-hybrid
+" Plug 'w0ng/vim-hybrid'                  " vim-hybrid
 Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
@@ -73,6 +72,7 @@ Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
+Plug 'mhartington/oceanic-next'
 "}}}
 
 " {{{ DISABLED Plugs
@@ -186,7 +186,7 @@ endif " }}}
 " syntax highlighting
 syntax enable
 
-set bg=dark
+" set bg=dark
 " set t_Co=256
 " let base16colorspace=256
 
@@ -366,7 +366,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'raven'
+let g:airline_theme = 'oceanicnext'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
@@ -521,9 +521,10 @@ let g:fzf_command_prefix = 'Fzf'
 
 "{{{ colorscheme
 " let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 0
-" let $NVIM_TUI_ENABLE_TRUE_COLOR = 0
-colorscheme hybrid
+" let g:hybrid_reduced_contrast = 0
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+set termguicolors
+colorscheme OceanicNext
 "}}}
 
 " custom commands {{{
