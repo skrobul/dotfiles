@@ -61,7 +61,7 @@ Plug 'slim-template/vim-slim'           " slim templating support
 Plug 'amiorin/vim-project'
 " color packages
 Plug 'mhinz/vim-janah'
-" Plug 'w0ng/vim-hybrid'                  " vim-hybrid
+Plug 'w0ng/vim-hybrid'                  " vim-hybrid
 Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
@@ -72,7 +72,7 @@ Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
 "}}}
 
 " {{{ DISABLED Plugs
@@ -366,8 +366,10 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'oceanicnext'
-let g:airline_powerline_fonts = 1
+let g:airline_theme = 'hybrid'
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -520,11 +522,13 @@ let g:fzf_command_prefix = 'Fzf'
 " }}}
 
 "{{{ colorscheme
-" let g:hybrid_custom_term_colors = 1
-" let g:hybrid_reduced_contrast = 0
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-set termguicolors
-colorscheme OceanicNext
+if has('termguicolors')
+    set termguicolors
+endif
+set background=dark
+let g:hybrid_custom_term_colors = 0
+let g:hybrid_reduced_contrast = 0
+colorscheme hybrid
 "}}}
 
 " custom commands {{{
@@ -548,8 +552,8 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 command! PRlog Glog master..HEAD --reverse --
 
 " fix search highlight color
-" This has to be placed after plugins.
-hi Search cterm=NONE ctermfg=0 ctermbg=24
+" T#his has to be placed after plugins.
+" hi Search cterm=NONE ctermfg=0 ctermbg=24
 
 " create file with subdirectories if needed :E
 function! s:MKDir(...)
