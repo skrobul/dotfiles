@@ -228,6 +228,7 @@ set number
 if has('mouse')
   set mouse=a
 endif
+set cursorline
 
 " explorer
 let g:explVertical=1      " Split vertically
@@ -366,7 +367,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'base16_grayscale'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -529,6 +530,20 @@ set background=dark
 let g:hybrid_custom_term_colors = 0
 let g:hybrid_reduced_contrast = 0
 colorscheme hybrid
+
+" local modifications
+" search results blue instead of orange
+hi Search ctermfg=234 ctermbg=221 guifg=#101112 guibg=#B7C0C9
+" more distinct line nr
+hi LineNr ctermfg=237 guibg=#2F3339 guifg=#707885
+
+" fix gitgutter background
+hi GitGutterAdd ctermfg=2 guifg=#009900 guibg=#2F3339
+hi GitGutterDelete ctermfg=1 guifg=#ff2222 guibg=#2F3339
+hi GitGutterChange ctermfg=3 guifg=#bbbb00 guibg=#2F3339
+
+" color constants with blue instead of orange
+hi Type ctermfg=173 guifg=#23A1D3
 "}}}
 
 " custom commands {{{
@@ -550,10 +565,6 @@ command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 " load all feature branch commits into buffer
 command! PRlog Glog master..HEAD --reverse --
-
-" fix search highlight color
-" T#his has to be placed after plugins.
-" hi Search cterm=NONE ctermfg=0 ctermbg=24
 
 " create file with subdirectories if needed :E
 function! s:MKDir(...)
