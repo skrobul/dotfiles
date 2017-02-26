@@ -81,3 +81,8 @@ alias ns-cli="~/devel/nscli/ns_cli.py"
 alias nscli="~/devel/nscli/ns_cli.py"
 alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
+
+# Fasd
+eval "$(fasd --init auto)"
+alias j="fasd_cd -d"
+alias jj="fasd -d -i"
