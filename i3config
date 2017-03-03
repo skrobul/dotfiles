@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     colors {
-        background #000000
+        background #0000003a
         statusline #ffffff
         separator #666666
 
@@ -169,6 +169,7 @@ bar {
     # status_command i3status
     status_command i3blocks -c ~/dotfiles/i3blocks/config
     font pango:Dejavu Sans Mono, FontAwesome 11
+    i3bar_command i3bar -t
 }
 
 for_window [title="VidyoDesktop$"] floating enable
@@ -201,3 +202,9 @@ bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/i3exit suspend
 # Apps
 bindsym $mod+t exec tuxcmd
+
+# Gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 15
+gaps outer 15
+smart_gaps on
