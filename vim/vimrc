@@ -227,7 +227,7 @@ set number
 if has('mouse')
   set mouse=a
 endif
-set cursorline
+" set cursorline
 
 " explorer
 let g:explVertical=1      " Split vertically
@@ -455,9 +455,6 @@ nmap ,ps <Plug>(pad-incremental-new-note)
 
 " bug workaround
 " see https://github.com/fmoralesc/vim-pad/issues/75#issuecomment-257467586
-augroup vimpad
-    au BufUnload ~/Dropbox/notes/* exe b:python . " pad.pad.update()"
-augroup END
 
 " switching between markdown and otl
 function! PadMarkdown()
