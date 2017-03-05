@@ -7,7 +7,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
       endif
 
 " }}}
-
 " {{{  Enabled plugins
 " set the runtime path to include Vundle and initialize
 
@@ -72,8 +71,8 @@ Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
 Plug 'vim-scripts/Rename'
+Plug 'vimwiki/vimwiki'
 "}}}
-
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
 " Plug 'mrtazz/simplenote.vim'           " simplenote support
@@ -101,7 +100,6 @@ Plug 'vim-scripts/Rename'
 
 call plug#end()
 " }}}
-
 " Autocmd {{{
 if has('autocmd')
     filetype plugin indent on
@@ -180,7 +178,6 @@ if has('autocmd')
         autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
     augroup END
 endif " }}}
-
 " VIM Settings {{{
 " syntax highlighting
 syntax enable
@@ -277,7 +274,6 @@ set splitbelow " open splits below current pane
 set splitright " ... to the right of current pane
 
 " }}}
-
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
 nnoremap <CR> :noh<CR><CR>
@@ -329,8 +325,39 @@ vmap <Leader>bl :Buffers<CR>
 " ruby context endings - insert marks
 nmap <Leader>z /end%y$%A # p:nohlsearch
 
-" }}}
+" Map `kj` to ESC
+imap kj <ESC>
 
+" automatically insert a \v before any search string, so search uses normal regexes
+nnoremap / /\v
+vnoremap / /\v
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" Easy reloading of vimrc
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Switch to alternative file quickly
+nnoremap <Tab><Tab> <C-^>
+
+if has("nvim")
+    " neovim's terminal
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+    nnoremap <A-h> <C-w>h
+    nnoremap <A-j> <C-w>j
+    nnoremap <A-k> <C-w>k
+    nnoremap <A-l> <C-w>l
+endif
+
+
+" autocmd BufEnter term://* startinsert
+
+" }}}
 " visual mode mappings {{{
 
 " indent / deindent after selecting the text with (⇧ v), (.) to repeat.
@@ -346,7 +373,15 @@ vmap <C-v> p
 vmap <C-c> y
 
 " "}}}
-
+" gui related stuff {{{
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Sauce\ Code\ Powerline:h14
+      set guioptions-=r
+   endif
+endif
+" }}}
 " Plugins config {{{
 " CtrlP {{{
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -485,7 +520,6 @@ nmap ga <Plug>(EasyAlign)
 let g:gist_api_url = 'https://github.rackspace.com/api/v3'
 let g:gist_post_private = 1
 ""}}}
-
 " deoplete {{{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
@@ -494,24 +528,9 @@ let g:deoplete#file#enable_buffer_path = 1
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}}
-
 " vim-ruby {{{
 let g:ruby_indent_block_style = 'do'
 " }}}
-
-
-" end of plugin config }}}
-
-" gui related stuff {{{
-if has("gui_running")
-   let s:uname = system("uname")
-   if s:uname == "Darwin\n"
-      set guifont=Sauce\ Code\ Powerline:h14
-      set guioptions-=r
-   endif
-endif
-" }}}
-
 " ag - The Silver Searcher {{{
 if executable('ag')
   " Use ag over grep
@@ -526,13 +545,11 @@ endif
 " let g:ag_prg="/usr/local/bin/ag --vimgrep"
 
 " }}}
-
 " slimux - interactive sessions started directly from vim {{{
 map <Leader>l :SlimuxREPLSendLine<CR>
 vmap <Leader>l :SlimuxREPLSendSelection<CR>
 
 " }}}
-
 " fzf - fuzzy search {{{
 map <C-p> :FZF<CR>
 vmap <C-p> :FZF<CR>
@@ -540,7 +557,89 @@ vmap <C-p> :FZF<CR>
 let g:fzf_command_prefix = 'Fzf'
 
 " }}}
+" projects {{{
+let g:project_use_nerdtree = 1
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/devel")
+Project 'scratch'
+Project '~/dotfiles'
+Project 'unipede'
+Project 'config-gen'
+Project 'salt-secrets'
+Project 'salt-marek'
+Project 'salt'
+Project 'bbauth'
+" }}}
+" vim-outliner {{{
+" autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
+autocmd! FileType votl inoremap <C-n> <Esc>:call UltiSnips#ExpandSnippetOrJump()<CR>
+autocmd! FileType votl set nolist foldlevel=1
 
+" }}}
+" tsuquyomi {{{
+" disable neomake makers for typescript to avoid duplication
+let g:neomake_typescript_enabled_makers = []
+let g:tsuquyomi_disable_default_mappings = 1
+" }}}
+" tmux-navigate {{{
+" temp fix for https://github.com/neovim/neovim/issues/2048
+if has('nvim')
+    nmap <silent> <BS> :TmuxNavigateLeft<CR>
+endif
+" }}}
+" {{{ tableize / table mode
+let g:table_mode_map_prefix = "<leader>y"
+" }}}
+" {{{ seeing is believing
+" Enable seeing-is-believing mappings only for Ruby
+augroup seeingIsBelievingSettings
+  autocmd!
+
+  autocmd FileType ruby nmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
+  autocmd FileType ruby xmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
+
+  autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-mark)
+
+  autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
+  autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
+augroup END
+" }}}
+" {{{ vim-test
+nnoremap <silent> ,rt :TestSuite<cr>
+nnoremap <silent> ,rf :TestFile<cr>
+nnoremap <silent> ,rn :TestNearest<cr>
+nnoremap <silent> ,rr :TestLast<cr>
+nnoremap <silent> ,rv :TestVisit<cr>
+" Useful maps
+" hide/close terminal
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+let test#strategy = "dispatch"
+" }}}
+" vim-livedown {{{
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+nmap gm :LivedownToggle<CR>
+" }}}
+" {{{ vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/wiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_table_mappings = 0
+" }}}
+" end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
     set termguicolors
@@ -564,7 +663,6 @@ hi GitGutterChange ctermfg=3 guifg=#bbbb00 guibg=#2F3339
 " color constants with blue instead of orange
 hi Type ctermfg=173 guifg=#23A1D3
 "}}}
-
 " custom commands {{{
 " bind \a (backward slash) to grep shortcut
 "command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -612,137 +710,13 @@ cmap w!! w !sudo tee % >/dev/null
 
 
 " }}}
-
 " custom bindings {{{
 
-" Map `kj` to ESC
-imap kj <ESC>
-
-" automatically insert a \v before any search string, so search uses normal regexes
-nnoremap / /\v
-vnoremap / /\v
-
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
-
-" Easy reloading of vimrc
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-
-
-" Switch to alternative file quickly
-nnoremap <Tab><Tab> <C-^>
-
-if has("nvim")
-    " neovim's terminal
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
-    nnoremap <A-h> <C-w>h
-    nnoremap <A-j> <C-w>j
-    nnoremap <A-k> <C-w>k
-    nnoremap <A-l> <C-w>l
-endif
-
-
-" autocmd BufEnter term://* startinsert
-
 
 " }}}
-
-" projects {{{
-let g:project_use_nerdtree = 1
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/devel")
-Project 'scratch'
-Project '~/dotfiles'
-Project 'unipede'
-Project 'config-gen'
-Project 'salt-secrets'
-Project 'salt-marek'
-Project 'salt'
-Project 'bbauth'
-" }}}
-
-" vim-outliner {{{
-" autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
-autocmd! FileType votl inoremap <C-n> <Esc>:call UltiSnips#ExpandSnippetOrJump()<CR>
-autocmd! FileType votl set nolist foldlevel=1
-
-" }}}
-
-" tsuquyomi {{{
-" disable neomake makers for typescript to avoid duplication
-let g:neomake_typescript_enabled_makers = []
-let g:tsuquyomi_disable_default_mappings = 1
-" }}}
-
-" tmux-navigate {{{
-" temp fix for https://github.com/neovim/neovim/issues/2048
-if has('nvim')
-    nmap <silent> <BS> :TmuxNavigateLeft<CR>
-endif
-" }}}
-
-" {{{ tableize / table mode
-let g:table_mode_map_prefix = "<leader>y"
-" }}}
-
-" {{{ seeing is believing
-"" Enable seeing-is-believing mappings only for Ruby
-augroup seeingIsBelievingSettings
-  autocmd!
-
-  autocmd FileType ruby nmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
-  autocmd FileType ruby xmap <buffer> <M-Enter> <Plug>(seeing-is-believing-mark-and-run)
-
-  autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
-  autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing-is-believing-mark)
-  autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-mark)
-
-  autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
-  autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
-augroup END
-" }}}
-
-" {{{ vim-test neoterm
-nnoremap <silent> ,rt :TestSuite<cr>
-nnoremap <silent> ,rf :TestFile<cr>
-nnoremap <silent> ,rn :TestNearest<cr>
-nnoremap <silent> ,rr :TestLast<cr>
-nnoremap <silent> ,rv :TestVisit<cr>
-" Useful maps
-" hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
-"}}}
-
-" {{{ vim-test
-let test#strategy = "dispatch"
-" }}}
-
-" vim-livedown {{{
-" should markdown preview get shown automatically upon opening markdown buffer
-let g:livedown_autorun = 0
-
-" should the browser window pop-up upon previewing
-let g:livedown_open = 1
-
-" the port on which Livedown server will run
-let g:livedown_port = 1337
-
-nmap gm :LivedownToggle<CR>
-" }}}
-
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 "}}}
-
 " vim: foldmethod=marker foldlevel=0
