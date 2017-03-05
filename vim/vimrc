@@ -208,7 +208,7 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 set incsearch
-set spellfile=~/.vim/spell/en.utf-8.add
+set spellfile=~/dotfiles/vim/spell/en.utf-8.add
 set modelines=5         " check for vim settings in X lines of read file
 set complete-=k         " autocompletion - disable dictionary based
 set hlsearch
