@@ -710,10 +710,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 
 " }}}
-" custom bindings {{{
-
-
-" }}}
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
