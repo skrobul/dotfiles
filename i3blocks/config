@@ -16,7 +16,7 @@ color=#FFD135
 
 [volume]
 command=/home/skrobul/dotfiles/i3blocks/scripts/volume
-instance=Master
+instance=pulse
 signal=10
 
 [separator]
