@@ -3,26 +3,29 @@ ZGEN_AUTOLOAD_COMPINIT=false
 #########################
 # Zgen plugin manager
 #########################
+ZSH_THEME=""
 source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
   # specify plugins here
-  zgen oh-my-zsh
+  # zgen oh-my-zsh
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
-  zgen oh-my-zsh plugins/gitfast
-  zgen oh-my-zsh plugins/tmux
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/colored-man-pages
+  # zgen oh-my-zsh plugins/gitfast
+  # zgen oh-my-zsh plugins/tmux
+  # zgen oh-my-zsh plugins/docker
+  # zgen oh-my-zsh plugins/colored-man-pages
 
   # Theme
-  zgen oh-my-zsh themes/miloshadzic
+  # zgen oh-my-zsh themes/miloshadzic
 
   # generate the init script from plugins above
   zgen save
 fi
 
 
+autoload -U promptinit; promptinit
+prompt pure
 #########################
 # visual command edit
 #########################
@@ -83,6 +86,6 @@ alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
 
 # Fasd
-eval "$(fasd --init auto)"
+eval "$(fasd --init posix-alias zsh-hook)"
 alias j="fasd_cd -d"
 alias jj="fasd -d -i"
