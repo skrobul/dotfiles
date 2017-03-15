@@ -1,4 +1,5 @@
 bindkey -e
+fpath=( "$HOME/dotfiles/zsh/pure" $fpath )
 ZGEN_AUTOLOAD_COMPINIT=false
 #########################
 # Zgen plugin manager
