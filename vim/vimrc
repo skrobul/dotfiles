@@ -17,7 +17,7 @@ Plug 'honza/vim-snippets'              " actual snippets
 Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Shougo/deoplete.nvim'             " completion
 Plug 'fishbullet/deoplete-ruby'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
@@ -518,6 +518,7 @@ nmap ga <Plug>(EasyAlign)
 " vim-gist {{{2
 let g:gist_api_url = 'https://github.rackspace.com/api/v3'
 let g:gist_post_private = 1
+let g:gist_show_privates = 1
 ""}}}
 " deoplete {{{{
 let g:deoplete#enable_at_startup = 1
@@ -588,6 +589,8 @@ endif
 " }}}
 " {{{ tableize / table mode
 let g:table_mode_map_prefix = "<leader>y"
+let g:table_mode_corner='|' "markdown tables"
+
 " }}}
 " {{{ seeing is believing
 " Enable seeing-is-believing mappings only for Ruby
