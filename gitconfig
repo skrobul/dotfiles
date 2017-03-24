@@ -34,9 +34,11 @@
 [user]
 	name = Marek Skrobacki
 	email = marek.skrobacki@rackspace.co.uk
+	signingkey = 374CDBFC56D86927
 
 [commit]
     template = ~/.gitmessage
+	gpgsign = true
 [hub]
     host = github.rackspace.com
 [mergetool "vimdiff"]
