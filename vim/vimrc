@@ -72,6 +72,7 @@ Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
 Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
+Plug 'ClockworkNet/vim-apparmor'
 "}}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -116,7 +117,6 @@ if has('autocmd')
         autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
         autocmd FileType coffee set sw=2 ts=2 tw=80
         autocmd FileType python set ts=4 sw=4 et
-        autocmd FileType markdown set tw=80 conceallevel=2 wrap
         autocmd FileType yaml,yml set sw=2 ts=2 tw=80
     augroup END
     augroup completions
@@ -138,6 +138,7 @@ if has('autocmd')
         autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
         autocmd FileType markdown setlocal spell
         autocmd FileType markdown set complete+=k
+        autocmd FileType markdown set tw=80 conceallevel=3 wrap
     augroup end
 
     augroup git
