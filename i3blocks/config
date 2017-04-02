@@ -35,7 +35,7 @@ command=/home/skrobul/dotfiles/i3blocks/scripts/anyconnect
 color=#FFD135
 
 [datetime]
-command=date +%T
+command=date +"%T %A, %-d %b"
 
 [separator]
 color=#FFD135
