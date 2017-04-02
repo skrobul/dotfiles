@@ -1,0 +1,5 @@
+#!/bin/bash
+date +"%T %A, %-d %b"
+case $BLOCK_BUTTON in
+    3) xdg-open http://calendar.skrobul.com/
+esac
