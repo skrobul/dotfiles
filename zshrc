@@ -70,7 +70,7 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-export PATH="$PATH:node_modules/.bin:$HOME/.bin:$HOME/bin"
+export PATH="$PATH:$HOME/.bin:$HOME/bin"
 
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
