@@ -2,14 +2,15 @@
 ! ! Xft.dpi: 180
 Xft.dpi: 108
 ! Xft.antialias: true
-! Xft.rgba: rgb
+ Xft.rgba: rgb
 ! Xft.hinting: true
-! Xft.hintstyle: hintfull
+Xft.hintstyle: hintnone
 ! Xft.lcdfilter: lcddefault
 
 
 
 rofi.font:              Droid Sans Mono 16
+!rofi.font:              SF UI Text SemiBold 16
 
 rofi.color-enabled: true
 rofi.color-window: argb:d7000000, #ffffff, argb:bcffffff
