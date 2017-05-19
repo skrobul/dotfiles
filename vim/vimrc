@@ -21,8 +21,8 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
-Plug 'vim-airline/vim-airline'         " nice statusline
-Plug 'vim-airline/vim-airline-themes'  " nice statusline - themes
+" Plug 'vim-airline/vim-airline'         " nice statusline
+" Plug 'vim-airline/vim-airline-themes'  " nice statusline - themes
 Plug 'jwhitley/vim-matchit'            " better jumping with %
 Plug 'endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
@@ -73,6 +73,7 @@ Plug 'shime/vim-livedown'
 Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
+Plug 'fholgado/minibufexpl.vim'
 "}}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
