@@ -1,3 +1,11 @@
+# start stuff
+#exec dropbox start &
+#exec rescuetime &
+
+#exec eval `dbus-launch --sh-syntax --exit-with-session`
+#exec udiskie &
+
+###########################################
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -8,7 +16,7 @@ font pango:Droid Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id gnome-terminal
+bindsym $mod+Return exec --no-startup-id terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -70,7 +78,7 @@ set $tag1 "1:  term"
 set $tag2 "2:  web"
 set $tag3 "3"
 set $tag4 "4"
-set $tag5 "5:  vidyo"
+set $tag5 "5:  zoom"
 set $tag6 "6"
 set $tag7 "7"
 set $tag8 "8:  spotify"
@@ -155,29 +163,39 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     colors {
-        background #0000003a
-        statusline #ffffff
-        separator #666666
-
-        #  <colorclass> <border> <background> <text>
-        focused_workspace  #4c7899 #132737 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #DC770F #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        # background #0000003a
+        # statusline #ffffff
+        # separator #666666
+        #
+        # #  <colorclass> <border> <background> <text>
+        # focused_workspace  #4c7899 #132737 #ffffff
+        # active_workspace   #333333 #5f676a #ffffff
+        # inactive_workspace #333333 #222222 #888888
+        # urgent_workspace   #2f343a #DC770F #ffffff
+        # binding_mode       #2f343a #900000 #ffffff
+        background #080808
+        statusline #808080
+        separator #808080
+        focused_workspace #080808 #222222 #808080
+        active_workspace #080808 #080808 #797979 
+        inactive_workspace #080808 #080808 #4F4F4F
+        urgent_workspace #080808 #080808 #EA4C59
     }
     # status_command i3status
     status_command i3blocks -c ~/dotfiles/i3blocks/config
-    font pango:Dejavu Sans Mono, FontAwesome 11
+    font pango:Dejavu Sans Mono, FontAwesome 16
     i3bar_command i3bar
 }
 
 for_window [title="VidyoDesktop$"] floating enable
+for_window [title="Zoom"] floating enable
 for_window [class="Vpnui"] floating enable
+for_window [class="Guvcview"] floating enable
 for_window [class="^Chrome$" title=" - Chrome"] border none
 
 # app assignments
 assign [class="VidyoDesktop"] $tag5
+assign [class="zoom"] $tag5
 assign [class="Spotify"] $tag8
 assign [class="Vpnui"] $tag9
 assign [class="Google-chrome"] $tag2
@@ -192,14 +210,20 @@ bindsym Ctrl+F5 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 bindsym Ctrl+F6 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 bindsym Ctrl+F7 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym Ctrl+F8 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 # Screenshot
 bindsym $mod+Shift+m exec ~/bin/rsa
 bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
+# Camera
+bindsym Ctrl+F9 exec guvcview -z -a none
+
 # Suspend
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/i3exit suspend
+bindsym XF86Sleep exec --no-startup-id ~/bin/i3exit suspend
 # Apps
 bindsym $mod+t exec tuxcmd
 
@@ -208,3 +232,6 @@ bindsym $mod+t exec tuxcmd
 #gaps inner 15
 #gaps outer 15
 #smart_gaps on
+#
+exec --no-startup-id compton
+exec_always --no-startup-id feh --bg-fill ~/Pictures/samoloty.jpg
