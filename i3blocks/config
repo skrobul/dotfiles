@@ -5,6 +5,12 @@ color=#ffffff
 separator=false
 separator_block_width=9
 
+[temp]
+command=/home/skrobul/dotfiles/i3blocks/scripts/weather
+interval=300
+
+[separator]
+color=#FFD135
 
 [disk]
 label=

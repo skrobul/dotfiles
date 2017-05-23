@@ -1,0 +1,14 @@
+#!/bin/sh
+KEY=`cat ~/.darksky_api_key`
+
+LONG=-0.330267
+LAT=51.510068
+# https://api.darksky.net/forecast/[key]/[latitude],[longitude]
+
+DATA=$(curl -s "https://api.darksky.net/forecast/$KEY/$LAT,$LONG?exclude=minutely,hourly,daily,alerts,flags&units=si")
+
+TEMP=`echo $DATA | jq '.currently.apparentTemperature | floor'`
+SUMMARY=`echo $DATA | jq -r '.currently.summary'`
+
+
+echo "$TEMP° $SUMMARY"
