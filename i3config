@@ -79,7 +79,7 @@ set $tag2 "2:  web"
 set $tag3 "3"
 set $tag4 "4"
 set $tag5 "5:  zoom"
-set $tag6 "6"
+set $tag6 "6:  mail"
 set $tag7 "7"
 set $tag8 "8:  spotify"
 set $tag9 "9:  vpn"
@@ -183,7 +183,7 @@ bar {
     }
     # status_command i3status
     status_command i3blocks -c ~/dotfiles/i3blocks/config
-    font pango:Dejavu Sans Mono, FontAwesome 16
+    font pango:Dejavu Sans Mono, FontAwesome 15
     i3bar_command i3bar
 }
 
@@ -199,6 +199,7 @@ assign [class="zoom"] $tag5
 assign [class="Spotify"] $tag8
 assign [class="Vpnui"] $tag9
 assign [class="Google-chrome"] $tag2
+assign [class="Thunderbird"] $tag6
 
 # Audio
 bindsym XF86AudioRaiseVolume exec amixer -c "E5" -q set Speaker 5%+ unmute && killall -USR1 i3status
