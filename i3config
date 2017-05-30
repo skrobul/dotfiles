@@ -23,6 +23,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+Shift+d exec --no-startup-id "dmenu"
 
 # change focus
 bindsym $mod+h focus left
@@ -184,7 +185,7 @@ bar {
     # status_command i3status
     status_command i3blocks -c ~/dotfiles/i3blocks/config
     font pango:Dejavu Sans Mono, FontAwesome 15
-    i3bar_command i3bar
+    #i3bar_command i3bar
 }
 
 for_window [title="VidyoDesktop$"] floating enable
