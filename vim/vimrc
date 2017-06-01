@@ -28,16 +28,13 @@ Plug 'endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
 Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
-" " npm -g install instant-markdown-d
-" Plug 'suan/vim-instant-markdown'     " instant markdown preview
-Plug 'jiangmiao/auto-pairs'            " insert mode completion for quotes, etc
+Plug 'cohama/lexima.vim'                 " insert mode completion for quotes, etc
 Plug 'tpope/vim-surround'              " quickly surround
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
 Plug 'tpope/vim-dispatch'              " start stuff in background
 Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
 Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
-" Plug 'neilagabriel/vim-geeknote'       " evernote vim support
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
