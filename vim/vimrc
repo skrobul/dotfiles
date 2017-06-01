@@ -15,8 +15,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'honza/vim-snippets'              " actual snippets
 Plug 'benekastah/neomake'              " syntastic replacement
-" Plug 'Shougo/deoplete.nvim'             " completion
-" Plug 'fishbullet/deoplete-ruby'
+Plug 'Shougo/deoplete.nvim'             " completion
+Plug 'fishbullet/deoplete-ruby'
 " Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
