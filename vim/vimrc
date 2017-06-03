@@ -1,5 +1,6 @@
 " {{{ vim-plug auto installation
 "
+set shell=/bin/bash
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -24,7 +25,7 @@ Plug 'rstacruz/sparkup'                " parser for condensed HTML
 " Plug 'vim-airline/vim-airline'         " nice statusline
 " Plug 'vim-airline/vim-airline-themes'  " nice statusline - themes
 Plug 'jwhitley/vim-matchit'            " better jumping with %
-Plug 'endwise.vim'                     " wisely 'end' functions etc
+Plug 'vim-scripts/endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
 Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
