@@ -192,6 +192,7 @@ for_window [title="VidyoDesktop$"] floating enable
 for_window [title="Zoom"] floating enable
 for_window [class="Vpnui"] floating enable
 for_window [class="Guvcview"] floating enable
+for_window [class="VirtualBox"] floating enable
 for_window [class="^Chrome$" title=" - Chrome"] border none
 
 # app assignments
