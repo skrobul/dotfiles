@@ -18,7 +18,7 @@ Plug 'honza/vim-snippets'              " actual snippets
 Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Shougo/deoplete.nvim'             " completion
 Plug 'fishbullet/deoplete-ruby'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
@@ -47,7 +47,7 @@ Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'mattn/gist-vim'                  " create GIST from vim
 Plug 'mattn/webapi-vim'                " create GIST from vim
-Plug 'epeli/slimux'                    " start interactive session
+" Plug 'epeli/slimux'                    " start interactive session
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -340,7 +340,7 @@ nmap Q gqap
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Switch to alternative file quickly
-nnoremap <Tab><Tab> <C-^>
+" nnoremap <Tab><Tab> <C-^>
 
 if has("nvim")
     " neovim's terminal
@@ -394,11 +394,11 @@ nmap <C-S-p> :CtrlPMixed<CR>
 " }}}
 " Completion plugins (YCM/UltiSnip/Supertab) {{{
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
 let g:airline_theme = 'base16_grayscale'
