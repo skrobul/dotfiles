@@ -1,4 +1,5 @@
 bindkey -e
+export PATH=$PATH:/usr/local/bin
 fpath=( "$HOME/dotfiles/zsh/pure" $fpath )
 ZGEN_AUTOLOAD_COMPINIT=false
 #########################
@@ -34,7 +35,7 @@ export VISUAL=vim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 # core configuration
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to disable colors in ls.
 DISABLE_LS_COLORS="false"
@@ -46,7 +47,7 @@ DISABLE_LS_COLORS="false"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -70,7 +71,7 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-export PATH="$PATH:$HOME/.bin:$HOME/bin"
+export PATH="$PATH:$HOME/.bin:$HOME/bin:$HOME/.rvm/bin"
 
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
@@ -78,7 +79,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
 alias ag='ag --color-path "1;36"'
 alias ns-cli="~/devel/nscli/ns_cli.py"
@@ -88,6 +88,6 @@ alias push_and_open_pr="git push -u marek && hub pull-request"
 alias pbcopy="xclip -selection clip -i"
 
 # Fasd
-eval "$(fasd --init posix-alias zsh-hook)"
-alias j="fasd_cd -d"
-alias jj="fasd -d -i"
+# eval "$(fasd --init posix-alias zsh-hook)"
+# alias j="fasd_cd -d"
+# alias jj="fasd -d -i"
