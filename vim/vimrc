@@ -57,7 +57,6 @@ Plug 'slim-template/vim-slim'           " slim templating support
 Plug 'amiorin/vim-project'
 " color packages
 Plug 'mhinz/vim-janah'
-Plug 'w0ng/vim-hybrid'                  " vim-hybrid
 Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
@@ -72,6 +71,7 @@ Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
 Plug 'fholgado/minibufexpl.vim'
+Plug 'arcticicestudio/nord-vim'
 "}}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -182,10 +182,6 @@ endif " }}}
 " syntax highlighting
 syntax enable
 
-" set bg=dark
-" set t_Co=256
-" let base16colorspace=256
-
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
 set si
@@ -234,7 +230,7 @@ let g:explSplitRight=1    " Put new window to the right of the explorer
 " => Statusline
 """"""""""""""""""""""""""""""
 " Always hide the statusline
-set laststatus=2
+set laststatus=1
 set ruler               " Show the cursor position all the time
 set rulerformat=%30(%<%m%y%h%r%=%l,%c\ %P%)
 set showcmd
@@ -265,7 +261,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set list
+set nolist
 set showbreak=↪
 
 
@@ -401,7 +397,7 @@ let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 " vim-airline {{{
-let g:airline_theme = 'base16_grayscale'
+let g:airline_theme = 'nord'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -646,10 +642,8 @@ let g:vimwiki_table_mappings = 0
 if has('termguicolors')
     set termguicolors
 endif
-set background=dark
-let g:hybrid_custom_term_colors = 0
-let g:hybrid_reduced_contrast = 0
-colorscheme hybrid
+let g:nord_italic_comments = 0
+colorscheme nord
 
 " local modifications
 " search results blue instead of orange
