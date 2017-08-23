@@ -10,7 +10,7 @@ source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
   # specify plugins here
-  # zgen oh-my-zsh
+  zgen oh-my-zsh
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
   # zgen oh-my-zsh plugins/gitfast
@@ -24,7 +24,6 @@ if ! zgen saved; then
   # generate the init script from plugins above
   zgen save
 fi
-
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -86,8 +85,12 @@ alias nscli="~/devel/nscli/ns_cli.py"
 alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
 alias pbcopy="xclip -selection clip -i"
-
+alias agenda="gcalcli agenda"
+alias gcal_personal="gcalcli --calendar=\"skrobul@skrobul.com\""
 # Fasd
-# eval "$(fasd --init posix-alias zsh-hook)"
+#eval "$(fasd --init posix-alias zsh-hook)"
 # alias j="fasd_cd -d"
 # alias jj="fasd -d -i"
+#
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
