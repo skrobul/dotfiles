@@ -18,8 +18,8 @@ Plug 'honza/vim-snippets'              " actual snippets
 Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Shougo/deoplete.nvim'             " completion
 Plug 'fishbullet/deoplete-ruby'
-Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
+" Plug 'ervandew/supertab'
+" Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
 " Plug 'vim-airline/vim-airline'         " nice statusline
@@ -72,6 +72,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 "}}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -390,7 +393,7 @@ nmap <C-S-p> :CtrlPMixed<CR>
 " }}}
 " Completion plugins (YCM/UltiSnip/Supertab) {{{
 " Ultisnip - disabled shortcuts so they don't conflict with YouCompleteMe
-let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
+" let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
 " better key bindings for UltiSnipsExpandTrigger
 " let g:UltiSnipsExpandTrigger = "<tab>"
 " let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -637,6 +640,26 @@ let g:vimwiki_list = [{'path': '~/Dropbox/notes/wiki/',
 
 let g:vimwiki_table_mappings = 0
 " }}}
+" neosnippet
+"
+" SuperTab like snippets' behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+let g:neosnippet#snippets_directory="~/.vim/UltiSnips,~/.vim/bundle/vim-kubernetes/UltiSnips"
+
+	" Expand the completed snippet trigger by <CR>.
+imap <expr><CR>
+  \ (pumvisible() && neosnippet#expandable()) ?
+  \ "\<Plug>(neosnippet_expand)" : "\<CR>"
+
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
