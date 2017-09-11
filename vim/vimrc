@@ -15,7 +15,6 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'honza/vim-snippets'              " actual snippets
-Plug 'benekastah/neomake'              " syntastic replacement
 Plug 'Shougo/deoplete.nvim'             " completion
 Plug 'fishbullet/deoplete-ruby'
 " Plug 'ervandew/supertab'
@@ -75,6 +74,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'w0rp/ale'
 "}}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -168,13 +168,6 @@ if has('autocmd')
         autocmd BufRead,BufNewFile */group_vars/* set ft=yaml
         autocmd BufRead,BufNewFile *.j2 set ft=jinja2
     augroup END
-
-    augroup neomake
-        autocmd!
-        " run neomake on every write
-        " autocmd! BufWritePost ruby,eruby Neomake
-        autocmd! BufWritePost * Neomake
-    augroup end
 
     augroup BWCCreateDir
         autocmd!
@@ -424,11 +417,6 @@ let g:vim_markdown_new_list_item_indent = 2
 " NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
 " }}}
-" neomake {{{
-map <silent> <Leader>s :Neomake<CR>
-" let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek', 'rubylint']
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
-" }}}
 " instant markdown {{{
 let g:instant_markdown_slow = 1
 " "}}}
@@ -653,7 +641,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
-let g:neosnippet#snippets_directory="~/.vim/UltiSnips,~/.vim/bundle/vim-kubernetes/UltiSnips"
+" let g:neosnippet#snippets_directory="~/.vim/UltiSnips,~/.vim/bundle/vim-kubernetes/UltiSnips"
+let g:neosnippet#snippets_directory="~/dotfiles/snippets/"
 
 	" Expand the completed snippet trigger by <CR>.
 imap <expr><CR>
