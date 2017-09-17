@@ -69,8 +69,8 @@ Plug 'shime/vim-livedown'
 Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
-Plug 'fholgado/minibufexpl.vim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'fholgado/minibufexpl.vim'
+Plug 'skrobul/nord-vim'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -193,7 +193,7 @@ set background=dark     "awesome for terminals with crappy colors (putty!)
 set tagstack            "lets you push and pop your jumps with ctrl+]
 set pastetoggle=<F11>   "when you're pasting stuff this keeps it from getting
                         "all whacked out with indentation
-set showmatch
+set noshowmatch
 set showmode
 set smarttab
 set nrformats-=octal
