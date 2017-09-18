@@ -723,4 +723,7 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 "}}}
+" colorscheme overrides {{{
+hi MatchParen     ctermfg=0 ctermbg=6 guifg=#EBCB8B guibg=#88C0D0
+"}}}
 " vim: foldmethod=marker foldlevel=0
