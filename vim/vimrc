@@ -305,9 +305,9 @@ nmap <silent> <leader>n :bnext<CR>
 " previous buffer
 nmap <silent> <leader>p :bprevious<CR>
 "close the buffer and replace with previous
-nmap <silent> <leader>br :bp <BAR> bd #<CR>
+nmap <silent> <leader>bc :bp <BAR> bd #<CR>
 "close the buffer
-nmap <silent> <leader>bc :bd<CR>
+nmap <silent> <leader>bd :bd<CR>
 " show all open buffers in buffer explorer
 " nmap <silent> <leader>b :ls<CR>
 " nmap <silent> <leader>b :CtrlPBuffer<cr>
