@@ -511,6 +511,7 @@ let g:gist_show_privates = 1
 " deoplete {{{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#max_list = 15
 " tab completion
 " inoremap <Leader><Tab> <Tab>
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
