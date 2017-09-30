@@ -19,6 +19,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "rupa/z", use:z.sh
+zplug "arzzen/calc.plugin.zsh"
 
 
 
