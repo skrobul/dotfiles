@@ -1,29 +1,40 @@
 bindkey -e
 export PATH=$PATH:/usr/local/bin
 fpath=( "$HOME/dotfiles/zsh/pure" $fpath )
-ZGEN_AUTOLOAD_COMPINIT=false
 #########################
 # Zgen plugin manager
 #########################
 ZSH_THEME=""
-source "${HOME}/.zgen/zgen.zsh"
-# if the init scipt doesn't exist
-if ! zgen saved; then
-  # specify plugins here
-  zgen oh-my-zsh
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-completions src
-  # zgen oh-my-zsh plugins/gitfast
-  # zgen oh-my-zsh plugins/tmux
-  # zgen oh-my-zsh plugins/docker
-  # zgen oh-my-zsh plugins/colored-man-pages
 
-  # Theme
-  # zgen oh-my-zsh themes/miloshadzic
-
-  # generate the init script from plugins above
-  zgen save
+############# ZPLUG start #############
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
 fi
+source ~/.zplug/init.zsh
+
+# Make sure to use double quotes to prevent shell expansion
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "rupa/z", use:z.sh
+
+
+
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
+############# ZPLUG end #############
+
 
 autoload -U promptinit; promptinit
 prompt pure
