@@ -70,7 +70,7 @@ Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
 " Plug 'fholgado/minibufexpl.vim'
-Plug 'skrobul/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -631,6 +631,9 @@ let g:vimwiki_list = [{'path': '~/Dropbox/notes/wiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_table_mappings = 0
+let g:vimwiki_table_auto_fmt = 0
+
+
 " }}}
 " neosnippet {{{
 "
