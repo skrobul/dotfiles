@@ -17,7 +17,6 @@ source ~/.zplug/init.zsh
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "rupa/z", use:z.sh
 zplug "arzzen/calc.plugin.zsh"
 
@@ -66,14 +65,6 @@ COMPLETION_WAITING_DOTS="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 
-#
-# Plugins configuration
-#
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=false
-ZSH_TMUX_ITERM2=false
-ZSH_TMUX_AUTOQUIT=false
-
 
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
@@ -99,10 +90,28 @@ alias push_and_open_pr="git push -u marek && hub pull-request"
 alias pbcopy="xclip -selection clip -i"
 alias agenda="LC_ALL=en_US.UTF-8 gcalcli agenda"
 alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com\""
+
+timedping()
+{
+    ping $1 $2 | while read pong; do echo "$(date): $pong"; done
+}
 # Fasd
 #eval "$(fasd --init posix-alias zsh-hook)"
 # alias j="fasd_cd -d"
 # alias jj="fasd -d -i"
 #
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+#bindkey '^[[A' history-beginning-search-backward
+#bindkey '^[[B' history-beginning-search-forward
+
+# History
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
