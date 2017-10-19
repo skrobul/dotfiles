@@ -36,6 +36,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
 Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
+Plug 'tpope/vim-eunuch.git'            " Chmod, rename, delete etc
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
 Plug 'benmills/vimux'                  " interact with tmux
@@ -317,6 +318,8 @@ nmap <silent> <leader>bd :bd<CR>
 map <Leader>bl :Buffers<CR>
 vmap <Leader>bl :Buffers<CR>
 
+map ' :Buffers<CR>
+vmap ' :Buffers<CR>
 " ruby context endings - insert marks
 nmap <Leader>z /end%y$%A # p:nohlsearch
 
@@ -545,7 +548,7 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 map <C-p> :FZF<CR>
 vmap <C-p> :FZF<CR>
 " https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
-let g:fzf_command_prefix = 'Fzf'
+"let g:fzf_command_prefix = 'Fzf'
 
 " }}}
 " projects {{{
