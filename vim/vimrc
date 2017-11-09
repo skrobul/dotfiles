@@ -28,7 +28,7 @@ Plug 'vim-scripts/endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
 Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
-Plug 'cohama/lexima.vim'                 " insert mode completion for quotes, etc
+Plug 'jiangmiao/auto-pairs'            " insert mode completion for quotes, etc
 Plug 'tpope/vim-surround'              " quickly surround
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
 Plug 'tpope/vim-dispatch'              " start stuff in background
@@ -36,7 +36,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'  " text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'           " dependency for vim-textobj-rubyblock
 Plug 'christoomey/vim-tmux-navigator'  " seamless navigation between tmux panes and splits
 Plug 'tpope/vim-unimpaired'            " set of movement mappings
-Plug 'tpope/vim-eunuch.git'            " Chmod, rename, delete etc
+Plug 'tpope/vim-eunuch'                " Chmod, rename, delete etc
 Plug 'henrik/vim-qargs'                " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'      " helps with creating tables
 Plug 'benmills/vimux'                  " interact with tmux
@@ -67,7 +67,6 @@ Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
-Plug 'vim-scripts/Rename'
 Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
 " Plug 'fholgado/minibufexpl.vim'
@@ -669,6 +668,10 @@ let g:rspec_command = "Dispatch -compiler=rspec bundle exec rspec {spec} --forma
 " project folders
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it its specify shared_context shared_examples shared_examples_for shared_context include_examples include_context it_should_behave_like it_behaves_like before after around subject scenario feature background given described_class violated pending expect expect_any_instance_of allow allow_any_instance_of double instance_double mock xit fit
 highlight def link rubyRspec Function
+" }}}
+" {{{ ale 
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
 " }}}
 " end of plugin config }}}
 "{{{ colorscheme
