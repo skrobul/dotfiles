@@ -1,5 +1,4 @@
 bindkey -e
-export PATH=$PATH:/usr/local/bin
 fpath=( "$HOME/dotfiles/zsh/pure" $fpath )
 #########################
 # Zgen plugin manager
@@ -73,14 +72,11 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-export PATH="$PATH:$HOME/.bin:$HOME/bin:$HOME/.rvm/bin"
-
 PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
 alias ag='ag --color-path "1;36"'
 alias ns-cli="~/devel/nscli/ns_cli.py"
