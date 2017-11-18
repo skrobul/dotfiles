@@ -41,7 +41,7 @@
 
 [commit]
     template = ~/.gitmessage
-	gpgsign = true
+    gpgsign = false
 [hub]
     host = github.rackspace.com
 [mergetool "vimdiff"]
