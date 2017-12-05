@@ -66,7 +66,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(flatland-black-theme soft-charcoal-theme )
+   dotspacemacs-additional-packages '(base16-theme flatland-black-theme soft-charcoal-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -138,7 +138,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(flatland-black
+   dotspacemacs-themes '(base16-tomorrow-night
+                         flatland-black
                          soft-charcoal
                          flatland
                          spacemacs-dark
@@ -149,7 +150,7 @@ values."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 16
-                               :weight medium
+                               :weight semi-bold
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
