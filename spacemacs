@@ -54,7 +54,9 @@ values."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     ruby
+     (ruby :variables
+           ruby-version-manager 'rvm
+           ruby-test-runner 'rspec)
      version-control
      sql
      git
