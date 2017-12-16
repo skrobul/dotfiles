@@ -1,4 +1,4 @@
-;; -*- mode: emacs-lisp -*-
+
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -30,8 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     javascript
+   '(ansible
+   javascript
      html
      shell-scripts
      yaml
@@ -42,12 +42,14 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      git
      markdown
-     org
+     (org :variables
+          org-want-todo-bindings 'yes)
+
      (shell :variables
             shell-default-term-shell "/usr/bin/zsh"
             shell-default-height 30
@@ -62,13 +64,13 @@ values."
      git
      spotify
      selectric
-     google-calendar
+     ;;google-calendar
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(base16-theme flatland-black-theme soft-charcoal-theme)
+   dotspacemacs-additional-packages '(base16-theme flatland-black-theme soft-charcoal-theme material-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -140,7 +142,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-tomorrow-night
+   dotspacemacs-themes '(material
+                         base16-tomorrow-night
                          flatland-black
                          soft-charcoal
                          flatland
@@ -259,7 +262,7 @@ values."
    ;; If non nil show the color guide hint for transient state keys. (default t)
    dotspacemacs-show-transient-state-color-guide t
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
@@ -348,13 +351,7 @@ you should place your code here."
  '(exec-path-from-shell-check-startup-files nil)
  '(package-selected-packages
    (quote
-    (org-gcal request-deferred deferred calfw magithub soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(default ((((class color) (min-colors 89)) (:foreground "#D8DEE9" :background "#2E3440" :family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 127 :width normal)))))
+    (org-gcal request-deferred deferred calfw  soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -367,6 +364,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+ '(custom-safe-themes
+   (quote
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(exec-path-from-shell-check-startup-files nil)
  '(org-capture-templates
@@ -380,13 +380,13 @@ This function is called at the very end of Spacemacs initialization."
  '(org-directory "~/Dropbox/notes/")
  '(package-selected-packages
    (quote
-    (soft-charcoal-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode magithub ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (material-theme jinja2-mode company-ansible ansible-doc ansible org-gcal request-deferred deferred calfw soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 89)) ))))
+ '(default ((t (:foreground "#F8F8F8" :background "#000000")))))
 )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
