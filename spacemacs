@@ -340,6 +340,10 @@ you should place your code here."
   ;; calendar alerts
   (setq alert-default-style 'libnotify)
 
+  ;; zerodark modeline
+  (zerodark-setup-modeline-format)
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
