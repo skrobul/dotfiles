@@ -337,6 +337,9 @@ you should place your code here."
   (setq powerline-default-separator 'nil)
   (load "~/.spacemacs-secrets.el.gpg")
 
+  ;; calendar alerts
+  (setq alert-default-style 'libnotify)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
