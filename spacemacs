@@ -377,10 +377,14 @@ This function is called at the very end of Spacemacs initialization."
    (quote
     (("w" "Work task" entry
       (file+headline "~/Dropbox/notes/Work.org" "Inbox")
-      "* TODO %?\\n  %i\\n  %a")
+      "* TODO %?
+      %i
+      %a")
      ("p" "Personal task" entry
       (file+headline "~/Dropbox/notes/Personal.org" "Inbox")
-      "* TODO %?\\n   %i\\n  %a"))))
+      "* TODO %?
+              %i
+              %a"))))
  '(org-directory "~/Dropbox/notes/")
  '(package-selected-packages
    (quote
