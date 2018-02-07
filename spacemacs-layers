@@ -1,0 +1,4 @@
+
+git clone https://github.com/borgnix/spacemacs-journal.git ~/.emacs.d/private/journal
+git clone https://github.com/mhkc/google-calendar-layer ~/.emacs.d/private/google-calendar
+
