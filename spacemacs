@@ -84,7 +84,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(zerodark-theme)
+   dotspacemacs-additional-packages '(zerodark-theme jbeans-theme atom-dark-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -189,7 +189,8 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(zerodark
-                         default-dark
+                         atom-dark
+                         jbeans
                          spacemacs-dark
                          spacemacs-light)
 
@@ -209,7 +210,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
+                               :size 20 
                                :weight semi-bold
                                :width normal
                                :powerline-scale 1.1)
@@ -494,6 +495,8 @@ before packages are loaded."
       (let ((browse-url-browser-function 'browse-url-firefox))
         (browse-url url)))
     (setq flymd-browser-open-function 'my-flymd-browser-function)
+    (setq flymd-output-directory "/tmp")
+    (setq flymd-close-buffer-delete-temp-file t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -522,7 +525,7 @@ This function is called at the very end of Spacemacs initialization."
  '(exec-path-from-shell-check-startup-files nil)
  '(package-selected-packages
    (quote
-    (gmail-message-mode ham-mode html-to-markdown flymd edit-server yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic material-theme jinja2-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern dash-functional company-statistics company-shell company-ansible company auto-yasnippet ansible-doc ansible ac-ispell auto-complete org-gcal request-deferred deferred calfw soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (jbeans-theme atom-dark-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic material-theme jinja2-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern dash-functional company-statistics company-shell company-ansible company auto-yasnippet ansible-doc ansible ac-ispell auto-complete org-gcal request-deferred deferred calfw soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
