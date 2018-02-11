@@ -497,6 +497,21 @@ before packages are loaded."
     (setq flymd-browser-open-function 'my-flymd-browser-function)
     (setq flymd-output-directory "/tmp")
     (setq flymd-close-buffer-delete-temp-file t)
+
+
+    ;; open pull-reqests directly from magit
+    (defun marek/visit-pull-request-url ()
+      "Visit the current branch's PR on GHE."
+      (interactive)
+      (browse-url
+       (format "https://github.rackspace.com/%s/pull/new/%s"
+               (replace-regexp-in-string
+                "\\`.+github\\.rackspace\\.com:\\(.+\\)\\.git\\'" "\\1"
+                (magit-get "remote"
+                           (magit-get-push-remote)
+                           "url"))
+               (magit-get-current-branch))))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
