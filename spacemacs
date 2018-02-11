@@ -512,6 +512,12 @@ before packages are loaded."
                            "url"))
                (magit-get-current-branch))))
 
+    ;; bind opening PRs to V
+    (eval-after-load 'magit
+      '(define-key magit-mode-map "h"
+         #'marek/visit-pull-request-url))
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
