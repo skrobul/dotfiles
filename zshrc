@@ -111,3 +111,5 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
+export PATH=$PATH:node_modules/.bin/
+
