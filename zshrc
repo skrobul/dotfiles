@@ -16,7 +16,7 @@ source ~/.zplug/init.zsh
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
-zplug "rupa/z", use:z.sh
+#zplug "rupa/z", use:z.sh
 zplug "arzzen/calc.plugin.zsh"
 
 
