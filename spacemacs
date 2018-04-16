@@ -204,8 +204,8 @@ It should only modify the values of Spacemacs settings."
    ;; to create your own spaceline theme. Value can be a symbol or list with\
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   ;; dotspacemacs-mode-line-theme '(all-the-icons )
+   ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(all-the-icons )
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -539,8 +539,8 @@ before packages are loaded."
 
       ;; org templates
       (setq org-capture-templates
-            '(("p" "Personal Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
-              ("w" "Work Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+            '(("p" "Personal Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n%?\n      Added: %U")
+              ("w" "Work Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n%?\n      Added: %U")
             ))
       )
 
@@ -561,7 +561,7 @@ before packages are loaded."
       (interactive)
       (term-send-raw-string "\C-r"))
 
-    (add-hook 'term-mode-hook 'marek/setup-term-mode)
+    (add-hook 'terminal-mode-hook 'marek/setup-term-mode)
 
     )
 
