@@ -75,7 +75,6 @@ This function should only modify configuration layer settings."
      sql
      git
      spotify
-     selectric
      neotree
      chrome
      (ibuffer :variables
