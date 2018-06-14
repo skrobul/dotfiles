@@ -33,7 +33,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(typescript
+   '(nginx
+     typescript
      csv
      php
      python
@@ -58,6 +59,7 @@ This function should only modify configuration layer settings."
      journal
      (org :variables
           org-enable-org-journal-support t
+          org-indent-mode t
           org-journal-dir "~/Dropbox/notes/journal/"
           org-want-todo-bindings 'yes)
 
@@ -588,14 +590,40 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(edit-server-port 19292)
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  '(evil-want-Y-yank-to-eol nil)
- '(exec-path-from-shell-check-startup-files nil)
- '(fringe-mode 10 nil (fringe))
- '(linum-format " %6d ")
+ '(fci-rule-color "#5B6268")
+ '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(package-selected-packages
    (quote
-    (groovy-mode groovy-imports pcache calfw-org yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic material-theme jinja2-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern dash-functional company-statistics company-shell company-ansible company auto-yasnippet ansible-doc ansible ac-ispell auto-complete org-gcal request-deferred deferred calfw soft-charcoal-theme flatland-black-theme tern web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode ghub+ apiwrap ghub xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flatland-theme spotify selectric-mode helm-spotify multi sql-indent orgit markdown-toc magit-gitflow evil-magit smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download mmm-mode minitest markdown-mode htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck magit magit-popup git-commit with-editor diff-hl chruby bundler inf-ruby auto-dictionary insert-shebang fish-mode yaml-mode vimrc-mode dactyl-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (nginx-mode zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen toc-org tide typescript-mode tagedit symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons spaceline powerline smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el password-generator paradox spinner overseer orgit org-projectile org-category-capture org-present org-pomodoro org-mime org-journal org-gcal request-deferred org-download org-bullets org-brain open-junk-file neotree nameless multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode skewer-mode live-py-mode linum-relative link-hint json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic epc ctable concurrent deferred impatient-mode simple-httpd imenu-anywhere ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-spotify-plus multi helm-pydoc helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode groovy-mode groovy-imports pcache google-translate golden-ratio gnuplot gmail-message-mode ham-mode markdown-mode html-to-markdown gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flymd flycheck-pos-tip pos-tip flycheck-bashate flycheck flx-ido flx fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit ghub with-editor evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu highlight eshell-z which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode doom-themes diminish diff-hl define-word darktooth-theme dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-ansible company-anaconda column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote bind-map auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme ansible-doc ansible alert aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(vc-annotate-background "#282c34")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#98be65")
+    (cons 40 "#b4be6c")
+    (cons 60 "#d0be73")
+    (cons 80 "#ECBE7B")
+    (cons 100 "#e6ab6a")
+    (cons 120 "#e09859")
+    (cons 140 "#da8548")
+    (cons 160 "#d38079")
+    (cons 180 "#cc7cab")
+    (cons 200 "#c678dd")
+    (cons 220 "#d974b7")
+    (cons 240 "#ec7091")
+    (cons 260 "#ff6c6b")
+    (cons 280 "#cf6162")
+    (cons 300 "#9f585a")
+    (cons 320 "#6f4e52")
+    (cons 340 "#5B6268")
+    (cons 360 "#5B6268")))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
