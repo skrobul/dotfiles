@@ -95,7 +95,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(darktooth-theme doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme)
+   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -199,7 +199,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(
+   dotspacemacs-themes '(doom-molokai
                          wombat
                          apropospriate-light
                          apropospriate-dark
@@ -222,7 +222,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   dotspacemacs-mode-line-theme '(all-the-icons )
+   dotspacemacs-mode-line-theme '(spacemacs )
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -234,7 +234,7 @@ It should only modify the values of Spacemacs settings."
                                :size 22
                                :weight semibold
                                :width normal
-                               :powerline-scale 1.0)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
 
@@ -487,7 +487,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;; better separators
-  (setq powerline-default-separator nil)
+  (setq powerline-default-separator 'alternate)
   (load "~/.spacemacs-secrets.el.gpg")
 
   (require 'seeing-is-believing)
@@ -605,44 +605,13 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(evil-want-Y-yank-to-eol nil)
- '(fci-rule-color "#a3a1a1")
- '(jdee-db-active-breakpoint-face-colors (cons "#f2f2f2" "#4271ae"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#f2f2f2" "#718c00"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#f2f2f2" "#a5a4a5"))
- '(linum-format " %3i ")
  '(package-selected-packages
    (quote
-    (ranger apropospriate-theme nginx-mode zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen toc-org tide typescript-mode tagedit symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons spaceline powerline smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el password-generator paradox spinner overseer orgit org-projectile org-category-capture org-present org-pomodoro org-mime org-journal org-gcal request-deferred org-download org-bullets org-brain open-junk-file neotree nameless multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode skewer-mode live-py-mode linum-relative link-hint json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic epc ctable concurrent deferred impatient-mode simple-httpd imenu-anywhere ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-spotify-plus multi helm-pydoc helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode groovy-mode groovy-imports pcache google-translate golden-ratio gnuplot gmail-message-mode ham-mode markdown-mode html-to-markdown gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flymd flycheck-pos-tip pos-tip flycheck-bashate flycheck flx-ido flx fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit ghub with-editor evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu highlight eshell-z which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode doom-themes diminish diff-hl define-word darktooth-theme dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-ansible company-anaconda column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote bind-map auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme ansible-doc ansible alert aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(pdf-view-midnight-colors (quote ("#eeeeee" . "#000000")))
- '(vc-annotate-background "#ffffff")
- '(vc-annotate-color-map
-   (list
-    (cons 20 "#718c00")
-    (cons 40 "#999a00")
-    (cons 60 "#c1a800")
-    (cons 80 "#eab700")
-    (cons 100 "#eda70a")
-    (cons 120 "#f19714")
-    (cons 140 "#f5871f")
-    (cons 160 "#e69659")
-    (cons 180 "#d7a594")
-    (cons 200 "#c9b4cf")
-    (cons 220 "#c88597")
-    (cons 240 "#c85660")
-    (cons 260 "#c82829")
-    (cons 280 "#bf4748")
-    (cons 300 "#b66667")
-    (cons 320 "#ad8586")
-    (cons 340 "#a3a1a1")
-    (cons 360 "#a3a1a1")))
- '(vc-annotate-very-old-color nil))
+    (yasnippet-snippets web-mode toc-org tide typescript-mode rspec-mode persp-mode org-mime neotree mmm-mode hy-mode helm-projectile git-timemachine git-link flycheck-pos-tip evil-magit evil-iedit-state emmet-mode editorconfig dumb-jump doom-themes darktooth-theme counsel-projectile counsel swiper ivy company-anaconda browse-at-remote anaconda-mode ace-window ac-php-core smartparens highlight company helm helm-core multiple-cursors avy markdown-mode projectile yasnippet php-mode pythonic js2-mode flycheck magit magit-popup git-commit ghub with-editor memoize which-key use-package org-plus-contrib zerodark-theme yapfify yaml-mode xterm-color xcscope ws-butler winum web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen tagedit symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop robe restart-emacs rbenv ranger rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode pos-tip popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-journal org-gcal org-download org-bullets org-brain open-junk-file nginx-mode nameless multi-term move-text minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere iedit ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports google-translate golden-ratio gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-messenger git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode elisp-slime-nav edit-server drupal-mode diminish diff-hl define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-php company-ansible column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler bind-key autothemer auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible aggressive-indent adaptive-wrap ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:inherit highlight :underline nil)))))
+ )
 )
