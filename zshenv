@@ -4,3 +4,4 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 
 export PATH="$PATH:$HOME/.bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/bin"
+export PATH=$PATH:node_modules/.bin/
