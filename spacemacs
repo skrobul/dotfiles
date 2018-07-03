@@ -556,8 +556,8 @@ before packages are loaded."
 
       ;; org templates
       (setq org-capture-templates
-            '(("p" "Personal Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U")
-              ("w" "Work Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U")
+            '(("p" "Personal Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n")
+              ("w" "Work Todo" entry (file+headline "~/Dropbox/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n")
               ("a" "Appointment" entry (file  "~/Dropbox/notes/calendar/cal_skrobul.org")
                "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
