@@ -74,6 +74,7 @@ This function should only modify configuration layer settings."
            ruby-enable-enh-ruby-mode t
            ruby-test-runner 'rspec)
      version-control
+     salt
      sql
      git
      spotify
