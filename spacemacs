@@ -562,25 +562,25 @@ before packages are loaded."
               ("a" "Appointment" entry (file  "~/Dropbox/notes/calendar/cal_skrobul.org")
                "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
+
+      ;; Archive all DONE tasks in a buffer
+      (defun marek/org-archive-done-tasks ()
+        (interactive)
+        (org-map-entries (lambda ()
+                          (org-archive-subtree)
+                          (setq  org-map-continue-from (outline-previous-heading)))
+                        "/DONE|CANCELLED" 'file))
+
+      ;; bind keys
+      (defun marek/open_gtd ()
+        " Open GTD file immediately"
+        (interactive)
+        (find-file "~/Dropbox/notes/gtd.org")
       )
-
-    ;; Archive all DONE tasks in a buffer
-    (defun marek/org-archive-done-tasks ()
-      (interactive)
-      (org-map-entries (lambda ()
-                         (org-archive-subtree)
-                         (setq  org-map-continue-from (outline-previous-heading)))
-                       "/DONE" 'file))
-
-    ;; bind keys
-    (defun marek/open_gtd ()
-      " Open GTD file immediately"
-      (interactive)
-      (find-file "~/Dropbox/notes/gtd.org")
+      (spacemacs/set-leader-keys "oc" 'org-capture)
+      (spacemacs/set-leader-keys "op" 'marek/open_gtd)
+      (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
     )
-    (spacemacs/set-leader-keys "oc" 'org-capture)
-    (spacemacs/set-leader-keys "op" 'marek/open_gtd)
-    (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
 
     ;; fix Ctrl-R for terminal(
     (defun marek/setup-term-mode ()
@@ -606,9 +606,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets web-mode toc-org tide typescript-mode rspec-mode persp-mode org-mime neotree mmm-mode hy-mode helm-projectile git-timemachine git-link flycheck-pos-tip evil-magit evil-iedit-state emmet-mode editorconfig dumb-jump doom-themes darktooth-theme counsel-projectile counsel swiper ivy company-anaconda browse-at-remote anaconda-mode ace-window ac-php-core smartparens highlight company helm helm-core multiple-cursors avy markdown-mode projectile yasnippet php-mode pythonic js2-mode flycheck magit magit-popup git-commit ghub with-editor memoize which-key use-package org-plus-contrib zerodark-theme yapfify yaml-mode xterm-color xcscope ws-butler winum web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen tagedit symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop robe restart-emacs rbenv ranger rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode pos-tip popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-journal org-gcal org-download org-bullets org-brain open-junk-file nginx-mode nameless multi-term move-text minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere iedit ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports google-translate golden-ratio gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-messenger git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode elisp-slime-nav edit-server drupal-mode diminish diff-hl define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-php company-ansible column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler bind-key autothemer auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible aggressive-indent adaptive-wrap ace-link ace-jump-helm-line ac-ispell))))
+    (salt-mode mmm-jinja2 web-mode pyvenv org-download hy-mode expand-region evil-magit evil-escape doom-themes company-ansible aggressive-indent ac-php-core counsel ivy smartparens helm helm-core projectile pythonic js2-mode spaceline magit org-plus-contrib zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color xcscope ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org tide tagedit symon swiper subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv ranger rake rainbow-delimiters pytest pyenv-mode py-isort pug-mode powerline popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-journal org-gcal org-bullets org-brain open-junk-file nginx-mode neotree nameless multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports google-translate golden-ratio gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghub gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-pos-tip flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode diminish diff-hl define-word darktooth-theme dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-anaconda column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
