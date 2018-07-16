@@ -560,8 +560,8 @@ before packages are loaded."
 
       ;; org templates
       (setq org-capture-templates
-            '(("p" "Personal Todo" entry (file+headline "~/Sync/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n")
-              ("w" "Work Todo" entry (file+headline "~/Sync/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n")
+            '(("p" "Personal Todo" entry (file+headline "~/Sync/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n")
+              ("w" "Work Todo" entry (file+headline "~/Sync/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n")
               ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org")
                "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
