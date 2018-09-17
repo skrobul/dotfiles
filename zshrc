@@ -117,3 +117,7 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
+# Docker exec bug with wrapping
+# https://github.com/moby/moby/pull/37172
+# https://github.com/moby/moby/issues/35407
+alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
