@@ -97,7 +97,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme)
+   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme vue-mode)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -622,6 +622,8 @@ before packages are loaded."
     (add-hook 'text-mode-hook 'turn-on-auto-fill)
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+    ;; use emacs as GIT_EDITOR
+    (global-git-commit-mode t)
     )
 
 ;; Do not write anything past this comment. This is where Emacs will
