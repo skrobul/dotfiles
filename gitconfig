@@ -8,7 +8,7 @@
 [push]
     default = current
 [core]
-    editor = emacsclient -n
+    editor = emacsclient -c
     excludesfile = ~/.gitignore
 [alias]
     d  = diff
