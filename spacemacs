@@ -675,5 +675,8 @@ This function is called at the very end of Spacemacs initialization."
  '(spaceline-unmodified ((t (:background "#739200" :foreground "#3E3D31" :inherit (quote mode-line)))))
  '(spacemacs-insert-face ((t (:background "#222222" :foreground "#B1D631" :inherit (quote mode-line)))))
  '(spacemacs-normal-face ((t (:background "black" :foreground "#B1D631" :inherit (quote mode-line))))))
+ '(org-done ((t (:foreground "#91Ba31" :box nil :weight bold))))
+ '(org-level-2 ((t (:foreground "gainsboro"))))
+ '(org-todo ((t (:foreground "tomato1" :box nil :weight semi-bold)))))
 )
 
