@@ -72,6 +72,8 @@ This function should only modify configuration layer settings."
      (ruby :variables
            ruby-version-manager 'rvm
            ruby-enable-enh-ruby-mode t
+           enh-ruby-deep-indent-paren t
+           enh-ruby-hanging-paren-deep-indent-level 0
            ruby-test-runner 'rspec)
      version-control
      salt
