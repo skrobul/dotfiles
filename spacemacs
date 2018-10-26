@@ -235,11 +235,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("IBM Plex Mono"
-                               :size 20
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 22
                                :weight semibold
                                :width normal
-                               :powerline-scale 0.5)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
 
