@@ -555,6 +555,10 @@ before packages are loaded."
     (setq create-lockfiles nil)
 
     ;; org mode
+    (spacemacs/set-leader-keys "oc" 'org-capture)
+    (spacemacs/set-leader-keys "op" 'marek/open_gtd)
+    (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
+
     (with-eval-after-load 'org
       ;; no current line highlight on org files (issues with colorscheme)
       (setq highlight-current-line-ignore-regexp "\.org\\|")
@@ -581,9 +585,6 @@ before packages are loaded."
         (interactive)
         (find-file "~/Sync/notes/gtd.org")
       )
-      (spacemacs/set-leader-keys "oc" 'org-capture)
-      (spacemacs/set-leader-keys "op" 'marek/open_gtd)
-      (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
 
       ;; render images inline by default
       (setq org-startup-with-inline-images t)
