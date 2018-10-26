@@ -89,6 +89,7 @@ This function should only modify configuration layer settings."
      ranger
      auto-completion
      graphviz
+     vue
      )
 
    ;; List of additional packages that will be installed without being
@@ -98,7 +99,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme vue-mode)
+   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
