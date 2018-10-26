@@ -43,7 +43,6 @@ This function should only modify configuration layer settings."
      html
      shell-scripts
      yaml
-     vimscript
      groovy
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
