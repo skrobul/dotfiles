@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
           org-enable-org-journal-support t
           org-indent-mode t
           org-journal-dir "~/Sync/notes/journal/"
+          org-journal-file-format "%Y%m%d.org"
           org-want-todo-bindings 'yes)
 
      (shell :variables
@@ -677,6 +678,6 @@ This function is called at the very end of Spacemacs initialization."
  '(spacemacs-normal-face ((t (:background "black" :foreground "#B1D631" :inherit (quote mode-line))))))
  '(org-done ((t (:foreground "#91Ba31" :box nil :weight bold))))
  '(org-level-2 ((t (:foreground "gainsboro"))))
- '(org-todo ((t (:foreground "tomato1" :box nil :weight semi-bold)))))
+ '(org-todo ((t (:foreground "tomato1" :box nil :weight semi-bold))))
 )
 
