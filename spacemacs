@@ -61,13 +61,14 @@ This function should only modify configuration layer settings."
           org-indent-mode t
           org-journal-dir "~/Sync/notes/journal/"
           org-journal-file-format "%Y%m%d.org"
+          org-fast-tag-selection-single-key 'yes
           org-want-todo-bindings 'yes)
 
      (shell :variables
             shell-default-term-shell "/usr/bin/zsh"
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      (ruby :variables
            ruby-version-manager 'rvm
