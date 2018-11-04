@@ -567,7 +567,7 @@ before packages are loaded."
 
       ;; org templates
       (setq org-capture-templates
-            '(("p" "Personal Todo" entry (file+headline "~/Sync/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n")
+            '(("p" "Personal Todo" entry (file+headline "~/Sync/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n\n")
               ("w" "Work Todo" entry (file+headline "~/Sync/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n")
               ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org")
                "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
@@ -628,7 +628,7 @@ before packages are loaded."
 
     ;; use emacs as GIT_EDITOR
     (global-git-commit-mode t)
-    )
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -654,8 +654,8 @@ This function is called at the very end of Spacemacs initialization."
     ("#F57F17" "#66BB6A" "#0097A7" "#42A5F5" "#7E57C2" "#D84315")))
  '(highlight-symbol-foreground-color "#546E7A")
  '(highlight-tail-colors (quote (("#F8BBD0" . 0) ("#FAFAFA" . 100))))
- '(org-pomodoro-audio-player "/usr/bin/paplay")
  '(lsp-ui-doc-position (quote at-point))
+ '(org-pomodoro-audio-player "/usr/bin/paplay")
  '(package-selected-packages
    (quote
     (graphviz-dot-mode hemisu-theme salt-mode mmm-jinja2 web-mode pyvenv org-download hy-mode expand-region evil-magit evil-escape doom-themes company-ansible aggressive-indent ac-php-core counsel ivy smartparens helm helm-core projectile pythonic js2-mode spaceline magit org-plus-contrib zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color xcscope ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org tide tagedit symon swiper subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv ranger rake rainbow-delimiters pytest pyenv-mode py-isort pug-mode powerline popwin pippel pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-journal org-gcal org-bullets org-brain open-junk-file nginx-mode neotree nameless multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports google-translate golden-ratio gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ ghub gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-pos-tip flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eziam-theme eyebrowse exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode diminish diff-hl define-word darktooth-theme dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-anaconda column-enforce-mode coffee-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
@@ -670,6 +670,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:background "gray6" :foreground "deep sky blue"))))
+ '(org-done ((t (:foreground "#00dd00" :box nil :weight bold))))
+ '(org-todo ((t (:foreground "#dd0000" :box nil :weight bold))))
+ '(org-level-2 ((t (:foreground "gainsboro"))))
  '(spaceline-evil-emacs ((t (:background "darkblue" :foreground "#3E3D31" :inherit (quote mode-line)))))
  '(spaceline-evil-normal ((t (:background "green" :foreground "black"))))
  '(spaceline-highlight-face ((t (:background "lightgreen" :foreground "#3E3D31" :inherit (quote mode-line)))))
@@ -677,8 +680,5 @@ This function is called at the very end of Spacemacs initialization."
  '(spaceline-unmodified ((t (:background "#739200" :foreground "#3E3D31" :inherit (quote mode-line)))))
  '(spacemacs-insert-face ((t (:background "#222222" :foreground "#B1D631" :inherit (quote mode-line)))))
  '(spacemacs-normal-face ((t (:background "black" :foreground "#B1D631" :inherit (quote mode-line))))))
- '(org-done ((t (:foreground "#91Ba31" :box nil :weight bold))))
- '(org-level-2 ((t (:foreground "gainsboro"))))
- '(org-todo ((t (:foreground "tomato1" :box nil :weight semi-bold))))
 )
 
