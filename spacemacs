@@ -600,6 +600,19 @@ before packages are loaded."
        '((dot . t) (ruby . dot))
        )
       (setq org-confirm-babel-evaluate nil)
+
+      ;; custom agenda
+      (setq org-agenda-custom-commands
+            '(
+              ("p" . "Personal searches")
+              ("pa" tags-todo "+@personal")
+              ("pc" tags-todo "+@personal+@call")
+              ("pe" tags-todo "+@personal+@errand")
+              ("w" tags-todo "+@work")
+              ("xs" todo "STARTED")
+              ("xw" todo "WAITING")
+              ("xW" todo-tree "WAITING")
+              ))
     )
 
     ;; fix Ctrl-R for terminal(
