@@ -600,6 +600,18 @@ before packages are loaded."
        '((dot . t) (ruby . dot))
        )
       (setq org-confirm-babel-evaluate nil)
+
+
+      ;; custom link types
+      ;; https://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations
+      (setq org-link-abbrev-alist
+            '(("gh"        . "http://github.com/")
+              ("ghe"       . "http://github.rackspace.com/")
+              ("twitter"   . "https://twitter.com/")
+              ("google"    . "http://www.google.com/search?q=")
+              ("gmap"      . "http://maps.google.com/maps?q=%s")
+              )
+      )
     )
 
     ;; fix Ctrl-R for terminal(
