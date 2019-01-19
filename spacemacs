@@ -624,7 +624,6 @@ before packages are loaded."
               ("xw" todo "WAITING")
               ("xW" todo-tree "WAITING")
               ))
->>>>>>> 903b1d0ccfc356645634f4b97ca42453083805a7
     )
 
     ;; fix Ctrl-R for terminal(
