@@ -601,7 +601,6 @@ before packages are loaded."
        )
       (setq org-confirm-babel-evaluate nil)
 
-
       ;; custom link types
       ;; https://orgmode.org/manual/Link-abbreviations.html#Link-abbreviations
       (setq org-link-abbrev-alist
@@ -612,6 +611,20 @@ before packages are loaded."
               ("gmap"      . "http://maps.google.com/maps?q=%s")
               )
       )
+
+      ;; custom agenda
+      (setq org-agenda-custom-commands
+            '(
+              ("p" . "Personal searches")
+              ("pa" tags-todo "+@personal")
+              ("pc" tags-todo "+@personal+@call")
+              ("pe" tags-todo "+@personal+@errand")
+              ("w" tags-todo "+@work")
+              ("xs" todo "STARTED")
+              ("xw" todo "WAITING")
+              ("xW" todo-tree "WAITING")
+              ))
+>>>>>>> 903b1d0ccfc356645634f4b97ca42453083805a7
     )
 
     ;; fix Ctrl-R for terminal(
