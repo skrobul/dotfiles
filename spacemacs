@@ -90,7 +90,6 @@ This function should only modify configuration layer settings."
      calendar
      google-calendar
      ranger
-     auto-completion
      graphviz
      lsp
      vue
