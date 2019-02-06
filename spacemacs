@@ -33,7 +33,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(nginx
+   '(systemd
+     nginx
      typescript
      csv
      php
@@ -54,7 +55,7 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      git
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      journal
      (org :variables
           org-enable-org-journal-support t
@@ -91,6 +92,7 @@ This function should only modify configuration layer settings."
      ranger
      auto-completion
      graphviz
+     lsp
      vue
      )
 
@@ -238,7 +240,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 22
+                               :size 18
                                :weight semibold
                                :width normal
                                :powerline-scale 1.0)
@@ -652,6 +654,10 @@ before packages are loaded."
 
     ;; use emacs as GIT_EDITOR
     (global-git-commit-mode t)
+
+    ;; js2 mode - no semicolons needed
+    (setq js2-strict-missing-semi-warning nil)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
