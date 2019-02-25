@@ -676,6 +676,9 @@ before packages are loaded."
     ;; js2 mode - no semicolons needed
     (setq js2-strict-missing-semi-warning nil)
 
+    ;; add YARN bin to path
+    (setq exec-path (append exec-path '("/home/skrobul/.config/yarn/global/node_modules/.bin")))
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
