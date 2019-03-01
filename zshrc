@@ -121,3 +121,5 @@ setopt share_history # share command history data
 # https://github.com/moby/moby/pull/37172
 # https://github.com/moby/moby/issues/35407
 alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
