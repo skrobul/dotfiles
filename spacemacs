@@ -592,9 +592,9 @@ before packages are loaded."
       (setq org-capture-templates
             '(
               ("p" "Personal Todo" entry (file "~/Sync/notes/inbox.org")
-               "* TODO %^{Brief Description} :@personal: %^g\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
+               "* TODO %^{Brief Description} :@personal:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
               ("w" "Work Todo" entry (file "~/Sync/notes/inbox.org")
-               "* TODO %^{Brief Description} :@work: %^g\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
+               "* TODO %^{Brief Description} :@work:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
               ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org") "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
 
