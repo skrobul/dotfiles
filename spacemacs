@@ -211,7 +211,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-citylights
+   dotspacemacs-themes '(doom-city-lights
+                         doom-spacegrey
                          seti
                          smyx
                          monokai
@@ -248,7 +249,7 @@ It should only modify the values of Spacemacs settings."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 18
-                               :weight semibold
+                               :weight normal
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
@@ -577,21 +578,24 @@ before packages are loaded."
     ;; disable lockfiles (problems with guard triggering twice)
     (setq create-lockfiles nil)
 
-    ;; org mode
-    (spacemacs/set-leader-keys "oc" 'org-capture)
-    (spacemacs/set-leader-keys "op" 'marek/open_gtd)
-    (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
 
     (with-eval-after-load 'org
+      ;; org mode keys
+      (spacemacs/set-leader-keys "oc" 'org-capture)
+      (spacemacs/set-leader-keys "op" 'marek/open_gtd)
+      (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
+      (spacemacs/set-leader-keys "oi" 'marek/org-open-inbox)
       ;; no current line highlight on org files (issues with colorscheme)
       (setq highlight-current-line-ignore-regexp "\.org\\|")
 
       ;; org templates
       (setq org-capture-templates
-            '(("p" "Personal Todo" entry (file+headline "~/Sync/notes/gtd.org" "Personal Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n\n")
-              ("w" "Work Todo" entry (file+headline "~/Sync/notes/gtd.org" "Work Tasks") "* TODO %^{Brief Description} %^g\n\t%?\n\tAdded: %U\n\n")
-              ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org")
-               "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
+            '(
+              ("p" "Personal Todo" entry (file "~/Sync/notes/inbox.org")
+               "* TODO %^{Brief Description} :@personal: %^g\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
+              ("w" "Work Todo" entry (file "~/Sync/notes/inbox.org")
+               "* TODO %^{Brief Description} :@work: %^g\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
+              ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org") "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
 
       ;; Archive all DONE tasks in a buffer
@@ -607,6 +611,12 @@ before packages are loaded."
         " Open GTD file immediately"
         (interactive)
         (find-file "~/Sync/notes/gtd.org")
+      )
+
+      (defun marek/org-open-inbox ()
+        "Open GTD Inbox"
+        (interactive)
+        (find-file "~/Sync/notes/inbox.org")
       )
 
       ;; render images inline by default
@@ -645,6 +655,8 @@ before packages are loaded."
               ("xw" todo "WAITING")
               ("xW" todo-tree "WAITING")
               ))
+      ;; refile
+      (setq org-refile-targets '(("~/Sync/notes/gtd.org" :maxlevel . 1)))
     )
 
     ;; fix Ctrl-R for terminal(
@@ -757,6 +769,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight semi-bold :height 94 :width normal)))))
+ '(spaceline-evil-normal ((t (:background "#2F3841" :foreground "#3E3D31" :inherit (quote mode-line))))))
 )
 
