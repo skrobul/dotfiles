@@ -657,6 +657,16 @@ before packages are loaded."
               ))
       ;; refile
       (setq org-refile-targets '(("~/Sync/notes/gtd.org" :maxlevel . 1)))
+
+      ;; auto revert for some files
+      (add-hook 'org-mode-hook 'enable-auto-revert-for-org)
+      (defun enable-auto-revert-for-org ()
+        (when (or
+                  (string= (file-name-base buffer-file-name) "inbox")
+                  (string= (file-name-base buffer-file-name) "gtd"))
+          (auto-revert-mode)
+        )
+      )
     )
 
     ;; fix Ctrl-R for terminal(
