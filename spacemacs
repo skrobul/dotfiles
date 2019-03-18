@@ -662,8 +662,8 @@ before packages are loaded."
       (add-hook 'org-mode-hook 'enable-auto-revert-for-org)
       (defun enable-auto-revert-for-org ()
         (when (or
-                  (string= (file-name-base buffer-file-name) "inbox")
-                  (string= (file-name-base buffer-file-name) "gtd"))
+                  (string= (file-name-base (or buffer-file-name "")) "inbox")
+                  (string= (file-name-base (or buffer-file-name "")) "gtd"))
           (auto-revert-mode)
         )
       )
