@@ -628,7 +628,11 @@ before packages are loaded."
       ;; inline for dot graphs
       (org-babel-do-load-languages
        'org-babel-load-languages
-       '((dot . t) (ruby . dot))
+       '(
+         (dot . t)
+         (ruby . dot)
+         (ditaa . t)
+         )
        )
       (setq org-confirm-babel-evaluate nil)
 
