@@ -33,12 +33,12 @@ label=
 min_width=255.255.255.255
 command=/home/skrobul/dotfiles/i3blocks/scripts/ethernet
 
-[vpn]
-label=
-command=/home/skrobul/dotfiles/i3blocks/scripts/anyconnect
+#[vpn]
+#label=
+#command=/home/skrobul/dotfiles/i3blocks/scripts/anyconnect
 
-[separator]
-color=#FFD135
+#[separator]
+#color=#FFD135
 
 [datetime]
 command=/home/skrobul/dotfiles/i3blocks/scripts/date
