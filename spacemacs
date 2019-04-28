@@ -734,6 +734,7 @@ This function is called at the very end of Spacemacs initialization."
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
+ '(groovy-indent-offset 2)
  '(highlight-indent-guides-auto-enabled nil)
  '(highlight-symbol-colors
    (quote
