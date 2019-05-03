@@ -266,13 +266,18 @@ exec xbindkeys
 
 
 # Gaps
-for_window [class="^.*"] border pixel 1
-gaps inner 15
-gaps outer 15
-smart_gaps on
+for_window [class="^.*"] border pixel 0
 set $mode_gaps gaps
 set $mode_gaps_outer outer gaps
 set $mode_gaps_inner inner gaps
+set $default_gaps_inner 15
+set $default_gaps_outer 15
+
+
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+smart_gaps on
+
 bindsym $mod+Shift+g mode "$mode_gaps"
 mode "$mode_gaps" {
     bindsym o      mode "$mode_gaps_outer"
