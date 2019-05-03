@@ -226,8 +226,8 @@ bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 # Screenshot
-bindsym $mod+Shift+m exec ~/bin/rsa
-bindsym --release $mod+Print exec scrot -s 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
+bindsym $mod+Shift+m exec /home/skrobul/bin/rsa
+bindsym Print exec flameshot gui
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
 # Camera
@@ -247,5 +247,6 @@ bindsym $mod+t exec tuxcmd
 #
 exec --no-startup-id compton --config ~/dotfiles/compton.conf
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/samoloty.jpg
+exec --no-startup-id start-pulseaudio-x11
 exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec --no-startup xbindkeys
