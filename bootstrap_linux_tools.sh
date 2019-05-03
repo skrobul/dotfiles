@@ -1,2 +1,2 @@
 #!/bin/sh
-apt-get install nitrogen vim-full libnotify-bin postgresql-client
+apt-get install nitrogen vim-full libnotify-bin postgresql-client flameshot
