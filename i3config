@@ -196,7 +196,17 @@ for_window [class="VirtualBox"] floating enable
 for_window [class="^Chrome$" title=" - Chrome"] border none
 for_window [class="^Firefox$" ] border none
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="(?i)pavucontrol"] floating enable border normal
+
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # bug for spotify assignment
 for_window [class="(?i)Spotify"] move to workspace $tag8
@@ -239,14 +249,61 @@ bindsym XF86Sleep exec --no-startup-id ~/bin/i3exit suspend
 # Apps
 bindsym $mod+t exec tuxcmd
 
-# Gaps
-#for_window [class="^.*"] border pixel 0
-#gaps inner 15
-#gaps outer 15
-#smart_gaps on
-#
+# Startup
 exec --no-startup-id compton --config ~/dotfiles/compton.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec xbindkeys
+
+
+# Gaps
+for_window [class="^.*"] border pixel 1
+gaps inner 15
+gaps outer 15
+smart_gaps on
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
