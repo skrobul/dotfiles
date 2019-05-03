@@ -246,7 +246,7 @@ bindsym $mod+t exec tuxcmd
 #smart_gaps on
 #
 exec --no-startup-id compton --config ~/dotfiles/compton.conf
-#exec_always --no-startup-id feh --bg-fill ~/Pictures/samoloty.jpg
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
-exec --no-startup xbindkeys
+exec xbindkeys

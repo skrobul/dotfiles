@@ -1,7 +1,7 @@
 full_text=|
 align=center
 interval=5
-color=#ffffff
+color=#888888
 separator=false
 separator_block_width=9
 
@@ -10,7 +10,7 @@ command=/home/skrobul/dotfiles/i3blocks/scripts/weather
 interval=300
 
 [separator]
-color=#FFD135
+color=#555555
 
 [disk]
 label=
@@ -18,30 +18,49 @@ command=/home/skrobul/dotfiles/i3blocks/scripts/disk
 interval=60
 
 [separator]
-color=#FFD135
+color=#555555
 
-[volume]
+# [volume]
+# command=/home/skrobul/dotfiles/i3blocks/scripts/volume
+# instance=pulse
+# signal=10
+
+[volume-pulseaudio]
 command=/home/skrobul/dotfiles/i3blocks/scripts/volume
-instance=pulse
-signal=10
+interval=once
+signal=1
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
 
 [separator]
-color=#FFD135
+color=#555555
 
 [ethernet]
 label=
 min_width=255.255.255.255
 command=/home/skrobul/dotfiles/i3blocks/scripts/ethernet
 
-#[vpn]
-#label=
-#command=/home/skrobul/dotfiles/i3blocks/scripts/anyconnect
-
-#[separator]
-#color=#FFD135
+[separator]
+color=#555555
 
 [datetime]
 command=/home/skrobul/dotfiles/i3blocks/scripts/date
 
 [separator]
-color=#FFD135
+color=#555555
+
