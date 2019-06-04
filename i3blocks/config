@@ -17,6 +17,7 @@ label=
 command=/home/skrobul/dotfiles/i3blocks/scripts/disk
 interval=60
 
+
 [separator]
 color=#555555
 
@@ -46,6 +47,14 @@ signal=1
 #USE_DESCRIPTION=0
 ## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
 #SUBSCRIBE=0
+
+[separator]
+color=#555555
+
+[battery]
+command=/usr/lib/i3blocks/battery
+label=🔋
+
 
 [separator]
 color=#555555
