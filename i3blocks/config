@@ -55,6 +55,10 @@ color=#555555
 command=/usr/lib/i3blocks/battery
 label=🔋
 
+[battery2]
+command=/usr/lib/i3blocks/battery
+label=🔋
+instance=1
 
 [separator]
 color=#555555
