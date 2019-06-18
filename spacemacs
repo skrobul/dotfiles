@@ -51,7 +51,14 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-tab-key-behavior 'complete
+                      spacemacs-default-company-backends '(company-files company-capf company-emoji)
+
+      )
      ;; better-defaults
      emacs-lisp
      git
@@ -107,7 +114,18 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(doom-themes zerodark-theme jbeans-theme atom-dark-theme seeing-is-believing imenu-anywhere clues-theme flatui-theme seti-theme)
+   dotspacemacs-additional-packages '(doom-themes
+                                      zerodark-theme
+                                      jbeans-theme
+                                      atom-dark-theme
+                                      seeing-is-believing
+                                      imenu-anywhere
+                                      clues-theme
+                                      flatui-theme
+                                      seti-theme
+                                      company-box
+                                      srcery-theme
+                                      )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -211,7 +229,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox
+   dotspacemacs-themes '(srcery
+                         gruvbox
                          doom-city-lights
                          doom-spacegrey
                          seti
@@ -248,9 +267,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Hack"
                                :size 18
-                               :weight bold
+                               :weight normal
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
@@ -503,6 +522,10 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; company-mode
+  (global-company-mode)
+;;  (add-hook 'company-mode-hook 'company-box-mode)
 
   ;; better separators
   (setq powerline-default-separator 'alternate)
