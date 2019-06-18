@@ -259,6 +259,7 @@ bindsym $mod+t exec tuxcmd
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/dotfiles/compton.conf
+exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/dotfiles/compton.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
