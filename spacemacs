@@ -258,7 +258,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   dotspacemacs-mode-line-theme '(spacemacs )
+   dotspacemacs-mode-line-theme '(all-the-icons :separator none :separator-scale 1.0)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -266,8 +266,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Hack"
-                               :size 18
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 22
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -513,6 +513,25 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+
+  (defun spaceline-custom-theme (&rest additional-segments)
+    "My custom spaceline theme."
+    (spaceline-compile
+      `(major-mode (minor-modes :when active) buffer-id)
+      `((line-column :separator " | " :priority 3)
+      `(marek/buffer-id)
+      `((flycheck-error flycheck-warning flycheck-info)
+       :when active
+       :priority 89)
+      `(org-pomodoro :when active)
+      `(org-clock :when active)
+      ` (buffer-position :priority 99)
+        ,@additional-segments))
+    (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))))
+
+
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -591,9 +610,9 @@ before packages are loaded."
          #'marek/visit-pull-request-url))
 
     ;; seeing-is-believing
-    (define-key ruby-mode-map (kbd ", d x") 'seeing-is-believing-run-as-xmpfilter)
-    (define-key ruby-mode-map (kbd ", d c") 'seeing-is-believing-clear)
-    (define-key ruby-mode-map (kbd ", d t") 'seeing-is-believing-mark-current-line-for-xmpfilter)
+    ;;(define-key ruby-mode-map (kbd ", d x") 'seeing-is-believing-run-as-xmpfilter)
+    ;;(define-key ruby-mode-map (kbd ", d c") 'seeing-is-believing-clear)
+    ;;#(define-key ruby-mode-map (kbd ", d t") 'seeing-is-believing-mark-current-line-for-xmpfilter)
 
     ;; imenu-anywhere
     (global-set-key (kbd "C-'") #'imenu-anywhere)
@@ -707,10 +726,24 @@ before packages are loaded."
     (add-hook 'terminal-mode-hook 'marek/setup-term-mode)
 
     ;; spaceline
+
+    ;; better file names in modeline
+    (spaceline-define-segment marek/buffer-id
+      "buffer id without project name"
+      (if (buffer-file-name)
+            ;; (s-chop-prefix (projectile-project-root) (buffer-file-name))
+        (s-chop-prefix (projectile-project-root) (buffer-file-name))
+            (powerline-buffer-id)
+      )
+      :priority 10000000000000
+     )
+    (spaceline-toggle-buffer-id-off)
+    (spaceline-toggle-marek/buffer-id-on)
     (spaceline-toggle-minor-modes-off)
     (spaceline-toggle-purpose-off)
     (spaceline-toggle-line-off)
     (spaceline-toggle-buffer-encoding-abbrev-off)
+
 
     ;; zooming keys
     (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -728,6 +761,18 @@ before packages are loaded."
 
     ;; add YARN bin to path
     (setq exec-path (append exec-path '("/home/skrobul/.config/yarn/global/node_modules/.bin")))
+
+    ;; remap vim's s/S to avy
+    (define-key evil-normal-state-map (kbd "s") #'avy-goto-word-1)
+    (define-key evil-motion-state-map (kbd "s") #'avy-goto-word-1)
+    (define-key evil-normal-state-map (kbd "S") #'avy-goto-char-timer)
+    (define-key evil-motion-state-map (kbd "S") #'avy-goto-char-timer)
+
+
+    ;; (defun amitp/spaceline-buffer-id ()
+    ;;   (cond (buffer-file-name
+    ;;          (s-chop-prefix (amitp/project-root-for-file buffer-file-name) buffer-file-name))
+    ;;         (t (s-trim (powerline-buffer-id 'mode-line-buffer-id)))))
 
 )
 
