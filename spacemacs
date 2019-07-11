@@ -258,7 +258,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   dotspacemacs-mode-line-theme '(all-the-icons :separator none :separator-scale 1.0)
+   dotspacemacs-mode-line-theme '(vim-powerline)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -268,7 +268,7 @@ It should only modify the values of Spacemacs settings."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 22
-                               :weight normal
+                               :weight semibold
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
@@ -674,6 +674,7 @@ before packages are loaded."
          (dot . t)
          (ruby . dot)
          (ditaa . t)
+         (sql . t)
          )
        )
       (setq org-confirm-babel-evaluate nil)
@@ -799,7 +800,6 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-visual-state-cursor (quote ("#C5E1A5" box)) t)
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#37474f")
- '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
  '(groovy-indent-offset 2)
  '(highlight-indent-guides-auto-enabled nil)
@@ -820,6 +820,7 @@ This function is called at the very end of Spacemacs initialization."
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#3a513a513a51")
  '(pos-tip-foreground-color "#9E9E9E")
+ '(rspec-primary-source-dirs nil)
  '(sml/active-background-color "#34495e")
  '(sml/active-foreground-color "#ecf0f1")
  '(sml/inactive-background-color "#dfe4ea")
