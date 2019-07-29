@@ -1,0 +1,8 @@
+# User config
+set my_realname="Marek Skrobacki"
+set my_username=`kwallet-query -f mutt -r username kdewallet`
+set my_domain=`kwallet-query -f mutt -r domain kdewallet`
+set my_password=`kwallet-query -f mutt -r password kdewallet`
+set my_lang="en_GB"
+set sig_on_top=yes
+
