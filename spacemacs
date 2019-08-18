@@ -104,7 +104,6 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-show-symbol nil)
      marekvue
      firacode
-     doom-modeline
      )
 
    ;; List of additional packages that will be installed without being
@@ -115,7 +114,6 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(doom-themes
-                                      doom-modeline
                                       zerodark-theme
                                       jbeans-theme
                                       atom-dark-theme
@@ -258,7 +256,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   dotspacemacs-mode-line-theme '(vanilla)
+   dotspacemacs-mode-line-theme '(doom)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -558,12 +556,6 @@ before packages are loaded."
                       :priority -1
                       :multi-root t
                       :server-id 'ruby-ls)))
-
-  ;; lsp mode for ruby
-
-
-  ;; zerodark custom modeline
-  ;; (zerodark-setup-modeline-format)
 
   ;; use pry in ruby console
     (setq inf-ruby-default-implementation "pry")
