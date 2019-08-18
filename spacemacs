@@ -63,7 +63,6 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      (markdown :variables markdown-live-preview-engine 'vmd)
-     journal
      (org :variables
           org-enable-org-journal-support t
           org-indent-mode t
@@ -626,7 +625,8 @@ before packages are loaded."
       (spacemacs/set-leader-keys "op" 'marek/open_gtd)
       (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
       (spacemacs/set-leader-keys "oi" 'marek/org-open-inbox)
-      (spacemacs/set-leader-keys "oj" 'view-journal)
+      (spacemacs/set-leader-keys "oj" 'marek/view-journal)
+
       ;; no current line highlight on org files (issues with colorscheme)
       (setq highlight-current-line-ignore-regexp "\.org\\|")
 
@@ -659,6 +659,11 @@ before packages are loaded."
         "Open GTD Inbox"
         (interactive)
         (find-file "~/Sync/notes/inbox.org")
+      )
+
+      (defun marek/view-journal ()
+        (interactive)
+        (org-journal-new-entry t nil)
       )
 
       ;; render images inline by default
