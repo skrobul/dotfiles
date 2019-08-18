@@ -48,7 +48,7 @@
 (setq doom-modeline-enable-word-count nil)
 
 ;; Whether display buffer encoding.
-(setq doom-modeline-buffer-encoding t)
+(setq doom-modeline-buffer-encoding nil)
 
 ;; Whether display indentation information.
 (setq doom-modeline-indent-info nil)
