@@ -106,6 +106,7 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-show-symbol nil)
      marekvue
      firacode
+     doom-modeline
      )
 
    ;; List of additional packages that will be installed without being
@@ -116,6 +117,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(doom-themes
+                                      doom-modeline
                                       zerodark-theme
                                       jbeans-theme
                                       atom-dark-theme
@@ -259,7 +261,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
-   dotspacemacs-mode-line-theme '(vim-powerline)
+   dotspacemacs-mode-line-theme '(vanilla)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -531,8 +533,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         ,@additional-segments))
     (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))))
 
-
-
   )
 
 (defun dotspacemacs/user-config ()
@@ -728,26 +728,6 @@ before packages are loaded."
 
     (add-hook 'terminal-mode-hook 'marek/setup-term-mode)
 
-    ;; spaceline
-
-    ;; better file names in modeline
-    (spaceline-define-segment marek/buffer-id
-      "buffer id without project name"
-      (if (buffer-file-name)
-            ;; (s-chop-prefix (projectile-project-root) (buffer-file-name))
-        (s-chop-prefix (projectile-project-root) (buffer-file-name))
-            (powerline-buffer-id)
-      )
-      :priority 10000000000000
-     )
-    (spaceline-toggle-buffer-id-off)
-    (spaceline-toggle-marek/buffer-id-on)
-    (spaceline-toggle-minor-modes-off)
-    (spaceline-toggle-purpose-off)
-    (spaceline-toggle-line-off)
-    (spaceline-toggle-buffer-encoding-abbrev-off)
-
-
     ;; zooming keys
     (define-key global-map (kbd "C-+") 'text-scale-increase)
     (define-key global-map (kbd "C--") 'text-scale-decrease)
@@ -776,6 +756,7 @@ before packages are loaded."
     ;;   (cond (buffer-file-name
     ;;          (s-chop-prefix (amitp/project-root-for-file buffer-file-name) buffer-file-name))
     ;;         (t (s-trim (powerline-buffer-id 'mode-line-buffer-id)))))
+
 
 )
 
