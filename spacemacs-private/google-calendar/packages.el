@@ -13,7 +13,10 @@
 
 (defconst google-calendar-packages
   '(org-gcal
-    calfw))
+    calfw
+    calfw-org
+    alert
+    ))
 
 (defun google-calendar/init-org-gcal ()
   "Initializes org-gcal and adds keybindings for it's exposed functions"
@@ -24,6 +27,7 @@
         "agr" 'org-gcal-refresh-token
         "ags" 'org-gcal-sync
         "agf" 'org-gcal-fetch))
+    :defer t
     :config
     (setq org-gcal-down-days 365)   ;; Set org-gcal to download events a year in advance
     (add-hook 'after-init-hook 'org-gcal-fetch)
@@ -37,8 +41,6 @@
   (use-package calfw
     :init
     (evil-set-initial-state 'cfw:calendar-mode 'normal)
-    (defvar calfw-org-agenda-view "a"
-      "Key for opening the current week or day view in org-agenda.")
 
     (defvar calfw-window-conf nil
       "Current window config")
@@ -72,18 +74,40 @@ other-frame                 Use `switch-to-buffer-other-frame' to display calend
     (define-key cfw:calendar-mode-map "N" 'cfw:navi-next-month-command)
     (define-key cfw:calendar-mode-map "P" 'cfw:navi-previous-month-command)
     (define-key cfw:calendar-mode-map "c" 'cfw:org-capture)
-    (define-key cfw:calendar-mode-map "v" 'cfw:org-open-agenda-day))
+    (define-key cfw:calendar-mode-map "v" 'cfw:org-open-agenda-day)
+    (define-key cfw:calendar-mode-map (kbd "SPC") 'spacemacs-cmds)
+    (define-key cfw:calendar-mode-map (kbd "TAB") 'cfw:show-details-command)
+    (define-key cfw:calendar-mode-map (kbd "C-j") 'cfw:navi-next-item-command)
+    (define-key cfw:calendar-mode-map (kbd "C-k") 'cfw:navi-prev-item-command)
 
+    :defer t
+    :commands (cfw:open-calendar-buffer))
+)
+
+(defun google-calendar/init-calfw-org ()
   (use-package calfw-org
     :init
     (spacemacs/set-leader-keys
       "agc" 'google-calendar/calfw-view)
     (spacemacs/declare-prefix "agc" "open-org-calendar")
 
+    (defvar calfw-org-agenda-view "a"
+      "Key for opening the current week or day view in org-agenda.")
+
     :config
-    (define-key cfw:org-schedule-map "q" 'google-calendar/calfw-restore-windows)
+    (progn
+      (define-key cfw:org-schedule-map "q" 'google-calendar/calfw-restore-windows)
+      (define-key cfw:org-schedule-map (kbd "SPC") 'spacemacs-cmds)
+      (define-key cfw:org-schedule-map (kbd "TAB") 'cfw:org-open-agenda-day)
+      (define-key cfw:org-custom-map (kbd "SPC") 'spacemacs-cmds)
+      (define-key cfw:org-custom-map (kbd "TAB") 'cfw:org-open-agenda-day))
 
     :commands
-    (cfw:open-org-calendar)))
+    (cfw:open-org-calendar))
+)
 
+(defun google-calendar/init-alert ()
+  "Initialize alert"
+  (use-package alert
+    :defer t))
 ;;; packages.el ends here
