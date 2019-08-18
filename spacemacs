@@ -105,6 +105,7 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-enable nil
           lsp-ui-sideline-show-symbol nil)
      marekvue
+     firacode
      )
 
    ;; List of additional packages that will be installed without being
@@ -266,9 +267,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Fira Code"
                                :size 22
-                               :weight semibold
+                               :weight normal
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
