@@ -669,9 +669,11 @@ before packages are loaded."
        'org-babel-load-languages
        '(
          (dot . t)
-         (ruby . dot)
+         (ruby . t)
          (ditaa . t)
          (sql . t)
+         (shell . t)
+         (python . t)
          )
        )
       (setq org-confirm-babel-evaluate nil)
