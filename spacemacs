@@ -701,6 +701,9 @@ before packages are loaded."
               ("xw" todo "WAITING")
               ("xW" todo-tree "WAITING")
               ))
+      ;; default agenda view
+      (setq org-agenda-span 1)
+
       ;; refile
       (setq org-refile-targets '(("~/Sync/notes/gtd.org" :maxlevel . 1)))
 
