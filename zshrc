@@ -3,6 +3,7 @@ bindkey -e
 # Zgen plugin manager
 #########################
 ZSH_THEME=""
+fpath=($fpath "/home/skrobul/.zfunctions")
 
 ############# ZPLUG start #############
 # Check if zplug is installed
@@ -38,6 +39,7 @@ zplug load
 autoload -U promptinit; promptinit
 prompt spaceship
 SPACESHIP_CHAR_SYMBOL="❯ "
+SPACESHIP_NODE_DEFAULT_VERSION="v10.17.0"
 source ~/dotfiles/zsh/spaceship_sections/dockerenv.zsh
 
 SPACESHIP_PROMPT_ORDER=(
