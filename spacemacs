@@ -66,7 +66,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-enable-org-journal-support t
           org-indent-mode t
-          org-journal-dir "~/Sync/notes/journal/"
+          org-journal-dir "/mnt/gtd/journal/"
           org-journal-file-format "%Y%m%d.org"
           org-fast-tag-selection-single-key 'yes
           org-want-todo-bindings 'yes)
@@ -625,11 +625,11 @@ before packages are loaded."
       ;; org templates
       (setq org-capture-templates
             '(
-              ("p" "Personal Todo" entry (file "~/Sync/notes/inbox.org")
+              ("p" "Personal Todo" entry (file "mnt/gtd/inbox.org")
                "* TODO %^{Brief Description} :@personal:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
-              ("w" "Work Todo" entry (file "~/Sync/notes/inbox.org")
+              ("w" "Work Todo" entry (file "/mnt/gtd/inbox.org")
                "* TODO %^{Brief Description} :@work:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
-              ("a" "Appointment" entry (file  "~/Sync/notes/calendar/cal_skrobul.org") "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
+              ("a" "Appointment" entry (file  "/mnt/gtd/calendar/cal_skrobul.org") "* %?\n\n%^T\n\n:PROPERTIES:\n\n:END:\n\n")
             ))
 
       ;; Archive all DONE tasks in a buffer
@@ -644,13 +644,13 @@ before packages are loaded."
       (defun marek/open_gtd ()
         " Open GTD file immediately"
         (interactive)
-        (find-file "~/Sync/notes/gtd.org")
+        (find-file "/mnt/gtd/gtd.org")
       )
 
       (defun marek/org-open-inbox ()
         "Open GTD Inbox"
         (interactive)
-        (find-file "~/Sync/notes/inbox.org")
+        (find-file "/mnt/gtd/inbox.org")
       )
 
       (defun marek/view-journal ()
@@ -705,7 +705,7 @@ before packages are loaded."
       (setq org-agenda-span 1)
 
       ;; refile
-      (setq org-refile-targets '(("~/Sync/notes/gtd.org" :maxlevel . 1)))
+      (setq org-refile-targets '(("/mnt/gtd/gtd.org" :maxlevel . 1)))
 
       ;; auto revert for some files
       (add-hook 'org-mode-hook 'enable-auto-revert-for-org)
