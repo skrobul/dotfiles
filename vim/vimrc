@@ -90,8 +90,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'w0rp/ale'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'thoughtbot/vim-rspec'
-Plug 'vim-ctrlspace/vim-ctrlspace' " projectile a-like
-"}}}
+Plug 'vim-ctrlspace/vim-ctrlspace'       " projectile a-like
+Plug 'jreybert/vimagit'                  " vimagit
+" }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
 " Plug 'mrtazz/simplenote.vim'           " simplenote support
