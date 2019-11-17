@@ -66,7 +66,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'                    " vim-ag
 Plug 'justinmk/vim-sneak'
 Plug 'slim-template/vim-slim'           " slim templating support
-Plug 'amiorin/vim-project'
 " color packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                  " gruvbox color scheme
@@ -110,7 +109,6 @@ Plug 'jreybert/vimagit'                  " vimagit
 
 " Plug 'git@github.com:Shougo/vimproc.vim.git'
 " Plug 'Shougo/unite.vim'             " maybe ctrlp replacement
-" Plug 'dbakker/vim-projectroot'      " necessarry to guess project root
 " Plug 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
 " Plug 'tpope/vim-obsession'          "session management
 " Plug 'dhruvasagar/vim-prosession'   "switch between sessions
@@ -571,19 +569,6 @@ vmap <C-p> :FZF<CR>
 " https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
 "let g:fzf_command_prefix = 'Fzf'
 
-" }}}
-" projects {{{
-let g:project_use_nerdtree = 1
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/devel")
-Project 'scratch'
-Project '~/dotfiles'
-Project 'unipede'
-Project 'config-gen'
-Project 'salt-secrets'
-Project 'salt-marek'
-Project 'salt'
-Project 'bbauth'
 " }}}
 " vim-outliner {{{
 " autocmd! FileType votl inoremap <C-n> <ESC>:call UltiSnips#ExpandSnippet()<CR>i
