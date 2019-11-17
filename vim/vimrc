@@ -757,6 +757,20 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" List of installed coc extensions
+let g:coc_global_extensions = [
+            \ 'coc-css',
+            \ 'coc-html',
+            \ 'coc-json',
+            \ 'coc-emmet',
+            \ 'coc-lists',
+            \ 'coc-solargraph',
+            \ 'coc-snippets',
+            \ 'coc-tsserver',
+            \ 'coc-vetur',
+            \ 'coc-yaml'
+            \ ]
 " }}}
 
 " {{{ ctrl-space
