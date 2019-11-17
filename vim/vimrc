@@ -28,8 +28,6 @@ Plug 'honza/vim-snippets'              " actual snippets
 " Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
-" Plug 'vim-airline/vim-airline'         " nice statusline
-" Plug 'vim-airline/vim-airline-themes'  " nice statusline - themes
 Plug 'jwhitley/vim-matchit'            " better jumping with %
 " Plug 'vim-scripts/endwise.vim'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
@@ -392,23 +390,6 @@ set wildignore+=**/node_modules
 let g:ctrlp_extensions = ['tag']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 nmap <C-S-p> :CtrlPMixed<CR>
-" }}}
-" vim-airline {{{
-let g:airline_theme = 'nord'
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t' "display just filenames
-let g:airline#extensions#tabline#buffer_nr_show = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch = ''
-" disable file format and encoding
-" let g:airline_section_y = ''
-" display
-let g:airline_section_z = '%l,%c'
 " }}}
 " {{{ vim-markdown - no folding
 " let g:vim_markdown_folding_disabled=0
