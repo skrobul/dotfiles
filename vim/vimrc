@@ -519,8 +519,8 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 
 " }}}
 " fzf - fuzzy search {{{
-map <C-p> :FZF<CR>
-vmap <C-p> :FZF<CR>
+map <C-p> :CocList files<CR>
+vmap <C-p> :CocList files<CR>
 " https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
 "let g:fzf_command_prefix = 'Fzf'
 
