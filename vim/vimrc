@@ -270,6 +270,11 @@ set showbreak=↪
 " move focus to correct place after the split
 set splitright " ... to the right of current pane
 set splitbelow " open splits below current pane
+" show matching parens
+set showmatch
+if has("nvim")
+  set clipboard+=unnamedplus
+endif
 " }}}
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
@@ -355,6 +360,10 @@ endif
 
 
 " autocmd BufEnter term://* startinsert
+
+" bad habits from spacemacs...
+nnoremap <silent> <leader>fs :write<cr>
+nnoremap <silent> <leader>fR :write<cr>
 
 " }}}
 " visual mode mappings {{{
@@ -723,21 +732,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>ca  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
+" Search workleader symbols
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 " List of installed coc extensions
 let g:coc_global_extensions = [
@@ -745,6 +754,7 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-json',
             \ 'coc-emmet',
+            \ 'coc-eslint',
             \ 'coc-lists',
             \ 'coc-solargraph',
             \ 'coc-snippets',
@@ -753,7 +763,6 @@ let g:coc_global_extensions = [
             \ 'coc-yaml'
             \ ]
 " }}}
-
 " {{{ ctrl-space
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 " end of plugin config }}}
