@@ -51,10 +51,6 @@ Plug 'idanarye/vim-merginal'           " help with merges and rebase
 Plug 'junegunn/vim-easy-align'         " easy alignment
 Plug 'mattn/gist-vim'                  " create GIST from vim
 Plug 'mattn/webapi-vim'                " create GIST from vim
-" Plug 'epeli/slimux'                    " start interactive session
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'                    " vim-ag
 Plug 'justinmk/vim-sneak'
 Plug 'slim-template/vim-slim'           " slim templating support
@@ -527,8 +523,6 @@ vmap <Leader>l :SlimuxREPLSendSelection<CR>
 
 " }}}
 " fzf - fuzzy search {{{
-map <C-p> :CocList files<CR>
-vmap <C-p> :CocList files<CR>
 " https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
 "let g:fzf_command_prefix = 'Fzf'
 
@@ -752,6 +746,9 @@ let g:coc_global_extensions = [
             \ 'coc-vetur',
             \ 'coc-yaml'
             \ ]
+
+map <C-p> :CocList files<CR>
+vmap <C-p> :CocList files<CR>
 " }}}
 " {{{ ctrl-space
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
