@@ -71,7 +71,6 @@ Plug 'hwartig/vim-seeing-is-believing'  "inline ruby
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'                 "vim-test
 Plug 'shime/vim-livedown'
-Plug 'vimwiki/vimwiki'
 Plug 'ClockworkNet/vim-apparmor'
 " Plug 'fholgado/minibufexpl.vim'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
@@ -598,15 +597,6 @@ let g:livedown_open = 1
 let g:livedown_port = 1337
 
 nmap gm :LivedownToggle<CR>
-" }}}
-" {{{ vimwiki
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/wiki/',
-            \ 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_table_mappings = 0
-let g:vimwiki_table_auto_fmt = 0
-
-
 " }}}
 " {{{ vim-rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>
