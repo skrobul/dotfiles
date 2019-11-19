@@ -194,7 +194,6 @@ set background=dark     "awesome for terminals with crappy colors (putty!)
 set tagstack            "lets you push and pop your jumps with ctrl+]
 set pastetoggle=<F11>   "when you're pasting stuff this keeps it from getting
                         "all whacked out with indentation
-set noshowmatch
 set showmode
 set smarttab
 set nrformats-=octal
@@ -270,6 +269,7 @@ set showmatch
 if has("nvim")
   set clipboard+=unnamedplus
 endif
+set wildignore+=**/node_modules
 " }}}
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
@@ -386,16 +386,7 @@ if has("gui_running")
 endif
 " }}}
 " Plugins config {{{
-" CtrlP {{{
-" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-set wildignore+=**/node_modules
-" let g:ctrlp_open_new_file = "r"
-" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' } "fuzzy matching with ctrlp+cmatcher"
-let g:ctrlp_extensions = ['tag']
-" let g:ctrlp_cmd = 'CtrlPMixed'
-nmap <C-S-p> :CtrlPMixed<CR>
-" }}}
-" {{{ vim-markdown - no folding
+" {{{ vim-markdown
 " let g:vim_markdown_folding_disabled=0
 let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_new_list_item_indent = 2
@@ -435,9 +426,18 @@ vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
 " gina {{{
-nnoremap <Leader>gs :Gina status -v<CR>
-nnoremap <Leader>gc :Gina commit<CR>
+nnoremap <Leader>gs :Gina status<CR>
+nnoremap <Leader>gc :Gina commit -v<CR>
 nnoremap <Leader>gp :Gina push<CR>
+" use C to switch between the status/commit section
+autocmd FileType gina-status
+      \ nnoremap <silent><buffer> gc
+      \ :<C-u>Gina commit<CR>
+autocmd FileType gina-commit
+      \ nnoremap <silent><buffer> gs
+      \ :<C-u>Gina status<CR>
+call gina#custom#mapping#nmap('status', '<C-n>', 'j<Plug>(gina-show-preview)')
+call gina#custom#mapping#nmap('status', '<C-p>', 'k<Plug>(gina-show-preview)')
 " open three way diffs in vertical
 set diffopt+=vertical
 "}}}
@@ -515,16 +515,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 " let g:ag_prg="/usr/local/bin/ag --vimgrep"
-
-" }}}
-" slimux - interactive sessions started directly from vim {{{
-map <Leader>l :SlimuxREPLSendLine<CR>
-vmap <Leader>l :SlimuxREPLSendSelection<CR>
-
-" }}}
-" fzf - fuzzy search {{{
-" https://github.com/junegunn/fzf.vim/issues/83#issuecomment-205886405
-"let g:fzf_command_prefix = 'Fzf'
 
 " }}}
 " vim-outliner {{{
