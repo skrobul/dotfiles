@@ -73,7 +73,7 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'w0rp/ale'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'thoughtbot/vim-rspec'
+"Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ctrlspace/vim-ctrlspace'            " projectile a-like
 Plug 'jreybert/vimagit'                       " vimagit
 Plug 'neoclide/coc.nvim',{'branch':'release'} " completion
@@ -569,6 +569,14 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
 let test#strategy = "dispatch"
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
+
+let g:dispatch_compilers = {}
+let g:dispatch_compilers['bundle exec'] = ''
+let g:dispatch_compilers['rspec'] = 'rspec'
+
 " }}}
 " vim-livedown {{{
 " should markdown preview get shown automatically upon opening markdown buffer
@@ -583,15 +591,24 @@ let g:livedown_port = 1337
 nmap gm :LivedownToggle<CR>
 " }}}
 " {{{ vim-rspec
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch -compiler=rspec bundle exec rspec {spec} --format=progress"
+map <Leader>tf :call RunCurrentSpecFile()<CR>
+map <Leader>tn :call RunNearestSpec()<CR>
+map <Leader>tl :call RunLastSpec()<CR>
+map <Leader>ta :call RunAllSpecs()<CR>
+"let g:rspec_command = "Dispatch -compiler=rspec bundle exec rspec {spec} --format=progress"
 " Yoinked from rails.vim to support rspec keyword highlighting outside Rails
 " project folders
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it its specify shared_context shared_examples shared_examples_for shared_context include_examples include_context it_should_behave_like it_behaves_like before after around subject scenario feature background given described_class violated pending expect expect_any_instance_of allow allow_any_instance_of double instance_double mock xit fit
 highlight def link rubyRspec Function
+
+if has("nvim")
+  let g:rspec_command = ':call RunMySpecs("{spec}")'
+
+  function! RunMySpecs(specs)
+    execute 'split | terminal bundle exec rspec ' . a:specs
+    execute feedkeys("\<c-\>\<c-n>")
+  endfunction
+endif
 " }}}
 " {{{ ale 
 let g:ale_lint_on_text_changed = 'never'
@@ -753,23 +770,23 @@ let g:gruvbox_improved_warnings = 1
 
 " local modifications
 " search results blue instead of orange
-hi Search ctermfg=234 ctermbg=221 guifg=#101112 guibg=#B7C0C9
+" hi Search ctermfg=234 ctermbg=221 guifg=#101112 guibg=#B7C0C9
 " more distinct line nr
-hi LineNr ctermfg=237 guibg=#2F3339 guifg=#707885
+"hi LineNr ctermfg=237 guibg=#2F3339 guifg=#707885
 
 " fix gitgutter background
-hi GitGutterAdd ctermfg=2 guifg=#009900 guibg=#2F3339
-hi GitGutterDelete ctermfg=1 guifg=#ff2222 guibg=#2F3339
-hi GitGutterChange ctermfg=3 guifg=#bbbb00 guibg=#2F3339
+"hi GitGutterAdd ctermfg=2 guifg=#009900 guibg=#2F3339
+"hi GitGutterDelete ctermfg=1 guifg=#ff2222 guibg=#2F3339
+"hi GitGutterChange ctermfg=3 guifg=#bbbb00 guibg=#2F3339
 
 " color constants with blue instead of orange
-hi Type ctermfg=173 guifg=#23A1D3
+"hi Type ctermfg=173 guifg=#23A1D3
 "}}}
 " custom commands {{{
 " bind \a (backward slash) to grep shortcut
 "command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " map ag to leader a
-nnoremap <Leader>a :Ag<SPACE>
+nnoremap <Leader>sa :Ag<SPACE>
 function! ArrayConvertToW()
     execute "normal /=\s+<cr>evf]"
     s/\%V,/ /ge
@@ -816,8 +833,5 @@ cmap w!! w !sudo tee % >/dev/null
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-"}}}
-" colorscheme overrides {{{
-hi MatchParen     ctermfg=0 ctermbg=6 guifg=#EBCB8B guibg=#88C0D0
 "}}}
 " vim: foldmethod=marker foldlevel=0
