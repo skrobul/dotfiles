@@ -429,6 +429,7 @@ vmap <leader>gV :Gitv! --all<cr>
 nnoremap <Leader>gs :Gina status<CR>
 nnoremap <Leader>gc :Gina commit -v<CR>
 nnoremap <Leader>gp :Gina push<CR>
+nnoremap <Leader>gl :Gina log<CR>
 " use C to switch between the status/commit section
 autocmd FileType gina-status
       \ nnoremap <silent><buffer> gc
