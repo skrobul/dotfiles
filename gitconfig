@@ -8,7 +8,7 @@
 [push]
     default = current
 [core]
-    editor = emacsclient -c
+    editor = vim
     excludesfile = ~/.gitignore
 [alias]
     d  = diff
