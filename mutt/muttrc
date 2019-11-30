@@ -82,6 +82,7 @@ set index_format=" %?M?   ↳&%4C?   %Z      %D     %-15.15n    %s"
 bind    index   G  imap-fetch-mail
 macro   index   gi "<change-folder>=INBOX<enter>"       "Go to Inbox"
 macro   index   gs "<change-folder>=$my_sent<enter>"    "Go to Sent"
+macro   index   gb "<change-folder>=INBOX/BB/Strategic<enter>" "Go to Strategic"
 macro   index   gd "<change-folder>=$my_drafts<enter>"  "Go to Drafts"
 macro   index   gt "<change-folder>=$my_trash<enter>"   "Go to Trash"
 
@@ -116,24 +117,7 @@ macro pager S ":set confirmappend=no delete=yes\n<save-message>=Archive\n<sync-m
 
 
 # Colors
-color   normal      white default
-color   attachment  brightyellow default
-color   hdrdefault  cyan default
-color   indicator   black cyan
-color   markers     brightred default
-color   quoted      green default
-color   signature   cyan default
-color   status      brightgreen blue
-color   tilde       blue default
-color   tree        red default
-color   header      brightgreen default ^From:
-color   header      brightcyan default ^To:
-color   header      brightcyan default ^Reply-To:
-color   header      brightcyan default ^Cc:
-color   header      brightblue default ^Subject:
-color   body        brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color   body        brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
-
+#source ./dracula.muttrc
 # For better looks
 #set markers=no # don't put '+' at the beginning of wrapped lines
 #set pager_index_lines= 5 # how large is the index window?
