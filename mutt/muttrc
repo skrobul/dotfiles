@@ -43,6 +43,17 @@ set smtp_authenticators = "login"
 ## More settings
 unset confirmappend
 set delete
+# scroll by line instead of by page
+set menu_scroll 
+# + markers on wraps
+unset markers
+# save attachments in outgoing messages
+set fcc_attach
+# set reply subject
+set forward_format = "Fwd: %s"
+# include original message in reply
+set include
+set forward_quote
 
 # File storage settings
 
