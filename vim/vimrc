@@ -750,6 +750,7 @@ let g:coc_global_extensions = [
             \ 'coc-emmet',
             \ 'coc-eslint',
             \ 'coc-lists',
+            \ 'coc-prettier',
             \ 'coc-solargraph',
             \ 'coc-snippets',
             \ 'coc-tsserver',
