@@ -1,0 +1,34 @@
+[general]
+ui = ttyui
+accounts = Personal,Work
+pythonfile = ~/dotfiles/offlineimap.py
+
+[Account Personal]
+localrepository = Personal-Local
+remoterepository = Personal-Remote
+
+[Account Work]
+localrepository = Work-Local
+remoterepository = Work-Remote
+
+[Repository Personal-Local]
+type = Maildir
+localfolders = ~/Mail/Personal
+
+[Repository Work-Local]
+type = Maildir
+localfolders = ~/Mail/Work
+
+[Repository Personal-Remote]
+type = Gmail
+remoteuser = skrobul@skrobul.com
+remotepasseval = get_password("smtp.gmail.com", "skrobul@skrobul.com")
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-bundle.crt
+
+[Repository Work-Remote]
+type = Gmail
+remoteuser = marek.skrobacki@rackspace.co.uk
+remotepasseval = get_password("outlook.office365.com", "marek.skrobacki@rackspace.co.uk")
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-bundle.crt
