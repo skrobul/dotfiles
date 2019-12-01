@@ -27,7 +27,7 @@ realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-bundle.crt
 
 [Repository Work-Remote]
-type = Gmail
+type = IMAP
 remoteuser = marek.skrobacki@rackspace.co.uk
 remotepasseval = get_password("outlook.office365.com", "marek.skrobacki@rackspace.co.uk")
 realdelete = no
