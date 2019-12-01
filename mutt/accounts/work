@@ -1,0 +1,26 @@
+set from      = "marek.skrobacki@rackspace.co.uk"
+set sendmail  = "/usr/bin/msmtp -a work"
+set mbox      = "Work/archive"
+set postponed = "Work/Drafts"
+
+color status blue default
+
+macro index D \
+    "<save-message>Work/$my_trash<enter>" \
+    "move message to the trash"
+
+macro index ms \
+    "<save-message>Work/Junk<quote-char><space>Email<enter>"  \
+        "mark message as spam"
+
+# Mailboxes navigation
+macro   index   gi "<change-folder>=Work/INBOX<enter>"       "Go to Inbox"
+macro   index   gs "<change-folder>=Work/$my_sent<enter>"    "Go to Sent"
+macro   index   gb "<change-folder>=Work/INBOX.BB.Strategic<enter>" "Go to Strategic"
+macro   index   gd "<change-folder>=Work/$my_drafts<enter>"  "Go to Drafts"
+macro   index   gt "<change-folder>=Work/$my_trash<enter>"   "Go to Trash"
+
+### Marek's macros
+# Archive email
+macro index S "<tag-prefix-cond><save-message>=Work/Archive\n<sync-mailbox>"
+macro pager S "<save-message>=Work/Archive\n<sync-mailbox>"
