@@ -41,6 +41,8 @@ set ssl_force_tls = yes
 set smtp_authenticators = "login"
 
 ## More settings
+unset confirmappend
+set delete
 
 # File storage settings
 
@@ -111,8 +113,8 @@ bind    pager   w           previous-page
 
 ### Marek's macros
 # Archive email
-macro index S ":set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
-macro pager S ":set confirmappend=no delete=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index S "<tag-prefix-cond><save-message>=Archive\n<sync-mailbox>"
+macro pager S "<save-message>=Archive\n<sync-mailbox>"
 
 
 
