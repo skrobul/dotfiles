@@ -77,6 +77,8 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'vim-ctrlspace/vim-ctrlspace'            " projectile a-like
 Plug 'jreybert/vimagit'                       " vimagit
 Plug 'neoclide/coc.nvim',{'branch':'release'} " completion
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
