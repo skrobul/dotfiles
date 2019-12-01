@@ -2,3 +2,5 @@ weechat/logs
 weechat/*.log
 weechat/otr
 weechat/sec.conf
+vim/bundle
+weechat
