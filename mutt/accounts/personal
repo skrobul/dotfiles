@@ -5,10 +5,22 @@ set postponed = "+Personal/drafts"
 
 color status green default
 
-macro index D \
-    "<save-message>+Personal/Trash<enter>" \
+macro index,pager d \
+    "<save-message>=Personal/[Gmail].Bin<enter>" \
     "move message to the trash"
 
-macro index S \
-    "<save-message>+Personal/Spam<enter>"  \
+macro index,pager s \
+    "<save-message>=Personal/Spam<enter>"  \
         "mark message as spam"
+
+macro index,pager e \
+    "<save-message>=Personal/[Gmail]/All Mail<enter>" \
+    "archive message"
+
+
+macro index gi "<change-folder>=Personal/INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=Personal/[Gmail].All<quote-char><space>Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=Personal/[Gmail].Starred<enter>" "Go to starred messages"
+macro index gd "<change-folder>=Personal/[Gmail].Drafts<enter>" "Go to drafts"
+macro index gt "<change-folder>=PERSONAL/[GMAIL].Bin<enter>" "Go to trash"
+macro index ,c "<change-folder>=Work/INBOX<enter>" "change accounts"

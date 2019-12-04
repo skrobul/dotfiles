@@ -2,6 +2,7 @@
 ui = ttyui
 accounts = Personal,Work
 pythonfile = ~/dotfiles/offlineimap.py
+maxsyncaccounts = 2
 
 [Account Personal]
 localrepository = Personal-Local

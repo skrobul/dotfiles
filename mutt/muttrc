@@ -19,7 +19,6 @@ source "~/.mutt/lang/$my_lang"
 #set spoolfile= +INBOX
 #set postponed= +$my_drafts_noquote
 #set record = +$my_sent_noquote
-#set trash = +$my_trash_noquote
 #mailboxes
 
 #set imap_check_subscribed="yes"
@@ -110,6 +109,29 @@ bind    pager   j           next-line
 bind    pager   n           next-entry
 bind    pager   p           previous-entry
 bind    pager   w           previous-page
+
+# Vimmy keybindings
+bind alias,index,browser,query G last-entry
+bind pager G bottom
+
+bind alias,index,browser,query gg first-entry
+bind pager gg top
+
+bind alias,index,pager,browser,query \Cd half-down
+bind alias,index,pager,browser,query \Cu half-up
+
+bind index { previous-thread
+bind pager { half-up
+
+bind index } next-thread
+bind pager } half-down
+
+# Thread bindings
+bind generic             zt        current-top
+bind generic             zz        current-middle
+bind generic             zb        current-bottom
+bind index               za        collapse-thread
+bind index               zA        collapse-all
 
 # Folder hooks
 set spoolfile = "=Personal/INBOX"

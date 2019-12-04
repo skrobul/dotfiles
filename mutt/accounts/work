@@ -5,8 +5,8 @@ set postponed = "Work/Drafts"
 
 color status blue default
 
-macro index D \
-    "<save-message>Work/$my_trash<enter>" \
+macro index,pager d \
+    "<save-message>INBOX/Work/$my_trash<enter>" \
     "move message to the trash"
 
 macro index ms \
@@ -24,3 +24,5 @@ macro   index   gt "<change-folder>=Work/$my_trash<enter>"   "Go to Trash"
 # Archive email
 macro index S "<tag-prefix-cond><save-message>=Work/Archive\n<sync-mailbox>"
 macro pager S "<save-message>=Work/Archive\n<sync-mailbox>"
+
+macro index ,c "<change-folder>=Personal/INBOX<enter>" "change accounts"
