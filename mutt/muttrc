@@ -48,6 +48,8 @@ set forward_format = "Fwd: %s"
 # include original message in reply
 set include
 set forward_quote
+set mime_forward=yes
+set mime_forward_rest=yes
 
 # File storage settings
 
