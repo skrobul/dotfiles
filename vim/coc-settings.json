@@ -1,4 +1,5 @@
 {
 	"coc.preferences.diagnostic.displayByAle": true,
-    "codeLens.enable": true
+    "codeLens.enable": true,
+    "suggest.maxCompleteItemCount": 10
 }
