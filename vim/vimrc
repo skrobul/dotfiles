@@ -215,6 +215,7 @@ set formatoptions=tcrqnj
 set diffopt=filler
 " set lazyredraw
 set number
+set relativenumber
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
