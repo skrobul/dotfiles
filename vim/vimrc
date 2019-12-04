@@ -79,6 +79,7 @@ Plug 'jreybert/vimagit'                       " vimagit
 Plug 'neoclide/coc.nvim',{'branch':'release'} " completion
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jceb/vim-orgmode'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
