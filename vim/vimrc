@@ -429,7 +429,7 @@ vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
 " gina {{{
-nnoremap <Leader>gs :Gina status<CR>
+nnoremap <Leader>gs :Gina status -s<CR>
 nnoremap <Leader>gc :Gina commit -v<CR>
 nnoremap <Leader>gp :Gina push<CR>
 nnoremap <Leader>gl :Gina log<CR>
