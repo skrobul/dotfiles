@@ -764,6 +764,9 @@ vmap <C-p> :CocList files<CR>
 " }}}
 " {{{ ctrl-space
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
