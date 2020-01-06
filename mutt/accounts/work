@@ -6,11 +6,11 @@ set postponed = "Work/Drafts"
 color status blue default
 
 macro index,pager d \
-    "<save-message>INBOX/Work/$my_trash<enter>" \
+    "<save-message>=Work/INBOX.$my_trash<enter>" \
     "move message to the trash"
 
 macro index ms \
-    "<save-message>Work/Junk<quote-char><space>Email<enter>"  \
+    "<save-message>=Work/Junk<quote-char><space>Email<enter>"  \
         "mark message as spam"
 
 # Mailboxes navigation

@@ -109,6 +109,7 @@ bind    pager   j           next-line
 bind    pager   n           next-entry
 bind    pager   p           previous-entry
 bind    pager   w           previous-page
+bind    pager   R           group-reply
 
 # Vimmy keybindings
 bind alias,index,browser,query G last-entry
@@ -153,6 +154,10 @@ macro index <F6> \
 <pipe-message>notmuch-mutt tag -- -inbox<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
  "notmuch: remove message from inbox"
+
+# Better scrolling
+set menu_context=5
+set pager_context=5
 
 # Folder hooks
 set spoolfile = "=Personal/INBOX"

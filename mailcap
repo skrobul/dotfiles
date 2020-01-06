@@ -1,1 +1,10 @@
 text/html; /usr/bin/w3m -dump -T text/html %s ; copiousoutput
+
+
+audio/*; /usr/bin/xdg-open %s; copiousoutput
+
+image/*; /usr/bin/xdg-open %s; copiousoutput
+
+application/msword; /usr/bin/xdg-open %s; copiousoutput
+application/pdf; /usr/bin/xdg-open %s; copiousoutput
+application/postscript ; /usr/bin/xdg-open %s; copiousoutput
