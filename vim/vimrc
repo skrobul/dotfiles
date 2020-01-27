@@ -29,7 +29,6 @@ Plug 'honza/vim-snippets'              " actual snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
 Plug 'jwhitley/vim-matchit'            " better jumping with %
-Plug 'tpope/vim-endwise'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
 Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
