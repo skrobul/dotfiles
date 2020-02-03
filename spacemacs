@@ -611,14 +611,14 @@ before packages are loaded."
     ;; disable lockfiles (problems with guard triggering twice)
     (setq create-lockfiles nil)
 
+    ;; org mode keys
+    (spacemacs/set-leader-keys "oc" 'org-capture)
+    (spacemacs/set-leader-keys "op" 'marek/open_gtd)
+    (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
+    (spacemacs/set-leader-keys "oi" 'marek/org-open-inbox)
+    (spacemacs/set-leader-keys "oj" 'marek/view-journal)
 
     (with-eval-after-load 'org
-      ;; org mode keys
-      (spacemacs/set-leader-keys "oc" 'org-capture)
-      (spacemacs/set-leader-keys "op" 'marek/open_gtd)
-      (spacemacs/set-leader-keys "oa" 'marek/org-archive-done-tasks)
-      (spacemacs/set-leader-keys "oi" 'marek/org-open-inbox)
-      (spacemacs/set-leader-keys "oj" 'marek/view-journal)
 
       ;; no current line highlight on org files (issues with colorscheme)
       (setq highlight-current-line-ignore-regexp "\.org\\|")
