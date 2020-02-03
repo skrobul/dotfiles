@@ -57,7 +57,7 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-tab-key-behavior 'complete
-                      spacemacs-default-company-backends '(company-files company-capf company-emoji)
+                      spacemacs-default-company-backends '(company-files company-capf)
 
       )
      ;; better-defaults
@@ -618,7 +618,6 @@ before packages are loaded."
     (spacemacs/set-leader-keys "oi" 'marek/org-open-inbox)
     (spacemacs/set-leader-keys "oj" 'marek/view-journal)
 
-    (with-eval-after-load 'org
 
       ;; no current line highlight on org files (issues with colorscheme)
       (setq highlight-current-line-ignore-regexp "\.org\\|")
@@ -717,7 +716,6 @@ before packages are loaded."
           (auto-revert-mode)
         )
       )
-    )
 
     ;; fix Ctrl-R for terminal(
     (defun marek/setup-term-mode ()
