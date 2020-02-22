@@ -766,15 +766,14 @@ let g:coc_global_extensions = [
             \ 'coc-yaml'
             \ ]
 
-" disabled in favour of ctrl-space
-" map <C-p> :CocList files<CR>
-" vmap <C-p> :CocList files<CR>
+nnoremap <silent><C-p> :CocList files<CR>
+vnoremap <silent><C-p> :CocList files<CR>
 " }}}
 " {{{ ctrl-space
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 
 " file open
-nnoremap <silent><C-p> :CtrlSpace O<CR> 
+" nnoremap <silent><C-p> :CtrlSpace O<CR>
 nnoremap <silent><C-Space> :CtrlSpace H<CR> 
 nnoremap <silent><leader>b :CtrlSpace H<CR> 
 
