@@ -29,6 +29,7 @@ Plug 'honza/vim-snippets'              " actual snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
 Plug 'rstacruz/sparkup'                " parser for condensed HTML
 Plug 'jwhitley/vim-matchit'            " better jumping with %
+Plug 'tpope/vim-endwise'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
 Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
@@ -306,23 +307,23 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 " buffer navigation
 " new buffer (empty)
-nmap <silent> <leader>bt :enew<CR>
+nnoremap <silent> <leader>bt :enew<CR>
 " next buffer
-nmap <silent> <leader>n :bnext<CR>
+nnoremap <silent> <leader>n :bnext<CR>
 " previous buffer
-nmap <silent> <leader>p :bprevious<CR>
+nnoremap <silent> <leader>p :bprevious<CR>
 "close the buffer and replace with previous
-nmap <silent> <leader>bc :bp <BAR> bd #<CR>
+nnoremap <silent> <leader>bc :bp <BAR> bd #<CR>
 "close the buffer
-nmap <silent> <leader>bd :bd<CR>
+nnoremap <silent> <leader>bd :bd<CR>
 " show all open buffers in buffer explorer
 " nmap <silent> <leader>b :ls<CR>
 " nmap <silent> <leader>b :CtrlPBuffer<cr>
-map <Leader>bl :Buffers<CR>
-vmap <Leader>bl :Buffers<CR>
+nnoremap <silent> <Leader>bl :CocList -N buffers<CR>
+vmap <silent> <Leader>bl :CocList -N buffers<CR>
 
-map ' :Buffers<CR>
-vmap ' :Buffers<CR>
+nnoremap <silent> ' :CocList -N buffers<CR>
+vmap <silent>' :CocList -N buffers<CR>
 " ruby context endings - insert marks
 nmap <Leader>z /end%y$%A # p:nohlsearch
 
@@ -652,7 +653,11 @@ inoremap <silent><expr> <c-s-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 " conflicts with endwise.vim
 " https://github.com/neoclide/coc.nvim/issues/297
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" additionally, we need to disable endwise default mappings
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>\<Plug>DiscretionaryEnd" : "\<C-g>u\<CR>"
+let g:endwise_no_mappings = 1
+imap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
