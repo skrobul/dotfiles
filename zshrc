@@ -164,6 +164,6 @@ setopt autocd
 # https://github.com/moby/moby/pull/37172
 # https://github.com/moby/moby/issues/35407
 alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
-alias docker-deactivate='unset DOCKER_HOST DOCKER_CERT_PATH DOCKER_TLS_VERIFY'
+alias docker-deactivate="unset DOCKER_CERT_PATH DOCKER_TLS_VERIFY DOCKER_HOST"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
