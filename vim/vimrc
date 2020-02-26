@@ -22,8 +22,8 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" Plug 'tpope/vim-fugitive'              " git wrapper
-Plug 'lambdalisue/gina.vim'            " better git wrapper...
+ Plug 'tpope/vim-fugitive'              " git wrapper
+" Plug 'lambdalisue/gina.vim'            " better git wrapper...
 Plug 'honza/vim-snippets'              " actual snippets
 " Plug 'SirVer/ultisnips' ", { 'on' : [] }            code snippets
 Plug 'tomtom/tcomment_vim'             " easy comments
@@ -404,21 +404,21 @@ let g:instant_markdown_slow = 1
 let g:tcomment#replacements_xml={}
 " }}}
 " fugitive {{{
-" nnoremap <Leader>ga :Git add %:p<CR><CR>
-" nnoremap <Leader>gs :Gstatus<CR>
-" nnoremap <Leader>gc :Gcommit -v -q<CR>
-" nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>ge :Gedit<CR>
-" nnoremap <Leader>gr :Gread<CR>
-" nnoremap <Leader>gw :Gwrite<CR><CR>
-" nnoremap <Leader>gl :silent! Glog<CR>:bot copen<CR>
-" nnoremap <Leader>gp :Ggrep<Space>
-" nnoremap <Leader>gm :Gmove<Space>
-" nnoremap <Leader>gb :Git branch<Space>
-" nnoremap <Leader>go :Git checkout<Space>
-" nnoremap <Leader>gps :Gpush<CR>
-" nnoremap <Leader>gpl :Gpull<CR>
+nnoremap <Leader>ga :Git add %:p<CR><CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit -v -q<CR>
+nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>ge :Gedit<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gw :Gwrite<CR><CR>
+nnoremap <Leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <Leader>gp :Ggrep<Space>
+nnoremap <Leader>gm :Gmove<Space>
+nnoremap <Leader>gb :Git branch<Space>
+nnoremap <Leader>go :Git checkout<Space>
+nnoremap <Leader>gps :Gpush<CR>
+nnoremap <Leader>gpl :Gpull<CR>
 " git merges
 map <silent> <leader>2 :diffget LOCAL<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget REMOTE<CR> :diffupdate<CR>
@@ -429,21 +429,21 @@ vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
 " gina {{{
-nnoremap <Leader>gs :Gina status -s<CR>
-nnoremap <Leader>gc :Gina commit -v<CR>
-nnoremap <Leader>gp :Gina push<CR>
-nnoremap <Leader>gl :Gina log<CR>
-" use C to switch between the status/commit section
-autocmd FileType gina-status
-      \ nnoremap <silent><buffer> gc
-      \ :<C-u>Gina commit<CR>
-autocmd FileType gina-commit
-      \ nnoremap <silent><buffer> gs
-      \ :<C-u>Gina status<CR>
-call gina#custom#mapping#nmap('status', '<C-n>', 'j<Plug>(gina-show-preview)')
-call gina#custom#mapping#nmap('status', '<C-p>', 'k<Plug>(gina-show-preview)')
-" open three way diffs in vertical
-set diffopt+=vertical
+" nnoremap <Leader>gs :Gina status -s<CR>
+" nnoremap <Leader>gc :Gina commit -v<CR>
+" nnoremap <Leader>gp :Gina push<CR>
+" nnoremap <Leader>gl :Gina log<CR>
+" " use C to switch between the status/commit section
+" autocmd FileType gina-status
+"       \ nnoremap <silent><buffer> gc
+"       \ :<C-u>Gina commit<CR>
+" autocmd FileType gina-commit
+"       \ nnoremap <silent><buffer> gs
+"       \ :<C-u>Gina status<CR>
+" call gina#custom#mapping#nmap('status', '<C-n>', 'j<Plug>(gina-show-preview)')
+" call gina#custom#mapping#nmap('status', '<C-p>', 'k<Plug>(gina-show-preview)')
+" " open three way diffs in vertical
+" set diffopt+=vertical
 "}}}
 " Geeknote markdown by default {{{2
 let g:GeeknoteFormat="markdown"
