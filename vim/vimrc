@@ -394,6 +394,8 @@ endif
 " let g:vim_markdown_folding_disabled=0
 let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_new_list_item_indent = 2
+" workaround https://github.com/plasticboy/vim-markdown/issues/414
+let g:vim_markdown_folding_style_pythonic = 1
 " }}}
 " NERDTree - autoclose when last buffer {{{
 map <F4> :NERDTreeToggle<CR>
