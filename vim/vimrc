@@ -762,6 +762,7 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-json',
             \ 'coc-emmet',
+            \ 'coc-emoji',
             \ 'coc-eslint',
             \ 'coc-lists',
             \ 'coc-prettier',
