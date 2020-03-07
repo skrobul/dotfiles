@@ -164,7 +164,7 @@ if has('autocmd')
     augroup resCur
       autocmd!
       autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \ if line("'\"") > 0 && line("'\"") <= line("$") && bufname() != ".git/COMMIT_MESSAGE" |
             \   exe "normal g`\"" |
             \ endif
     augroup END
