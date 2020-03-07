@@ -81,6 +81,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jceb/vim-orgmode'
 Plug 'cespare/vim-toml'
+Plug 'leafOfTree/vim-vue-plugin'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
