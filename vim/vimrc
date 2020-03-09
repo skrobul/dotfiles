@@ -82,6 +82,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jceb/vim-orgmode'
 Plug 'cespare/vim-toml'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'mattn/emmet-vim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -759,19 +760,20 @@ nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 " List of installed coc extensions
 let g:coc_global_extensions = [
             \ 'coc-css',
-            \ 'coc-html',
-            \ 'coc-json',
             \ 'coc-emmet',
             \ 'coc-emoji',
             \ 'coc-eslint',
+            \ 'coc-html',
+            \ 'coc-json',
             \ 'coc-lists',
+            \ 'coc-markdownlint'
             \ 'coc-prettier',
             \ 'coc-python',
-            \ 'coc-solargraph',
             \ 'coc-snippets',
+            \ 'coc-solargraph',
             \ 'coc-tsserver',
             \ 'coc-vetur',
-            \ 'coc-yaml'
+            \ 'coc-yaml',
             \ ]
 
 nnoremap <silent><C-p> :CocList files<CR>
