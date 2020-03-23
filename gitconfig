@@ -37,13 +37,13 @@
     path = ~/.gitconfig.local
 
 [user]
-	name = Marek Skrobacki
-	email = marek.skrobacki@rackspace.co.uk
-	signingkey = 374CDBFC56D86927
+    name = Marek Skrobacki
+    email = marek.skrobacki@rackspace.co.uk
+    signingkey = D7E0356D46EAA0A5
 
 [commit]
     template = ~/.gitmessage
-    gpgsign = false
+    gpgsign = true
 [hub]
     host = github.rackspace.com
 [mergetool "vimdiff"]
@@ -52,10 +52,10 @@
     user = skrobul
 
 [url "https://"]
-	insteadOf = git://
+    insteadOf = git://
 [gui]
-	recentrepo = /Users/skrobul/devel/unipede
+    recentrepo = /Users/skrobul/devel/unipede
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [mergetool]
-	keepBackup = false
+    keepBackup = false
