@@ -662,7 +662,7 @@ before packages are loaded."
       (setq org-startup-with-inline-images t)
 
       ;; automatic visual indentation
-      (setq org-startup-indented t)
+      (setq org-startup-indented nil)
 
       ;; inline for dot graphs
       (org-babel-do-load-languages
