@@ -167,6 +167,7 @@ alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1
 alias docker-deactivate="unset DOCKER_CERT_PATH DOCKER_TLS_VERIFY DOCKER_HOST"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 pg_in_docker() {
     docker exec --user postgres -it "$1" psql "$2"
