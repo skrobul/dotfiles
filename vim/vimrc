@@ -325,7 +325,7 @@ nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> <Leader>bl :CocList -N buffers<CR>
 vmap <silent> <Leader>bl :CocList -N buffers<CR>
 
-nnoremap <silent> ' :CocList -N buffers<CR>
+nnoremap <silent> '' :CocList -N buffers<CR>
 vmap <silent>' :CocList -N buffers<CR>
 " ruby context endings - insert marks
 nmap <Leader>z /end%y$%A # p:nohlsearch
@@ -766,7 +766,7 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-json',
             \ 'coc-lists',
-            \ 'coc-markdownlint'
+            \ 'coc-markdownlint',
             \ 'coc-prettier',
             \ 'coc-python',
             \ 'coc-snippets',
