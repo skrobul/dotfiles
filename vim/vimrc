@@ -31,7 +31,7 @@ Plug 'rstacruz/sparkup'                " parser for condensed HTML
 Plug 'jwhitley/vim-matchit'            " better jumping with %
 Plug 'tpope/vim-endwise'                     " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'        " coffe script support
-Plug 'plasticboy/vim-markdown'         " markdown syntax
+"Plug 'plasticboy/vim-markdown'         " markdown syntax
 Plug 'tpope/vim-repeat'                " extend support for repeating with .
 Plug 'tpope/vim-surround'              " quickly surround
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }  " file manager
@@ -57,7 +57,7 @@ Plug 'slim-template/vim-slim'           " slim templating support
 " color packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                  " gruvbox color scheme
-Plug 'vimoutliner/vimoutliner'          " vim outliner
+"Plug 'vimoutliner/vimoutliner'          " vim outliner
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
 Plug 'Quramy/tsuquyomi'                 " typescript completion
@@ -83,6 +83,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'cespare/vim-toml'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
+Plug 'romainl/vim-cool'     " disables search highlighting when you are done
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -784,7 +785,7 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 
 " file open
 " nnoremap <silent><C-p> :CtrlSpace O<CR>
-nnoremap <silent><C-Space> :CtrlSpace H<CR>
+nnoremap <silent><C-Space> :CtrlSpace h<CR>
 nnoremap <silent><leader>b :CtrlSpace H<CR>
 
 let g:CtrlSpaceSetDefaultMapping = 0
