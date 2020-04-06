@@ -162,11 +162,12 @@ if has('autocmd')
         autocmd FileType gitrebase noremap <CR> :Cycle<CR>
     augroup end
 
+    "
     " jump to the last cursor position
     augroup resCur
       autocmd!
       autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") && bufname() != ".git/COMMIT_MESSAGE" |
+            \ if line("'\"") > 0 && line("'\"") <= line("$") && bufname() !~ ".git/COMMIT_MESSAGE" |
             \   exe "normal g`\"" |
             \ endif
     augroup END
