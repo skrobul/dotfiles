@@ -566,13 +566,6 @@ nnoremap <silent> ,rf :TestFile<cr>
 nnoremap <silent> ,rn :TestNearest<cr>
 nnoremap <silent> ,rr :TestLast<cr>
 nnoremap <silent> ,rv :TestVisit<cr>
-" Useful maps
-" hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
 let test#strategy = "dispatch"
 if has('nvim')
   tmap <C-o> <C-\><C-n>
@@ -582,6 +575,22 @@ let g:dispatch_compilers = {}
 let g:dispatch_compilers['bundle exec'] = ''
 let g:dispatch_compilers['rspec'] = 'rspec'
 
+" }}}
+" {{{ neoterm
+" Useful maps
+" hide/close terminal
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+" send line to REPL
+" Use gz{text-object} in normal mode
+nnoremap gz <Plug>(neoterm-repl-send)
+" Send selected contents in visual mode.
+xnoremap gz <Plug>(neoterm-repl-send)
+" use `gzz` or `2gzz` to send current or 2 lines to REPL.
+nnoremap gzz <Plug>(neoterm-repl-send-line)
 " }}}
 " vim-livedown {{{
 " should markdown preview get shown automatically upon opening markdown buffer
