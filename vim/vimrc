@@ -50,9 +50,6 @@ Plug 'mattn/webapi-vim'                                 " create GIST from vim
 Plug 'rking/ag.vim'                                     " vim-ag
 Plug 'justinmk/vim-sneak'
 Plug 'slim-template/vim-slim'                           " slim templating support
-" color packages
-Plug 'mhinz/vim-janah'
-Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 Plug 'leafgarland/typescript-vim'                       " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}              " Dependency for tsuquyomi
 Plug 'Quramy/tsuquyomi'                                 " typescript completion
@@ -68,7 +65,6 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'w0rp/ale'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
-Plug 'jreybert/vimagit'                                 " vimagit
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -79,6 +75,9 @@ Plug 'mattn/emmet-vim'
 Plug 'romainl/vim-cool'                                 " disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 " display CSS colors inline
 Plug 'osyo-manga/vim-over'                              " preview search & replace
+" colorscheme packages
+Plug 'mhinz/vim-janah'
+Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
