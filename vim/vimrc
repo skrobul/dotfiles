@@ -84,6 +84,7 @@ Plug 'cespare/vim-toml'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'romainl/vim-cool'     " disables search highlighting when you are done
+Plug 'ap/vim-css-color'     " display CSS colors inline
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
