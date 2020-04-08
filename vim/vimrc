@@ -22,8 +22,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
- Plug 'tpope/vim-fugitive'                              " git wrapper
-                                                        " Plug 'lambdalisue/gina.vim'            " better git wrapper...
+Plug 'tpope/vim-fugitive'                               " git wrapper
 Plug 'honza/vim-snippets'                               " actual snippets
 Plug 'tomtom/tcomment_vim'                              " easy comments
 Plug 'jwhitley/vim-matchit'                             " better jumping with %
@@ -95,7 +94,6 @@ Plug 'osyo-manga/vim-over'                              " preview search & repla
 " Plug 'skrobul/grb256'          " my version of grb256
 " Plug 'vim-scripts/CSApprox'
 " Plug 'Lokaltog/vim-easymotion'      " easy motion
-
 " Plug 'git@github.com:Shougo/vimproc.vim.git'
 " Plug 'Shougo/unite.vim'             " maybe ctrlp replacement
 " Plug 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
@@ -790,6 +788,10 @@ let g:CtrlSpaceSearchTiming = 70
 if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
+" }}}
+" vim-airline {{{
+let g:airline#extensions#tabline#enabled = 1
+" }}}
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
