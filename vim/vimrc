@@ -49,32 +49,32 @@ Plug 'mattn/gist-vim'                                   " create GIST from vim
 Plug 'mattn/webapi-vim'                                 " create GIST from vim
 Plug 'rking/ag.vim'                                     " vim-ag
 Plug 'justinmk/vim-sneak'
-Plug 'slim-template/vim-slim'                           " slim templating support
-Plug 'leafgarland/typescript-vim'                       " Typescript syntax
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}              " Dependency for tsuquyomi
-Plug 'Quramy/tsuquyomi'                                 " typescript completion
-Plug 'KabbAmine/vCoolor.vim'                            " color picker
 Plug 'airblade/vim-gitgutter'
 Plug 'hwartig/vim-seeing-is-believing'                  " inline ruby
-Plug 'kassio/neoterm'
+Plug 'kassio/neoterm'                                   " reuse terminal, repl integration
 Plug 'janko-m/vim-test'                                 " vim-test
-Plug 'shime/vim-livedown'
-Plug 'ClockworkNet/vim-apparmor'
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'andrewstuart/vim-kubernetes'
-Plug 'w0rp/ale'
-Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'shime/vim-livedown'                               " live markdown preview
+Plug 'w0rp/ale'                                         " linter
 Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jceb/vim-orgmode'
-Plug 'cespare/vim-toml'
-Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'romainl/vim-cool'                                 " disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 " display CSS colors inline
+Plug 'KabbAmine/vCoolor.vim'                            " color picker
 Plug 'osyo-manga/vim-over'                              " preview search & replace
+" additional syntax / lang support plugins
+Plug 'cespare/vim-toml'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'leafgarland/typescript-vim'          " Typescript syntax
+Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
+Plug 'Quramy/tsuquyomi'                    " typescript completion
+Plug 'andrewstuart/vim-kubernetes'         " kubernetes manifests
+Plug 'slim-template/vim-slim'              " slim templating support
+Plug 'ClockworkNet/vim-apparmor'           " AppArmor definitions
+Plug 'jceb/vim-orgmode'                    " emacs' org-mode
+Plug 'leafOfTree/vim-vue-plugin'           " vue.js
 " colorscheme packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
