@@ -24,7 +24,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-fugitive'                               " git wrapper
 Plug 'honza/vim-snippets'                               " actual snippets
-Plug 'tomtom/tcomment_vim'                              " easy comments
+Plug 'tpope/vim-commentary'                              " easy comments
 Plug 'jwhitley/vim-matchit'                             " better jumping with %
 Plug 'tpope/vim-endwise'                                " wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'                         " coffe script support
@@ -402,9 +402,6 @@ map <F4> :NERDTreeToggle<CR>
 " instant markdown {{{
 let g:instant_markdown_slow = 1
 " "}}}
-" tcomment {{{
-let g:tcomment#replacements_xml={}
-" }}}
 " fugitive {{{
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gs :Gstatus<CR>
