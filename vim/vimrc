@@ -59,7 +59,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'vue'] }
 Plug 'romainl/vim-cool'                                 " disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 " display CSS colors inline
 Plug 'KabbAmine/vCoolor.vim'                            " color picker
