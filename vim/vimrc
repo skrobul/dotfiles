@@ -78,6 +78,7 @@ Plug 'leafOfTree/vim-vue-plugin'           " vue.js
 " colorscheme packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
+Plug 'ayu-theme/ayu-vim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -805,7 +806,8 @@ let g:airline#extensions#tabline#enabled = 1
 if has('termguicolors')
     set termguicolors
 endif
-colorscheme gruvbox
+let ayucolor="dark"                " set to light, mirage or dark
+colorscheme ayu
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
 
