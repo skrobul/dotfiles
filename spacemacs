@@ -625,7 +625,7 @@ before packages are loaded."
       ;; org templates
       (setq org-capture-templates
             '(
-              ("p" "Personal Todo" entry (file "mnt/gtd/inbox.org")
+              ("p" "Personal Todo" entry (file "/mnt/gtd/inbox.org")
                "* TODO %^{Brief Description} :@personal:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
               ("w" "Work Todo" entry (file "/mnt/gtd/inbox.org")
                "* TODO %^{Brief Description} :@work:\n\t%?\n:PROPERTIES:\n:ADDED: %U\n:END:")
