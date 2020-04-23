@@ -806,6 +806,12 @@ let g:vimwiki_list = [{'path': '/mnt/gtd/wiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " }}}
+" {{{ vim-org
+let maplocalleader = "-"
+let g:org_aggressive_conceal = 0
+let g:org_agenda_files = ['/mnt/gtd/gtd.org', '/mnt/gtd/inbox.org']
+let g:org_todo_keywords = [['TODO(t)', 'STARTED(s)', 'WAITING(w)', '|', 'DONE(d)', 'CANCELLED(c)']]
+" }}}
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
