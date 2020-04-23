@@ -812,7 +812,10 @@ if has('termguicolors')
     set termguicolors
 endif
 let ayucolor="dark"                " set to light, mirage or dark
-colorscheme ayu
+set background=dark
+let g:two_firewatch_italics=1
+colorscheme two-firewatch
+let g:airline_theme='twofirewatch' 
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
 
