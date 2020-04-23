@@ -80,6 +80,7 @@ Plug 'leafOfTree/vim-vue-plugin'           " vue.js
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-two-firewatch'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
