@@ -700,6 +700,8 @@ before packages are loaded."
               ("xs" todo "STARTED")
               ("xw" todo "WAITING")
               ("xW" todo-tree "WAITING")
+              ("d" . "Done tasks")
+              ("dd" tags"CLOSED>\"<-2d>\"")
               ))
       ;; default agenda view
       (setq org-agenda-span 1)
