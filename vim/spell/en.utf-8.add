@@ -136,3 +136,11 @@ syd
 etc
 init
 conf
+wal
+healthcheck
+Postgres
+filesystem
+datadir
+PostgreSQL
+app13
+masterdb
