@@ -178,3 +178,8 @@ pg_in_docker_by_name() {
     pg_in_docker "$container_id"
 
 }
+
+function change_commit_date() {
+    GIT_COMMITTER_DATE="$1" git commit --no-edit --amend -S --date="$1" && \
+        git log --format=fuller HEAD~1..HEAD 
+}
