@@ -82,6 +82,7 @@ Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'sainnhe/edge'
+Plug 'hardselius/warlock'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -825,8 +826,8 @@ let g:two_firewatch_italics=1
 
 let g:edge_style = 'default'   "default, aura or neon
 
-colorscheme edge
-let g:airline_theme='edge' 
+colorscheme warlock
+let g:airline_theme='base16_grayscale'
 
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
