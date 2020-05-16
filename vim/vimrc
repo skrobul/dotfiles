@@ -81,6 +81,7 @@ Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
+Plug 'sainnhe/edge'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -821,8 +822,12 @@ endif
 let ayucolor="dark"                " set to light, mirage or dark
 set background=dark
 let g:two_firewatch_italics=1
-colorscheme two-firewatch
-let g:airline_theme='twofirewatch' 
+
+let g:edge_style = 'default'   "default, aura or neon
+
+colorscheme edge
+let g:airline_theme='edge' 
+
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
 
