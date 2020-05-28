@@ -83,6 +83,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'sainnhe/edge'
 Plug 'hardselius/warlock'
+Plug 'chriskempson/base16-vim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
