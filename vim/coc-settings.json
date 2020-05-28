@@ -1,7 +1,8 @@
 {
-    "diagnostic.displayByAle": true,
+    "diagnostic.displayByAle": false,
     "codeLens.enable": true,
     "suggest.maxCompleteItemCount": 10,
+    "suggest.minTriggerInputLength": 3,
     "suggest.snippetIndicator": "🌟",
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
