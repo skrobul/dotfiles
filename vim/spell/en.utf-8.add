@@ -144,3 +144,16 @@ datadir
 PostgreSQL
 app13
 masterdb
+loadbalancing
+Keepalived
+VRRP
+Traefik
+Trᴁfik
+metadata
+yml
+SNI
+backend
+app
+frontends
+backends
+Træfik
