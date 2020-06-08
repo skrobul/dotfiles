@@ -40,7 +40,7 @@ Plug 'tpope/vim-eunuch'                                 " Chmod, rename, delete 
 Plug 'henrik/vim-qargs'                                 " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'                       " helps with creating tables
 Plug 'benmills/vimux'                                   " interact with tmux
-Plug 'fmoralesc/vim-pad'                                " Evernote replacement
+"Plug 'fmoralesc/vim-pad'                                " Evernote replacement
 Plug 'gregsexton/gitv'                                  " gitk for vim
 Plug 'nathanaelkane/vim-indent-guides'                  " visual indent
 Plug 'idanarye/vim-merginal'                            " help with merges and rebase
@@ -48,7 +48,6 @@ Plug 'junegunn/vim-easy-align'                          " easy alignment
 Plug 'mattn/gist-vim'                                   " create GIST from vim
 Plug 'mattn/webapi-vim'                                 " create GIST from vim
 Plug 'rking/ag.vim'                                     " vim-ag
-Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
 Plug 'hwartig/vim-seeing-is-believing'                  " inline ruby
 Plug 'kassio/neoterm'                                   " reuse terminal, repl integration
@@ -65,12 +64,13 @@ Plug 'ap/vim-css-color'                                 " display CSS colors inl
 Plug 'KabbAmine/vCoolor.vim'                            " color picker
 Plug 'osyo-manga/vim-over'                              " preview search & replace
 Plug 'vimwiki/vimwiki'
+Plug 'AndrewRadev/splitjoin.vim'                            " split one liners
 " additional syntax / lang support plugins
 Plug 'cespare/vim-toml'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'leafgarland/typescript-vim'          " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
-Plug 'Quramy/tsuquyomi'                    " typescript completion
+" Plug 'Quramy/tsuquyomi'                    " typescript completion
 Plug 'andrewstuart/vim-kubernetes'         " kubernetes manifests
 Plug 'slim-template/vim-slim'              " slim templating support
 Plug 'ClockworkNet/vim-apparmor'           " AppArmor definitions
@@ -144,9 +144,9 @@ if has('autocmd')
     augroup markdown
         autocmd!
         autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
-        autocmd FileType markdown setlocal spell
-        autocmd FileType markdown set complete+=k
-        autocmd FileType markdown set tw=80 conceallevel=3 wrap
+        " autocmd FileType markdown setlocal spell
+        " autocmd FileType markdown set complete+=k
+        autocmd FileType markdown set tw=120 conceallevel=3 wrap
     augroup end
 
     augroup git
