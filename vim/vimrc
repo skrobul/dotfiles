@@ -54,7 +54,7 @@ Plug 'kassio/neoterm'                                   " reuse terminal, repl i
 Plug 'janko-m/vim-test'                                 " vim-test
 Plug 'shime/vim-livedown'                               " live markdown preview
 Plug 'w0rp/ale'                                         " linter
-Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
+"Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -627,10 +627,15 @@ if has("nvim")
 endif
 " }}}
 " {{{ ale
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_delay = 800
+let g:ale_lint_on_save = 0
 let g:ale_sign_warning = ''
 let g:ale_sign_error = '✖'
+let g:ale_cache_executable_check_failures=1
+let g:ale_linters = {
+\     'vimwiki': [],
+\}
 " }}}
 " {{{ coc.nvim
 " if hidden is not set, TextEdit might fail.
@@ -809,6 +814,7 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '/mnt/gtd/wiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
+let g:vimwiki_folding = 'expr'
 " }}}
 " {{{ vim-org
 let maplocalleader = "-"
