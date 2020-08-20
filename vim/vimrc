@@ -87,6 +87,7 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'sainnhe/edge'
 Plug 'hardselius/warlock'
 Plug 'chriskempson/base16-vim'
+Plug 'alvan/vim-closetag'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -182,6 +183,11 @@ if has('autocmd')
     augroup BWCCreateDir
         autocmd!
         autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+    augroup END
+
+    augroup vimwikitemplate
+        autocmd!
+        autocmd BufNewFile /mnt/gtd/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%' | norm "5G"
     augroup END
 endif " }}}
 " VIM Settings {{{
