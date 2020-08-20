@@ -187,7 +187,7 @@ if has('autocmd')
 
     augroup vimwikitemplate
         autocmd!
-        autocmd BufNewFile /mnt/gtd/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%' | norm "5G"
+        autocmd BufNewFile /mnt/gtd/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%'
     augroup END
 endif " }}}
 " VIM Settings {{{
