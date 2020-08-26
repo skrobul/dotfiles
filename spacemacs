@@ -707,7 +707,7 @@ before packages are loaded."
       (setq org-agenda-span 1)
 
       ;; refile
-      (setq org-refile-targets '(("/mnt/gtd/gtd.org" :maxlevel . 1)))
+      (setq org-refile-targets '(("/mnt/gtd/gtd.org" :maxlevel . 1) ("/mnt/gtd/gtd.org" :regexp . ".*Someday.*")))
 
       ;; bring back <s
       (when (version<= "9.2" (org-version))
