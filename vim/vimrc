@@ -88,6 +88,7 @@ Plug 'sainnhe/edge'
 Plug 'hardselius/warlock'
 Plug 'chriskempson/base16-vim'
 Plug 'alvan/vim-closetag'
+Plug 'rakr/vim-one'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -846,13 +847,13 @@ if has('termguicolors')
     set termguicolors
 endif
 let ayucolor="dark"                " set to light, mirage or dark
-set background=dark
 let g:two_firewatch_italics=1
 
 let g:edge_style = 'default'   "default, aura or neon
 
-colorscheme warlock
-let g:airline_theme='base16_grayscale'
+colorscheme one
+set background=dark
+let g:airline_theme='one'
 
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
