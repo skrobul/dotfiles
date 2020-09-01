@@ -54,6 +54,7 @@ Plug 'kassio/neoterm'                                   " reuse terminal, repl i
 Plug 'janko-m/vim-test'                                 " vim-test
 Plug 'shime/vim-livedown'                               " live markdown preview
 Plug 'w0rp/ale'                                         " linter
+Plug 'lambdalisue/suda.vim'                             " sudo write(neovim needs it)
 "Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
 Plug 'vim-airline/vim-airline'
@@ -63,7 +64,7 @@ Plug 'romainl/vim-cool'                                 " disables search highli
 Plug 'ap/vim-css-color'                                 " display CSS colors inline
 Plug 'KabbAmine/vCoolor.vim'                            " color picker
 Plug 'osyo-manga/vim-over'                              " preview search & replace
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'on': ['VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'] }
 Plug 'AndrewRadev/splitjoin.vim'                            " split one liners
 Plug 'dkarter/bullets.vim'                              " list formatting
 " additional syntax / lang support plugins
@@ -825,6 +826,11 @@ let g:vimwiki_list = [{'path': '/mnt/gtd/wiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_folding = 'expr'
+" these mappings are needed to enable lazy plugin loading and reduce vim
+" startup time
+nnoremap <silent><script> <leader>ww :VimwikiIndex<CR>
+nnoremap <silent><script> <leader>wi :VimwikiDiaryIndex<CR>
+nnoremap <silent><script> <leader>w\w :VimwikiMakeDiaryNote<CR>
 " }}}
 " {{{ vim-org
 let maplocalleader = "-"
@@ -841,6 +847,10 @@ let g:bullets_enabled_file_types = [
     \ 'vimwiki'
     \]
 " }}}
+" {{{ suda
+let g:suda_smart_edit = 1
+" }}}
+
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
