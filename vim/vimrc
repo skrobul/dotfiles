@@ -377,6 +377,10 @@ endif
 nnoremap <silent> <leader>fs :write<cr>
 nnoremap <silent> <leader>fR :write<cr>
 
+" insert current hour for vim-diary
+inoremap <F5> **<C-R>=strftime("%H:%M:%S")<CR>**:  
+inoremap <S-F5> <C-R>=strftime("%F")<CR><CR>
+
 " }}}
 " visual mode mappings {{{
 
