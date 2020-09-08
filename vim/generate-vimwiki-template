@@ -8,8 +8,6 @@ template = """# {date}
 
 * 
 
-## Todo
-
 ## Notes"""
 
 date = (datetime.date.today() if len(sys.argv) < 2
