@@ -707,7 +707,11 @@ before packages are loaded."
       (setq org-agenda-span 1)
 
       ;; refile
-      (setq org-refile-targets '(("/mnt/gtd/gtd.org" :maxlevel . 1) ("/mnt/gtd/gtd.org" :regexp . ".*Someday.*")))
+      (setq org-refile-targets '(
+                                 ("/mnt/gtd/gtd.org" :maxlevel . 1)
+                                 ("/mnt/gtd/gtd.org" :regexp . ".*Someday.*")
+                                 ("/mnt/gtd/gtd.org" :regexp . ".*Project:.*")
+                                 ))
 
       ;; bring back <s
       (when (version<= "9.2" (org-version))
@@ -812,6 +816,7 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
  '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(hl-sexp-background-color "#1c1f26")
+ '(max-mini-window-height 0.45)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
