@@ -128,6 +128,7 @@ alias push_and_open_pr="git push -u marek && hub pull-request"
 alias pbcopy="xclip -selection clip -i"
 alias agenda="LC_ALL=en_US.UTF-8 gcalcli agenda"
 alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com\""
+alias kd="kitty +kitten diff"
 
 timedping()
 {
