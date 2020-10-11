@@ -835,6 +835,10 @@ let g:vimwiki_folding = 'expr'
 nnoremap <silent><script> <leader>ww :VimwikiIndex<CR>
 nnoremap <silent><script> <leader>wi :VimwikiDiaryIndex<CR>
 nnoremap <silent><script> <leader>w\w :VimwikiMakeDiaryNote<CR>
+" switch vimgrep to use ag if available
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git
+endif
 " }}}
 " {{{ vim-org
 let maplocalleader = "-"
