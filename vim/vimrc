@@ -189,7 +189,7 @@ if has('autocmd')
 
     augroup vimwikitemplate
         autocmd!
-        autocmd BufNewFile /mnt/gtd/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%'
+        autocmd BufNewFile ~/Sync/notes/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%'
     augroup END
 endif " }}}
 " VIM Settings {{{
@@ -471,7 +471,7 @@ let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
 "}}}
 " vim-pad {{{2
-let g:pad#dir = '/mnt/gtd/'
+let g:pad#dir = '~/Sync/notes/'
 let g:pad#maps#new = "<meta>n"
 let g:pad#search_backend = 'ag'
 let g:pad#default_format = "markdown"
@@ -826,7 +826,7 @@ let g:airline#extensions#tabline#enabled = 1
 " wikis' outside the defined directories, in reality this breaks markdown
 " files everywhere, so we set it to 0
 let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [{'path': '/mnt/gtd/wiki/',
+let g:vimwiki_list = [{'path': '~/Sync/notes/wiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_folding = 'expr'
