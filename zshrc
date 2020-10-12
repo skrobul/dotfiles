@@ -37,7 +37,7 @@ zplug load
 
 
 autoload -U promptinit; promptinit
-prompt spaceship
+#prompt spaceship
 SPACESHIP_CHAR_SYMBOL="❯ "
 SPACESHIP_NODE_DEFAULT_VERSION="v10.17.0"
 source ~/dotfiles/zsh/spaceship_sections/dockerenv.zsh
