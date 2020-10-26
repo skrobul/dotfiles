@@ -70,6 +70,7 @@ Plug 'dkarter/bullets.vim'                              " list formatting
 " additional syntax / lang support plugins
 Plug 'cespare/vim-toml'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'saltstack/salt-vim'
 Plug 'leafgarland/typescript-vim'          " Typescript syntax
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
 " Plug 'Quramy/tsuquyomi'                    " typescript completion
@@ -126,8 +127,6 @@ if has('autocmd')
         autocmd BufRead,BufNewFile *.tex set tw=80
         "wrap lines in .txt files
         autocmd BufNewFile,BufRead *.txt set tw=78
-        " salt states are just yaml files
-        autocmd BufNewFile,BufRead *.sls set ft=yaml sw=2 ts=2
         autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
         autocmd FileType coffee set sw=2 ts=2 tw=80
         autocmd FileType python set ts=4 sw=4 et
