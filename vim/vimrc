@@ -81,6 +81,7 @@ Plug 'jceb/vim-orgmode'                    " emacs' org-mode
 Plug 'leafOfTree/vim-vue-plugin'           " vue.js
 Plug 'godlygeek/tabular'                   " dependency for plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'             " markdown - extra actions, folding
+Plug 'junegunn/goyo.vim'                   " distraction free writing
 " colorscheme packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
