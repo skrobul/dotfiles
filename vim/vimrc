@@ -57,6 +57,8 @@ Plug 'w0rp/ale'                                         " linter
 Plug 'lambdalisue/suda.vim'                             " sudo write(neovim needs it)
 "Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'vue'] }
@@ -93,6 +95,7 @@ Plug 'hardselius/warlock'
 Plug 'chriskempson/base16-vim'
 Plug 'alvan/vim-closetag'
 Plug 'rakr/vim-one'
+Plug 'preservim/tagbar'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -297,10 +300,6 @@ nnoremap <CR> :noh<CR><CR>
 nnoremap <Leader>z :%s/\<<C-r><C-w>\>//g<Left><Left>
 " space bar folding
 nnoremap  <silent>  <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-
-" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
-nnoremap <F12> :bn<CR>
-nnoremap <S-F12> :bp<CR>
 
 " disable arrows
 noremap <Up> <Nop>
@@ -798,7 +797,7 @@ let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-lists',
             \ 'coc-prettier',
-            \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-snippets',
             \ 'coc-solargraph',
             \ 'coc-tsserver',
@@ -806,8 +805,6 @@ let g:coc_global_extensions = [
             \ 'coc-yaml',
             \ ]
 
-nnoremap <silent><C-p> :CocList files<CR>
-vnoremap <silent><C-p> :CocList files<CR>
 " }}}
 " {{{ ctrl-space
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
@@ -863,6 +860,10 @@ let g:bullets_enabled_file_types = [
 " {{{ suda
 let g:suda_smart_edit = 1
 " }}}
+" {{{ fzf.vim
+nnoremap <silent><C-p> :Files<CR>
+vnoremap <silent><C-p> :Files<CR>
+" }}}
 
 " end of plugin config }}}
 "{{{ colorscheme
@@ -874,9 +875,9 @@ let g:two_firewatch_italics=1
 
 let g:edge_style = 'default'   "default, aura or neon
 
-colorscheme one
+colorscheme two-firewatch
 set background=dark
-let g:airline_theme='one'
+let g:airline_theme='sol'
 
 let g:gruvbox_improved_strings = 1
 let g:gruvbox_improved_warnings = 1
