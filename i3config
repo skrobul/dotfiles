@@ -256,6 +256,9 @@ bindsym XF86Sleep exec --no-startup-id ~/bin/i3exit suspend
 # Apps
 bindsym $mod+t exec tuxcmd
 
+# Keyboard
+exec --no-startup-id setxkbmap pl,gb,us -option 'grp:alt_shift_toggle'
+
 # Startup
 # exec --no-startup-id dunst
 exec --no-startup-id nm-applet
