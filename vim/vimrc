@@ -85,6 +85,8 @@ Plug 'godlygeek/tabular'                   " dependency for plasticboy/vim-markd
 Plug 'plasticboy/vim-markdown'             " markdown - extra actions, folding
 Plug 'junegunn/goyo.vim'                   " distraction free writing
 Plug 'cyberkov/openhab-vim'                " openhab
+Plug 'sheerun/vim-polyglot'                " lot of extra languages
+Plug 'chrisbra/NrrwRgn'                    " narrow/region filetype
 " colorscheme packages
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
