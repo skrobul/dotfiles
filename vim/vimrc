@@ -293,6 +293,10 @@ if has("nvim")
   set clipboard+=unnamedplus
 endif
 set wildignore+=**/node_modules
+
+" per-project vimrc
+set exrc
+set secure
 " }}}
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
