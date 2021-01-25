@@ -1,6 +1,6 @@
 # start stuff
 #exec dropbox start &
-#exec rescuetime &
+exec rescuetime &
 
 #exec eval `dbus-launch --sh-syntax --exit-with-session`
 #exec udiskie &
@@ -260,7 +260,7 @@ bindsym $mod+t exec tuxcmd
 exec --no-startup-id setxkbmap pl,gb,us -option 'grp:alt_shift_toggle'
 
 # Startup
-# exec --no-startup-id dunst
+exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 #exec --no-startup-id compton --config ~/dotfiles/compton.conf
 #exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/dotfiles/compton.conf
@@ -268,6 +268,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 # exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec xbindkeys
+exec_always --no-startup-id xfce4-power-manager
 
 
 # Gaps
