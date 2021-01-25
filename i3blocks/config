@@ -7,7 +7,7 @@ separator_block_width=9
 
 [temp]
 command=/home/skrobul/dotfiles/i3blocks/scripts/weather
-interval=300
+interval=1200
 
 [separator]
 color=#555555
