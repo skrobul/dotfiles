@@ -98,6 +98,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'alvan/vim-closetag'
 Plug 'rakr/vim-one'
 Plug 'preservim/tagbar'
+Plug 'arcticicestudio/nord-vim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -882,12 +883,13 @@ let g:two_firewatch_italics=1
 
 let g:edge_style = 'default'   "default, aura or neon
 
-colorscheme two-firewatch
 set background=dark
-let g:airline_theme='sol'
+let g:airline_theme='nord'
+let g:nord_bold_vertical_split_line = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_italic_comments = 1
 
-let g:gruvbox_improved_strings = 1
-let g:gruvbox_improved_warnings = 1
+colorscheme nord
 
 " local modifications
 " search results blue instead of orange
