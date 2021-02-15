@@ -1,9 +1,9 @@
 {
-    "diagnostic.displayByAle": false,
+    "diagnostic.displayByAle": true,
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
     "suggest.maxCompleteItemCount": 10,
-    "suggest.minTriggerInputLength": 3,
+    "suggest.minTriggerInputLength": 2,
     "suggest.snippetIndicator": "🌟",
     "suggest.autoTrigger":"trigger",
     "suggest.completionItemKindLabels": {
@@ -39,5 +39,8 @@
         "semi": false
       }
     },
-    "solargraph.useBundler": false
+    "solargraph.useBundler": false,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.venvPath": "/home/skrobul/venv/"
 }
