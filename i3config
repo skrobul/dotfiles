@@ -171,6 +171,7 @@ bar {
         #
         # #  <colorclass> <border> <background> <text>
         # focused_workspace  #4c7899 #132737 #ffffff
+        focused_workspace  #3A97DC #132737 #ffffff
         # active_workspace   #333333 #5f676a #ffffff
         # inactive_workspace #333333 #222222 #888888
         # urgent_workspace   #2f343a #DC770F #ffffff
@@ -264,11 +265,14 @@ exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 #exec --no-startup-id compton --config ~/dotfiles/compton.conf
 #exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/dotfiles/compton.conf
-#exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id start-pulseaudio-x11
 # exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec xbindkeys
 exec_always --no-startup-id xfce4-power-manager
+
+# needed for libvirt and KVM
+exec --no-startup-id lxpolkit
 
 
 # Gaps
@@ -329,3 +333,12 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #9FD521 #28F248 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
