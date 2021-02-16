@@ -445,8 +445,8 @@ nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gpl :Gpull<CR>
 " git merges
-map <silent> <leader>2 :diffget LOCAL<CR> :diffupdate<CR>
-map <silent> <leader>3 :diffget REMOTE<CR> :diffupdate<CR>
+map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
 " gitv
 nnoremap <Leader>gv :Gitv --all<CR>
 nnoremap <Leader>gV :Gitv! --all<CR>
