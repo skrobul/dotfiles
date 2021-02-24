@@ -814,20 +814,6 @@ let g:coc_global_extensions = [
             \ ]
 
 " }}}
-" {{{ ctrl-space
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
-
-" file open
-" nnoremap <silent><C-p> :CtrlSpace O<CR>
-nnoremap <silent><C-Space> :CtrlSpace h<CR>
-nnoremap <silent><leader>b :CtrlSpace H<CR>
-
-let g:CtrlSpaceSetDefaultMapping = 0
-let g:CtrlSpaceSearchTiming = 70
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-" }}}
 " vim-airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
