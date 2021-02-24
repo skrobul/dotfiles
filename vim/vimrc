@@ -862,7 +862,10 @@ let g:suda_smart_edit = 1
 nnoremap <silent><C-p> :GitFiles<CR>
 vnoremap <silent><C-p> :GitFiles<CR>
 " }}}
-
+"nrrw {{{ no mappings
+let g:nrrw_rgn_nomap_nr = 1
+let g:nrrw_rgn_nomap_Nr = 1
+"}}}
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
