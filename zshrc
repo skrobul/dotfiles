@@ -16,6 +16,7 @@ source ~/.zplug/init.zsh
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
+zplug "greymd/docker-zsh-completion"
 #zplug "rupa/z", use:z.sh
 zplug "arzzen/calc.plugin.zsh"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
@@ -185,3 +186,6 @@ function change_commit_date() {
     GIT_COMMITTER_DATE="$1" git commit --no-edit --amend -S --date="$1" && \
         git log --format=fuller HEAD~1..HEAD 
 }
+
+eval "$(direnv hook zsh)"
+
