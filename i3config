@@ -77,7 +77,7 @@ bindsym $mod+a focus parent
 
 set $tag1 "1:  term"
 set $tag2 "2:  web"
-set $tag3 "3:  emacs"
+set $tag3 "3:  comms"
 set $tag4 "4"
 set $tag5 "5:  videoconf"
 set $tag6 "6:  mail"
@@ -171,7 +171,7 @@ bar {
         #
         # #  <colorclass> <border> <background> <text>
         # focused_workspace  #4c7899 #132737 #ffffff
-        focused_workspace  #3A97DC #132737 #ffffff
+        focused_workspace  #FDF51E #132737 #ffffff
         # active_workspace   #333333 #5f676a #ffffff
         # inactive_workspace #333333 #222222 #888888
         # urgent_workspace   #2f343a #DC770F #ffffff
@@ -335,7 +335,7 @@ mode "$mode_gaps_outer" {
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #9FD521 #28F248 #ffffff #2e9ef4   #285577
+client.focused          #9FD521 #28F248 #ffffff #2e9ef4   #1FD2FF
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
