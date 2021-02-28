@@ -859,8 +859,8 @@ let g:bullets_enabled_file_types = [
 let g:suda_smart_edit = 1
 " }}}
 " {{{ fzf.vim
-nnoremap <silent><C-p> :GitFiles<CR>
-vnoremap <silent><C-p> :GitFiles<CR>
+nnoremap <silent><C-p> :Files<CR>
+vnoremap <silent><C-p> :Files<CR>
 " }}}
 "nrrw {{{ no mappings
 let g:nrrw_rgn_nomap_nr = 1
