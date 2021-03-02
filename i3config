@@ -191,7 +191,7 @@ bar {
 }
 
 for_window [title="VidyoDesktop$"] floating enable
-for_window [title="Zoom"] floating enable 
+#for_window [title="Zoom"] floating enable 
 for_window [class="Vpnui"] floating enable
 for_window [class="Guvcview"] floating enable
 #for_window [class="VirtualBox"] floating enable border normal
@@ -217,14 +217,14 @@ for_window [class="(?i)Spotify"] move to workspace $tag8
 for_window [urgent=latest] focus
 
 # app assignments
-assign [class="VidyoDesktop"] $tag5
+assign [class="slack"] $tag3
 assign [class="zoom"] $tag5
 assign [class="spotify"] $tag8
 assign [class="Vpnui"] $tag9
 assign [class="Google-chrome"] $tag2
 assign [class="Firefox"] $tag2
 assign [class="Emacs"] $tag3
-assign [class="alacritty"] $tag1
+assign [class="kitty"] $tag1
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
