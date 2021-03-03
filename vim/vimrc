@@ -916,7 +916,7 @@ command! NewRubyHashes :%s/:\([^ ]*\)\(\s*\)=>/\1:/g
 " retab to n spaces
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 " load all feature branch commits into buffer
-command! PRlog Glog master..HEAD --reverse --
+command! Glfeature Glog master..HEAD --reverse --
 
 " create file with subdirectories if needed :E
 function! s:MKDir(...)
@@ -945,6 +945,39 @@ cmap w!! w !sudo tee % >/dev/null
 
 " trim trailing whitespace
 command! TrimWhiteSpace :%s/\ \+$//
+
+function! s:OpenPullRequest(...) 
+  vsplit ~/.git_PR_message
+  normal! ggdG
+  setlocal filetype=gitcommit
+  setlocal bufhidden=delete
+  let template = [
+              \ '',
+              \ '# ------------------------ >8 ------------------------',
+              \ '# Do not modify or remove the line above.',
+              \ '# Everything below it will be ignored.',
+              \ '',
+              \ '# Write a message for this pull request. The first block',
+              \ '# of text is the title and the rest is the description.']
+  call append(line('^'), template)
+  execute ':r !git log --oneline master..HEAD'
+  normal! gg
+  autocmd BufDelete <buffer> ++once call s:SubmitPR()
+  autocmd BufWritePre <buffer> call s:CleanupPullRequestMessage()
+endfunction
+function! s:CleanupPullRequestMessage(...)
+   call cursor(0,0)
+   call search('>8')
+   echom bufname()
+   call deletebufline(bufname(), line("."), '$')
+endfunction
+function! s:SubmitPR(...)
+    silent !clear
+    execute '!hub pull-request -p -F ~/.git_PR_message'
+    call delete(expand('~/.git_PR_message'))
+endfunction
+command! PR :call s:OpenPullRequest()
+
 " }}}
 " local machine config {{{
 if filereadable(expand("~/.vimrc.local"))
