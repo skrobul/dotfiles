@@ -819,7 +819,8 @@ let g:coc_global_extensions = [
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_section_y = '' " fileencoding
-let g:airline_section_z = '' " percentage
+" let g:airline_section_z = '' " percentage
+let g:airline_section_z = airline#section#create(['%l', '/', '%v'])
 let g:airline#extensions#hunks#enabled = 0
 " }}}
 " {{{ vimwiki
