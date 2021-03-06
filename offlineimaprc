@@ -31,7 +31,13 @@ sslcacertfile = /etc/ssl/certs/ca-bundle.crt
 type = IMAP
 remoteuser = marek.skrobacki@rackspace.co.uk
 remotehost = outlook.office365.com
-remotepasseval = get_password("outlook.office365.com", "marek.skrobacki@rackspace.co.uk")
+auth_mechanisms = XOAUTH2
+oauth2_request_url = https://login.microsoftonline.com/common/oauth2/v2.0/token
+
+oauth2_client_id_eval = get_custom("outlook.office365.com", "marek.skrobacki@rackspace.co.uk", "oauth2_client_id")
+oauth2_client_secret_eval = get_custom("outlook.office365.com", "marek.skrobacki@rackspace.co.uk", "oauth2_client_secret")
+oauth2_refresh_token_eval = get_custom("outlook.office365.com", "marek.skrobacki@rackspace.co.uk", "oauth2_refresh_token")
+
 realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-bundle.crt
 
