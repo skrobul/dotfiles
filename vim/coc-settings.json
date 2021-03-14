@@ -43,5 +43,7 @@
     "solargraph.useBundler": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
-    "python.venvPath": "/home/skrobul/venv/"
+    "python.venvPath": "/home/skrobul/venv/",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["-l", "78"]
 }
