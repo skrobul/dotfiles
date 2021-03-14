@@ -40,7 +40,6 @@ Plug 'tpope/vim-eunuch'                                 " Chmod, rename, delete 
 Plug 'henrik/vim-qargs'                                 " adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'                       " helps with creating tables
 Plug 'benmills/vimux'                                   " interact with tmux
-"Plug 'fmoralesc/vim-pad'                                " Evernote replacement
 Plug 'gregsexton/gitv'                                  " gitk for vim
 Plug 'nathanaelkane/vim-indent-guides'                  " visual indent
 Plug 'idanarye/vim-merginal'                            " help with merges and rebase
@@ -380,10 +379,6 @@ endif
 
 " autocmd BufEnter term://* startinsert
 
-" bad habits from spacemacs...
-nnoremap <silent> <leader>fs :write<cr>
-nnoremap <silent> <leader>fR :write<cr>
-
 " insert current hour for vim-diary
 inoremap <F5> **<C-R>=strftime("%H:%M:%S")<CR>**:  
 inoremap <S-F5> <C-R>=strftime("%F")<CR><CR>
@@ -470,51 +465,9 @@ vmap <leader>gV :Gitv! --all<cr>
 " " open three way diffs in vertical
 " set diffopt+=vertical
 "}}}
-" Geeknote markdown by default {{{2
-let g:GeeknoteFormat="markdown"
-"}}}
 " {{{2 prosession configuration
 let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
-"}}}
-" vim-pad {{{2
-let g:pad#dir = '~/Sync/notes/'
-let g:pad#maps#new = "<meta>n"
-let g:pad#search_backend = 'ag'
-let g:pad#default_format = "markdown"
-let g:pad#default_file_extension = '.md'
-"let g:pad#window_height = 25
-let g:pad#open_in_split = 0   " open in main window
-
-let g:pad#title_first_line = 1
-" disable default mappings
-
-let g:pad#set_mappings = 0
-nmap <silent> <F1> <Plug>(pad-list)
-nmap <silent> <F2> <Plug>(pad-new)
-nmap ,pl <Plug>(pad-list)
-nmap ,pn <Plug>(pad-new)
-nmap ,ps <Plug>(pad-incremental-new-note)
-
-" bug workaround
-" see https://github.com/fmoralesc/vim-pad/issues/75#issuecomment-257467586
-
-" switching between markdown and otl
-function! PadMarkdown()
-    set ft=markdown
-    call Rename(expand("%:r") . ".md", '')
-    let g:pad#default_format = "markdown"
-    let g:pad#default_file_extension = '.md'
-endfunction
-command! -bar PadMarkdown call PadMarkdown()
-
-function! PadOTL()
-    set ft=votl
-    call Rename(expand("%:r") . ".votl", '')
-    let g:pad#default_format = "votl"
-    let g:pad#default_file_extension = '.otl'
-endfunction
-command! -bar PadOTL call PadMarkdown()
 "}}}
 " easy align{{{2
 "
