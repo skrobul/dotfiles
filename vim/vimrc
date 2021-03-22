@@ -22,6 +22,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'rakr/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'                               " git wrapper
 Plug 'honza/vim-snippets'                               " actual snippets
 Plug 'tpope/vim-commentary'                              " easy comments
@@ -56,8 +57,12 @@ Plug 'w0rp/ale'                                         " linter
 Plug 'lambdalisue/suda.vim'                             " sudo write(neovim needs it)
 "Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/popup.nvim'                              " telescope
+Plug 'nvim-lua/plenary.nvim'                            " telescope
+Plug 'nvim-telescope/telescope.nvim'                    " telescope
+Plug 'kyazdani42/nvim-web-devicons'                     " telescope dep
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'vue'] }
@@ -90,7 +95,6 @@ Plug 'chrisbra/NrrwRgn'                    " narrow/region filetype
 Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
 Plug 'ayu-theme/ayu-vim'
-Plug 'rakr/vim-two-firewatch'
 Plug 'sainnhe/edge'
 Plug 'hardselius/warlock'
 Plug 'chriskempson/base16-vim'
@@ -98,6 +102,11 @@ Plug 'alvan/vim-closetag'
 Plug 'rakr/vim-one'
 Plug 'preservim/tagbar'
 Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'rakr/vim-one'
+Plug 'arzg/vim-colors-xcode'
+Plug 'pwntester/octo.nvim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -689,8 +698,8 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -769,11 +778,11 @@ let g:coc_global_extensions = [
 
 " }}}
 " vim-airline {{{
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_section_y = '' " fileencoding
 " let g:airline_section_z = '' " percentage
-let g:airline_section_z = airline#section#create(['%l', '/', '%v'])
+let g:airline_section_z = airline#section#create(['%l', ':', '%v'])
 let g:airline#extensions#hunks#enabled = 0
 " }}}
 " {{{ vimwiki
@@ -814,13 +823,37 @@ let g:bullets_enabled_file_types = [
 let g:suda_smart_edit = 1
 " }}}
 " {{{ fzf.vim
-nnoremap <silent><C-p> :Files<CR>
-vnoremap <silent><C-p> :Files<CR>
+"nnoremap <silent><C-p> :Files<CR>
+"vnoremap <silent><C-p> :Files<CR>
 " }}}
 "nrrw {{{ no mappings
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 "}}}
+" {{{ telescope.nvim
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fm <cmd>Telescope man_pages<cr>
+nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
+nnoremap <leader>fk <cmd>Telescope keymaps<cr>
+nnoremap <leader>fd <cmd>Telescope lsp_definitions<cr>
+nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
+
+lua << EOF
+require('telescope').setup{
+  color_devicons = true,
+    use_less = true,
+    set_env = { ['COLORTERM'] = 'truecolor' },
+}
+EOF
+
+" }}}
+" {{{ octo.nvim
+let g:octo_github_hostname = "github.rackspace.com"
+" }}}
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
@@ -832,12 +865,12 @@ let g:two_firewatch_italics=1
 let g:edge_style = 'default'   "default, aura or neon
 
 set background=dark
-let g:airline_theme='nord'
+let g:airline_theme='twofirewatch'
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 
-colorscheme nord
+colorscheme two-firewatch
 
 " local modifications
 " search results blue instead of orange
