@@ -2,6 +2,7 @@ set from      = "marek.skrobacki@rackspace.co.uk"
 set sendmail  = "/usr/bin/msmtp -a work"
 set mbox      = "Work/archive"
 set postponed = "Work/Drafts"
+set my_trash = "INBOX.Deleted<quote-char><space>Items"
 
 color status blue default
 
@@ -24,5 +25,8 @@ macro   index   gt "<change-folder>=Work/$my_trash<enter>"   "Go to Trash"
 # Archive email
 macro index S "<tag-prefix-cond><save-message>=Work/Archive\n<sync-mailbox>"
 macro pager S "<save-message>=Work/Archive\n<sync-mailbox>"
+macro index,pager e \
+    "<save-message>=Work/Archive<enter>" \
+    "archive message"
 
 macro index ,c "<change-folder>=Personal/INBOX<enter>" "change accounts"
