@@ -1,5 +1,5 @@
 # start stuff
-#exec dropbox start &
+exec --no-startup-id dropbox start &
 exec rescuetime &
 
 #exec eval `dbus-launch --sh-syntax --exit-with-session`
