@@ -21,6 +21,14 @@ interval=60
 [separator]
 color=#555555
 
+[cpu]
+label=
+command=/home/skrobul/dotfiles/i3blocks/scripts/cpu
+interval=1
+
+[separator]
+color=#555555
+
 # [volume]
 # command=/home/skrobul/dotfiles/i3blocks/scripts/volume
 # instance=pulse
@@ -73,6 +81,7 @@ color=#555555
 
 [datetime]
 command=/home/skrobul/dotfiles/i3blocks/scripts/date
+interval=1
 
 [separator]
 color=#555555
