@@ -796,34 +796,33 @@ This function is called at the very end of Spacemacs initialization."
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(beacon-color "#eab4484b8035")
- '(browse-url-browser-function (quote browse-url-firefox))
+ '(browse-url-browser-function 'browse-url-firefox)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
- '(evil-emacs-state-cursor (quote ("#E57373" hbar)) t)
- '(evil-insert-state-cursor (quote ("#E57373" bar)) t)
- '(evil-normal-state-cursor (quote ("#FFEE58" box)) t)
- '(evil-visual-state-cursor (quote ("#C5E1A5" box)) t)
+ '(evil-emacs-state-cursor '("#E57373" hbar) t)
+ '(evil-insert-state-cursor '("#E57373" bar) t)
+ '(evil-normal-state-cursor '("#FFEE58" box) t)
+ '(evil-visual-state-cursor '("#C5E1A5" box) t)
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#37474f")
- '(frame-background-mode (quote dark))
+ '(frame-background-mode 'dark)
  '(groovy-indent-offset 2)
  '(highlight-indent-guides-auto-enabled nil)
+ '(highlight-parentheses-background-colors '("#2492db" "#95a5a6" nil))
+ '(highlight-parentheses-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
  '(highlight-symbol-colors
-   (quote
-    ("#FFEE58" "#C5E1A5" "#80DEEA" "#64B5F6" "#E1BEE7" "#FFCC80")))
+   '("#FFEE58" "#C5E1A5" "#80DEEA" "#64B5F6" "#E1BEE7" "#FFCC80"))
  '(highlight-symbol-foreground-color "#E0E0E0")
- '(highlight-tail-colors (quote (("#eab4484b8035" . 0) ("#424242" . 100))))
- '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
- '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+ '(highlight-tail-colors '(("#eab4484b8035" . 0) ("#424242" . 100)))
+ '(hl-paren-background-colors '("#2492db" "#95a5a6" nil))
+ '(hl-paren-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
  '(hl-sexp-background-color "#1c1f26")
  '(max-mini-window-height 0.45)
  '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+   '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   (quote
-    (toml-mode racer helm-gtags ggtags flycheck-rust counsel-gtags counsel swiper ivy cargo rust-mode seti-theme ample-theme inkpot-theme flatland-theme tao-theme gotham-theme moe-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow zenburn-theme flatui-theme lsp-ui zerodark-theme yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vue-mode volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org tide tagedit systemd symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smyx-theme smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode salt-mode ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv ranger rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-journal org-gcal org-download org-bullets org-brain open-junk-file nginx-mode neotree nameless multi-term move-text monokai-theme minitest markdown-toc magit-svn magit-gitflow macrostep lsp-vue lorem-ipsum livid-mode live-py-mode link-hint json-navigator json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hemisu-theme helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode google-translate golden-ratio gnuplot gmail-message-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-pos-tip flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-themes doom-modeline diminish diff-hl define-word darktooth-theme cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-lsp company-ansible company-anaconda column-enforce-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
- '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+   '(ox-json toml-mode racer helm-gtags ggtags flycheck-rust counsel-gtags counsel swiper ivy cargo rust-mode seti-theme ample-theme inkpot-theme flatland-theme tao-theme gotham-theme moe-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow zenburn-theme flatui-theme lsp-ui zerodark-theme yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vue-mode volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org tide tagedit systemd symon subatomic-theme string-inflection sql-indent spotify spaceline-all-the-icons smyx-theme smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode salt-mode ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv ranger rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-journal org-gcal org-download org-bullets org-brain open-junk-file nginx-mode neotree nameless multi-term move-text monokai-theme minitest markdown-toc magit-svn magit-gitflow macrostep lsp-vue lorem-ipsum livid-mode live-py-mode link-hint json-navigator json-mode js2-refactor js-doc jinja2-mode jbeans-theme insert-shebang indent-guide importmagic impatient-mode imenu-anywhere ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hemisu-theme helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode google-translate golden-ratio gnuplot gmail-message-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flymd flycheck-pos-tip flycheck-bashate flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-themes doom-modeline diminish diff-hl define-word darktooth-theme cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-php company-lsp company-ansible company-anaconda column-enforce-mode clues-theme clean-aindent-mode chruby centered-cursor-mode calfw-org calfw bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-dark-theme apropospriate-theme ansible-doc ansible aggressive-indent ace-link ace-jump-helm-line ac-ispell))
+ '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pos-tip-background-color "#3a513a513a51")
  '(pos-tip-foreground-color "#9E9E9E")
  '(rspec-primary-source-dirs nil)
@@ -834,8 +833,7 @@ This function is called at the very end of Spacemacs initialization."
  '(tabbar-background-color "#353335333533")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#f36c60")
+   '((20 . "#f36c60")
      (40 . "#ff9800")
      (60 . "#fff59d")
      (80 . "#8bc34a")
@@ -852,7 +850,7 @@ This function is called at the very end of Spacemacs initialization."
      (300 . "#f36c60")
      (320 . "#ff9800")
      (340 . "#fff59d")
-     (360 . "#8bc34a"))))
+     (360 . "#8bc34a")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -860,6 +858,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-level-2 ((t (:inherit outline-2 :foreground "gray"))))
- '(spaceline-evil-normal ((t (:background "#2F3841" :foreground "#3E3D31" :inherit (quote mode-line))))))
+ '(spaceline-evil-normal ((t (:background "#2F3841" :foreground "#3E3D31" :inherit 'mode-line)))))
 )
 
