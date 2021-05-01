@@ -20,8 +20,7 @@ zplug "greymd/docker-zsh-completion"
 #zplug "rupa/z", use:z.sh
 zplug "arzzen/calc.plugin.zsh"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-
-
+zplug plugins/taskwarrior, from:oh-my-zsh
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -130,6 +129,7 @@ alias pbcopy="xclip -selection clip -i"
 alias agenda="LC_ALL=en_US.UTF-8 gcalcli agenda"
 alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com\""
 alias kd="kitty +kitten diff"
+alias t="task"
 
 timedping()
 {
