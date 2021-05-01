@@ -41,6 +41,8 @@
       }
     },
     "solargraph.useBundler": false,
+    "solargraph.formatting": true,
+    "solargraph.diagnostics": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.venvPath": "/home/skrobul/venv/",
