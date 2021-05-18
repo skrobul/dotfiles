@@ -79,6 +79,13 @@ command=/home/skrobul/dotfiles/i3blocks/scripts/ethernet
 [separator]
 color=#555555
 
+[btc]
+command=/home/skrobul/dotfiles/i3blocks/scripts/bitcoin
+interval=60
+
+[separator]
+color=#555555
+
 [datetime]
 command=/home/skrobul/dotfiles/i3blocks/scripts/date
 interval=1

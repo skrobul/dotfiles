@@ -1,0 +1,12 @@
+#!/usr/bin/ruby --disable=gems
+require 'open-uri'
+require 'uri'
+require 'json'
+
+URL='https://api.coindesk.com/v1/bpi/currentprice.json'.freeze
+
+response = JSON.parse(URI.open(URL).read, symbolize_names: true)
+
+price = response.dig(:bpi, :USD, :rate_float).to_i
+
+puts "BTC #{'$%.2f' % (price / 1000.0)}k"
