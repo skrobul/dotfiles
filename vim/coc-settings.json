@@ -48,5 +48,18 @@
     "python.venvPath": "/home/skrobul/venv/",
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": ["-l", "78"],
-    "snippets.userSnippetsDirectory": "~/dotfiles/snippets/"
+    "snippets.userSnippetsDirectory": "~/dotfiles/snippets/",
+    "html.filetypes": [
+        "html",
+        "handlebars",
+        "htmldjango",
+        "blade",
+        "erb",
+        "eruby",
+        "vue"
+    ],
+    "prettier.disableLanguages": [
+        "vue",
+        "html"
+    ]
 }
