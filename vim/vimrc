@@ -435,7 +435,7 @@ let g:instant_markdown_slow = 1
 " "}}}
 " fugitive {{{
 nnoremap <Leader>ga :Git add %:p<CR><CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gc :Gcommit -v -q<CR>
 nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <Leader>gd :Gdiff<CR>
@@ -447,8 +447,8 @@ nnoremap <Leader>gp :Ggrep<Space>
 nnoremap <Leader>gm :Gmove<Space>
 nnoremap <Leader>gb :Git branch<Space>
 nnoremap <Leader>go :Git checkout<Space>
-nnoremap <Leader>gps :Gpush<CR>
-nnoremap <Leader>gpl :Gpull<CR>
+nnoremap <Leader>gps :Git push<CR>
+nnoremap <Leader>gpl :Git pull<CR>
 " git merges
 map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
