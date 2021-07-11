@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 # don't forget to install secret-tool
 import subprocess
 def get_password(host, username):
@@ -24,4 +23,4 @@ def get_custom(host, username, cred_type):
       username,
       "type",
       cred_type]).splitlines()[0]
-  return ret
+  return ret.decode()
