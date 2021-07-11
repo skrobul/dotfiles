@@ -73,6 +73,7 @@ Plug 'osyo-manga/vim-over'                              " preview search & repla
 Plug 'vimwiki/vimwiki', { 'on': ['VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'] }
 Plug 'AndrewRadev/splitjoin.vim'                            " split one liners
 Plug 'dkarter/bullets.vim'                              " list formatting
+Plug 'xarthurx/taskwarrior.vim'
 " additional syntax / lang support plugins
 Plug 'cespare/vim-toml'
 Plug 'Glench/Vim-Jinja2-Syntax'
