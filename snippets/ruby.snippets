@@ -19,11 +19,12 @@ snippet seqmig "Sequel migration change"
     end
 endsnippet
 
-snippet apg abbr "awesome print"
+snippet apg "awesome print"
     ap [${1:pg.uri.to_s}, $2]
 endsnippet
 
-snippet rubodisable abbr "Rubocop inline disable"
+snippet rubodisable "Rubocop inline disable"
     # rubocop: disable ${1:Layout/LineLength}
+    ${VISUAL}
     # rubocop: enable ${1:Layout/LineLength}
 endsnippet
