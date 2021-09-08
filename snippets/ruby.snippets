@@ -1,5 +1,6 @@
-snippet seqmiglong
-abbr "Sequel migration up/down"
+priority 50
+
+snippet seqmiglong "Sequel migration up/down"
     Sequel.migration do
       up do
         ${1:Up migration}
@@ -8,15 +9,21 @@ abbr "Sequel migration up/down"
         ${2:Down migration} 
       end
     end
+endsnippet
 
-snippet seqmig
-abbr "Sequel migration change"
+snippet seqmig "Sequel migration change"
     Sequel.migration do
       change do
         ${1}
       end
     end
+endsnippet
 
-snippet apg
-abbr "awesome print"
+snippet apg abbr "awesome print"
     ap [${1:pg.uri.to_s}, $2]
+endsnippet
+
+snippet rubodisable abbr "Rubocop inline disable"
+    # rubocop: disable ${1:Layout/LineLength}
+    # rubocop: enable ${1:Layout/LineLength}
+endsnippet

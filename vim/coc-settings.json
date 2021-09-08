@@ -48,7 +48,7 @@
     "python.venvPath": "/home/skrobul/venv/",
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": ["-l", "78"],
-    "snippets.userSnippetsDirectory": "~/dotfiles/snippets/",
+    "snippets.userSnippetsDirectory": "/home/skrobul/dotfiles/snippets/",
     "html.filetypes": [
         "html",
         "handlebars",
