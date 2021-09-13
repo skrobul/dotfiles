@@ -451,8 +451,12 @@ nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Git push<CR>
 nnoremap <Leader>gpl :Git pull<CR>
 " git merges
-map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
-map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
+" map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
+" map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
+
+map <silent> <leader>1 :diffget BA<CR> :diffupdate<CR>
+map <silent> <leader>2 :diffget LO<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget RE<CR> :diffupdate<CR>
 " gitv
 nnoremap <Leader>gv :Gitv --all<CR>
 nnoremap <Leader>gV :Gitv! --all<CR>
