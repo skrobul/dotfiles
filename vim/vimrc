@@ -53,7 +53,6 @@ Plug 'hwartig/vim-seeing-is-believing'                  " inline ruby
 Plug 'kassio/neoterm'                                   " reuse terminal, repl integration
 Plug 'janko-m/vim-test'                                 " vim-test
 Plug 'shime/vim-livedown'                               " live markdown preview
-Plug 'w0rp/ale'                                         " linter
 Plug 'lambdalisue/suda.vim'                             " sudo write(neovim needs it)
 "Plug 'vim-ctrlspace/vim-ctrlspace'                      " projectile a-like
 Plug 'neoclide/coc.nvim',{'branch':'release'}           " completion
@@ -153,6 +152,7 @@ if has('autocmd')
         autocmd FileType coffee set sw=2 ts=2 tw=80
         autocmd FileType python set ts=4 sw=4 tw=78 et
         autocmd FileType yaml,yml set sw=2 ts=2 tw=80
+        autocmd FileType vue set sw=2 ts=2 tw=80
     augroup END
     augroup completions
         autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -215,7 +215,7 @@ if has('autocmd')
 endif " }}}
 " VIM Settings {{{
 " syntax highlighting
-syntax enable
+syntax off
 
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
@@ -393,10 +393,6 @@ endif
 
 
 " autocmd BufEnter term://* startinsert
-
-" insert current hour for vim-diary
-inoremap <F5> **<C-R>=strftime("%H:%M:%S")<CR>**:  
-inoremap <S-F5> <C-R>=strftime("%F")<CR><CR>
 
 " }}}
 " visual mode mappings {{{
@@ -623,7 +619,7 @@ endif
 " }}}
 " {{{ ale
 let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_delay = 100
+let g:ale_lint_delay = 500
 let g:ale_lint_on_save = 0
 let g:ale_sign_warning = ''
 let g:ale_sign_error = '✖'
@@ -647,8 +643,14 @@ set cmdheight=2
 set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -780,6 +782,7 @@ nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 " List of installed coc extensions
 let g:coc_global_extensions = [
             \ 'coc-css',
+            \ 'coc-diagnostic',
             \ 'coc-emmet',
             \ 'coc-emoji',
             \ 'coc-eslint',
@@ -979,7 +982,7 @@ cmap w!! w !sudo tee % >/dev/null
 " trim trailing whitespace
 command! TrimWhiteSpace :%s/\ \+$//
 
-function! s:OpenPullRequest(...) 
+function! s:OpenPullRequest(...)
   vsplit ~/.git_PR_message
   normal! ggdG
   setlocal filetype=gitcommit
