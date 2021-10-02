@@ -109,6 +109,10 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'rakr/vim-one'
 Plug 'arzg/vim-colors-xcode'
 Plug 'pwntester/octo.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
+"Plug 'lourenci/github-colors', { 'branch': 'main' }
+Plug 'elianiva/gitgud.nvim'
 " }}}
 " {{{ DISABLED Plugs
 " Plug 'tpope/vim-rvm'                   " RVM support
@@ -882,6 +886,19 @@ EOF
 " {{{ octo.nvim
 let g:octo_github_hostname = "github.rackspace.com"
 " }}}
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  }
+}
+EOF
+
+set background=dark
+" or set background=light
+colorscheme github-colors
+
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
@@ -893,12 +910,12 @@ let g:two_firewatch_italics=1
 let g:edge_style = 'default'   "default, aura or neon
 
 set background=dark
-" let g:airline_theme='gru'
+let g:airline_theme='base16'
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 
-colorscheme gruvbox8
+colorscheme gitgud
 
 " local modifications
 " search results blue instead of orange
