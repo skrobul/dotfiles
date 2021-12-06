@@ -37,3 +37,6 @@ taskd.credentials=Public\/Marek Skrobacki\/d26efb46-e936-48c3-a498-841b01ba9337
 
 weekstart=Monday
 report.next.filter=status:pending limit:10
+context.work=+work
+context.personal=-work
+context=personal
