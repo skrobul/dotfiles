@@ -10,11 +10,11 @@ macro index,pager d \
     "move message to the trash"
 
 macro index,pager s \
-    "<save-message>=Personal/Spam<enter>"  \
+    "<save-message>=Personal/[Gmail].Spam<enter>"  \
         "mark message as spam"
 
 macro index,pager e \
-    "<save-message>=Personal/[Gmail]/All Mail<enter>" \
+    "<delete-message><sync-mailbox>" \
     "archive message"
 
 
