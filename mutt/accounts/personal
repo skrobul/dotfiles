@@ -14,7 +14,7 @@ macro index,pager s \
         "mark message as spam"
 
 macro index,pager e \
-    "<delete-message><sync-mailbox>" \
+    "<delete-message>" \
     "archive message"
 
 
