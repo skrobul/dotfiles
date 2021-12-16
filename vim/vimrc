@@ -84,7 +84,6 @@ Plug 'andrewstuart/vim-kubernetes'         " kubernetes manifests
 Plug 'slim-template/vim-slim'              " slim templating support
 Plug 'ClockworkNet/vim-apparmor'           " AppArmor definitions
 Plug 'jceb/vim-orgmode'                    " emacs' org-mode
-Plug 'leafOfTree/vim-vue-plugin'           " vue.js
 Plug 'godlygeek/tabular'                   " dependency for plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'             " markdown - extra actions, folding
 Plug 'junegunn/goyo.vim'                   " distraction free writing
