@@ -1,3 +1,4 @@
+text/html; firefox '%s' &; test=test -n "$DISPLAY"; needsterminal;
 text/html; /usr/bin/w3m -dump -T text/html %s ; copiousoutput
 
 
