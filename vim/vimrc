@@ -59,7 +59,9 @@ Plug 'nvim-lua/plenary.nvim'                            " telescope
 Plug 'nvim-telescope/telescope.nvim'                    " telescope
 Plug 'kyazdani42/nvim-web-devicons'                     " telescope dep
 
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'              " built-in LSP
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " fast completion
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " snippets
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -841,14 +843,28 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'dockerls', 'emmet_ls', 'eslint', 'html', 'jsonls', 'pyright', 'solargraph', 'tailwindcss', 'tsserver', 'vuels'  }
+
+vim.g.coq_settings = { auto_start = 'shut-up' }
+local coq = require "coq"
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  nvim_lsp[lsp].setup { coq.lsp_ensure_capabilities({
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     }
+  })
   }
 end
+EOF
+" }}}
+" {{{ coq 
+lua << EOF
+vim.g.coq_settings = {
+  auto_start = 'shut-up',
+  clients = {
+    tmux = { enabled = false }
+    }
+  }
 EOF
 " }}}
 " vim-airline {{{
