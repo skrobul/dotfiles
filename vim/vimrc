@@ -895,7 +895,7 @@ local cmp = require'cmp'
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer', max_item_count = 10, keyword_length = 5 },
-      { name = 'tmux', option = { all_panes = false } },
+      { name = 'tmux', option = { all_panes = false }, keyword_length = 5 },
     }),
     experimental = {
         ghost_text = true,
