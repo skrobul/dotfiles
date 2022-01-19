@@ -893,8 +893,12 @@ local cmp = require'cmp'
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
-      { name = 'buffer' },
-    })
+      { name = 'buffer', max_item_count = 10, keyword_length = 5 },
+    }),
+    experimental = {
+        ghost_text = true,
+        native_menu = false
+    }
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
