@@ -59,16 +59,17 @@ Plug 'nvim-lua/plenary.nvim'                            " telescope
 Plug 'nvim-telescope/telescope.nvim'                    " telescope
 Plug 'kyazdani42/nvim-web-devicons'                     " telescope dep
 
-Plug 'neovim/nvim-lspconfig' " built-in LSP
-Plug 'hrsh7th/cmp-nvim-lsp'  " completion plugin
-Plug 'hrsh7th/cmp-buffer'    " completion plugin
-Plug 'hrsh7th/cmp-path'      " completion plugin
-Plug 'hrsh7th/cmp-cmdline'   " completion plugin
-Plug 'hrsh7th/nvim-cmp'      " completion plugin
-Plug 'hrsh7th/cmp-vsnip'     " For vsnip users.
-Plug 'hrsh7th/vim-vsnip'     " For vsnip users.
-Plug 'hrsh7th/vim-vsnip-integ' " vsnip
-Plug 'rafamadriz/friendly-snippets'
+Plug 'neovim/nvim-lspconfig'        " built-in LSP
+Plug 'hrsh7th/cmp-nvim-lsp'         " completion plugin
+Plug 'hrsh7th/cmp-buffer'           " completion plugin
+Plug 'hrsh7th/cmp-path'             " completion plugin
+Plug 'hrsh7th/cmp-cmdline'          " completion plugin
+Plug 'hrsh7th/nvim-cmp'             " completion plugin
+Plug 'hrsh7th/cmp-vsnip'            " For vsnip users.
+Plug 'hrsh7th/vim-vsnip'            " For vsnip users.
+Plug 'hrsh7th/vim-vsnip-integ'      " vsnip
+Plug 'rafamadriz/friendly-snippets' " collection of snippets
+Plug 'andersevenrud/cmp-tmux'       " complete from TMUX
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -894,6 +895,7 @@ local cmp = require'cmp'
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer', max_item_count = 10, keyword_length = 5 },
+      { name = 'tmux', option = { all_panes = false } },
     }),
     experimental = {
         ghost_text = true,
