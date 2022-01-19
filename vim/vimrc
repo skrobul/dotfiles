@@ -70,6 +70,7 @@ Plug 'hrsh7th/vim-vsnip'            " For vsnip users.
 Plug 'hrsh7th/vim-vsnip-integ'      " vsnip
 Plug 'rafamadriz/friendly-snippets' " collection of snippets
 Plug 'andersevenrud/cmp-tmux'       " complete from TMUX
+Plug 'petertriho/cmp-git'           " GH issue list
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -894,6 +895,7 @@ local cmp = require'cmp'
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
+      { name = 'cmp_git' }, 
       { name = 'buffer', max_item_count = 10, keyword_length = 5 },
       { name = 'tmux', option = { all_panes = false }, keyword_length = 5 },
     }),
@@ -925,6 +927,10 @@ local cmp = require'cmp'
   -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
   --   capabilities = capabilities
   -- }
+
+
+  -- cmp-git
+  require("cmp_git").setup()
 EOF
 
 " }}}
