@@ -1,346 +1,27 @@
 " {{{ vim-plug auto installation
 "
+lua require("start")
 set shell=/bin/bash
 
-if has("nvim")
-    if empty(glob('~/.config/nvim/autoload/plug.vim'))
-      silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      autocmd VimEnter * PlugInstall
-    endif
-endif
-
-if ! has("nvim")
-    if empty(glob('~/.vim/autoload/plug.vim'))
-        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        autocmd VimEnter * PlugInstall
-    endif
-endif
-
-" }}}
-" {{{  Enabled plugins
-" set the runtime path to include Vundle and initialize
-
-call plug#begin('~/.vim/bundle')
-
-Plug 'rakr/vim-two-firewatch'
-Plug 'tpope/vim-fugitive'                               " git wrapper
-Plug 'honza/vim-snippets'                               " actual snippets
-Plug 'tpope/vim-commentary'                              " easy comments
-Plug 'jwhitley/vim-matchit'                             " better jumping with %
-Plug 'tpope/vim-endwise'                                " wisely 'end' functions etc
-Plug 'kchmck/vim-coffee-script'                         " coffe script support
-Plug 'tpope/vim-repeat'                                 " extend support for repeating with .
-Plug 'tpope/vim-surround'                               " quickly surround
-Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' } " file manager
-Plug 'tpope/vim-dispatch'                               " start stuff in background
-Plug 'nelstrom/vim-textobj-rubyblock'                   " text object for selecting ruby blocks
-Plug 'kana/vim-textobj-user'                            " dependency for vim-textobj-rubyblock
-Plug 'christoomey/vim-tmux-navigator'                   " seamless navigation between tmux panes and splits
-Plug 'tpope/vim-unimpaired'                             " set of movement mappings
-Plug 'tpope/vim-eunuch'                                 " Chmod, rename, delete etc
-Plug 'henrik/vim-qargs'                                 " adds :Qargs command
-Plug 'dhruvasagar/vim-table-mode'                       " helps with creating tables
-Plug 'benmills/vimux'                                   " interact with tmux
-Plug 'gregsexton/gitv'                                  " gitk for vim
-Plug 'nathanaelkane/vim-indent-guides'                  " visual indent
-Plug 'idanarye/vim-merginal'                            " help with merges and rebase
-Plug 'junegunn/vim-easy-align'                          " easy alignment
-Plug 'mattn/gist-vim'                                   " create GIST from vim
-Plug 'mattn/webapi-vim'                                 " create GIST from vim
-Plug 'rking/ag.vim'                                     " vim-ag
-Plug 'airblade/vim-gitgutter'
-Plug 'hwartig/vim-seeing-is-believing'                  " inline ruby
-Plug 'kassio/neoterm'                                   " reuse terminal, repl integration
-Plug 'janko-m/vim-test'                                 " vim-test
-Plug 'shime/vim-livedown'                               " live markdown preview
-Plug 'lambdalisue/suda.vim'                             " sudo write(neovim needs it)
-Plug 'nvim-lua/popup.nvim'                              " telescope
-Plug 'nvim-lua/plenary.nvim'                            " telescope
-Plug 'nvim-telescope/telescope.nvim'                    " telescope
-Plug 'kyazdani42/nvim-web-devicons'                     " telescope dep
-
-Plug 'neovim/nvim-lspconfig'        " built-in LSP
-Plug 'hrsh7th/cmp-nvim-lsp'         " completion plugin
-Plug 'hrsh7th/cmp-buffer'           " completion plugin
-Plug 'hrsh7th/cmp-path'             " completion plugin
-Plug 'hrsh7th/cmp-cmdline'          " completion plugin
-Plug 'hrsh7th/nvim-cmp'             " completion plugin
-Plug 'hrsh7th/cmp-vsnip'            " For vsnip users.
-Plug 'hrsh7th/vim-vsnip'            " For vsnip users.
-Plug 'hrsh7th/vim-vsnip-integ'      " vsnip
-Plug 'rafamadriz/friendly-snippets' " collection of snippets
-Plug 'andersevenrud/cmp-tmux'       " complete from TMUX
-Plug 'petertriho/cmp-git'           " GH issue list
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'vue'] }
-Plug 'romainl/vim-cool'                                 " disables search highlighting when you are done
-Plug 'ap/vim-css-color'                                 " display CSS colors inline
-Plug 'KabbAmine/vCoolor.vim'                            " color picker
-Plug 'osyo-manga/vim-over'                              " preview search & replace
-Plug 'vimwiki/vimwiki', { 'on': ['VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'] }
-Plug 'AndrewRadev/splitjoin.vim'                            " split one liners
-Plug 'dkarter/bullets.vim'                              " list formatting
-Plug 'xarthurx/taskwarrior.vim'
-" additional syntax / lang support plugins
-Plug 'cespare/vim-toml'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'saltstack/salt-vim'
-Plug 'leafgarland/typescript-vim'          " Typescript syntax
-Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
-" Plug 'Quramy/tsuquyomi'                    " typescript completion
-Plug 'andrewstuart/vim-kubernetes'         " kubernetes manifests
-Plug 'slim-template/vim-slim'              " slim templating support
-Plug 'ClockworkNet/vim-apparmor'           " AppArmor definitions
-Plug 'jceb/vim-orgmode'                    " emacs' org-mode
-Plug 'godlygeek/tabular'                   " dependency for plasticboy/vim-markdown
-Plug 'plasticboy/vim-markdown'             " markdown - extra actions, folding
-Plug 'junegunn/goyo.vim'                   " distraction free writing
-Plug 'cyberkov/openhab-vim'                " openhab
-Plug 'sheerun/vim-polyglot'                " lot of extra languages
-Plug 'chrisbra/NrrwRgn'                    " narrow/region filetype
-" colorscheme packages
-Plug 'mhinz/vim-janah'
-Plug 'morhetz/gruvbox'                                  " gruvbox color scheme
-Plug 'lifepillar/vim-gruvbox8'                          " simplified and improved gruvbox
-Plug 'ayu-theme/ayu-vim'
-Plug 'sainnhe/edge'
-Plug 'hardselius/warlock'
-Plug 'chriskempson/base16-vim'
-Plug 'alvan/vim-closetag'
-Plug 'rakr/vim-one'
-Plug 'preservim/tagbar'
-Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'rakr/vim-one'
-Plug 'arzg/vim-colors-xcode'
-Plug 'pwntester/octo.nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
-"Plug 'lourenci/github-colors', { 'branch': 'main' }
-Plug 'elianiva/gitgud.nvim'
-" }}}
-" {{{ DISABLED Plugs
-" Plug 'tpope/vim-rvm'                   " RVM support
-" Plug 'mrtazz/simplenote.vim'           " simplenote support
-" Plug 'cseelus/vim-colors-clearance'
-" Plug 'MaxSt/FlatColor'
-" Plug 'blerins/flattown'
-" Plug 'rizzatti/dash.vim' - disabled  - took way too long to startup
-" Plug 'tpope/vim-bundler' " probably not needed (Jul 2015)
-" Plug 'mattly/iterm-colors-pencil'
-" Plug 'reedes/vim-colors-pencil'
-" Plug 'tpope/vim-rails' "set of rails helpers
-" Plug 'skrobul/grb256'          " my version of grb256
-" Plug 'vim-scripts/CSApprox'
-" Plug 'Lokaltog/vim-easymotion'      " easy motion
-" Plug 'git@github.com:Shougo/vimproc.vim.git'
-" Plug 'Shougo/unite.vim'             " maybe ctrlp replacement
-" Plug 'Shougo/neomru.vim'            " MRU functionality for Unite.vim
-" Plug 'tpope/vim-obsession'          "session management
-" Plug 'dhruvasagar/vim-prosession'   "switch between sessions
-" Plug 'kien/ctrlp.vim'                  " full path fuzzy finder
-" Plug 'jgdavey/vim-turbux'              " Turbo Ruby testing with tmux
-" All of your Plugs must be added before the following line
-
-call plug#end()
-" }}}
 " Autocmd {{{
 if has('autocmd')
-    filetype plugin indent on
-    augroup indentations
-        "don't expand tabs if we're in a makefile
-        autocmd BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
-        "wrap lines in TeX
-        autocmd BufRead,BufNewFile *.tex set tw=80
-        "wrap lines in .txt files
-        autocmd BufNewFile,BufRead *.txt set tw=78
-        autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
-        autocmd FileType coffee set sw=2 ts=2 tw=80
-        autocmd FileType python set ts=4 sw=4 tw=78 et
-        autocmd FileType yaml,yml set sw=2 ts=2 tw=80
-        autocmd FileType vue set sw=2 ts=2 tw=80
-    augroup END
-    augroup completions
-        autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-        autocmd FileType python set omnifunc=pythoncomplete#Complete
-        autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    augroup END
-
-    augroup autocorrections
-        autocmd!
-        " remove trailing whitespaces
-        autocmd BufWritePre ruby,eruby,markdown,yaml,yml,javascript,python :%s/\s\+$//e
-    augroup END
-
-    augroup markdown
-        autocmd!
-        autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
-        " autocmd FileType markdown setlocal spell
-        " autocmd FileType markdown set complete+=k
-        autocmd FileType markdown set tw=250 conceallevel=3 wrap nonumber 
-    augroup end
-
-    augroup git
-        autocmd!
-        " enable spelling on GIT commit messages
-        autocmd FileType gitcommit setlocal spell
-        " enable auto word wrap in commit messages
-        autocmd FileType gitcommit set sw=2 ts=2 tw=80 aw complete+=k
-        " enable spelling and autowrap on pull requests
-        autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown tw=150
-        autocmd FileType gitrebase noremap <CR> :Cycle<CR>
-    augroup end
-
-    "
-    " jump to the last cursor position
-    augroup resCur
-      autocmd!
-      autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") && bufname() !~ ".git/COMMIT" |
-            \   exe "normal g`\"" |
-            \ endif
-    augroup END
-
-    augroup ansible
-        autocmd BufRead,BufNewFile */host_vars/* set ft=yaml
-        autocmd BufRead,BufNewFile */group_vars/* set ft=yaml
-        autocmd BufRead,BufNewFile *.j2 set ft=jinja
-    augroup END
-
-    augroup BWCCreateDir
-        autocmd!
-        autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-    augroup END
-
-    augroup vimwikitemplate
-        autocmd!
-        autocmd BufNewFile ~/Sync/notes/wiki/diary/*.md :silent 0r !~/dotfiles/vim/generate-vimwiki-template '%'
-    augroup END
-
-    augroup taskwarrior
-        autocmd!
-        autocmd FileType taskreport set nonumber
-    augroup END
 endif " }}}
 " VIM Settings {{{
-" syntax highlighting
 syntax off
 
-set bs=2                " Allow backspacing over everything in insert mode
-set ai                  " Always set auto-indenting on
-"set backup             " Keep a backup file
-"set viminfo='20,\"50   " read/write a .viminfo file -- limit to only 50
-set history=50          " keep 50 lines of command history
-set ts=4                " 4 space wide tabs
-set sw=4
-set softtabstop=4     "makes backspacing over spaced out tabs work real nice
-set expandtab           "expand tabs to spaces
-set ignorecase
-set background=dark     "awesome for terminals with crappy colors (putty!)
-set tagstack            "lets you push and pop your jumps with ctrl+]
-set pastetoggle=<F11>   "when you're pasting stuff this keeps it from getting
-                        "all whacked out with indentation
-set showmode
-set smarttab
-set nrformats-=octal
-set ttimeout
-set ttimeoutlen=100
-set incsearch
-set spellfile=~/dotfiles/vim/spell/en.utf-8.add
-set modelines=5         " check for vim settings in X lines of read file
-set complete-=k         " autocompletion - disable dictionary based
-set hlsearch
-set ignorecase
-set smartcase
-set hidden " do not save history when leaving buffer
-set foldlevelstart=1
-set formatoptions=tcrqnj
-set diffopt=filler
-" set lazyredraw
-set number
-set norelativenumber
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-" set cursorline
-"
-" Better display for messages
-set cmdheight=2
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" explorer
-let g:explVertical=1      " Split vertically
-let g:explSplitRight=1    " Put new window to the right of the explorer
 
 """"""""""""""""""""""""""""""
 " => Statusline
 """"""""""""""""""""""""""""""
-" Always hide the statusline
-set laststatus=1
-set ruler               " Show the cursor position all the time
-set rulerformat=%30(%<%m%y%h%r%=%l,%c\ %P%)
-set showcmd
-set wildmode=longest,list,full
-set wildmenu
 
-set autoread " reads the file when it has been changed outside vim
-" set encoding=utf-8
-
-" files related
-set nobackup
-set nowritebackup
-set directory=$HOME/.cache/vim//
-set fileformats=unix,dos,mac
-
-" Searching in the menu
-set completeopt=menuone,longest,preview
-
-set clipboard=unnamed
 " Make 81st column stand out
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
 " let &colorcolumn=join(range(81,999),",")
 
-"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-"exec "set listchars=tab:\uBB\uBB,trail:•,nbsp:~"
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-
-highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set nolist
-set showbreak=↪
-
-
-" move focus to correct place after the split
-set splitright " ... to the right of current pane
-set splitbelow " open splits below current pane
-" show matching parens
-set showmatch
-if has("nvim")
-  set clipboard+=unnamedplus
-endif
 set wildignore+=**/node_modules
 
-" per-project vimrc
-set exrc
-set secure
 " }}}
 " normal mode mappings (general) {{{
 nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
@@ -930,7 +611,32 @@ local cmp = require'cmp'
 
 
   -- cmp-git
-  require("cmp_git").setup()
+  require("cmp_git").setup({
+    filetypes = { "gitcommit" },
+    trigger_actions = {
+        {
+                debug_name = "git_commits",
+                trigger_character = ":",
+                action = function(sources, trigger_char, callback, params, git_info)
+                return sources.git:get_commits(callback, params, trigger_char)
+            end,
+        },
+        {
+                debug_name = "github_issues_and_pr",
+                trigger_character = "#",
+                action = function(sources, trigger_char, callback, params, git_info)
+                return sources.github:get_issues_and_prs(callback, git_info, trigger_char)
+            end,
+        },
+        {
+                debug_name = "github_mentions",
+                trigger_character = "@",
+                action = function(sources, trigger_char, callback, params, git_info)
+                return sources.github:get_mentions(callback, git_info, trigger_char)
+            end,
+        },
+    }
+  })
 EOF
 
 " }}}
@@ -1085,28 +791,6 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 " load all feature branch commits into buffer
 command! Glfeature Glog master..HEAD --reverse --
 
-" create file with subdirectories if needed :E
-function! s:MKDir(...)
-    if         !a:0
-           \|| stridx('`+', a:1[0])!=-1
-           \|| a:1=~#'\v\\@<![ *?[%#]'
-           \|| isdirectory(a:1)
-           \|| filereadable(a:1)
-           \|| isdirectory(fnamemodify(a:1, ':p:h'))
-        return
-    endif
-    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
-endfunction
-command! -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
-
-function! s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-        let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-            call mkdir(dir, 'p')
-        endif
-    endif
-endfunction
 " Useful trick when I've forgotten to `sudo' before editing a file:
 cmap w!! w !sudo tee % >/dev/null
 
@@ -1153,4 +837,3 @@ endif
 "}}}
 " vim: foldmethod=marker foldlevel=0
 
-lua "require 'start.lua'"
