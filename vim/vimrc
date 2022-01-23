@@ -1152,3 +1152,5 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 "}}}
 " vim: foldmethod=marker foldlevel=0
+
+lua "require 'start.lua'"
