@@ -46,7 +46,7 @@ set.shortmess:append("c")
 
 -- " Always show the signcolumn, otherwise it would shift the text each time
 -- " diagnostics appear/become resolved.
-if (vim.fn.has("nvim-0.5.0") or vim.fn.has("patch-8.1.1564")) then
+if (vim.fn.has("nvim-0.5.0") == 1 or vim.fn.has("patch-8.1.1564") == 1) then
   -- Recently vim can merge signcolumn and number column into one
   set.signcolumn="number"
 else
@@ -69,11 +69,11 @@ set.listchars = { tab = ">~", eol = '↲', nbsp = '␣', trail = '•', extends 
 set.list = false
 set.showbreak="↪"
 set.writebackup = false
-set.directory="$HOME/.cache/vim/"
+set.directory=vim.env.HOME .. "/.cache/vim/"
 set.fileformats="unix,dos,mac"
 set.completeopt="menuone,longest,preview"
 
-if vim.fn.has("nvim") then
+if vim.fn.has("nvim") == 1 then
   set.clipboard:append("unnamedplus")
 else
   set.clipboard="unnamed"

@@ -20,7 +20,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " let &colorcolumn=join(range(81,999),",")
 
-set wildignore+=**/node_modules
 
 " }}}
 " normal mode mappings (general) {{{
@@ -40,12 +39,6 @@ noremap <Right> <Nop>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
-" Smart way to move btw. windows
-" map <C-j> <C-W>j
-" map <C-k> <C-W>k
-" map <C-h> <C-W>h
-" map <C-l> <C-W>l
 
 " lookup in Dash
 nmap <silent> <leader>d <Plug>DashSearch
@@ -576,6 +569,7 @@ local cmp = require'cmp'
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
+      { name = 'path' },
       { name = 'cmp_git' }, 
       { name = 'buffer', max_item_count = 10, keyword_length = 5 },
       { name = 'tmux', option = { all_panes = false }, keyword_length = 5 },
