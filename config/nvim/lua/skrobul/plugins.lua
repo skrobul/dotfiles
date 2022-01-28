@@ -49,8 +49,9 @@ Plug 'hrsh7th/vim-vsnip'            -- For vsnip users.
 Plug 'hrsh7th/vim-vsnip-integ'      -- vsnip
 Plug 'rafamadriz/friendly-snippets' -- collection of snippets
 Plug 'andersevenrud/cmp-tmux'       -- complete from TMUX
+Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
 -- Plug 'petertriho/cmp-git'           " GH issue list
-Plug '~/devel/cmp-git/'
+-- Plug '~/devel/cmp-git/'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
