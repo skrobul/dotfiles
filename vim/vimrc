@@ -5,6 +5,7 @@ set shell=/bin/bash
 "}}}
 " Autocmd {{{
 if has('autocmd')
+    source "~/.config/nvim/autocmds.vim"
 endif " }}}
 " VIM Settings {{{
 syntax off
