@@ -19,101 +19,7 @@ syntax on
 highlight ColorColumn ctermbg=Brown ctermfg=Black
 call matchadd('ColorColumn', '\%81v', 100)
 
-" let &colorcolumn=join(range(81,999),",")
-
-
 " }}}
-" normal mode mappings (general) {{{
-nnoremap <silent> <Leader>q :nohlsearch<CR><C-L>
-nnoremap <CR> :noh<CR><CR>
-
-" Replace all occurences of word under cursor
-nnoremap <Leader>z :%s/\<<C-r><C-w>\>//g<Left><Left>
-" space bar folding
-nnoremap  <silent>  <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-
-" disable arrows
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" lookup in Dash
-nmap <silent> <leader>d <Plug>DashSearch
-
-" buffer navigation
-" new buffer (empty)
-nnoremap <silent> <leader>bt :enew<CR>
-" next buffer
-nnoremap <silent> <leader>n :bnext<CR>
-" previous buffer
-nnoremap <silent> <leader>p :bprevious<CR>
-"close the buffer and replace with previous
-nnoremap <silent> <leader>bc :bp <BAR> bd #<CR>
-"close the buffer
-nnoremap <silent> <leader>bd :bd<CR>
-" show all open buffers in buffer explorer
-" nmap <silent> <leader>b :ls<CR>
-" nmap <silent> <leader>b :CtrlPBuffer<cr>
-nnoremap <silent> <Leader>bl :CocList -N buffers<CR>
-vmap <silent> <Leader>bl :CocList -N buffers<CR>
-
-nnoremap <silent> '' :CocList -N buffers<CR>
-vmap <silent>' :CocList -N buffers<CR>
-" ruby context endings - insert marks
-nmap <Leader>z /end%y$%A # p:nohlsearch
-
-" Map `kj` to ESC
-imap kj <ESC>
-
-" automatically insert a \v before any search string, so search uses normal regexes
-nnoremap / /\v
-vnoremap / /\v
-
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
-
-" Easy reloading of vimrc
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" Switch to alternative file quickly
-" nnoremap <Tab><Tab> <C-^>
-
-if has("nvim")
-    " neovim's terminal
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
-    nnoremap <A-h> <C-w>h
-    nnoremap <A-j> <C-w>j
-    nnoremap <A-k> <C-w>k
-    nnoremap <A-l> <C-w>l
-endif
-
-
-" autocmd BufEnter term://* startinsert
-
-" }}}
-" visual mode mappings {{{
-
-" indent / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap <Tab> >
-vnoremap <S-Tab> <
-" comment / decomment & normal comment behavior
-vmap <C-m> gc
-" Text wrap simpler, then type the open tag or ',"
-vmap <C-w> S
-" Cut, Paste, Copy
-vmap <C-x> d
-vmap <C-v> p
-vmap <C-c> y
-
-" "}}}
 " Plugins config {{{
 " {{{ vim-markdown
 " let g:vim_markdown_folding_disabled=0
@@ -338,16 +244,6 @@ let g:nrrw_rgn_nomap_Nr = 1
 "}}}
 " {{{ telescope.nvim
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fm <cmd>Telescope man_pages<cr>
-nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
-nnoremap <leader>fk <cmd>Telescope keymaps<cr>
-nnoremap <leader>fd <cmd>Telescope lsp_definitions<cr>
-nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
-
 lua require('skrobul/plugins/telescope')
 
 " }}}

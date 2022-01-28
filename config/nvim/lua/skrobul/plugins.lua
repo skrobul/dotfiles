@@ -86,3 +86,9 @@ Plug 'elianiva/gitgud.nvim'
 Plug 'ray-x/lsp_signature.nvim'            -- display function sig
 
 vim.call('plug#end')
+
+
+require 'skrobul.plugins.lspconfig'
+require 'skrobul.plugins.cmp'
+require 'skrobul.plugins.telescope'
+require 'skrobul.plugins.treesitter'
