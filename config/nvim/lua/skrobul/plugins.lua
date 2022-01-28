@@ -83,5 +83,6 @@ Plug 'sheerun/vim-polyglot'                -- lot of extra languages
 Plug 'pwntester/octo.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', branch='0.5-compat' })
 Plug 'elianiva/gitgud.nvim'
+Plug 'ray-x/lsp_signature.nvim'            -- display function sig
 
 vim.call('plug#end')
