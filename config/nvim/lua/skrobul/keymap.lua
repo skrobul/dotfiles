@@ -60,8 +60,8 @@ map {'n', '<leader>bd', '<cmd>bd<cr>'}
 
 -- automatically insert a \v before any search string, so search uses normal very veryv eyve very
 -- regexes
-map {'n', '/', '/\v'}
-map {'v', '/', '/\v'}
+map {'n', '/', '/\\v'}
+map {'v', '/', '/\\v'}
 
 -- Use Q for formatting the current paragraph (or selection)
 map {'v', 'Q', 'gq' }
