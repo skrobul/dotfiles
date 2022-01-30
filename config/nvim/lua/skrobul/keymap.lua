@@ -56,10 +56,7 @@ map {'n', '<leader>bd', '<cmd>bd<cr>'}
 -- utils
 
 -- Replace all occurences of word under cursor
-map {'n', '<Leader>rw', '<cmd>%s/\<<C-r><C-w>\>//g<Left><Left>'}
-
--- ruby context endings - insert marks
-map {'n', '<Leader>z', '/end%y$%A # p:nohlsearch'}
+-- map {'n', '<Leader>rw', "<cmd>%s/\<<C-r><C-w>\>//g<Left><Left>"}
 
 -- automatically insert a \v before any search string, so search uses normal very veryv eyve very
 -- regexes
@@ -74,10 +71,10 @@ map {'n', 'Q', 'gqap' }
 map {'n', '<space>', ":exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>" }
 
 -- neovim terminal
-map {'t', '<C-h>', '<C-\><C-n><C-w>h'}
-map {'t', '<C-j>', '<C-\><C-n><C-w>j'}
-map {'t', '<C-k>', '<C-\><C-n><C-w>k'}
-map {'t', '<C-l>', '<C-\><C-n><C-w>l'}
+map {'t', '<C-h>', '<C-\\><C-n><C-w>h'}
+map {'t', '<C-j>', '<C-\\><C-n><C-w>j'}
+map {'t', '<C-k>', '<C-\\><C-n><C-w>k'}
+map {'t', '<C-l>', '<C-\\><C-n><C-w>l'}
 map {'n', '<A-h>', '<C-w>h'}
 map {'n', '<A-j>', '<C-w>j'}
 map {'n', '<A-k>', '<C-w>k'}
