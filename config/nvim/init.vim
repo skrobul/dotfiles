@@ -247,17 +247,10 @@ let g:octo_github_hostname = "github.rackspace.com"
 if has('termguicolors')
     set termguicolors
 endif
-let ayucolor="dark"                " set to light, mirage or dark
-let g:two_firewatch_italics=1
-
-let g:edge_style = 'default'   "default, aura or neon
-
 set background=dark
-let g:nord_bold_vertical_split_line = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_italic_comments = 1
 
-colorscheme gitgud
+colorscheme sonokai
+let g:sonokai_style = 'maia'
 
 " local modifications
 " search results blue instead of orange

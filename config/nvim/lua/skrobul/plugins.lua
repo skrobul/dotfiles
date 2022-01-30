@@ -50,6 +50,7 @@ Plug 'hrsh7th/vim-vsnip-integ'      -- vsnip
 Plug 'rafamadriz/friendly-snippets' -- collection of snippets
 Plug 'andersevenrud/cmp-tmux'       -- complete from TMUX
 Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
+Plug 'ray-x/lsp_signature.nvim'        -- display function sig
 -- Plug 'petertriho/cmp-git'           " GH issue list
 -- Plug '~/devel/cmp-git/'
 
@@ -82,7 +83,8 @@ Plug 'sheerun/vim-polyglot'                -- lot of extra languages
 Plug 'pwntester/octo.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', branch='0.5-compat' })
 Plug 'elianiva/gitgud.nvim'
-Plug 'ray-x/lsp_signature.nvim'            -- display function sig
+Plug 'EdenEast/nightfox.nvim'
+Plug 'sainnhe/sonokai'
 
 vim.call('plug#end')
 
