@@ -57,7 +57,7 @@ end
 --
 
 -- Always hide the statusline
-set.laststatus=1
+set.laststatus=2
 set.ruler = true                -- Show the cursor position all the time
 -- TODOset.rulerformat = '%30(%<%m%y%h%r%=%l,%c\ %P%)'
 set.showcmd = true

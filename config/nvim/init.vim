@@ -189,14 +189,6 @@ if has("nvim")
   endfunction
 endif
 " }}}
-" vim-airline {{{
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline_section_y = '' " fileencoding
-" let g:airline_section_z = '' " percentage
-let g:airline_section_z = airline#section#create(['%l', ':', '%v'])
-let g:airline#extensions#hunks#enabled = 0
-" }}}
 " {{{ vimwiki
 " while g:vimwiki_global_ext is supposed to control creation of 'temporary
 " wikis' outside the defined directories, in reality this breaks markdown
@@ -261,7 +253,6 @@ let g:two_firewatch_italics=1
 let g:edge_style = 'default'   "default, aura or neon
 
 set background=dark
-let g:airline_theme='base16'
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1

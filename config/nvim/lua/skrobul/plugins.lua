@@ -53,8 +53,7 @@ Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
 -- Plug 'petertriho/cmp-git'           " GH issue list
 -- Plug '~/devel/cmp-git/'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} })
 Plug 'romainl/vim-cool'                                 -- disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 -- display CSS colors inline
@@ -87,8 +86,8 @@ Plug 'ray-x/lsp_signature.nvim'            -- display function sig
 
 vim.call('plug#end')
 
-
 require 'skrobul.plugins.lspconfig'
 require 'skrobul.plugins.cmp'
 require 'skrobul.plugins.telescope'
 require 'skrobul.plugins.treesitter'
+require 'skrobul.plugins.lualine'
