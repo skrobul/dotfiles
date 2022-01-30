@@ -40,3 +40,7 @@ report.next.filter=status:pending limit:10
 context.work=+work
 context.personal=-work
 context=personal
+
+# https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
+recurrence=off
+include /home/skrobul/.task/taskrc.local
