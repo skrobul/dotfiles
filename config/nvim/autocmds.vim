@@ -6,7 +6,7 @@ augroup indentations
   autocmd BufRead,BufNewFile *.tex set tw=80
   "wrap lines in .txt files
   autocmd BufNewFile,BufRead *.txt set tw=78
-  autocmd FileType ruby,eruby set sw=2 ts=2 tw=80
+  autocmd FileType ruby,eruby set sw=2 ts=2 tw=80 foldlevel=7
   autocmd FileType coffee set sw=2 ts=2 tw=80
   autocmd FileType python set ts=4 sw=4 tw=78 et
   autocmd FileType yaml,yml set sw=2 ts=2 tw=80

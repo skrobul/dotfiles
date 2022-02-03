@@ -1,5 +1,3 @@
-local nvim_lsp = require('lspconfig')
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 
@@ -47,6 +45,24 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
         -- if server.name == "tsserver" then
         --     opts.root_dir = function() ... end
         -- end
+        -- if server.name == "solargraph" then
+        --   opts.settings = {
+        --     commandPath = "/home/skrobul/.asdf/shims/solargraph",
+        --     diagnostics = true,
+        --     completion = true,
+        --     formatting = true
+        --   }
+        -- end
+
+        if server.name == "sumneko_lua" then
+          opts.settings = {
+            Lua = {
+              diagnostics = {
+                globals = { 'vim' }
+              }
+            }
+          }
+        end
 
         -- This setup() function will take the provided server configuration and decorate it with the necessary properties
         -- before passing it onwards to lspconfig.
@@ -54,3 +70,59 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
             server:setup(opts)
         end)
 
+
+-- manual solarpgraph setup
+local lspconfig = require'lspconfig'
+
+-- local function attacher(client)
+--   print('Attaching LSP: ' .. client.name)
+-- end
+
+
+lspconfig.solargraph.setup{
+  settings = {
+    solargraph = {
+      commandPath = '/home/skrobul/.asdf/shims/solargraph',
+      diagnostics = true,
+      completion = true,
+      formatting = true
+    }
+  },
+
+  on_attach = on_attach
+}
+
+-- icons
+local M = {}
+
+M.icons = {
+  Class = " ",
+  Color = " ",
+  Constant = " ",
+  Constructor = " ",
+  Enum = "了 ",
+  EnumMember = " ",
+  Field = " ",
+  File = " ",
+  Folder = " ",
+  Function = " ",
+  Interface = "ﰮ ",
+  Keyword = " ",
+  Method = "ƒ ",
+  Module = " ",
+  Property = " ",
+  Snippet = "﬌ ",
+  Struct = " ",
+  Text = " ",
+  Unit = " ",
+  Value = " ",
+  Variable = " ",
+}
+function M.setup()
+  local kinds = vim.lsp.protocol.CompletionItemKind
+  for i, kind in ipairs(kinds) do
+    kinds[i] = M.icons[kind] or kind
+  end
+end
+
+return M

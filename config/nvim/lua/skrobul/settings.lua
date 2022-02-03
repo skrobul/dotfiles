@@ -1,6 +1,6 @@
 local set = vim.opt
 
-set.bs = { indent, eol, start } -- Allow backspacing over everything in insert mode
+set.bs = { "indent", "eol", "start" } -- Allow backspacing over everything in insert mode
 set.ai = true                  -- Always set auto-indenting on
 set.history=50          -- keep 50 lines of command history
 set.ts=4                -- 4 space wide tabs
@@ -25,7 +25,7 @@ set.hlsearch = true
 set.ignorecase = true
 set.smartcase = true
 set.hidden = true -- do not save history when leaving buffer
-set.foldlevelstart=1
+set.foldlevelstart=7
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
 set.formatoptions="tcrqnj"
@@ -50,7 +50,7 @@ set.shortmess:append("c")
 -- " diagnostics appear/become resolved.
 if (vim.fn.has("nvim-0.5.0") == 1 or vim.fn.has("patch-8.1.1564") == 1) then
   -- Recently vim can merge signcolumn and number column into one
-  set.signcolumn="number"
+  set.signcolumn="auto"
 else
   set.signcolumn="yes"
 end

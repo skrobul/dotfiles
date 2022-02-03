@@ -1,12 +1,14 @@
 " {{{ vim-plug auto installation
 "
+sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError linehl= numhl=
+sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning linehl= numhl=
+sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation linehl= numhl=
+sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl= numhl=
 lua require("start")
 set shell=/bin/bash
 "}}}
 " Autocmd {{{
-if has('autocmd')
-    source "~/.config/nvim/autocmds.vim"
-endif " }}}
+source "~/.config/nvim/autocmds.vim"
 " VIM Settings {{{
 syntax on
 

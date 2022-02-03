@@ -68,7 +68,7 @@ map {'v', 'Q', 'gq' }
 map {'n', 'Q', 'gqap' }
 
 -- space bar folding
-map {'n', '<space>', ":exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>" }
+-- map {'n', '<space>', ":exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>" }
 
 -- neovim terminal
 map {'t', '<C-h>', '<C-\\><C-n><C-w>h'}
