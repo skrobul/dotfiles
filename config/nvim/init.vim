@@ -251,7 +251,7 @@ if has('termguicolors')
 endif
 set background=dark
 
-colorscheme sonokai
+colorscheme nightfox
 let g:sonokai_style = 'maia'
 
 " local modifications
