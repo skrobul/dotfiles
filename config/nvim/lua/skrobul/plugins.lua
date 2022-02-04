@@ -27,7 +27,7 @@ Plug 'junegunn/vim-easy-align'                          -- easy alignment
 Plug 'mattn/gist-vim'                                   -- create GIST from vim
 Plug 'mattn/webapi-vim'                                 -- create GIST from vim
 Plug 'rking/ag.vim'                                     -- vim-ag
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'hwartig/vim-seeing-is-believing'                  -- inline ruby
 Plug 'kassio/neoterm'                                   -- reuse terminal, repl integration
 Plug 'janko-m/vim-test'                                 -- vim-test
@@ -93,3 +93,4 @@ require 'skrobul.plugins.cmp'
 require 'skrobul.plugins.telescope'
 require 'skrobul.plugins.treesitter'
 require 'skrobul.plugins.lualine'
+require 'skrobul.plugins.gitsigns'
