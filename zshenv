@@ -8,3 +8,4 @@ export PATH=$PATH:node_modules/.bin/
 
 #eval $(ssh-agent -s)
 #ssh-add ~/.ssh/work_rsa
+THOR_MERGE="nvim -d"
