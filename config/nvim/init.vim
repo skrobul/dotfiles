@@ -8,7 +8,7 @@ lua require("start")
 set shell=/bin/bash
 "}}}
 " Autocmd {{{
-source "~/.config/nvim/autocmds.vim"
+source $HOME/.config/nvim/autocmds.vim
 " VIM Settings {{{
 syntax on
 

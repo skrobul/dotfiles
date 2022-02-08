@@ -44,9 +44,8 @@ Plug 'hrsh7th/cmp-buffer'           -- completion plugin
 Plug 'hrsh7th/cmp-path'             -- completion plugin
 Plug 'hrsh7th/cmp-cmdline'          -- completion plugin
 Plug 'hrsh7th/nvim-cmp'             -- completion plugin
-Plug 'hrsh7th/cmp-vsnip'            -- For vsnip users.
-Plug 'hrsh7th/vim-vsnip'            -- For vsnip users.
-Plug 'hrsh7th/vim-vsnip-integ'      -- vsnip
+Plug 'L3MON4D3/LuaSnip'             -- luasnip
+Plug 'saadparwaiz1/cmp_luasnip'     -- luasnip
 Plug 'rafamadriz/friendly-snippets' -- collection of snippets
 Plug 'andersevenrud/cmp-tmux'       -- complete from TMUX
 Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
