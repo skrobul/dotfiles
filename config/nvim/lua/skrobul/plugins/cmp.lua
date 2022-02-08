@@ -50,7 +50,7 @@ cmp.setup({
           end, { "i", "s" }),
       },
       sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
+          { name = 'nvim_lsp', max_item_count = 15 },
           { name = 'luasnip', keyword_length = 2 },
         }, {
           { name = 'path' },
