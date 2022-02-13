@@ -16,7 +16,7 @@ set.showmode = true
 set.smarttab = true
 set.nrformats:remove('octal')
 set.ttimeout = true
-set.ttimeoutlen = 100
+set.ttimeoutlen = 800
 set.incsearch = true
 set.spellfile = "~/dotfiles/vim/spell/en.utf-8.add"
 set.modelines=5         -- check for vim settings in X lines of read file

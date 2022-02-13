@@ -21,7 +21,7 @@ Plug 'henrik/vim-qargs'                                 -- adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'                       -- helps with creating tables
 Plug 'benmills/vimux'                                   -- interact with tmux
 Plug 'gregsexton/gitv'                                  -- gitk for vim
-Plug 'nathanaelkane/vim-indent-guides'                  -- visual indent
+Plug 'lukas-reineke/indent-blankline.nvim'              -- visual indent
 Plug 'idanarye/vim-merginal'                            -- help with merges and rebase
 Plug 'junegunn/vim-easy-align'                          -- easy alignment
 Plug 'mattn/gist-vim'                                   -- create GIST from vim
@@ -93,3 +93,4 @@ require 'skrobul.plugins.telescope'
 require 'skrobul.plugins.treesitter'
 require 'skrobul.plugins.lualine'
 require 'skrobul.plugins.gitsigns'
+require 'skrobul.plugins.blankline'
