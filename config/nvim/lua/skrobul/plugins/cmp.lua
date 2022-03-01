@@ -55,7 +55,7 @@ cmp.setup({
         }, {
           { name = 'path' },
           { name = 'buffer', max_item_count = 10, keyword_length = 5 },
-          { name = 'tmux', option = { all_panes = false }, keyword_length = 5, max_item_count = 5 },
+          { name = 'tmux', option = { all_panes = false }, keyword_length = 8, max_item_count = 5 },
         }),
       experimental = {
         ghost_text = true,
