@@ -23,6 +23,7 @@ augroup markdown
   autocmd!
   autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
   autocmd FileType markdown set tw=250 conceallevel=3 wrap nonumber 
+  autocmd FileType markdown,vimwiki lua require('cmp').setup.buffer({ matching = { disallow_fuzzy_matching = true, disallow_partial_matching=true}})
 augroup end
 
 augroup git
