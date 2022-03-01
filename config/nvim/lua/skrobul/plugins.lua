@@ -57,7 +57,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} })
 Plug 'romainl/vim-cool'                                 -- disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 -- display CSS colors inline
-Plug 'KabbAmine/vCoolor.vim'                            -- color picker
+-- Plug 'KabbAmine/vCoolor.vim'                            -- color picker
 Plug 'osyo-manga/vim-over'                              -- preview search & replace
 Plug('vimwiki/vimwiki', {on={'VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'}})
 Plug 'AndrewRadev/splitjoin.vim'                            -- split one liners
