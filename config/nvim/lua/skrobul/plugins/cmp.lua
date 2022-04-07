@@ -6,7 +6,6 @@ local has_words_before = function()
 end
 
 local luasnip = require("luasnip")
-require("luasnip.loaders.from_vscode").load()
 
 cmp.setup({
         snippet = {

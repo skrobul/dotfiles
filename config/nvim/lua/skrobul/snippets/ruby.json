@@ -1,0 +1,32 @@
+{
+    "Sequel migration up/down": {
+        "prefix": "seqmigupdown",
+        "body": [
+            "Sequel.migration do",
+            "  up do",
+            "    ${1}",
+            "  end",
+            "  down do",
+            "    ${2}",
+            "  end",
+            "end"
+        ]
+    },
+    "Sequel migration change": {
+        "prefix": "seqmig",
+        "body": [
+            "Sequel.migration do", 
+            "  change do", 
+            "    ${1}", 
+            "  end", 
+            "end" 
+        ]
+    },
+    "Rubocop inline disable": {
+        "prefix": "rubodisable",
+        "body": [
+            "# rubocop: disable ${1:Metrics/MethodLength}",
+            "# rubocop: enable ${1:Metrics/MethodLength}"
+        ]
+    }
+}

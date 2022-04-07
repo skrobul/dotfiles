@@ -88,6 +88,7 @@ Plug 'sainnhe/sonokai'
 vim.call('plug#end')
 
 require 'skrobul.plugins.lspconfig'
+require 'skrobul.plugins.luasnip'
 require 'skrobul.plugins.cmp'
 require 'skrobul.plugins.telescope'
 require 'skrobul.plugins.treesitter'
