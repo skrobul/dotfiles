@@ -119,7 +119,8 @@ if not configs.ls_emmet then
         'sss',
         'hbs',
         'handlebars',
-        'eruby'
+        'eruby',
+        'erb'
       };
       root_dir = function(fname)
         return vim.loop.cwd()
