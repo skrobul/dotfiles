@@ -91,3 +91,6 @@ set.exrc = true
 set.secure = true
 
 set.wildignore:append("**/node_modules")
+
+-- overcommit - no colors
+vim.env.OVERCOMMIT_COLOR=0
