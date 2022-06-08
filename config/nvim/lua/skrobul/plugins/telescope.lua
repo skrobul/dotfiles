@@ -10,6 +10,10 @@ require('telescope').setup{
                 -- etc
                 ["<esc>"] = actions.close
             }
+        },
+        preview = {
+          filesize_limit = 0.5,
+          timeout = 150
         }
     }
 }
