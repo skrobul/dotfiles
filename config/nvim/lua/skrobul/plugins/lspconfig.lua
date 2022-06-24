@@ -85,7 +85,8 @@ lspconfig.solargraph.setup{
       commandPath = '/home/skrobul/.asdf/shims/solargraph',
       diagnostics = true,
       completion = true,
-      formatting = true
+      formatting = true,
+      useBundler = true
     }
   },
 

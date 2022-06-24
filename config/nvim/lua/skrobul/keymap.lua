@@ -49,7 +49,7 @@ map {'n', '<leader>p',  '<cmd>bprevious<cr>'}
 -- close the buffer and replace with previous
 map {'n', '<leader>bc', '<cmd>bp <BAR> bd #<cr>'}
 -- close the buffer
-map {'n', '<leader>bd', '<cmd>bd<cr>'}
+map {'n', '<leader>bd', '<cmd>Bdelete<cr>'}
 
 
 

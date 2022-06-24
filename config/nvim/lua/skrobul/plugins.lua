@@ -38,6 +38,7 @@ Plug 'nvim-lua/plenary.nvim'                            -- telescope
 Plug 'nvim-telescope/telescope.nvim'                    -- telescope
 Plug 'kyazdani42/nvim-web-devicons'                     -- telescope dep
 
+-- LSP
 Plug 'neovim/nvim-lspconfig'        -- built-in LSP
 Plug 'hrsh7th/cmp-nvim-lsp'         -- completion plugin
 Plug 'hrsh7th/cmp-buffer'           -- completion plugin
@@ -50,26 +51,23 @@ Plug 'rafamadriz/friendly-snippets' -- collection of snippets
 Plug 'andersevenrud/cmp-tmux'       -- complete from TMUX
 Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
 Plug 'ray-x/lsp_signature.nvim'        -- display function sig
--- Plug 'petertriho/cmp-git'           " GH issue list
--- Plug '~/devel/cmp-git/'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} })
 Plug 'romainl/vim-cool'                                 -- disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 -- display CSS colors inline
--- Plug 'KabbAmine/vCoolor.vim'                            -- color picker
 Plug 'osyo-manga/vim-over'                              -- preview search & replace
 Plug('vimwiki/vimwiki', {on={'VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'}})
-Plug 'AndrewRadev/splitjoin.vim'                            -- split one liners
+Plug 'AndrewRadev/splitjoin.vim'                        -- split one liners
 Plug 'dkarter/bullets.vim'                              -- list formatting
 Plug 'xarthurx/taskwarrior.vim'
+
 -- additional syntax / lang support plugins
 Plug 'cespare/vim-toml'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'saltstack/salt-vim'
 Plug 'leafgarland/typescript-vim'          -- Typescript syntax
 Plug('Shougo/vimproc.vim', {['do'] ='make'}) -- Dependency for tsuquyomi
--- Plug 'Quramy/tsuquyomi'                    " typescript completion
 Plug 'andrewstuart/vim-kubernetes'         -- kubernetes manifests
 Plug 'slim-template/vim-slim'              -- slim templating support
 Plug 'ClockworkNet/vim-apparmor'           -- AppArmor definitions
@@ -78,6 +76,8 @@ Plug 'godlygeek/tabular'                   -- dependency for plasticboy/vim-mark
 Plug 'plasticboy/vim-markdown'             -- markdown - extra actions, folding
 Plug 'junegunn/goyo.vim'                   -- distraction free writing
 Plug 'sheerun/vim-polyglot'                -- lot of extra languages
+Plug 'famiu/bufdelete.nvim'                -- handles buffer deletion much better
+
 -- colorscheme packages
 Plug 'pwntester/octo.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', branch='0.5-compat' })
