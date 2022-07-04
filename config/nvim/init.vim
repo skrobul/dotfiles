@@ -321,7 +321,8 @@ function! s:CleanupPullRequestMessage(...)
 endfunction
 function! s:SubmitPR(...)
     silent !clear
-    execute '!hub pull-request -p -F ~/.git_PR_message'
+    execute '!git push -u marek'
+    execute '!hub pull-request -F ~/.git_PR_message'
     call delete(expand('~/.git_PR_message'))
 endfunction
 command! PR :call s:OpenPullRequest()
