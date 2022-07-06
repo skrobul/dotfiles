@@ -29,5 +29,12 @@
             "${TM_SELECTED_TEXT}",
             "# rubocop: enable ${1:Metrics/MethodLength}"
         ]
+    },
+    "Frozen string": {
+        "prefix": "frozen",
+        "body": [
+            "# frozen_string_literal: true",
+            "${0}"
+        ]
     }
 }
