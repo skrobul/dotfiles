@@ -80,7 +80,8 @@ Plug 'famiu/bufdelete.nvim'                -- handles buffer deletion much bette
 
 -- colorscheme packages
 Plug 'pwntester/octo.nvim'
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', branch='0.5-compat' })
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'elianiva/gitgud.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'sainnhe/sonokai'
