@@ -5,7 +5,7 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'                               -- git wrapper
 Plug 'honza/vim-snippets'                               -- actual snippets
 Plug 'tpope/vim-commentary'                              -- easy comments
-Plug 'jwhitley/vim-matchit'                             -- better jumping with %
+Plug 'andymass/vim-matchup'                             -- better jumping with %
 Plug 'tpope/vim-endwise'                                -- wisely 'end' functions etc
 Plug 'kchmck/vim-coffee-script'                         -- coffe script support
 Plug 'tpope/vim-repeat'                                 -- extend support for repeating with .

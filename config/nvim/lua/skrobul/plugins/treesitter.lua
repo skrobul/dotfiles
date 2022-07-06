@@ -30,5 +30,8 @@ require'nvim-treesitter.configs'.setup {
                 ["ob"] = "@block.outer",
             }
         }
+    },
+    matchup = {
+        enable = true
     }
 }
