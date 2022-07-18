@@ -27,7 +27,7 @@ Plug 'junegunn/vim-easy-align'                          -- easy alignment
 Plug 'mattn/gist-vim'                                   -- create GIST from vim
 Plug 'mattn/webapi-vim'                                 -- create GIST from vim
 Plug 'rking/ag.vim'                                     -- vim-ag
-Plug 'lewis6991/gitsigns.nvim'
+Plug('lewis6991/gitsigns.nvim', {branch='main'})
 Plug 'hwartig/vim-seeing-is-believing'                  -- inline ruby
 Plug 'kassio/neoterm'                                   -- reuse terminal, repl integration
 Plug 'janko-m/vim-test'                                 -- vim-test
@@ -40,20 +40,20 @@ Plug 'kyazdani42/nvim-web-devicons'                     -- telescope dep
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'        -- built-in LSP
-Plug 'hrsh7th/cmp-nvim-lsp'         -- completion plugin
-Plug 'hrsh7th/cmp-buffer'           -- completion plugin
-Plug 'hrsh7th/cmp-path'             -- completion plugin
-Plug 'hrsh7th/cmp-cmdline'          -- completion plugin
-Plug 'hrsh7th/nvim-cmp'             -- completion plugin
+Plug('hrsh7th/cmp-nvim-lsp', {branch='main'})         -- completion plugin
+Plug('hrsh7th/cmp-buffer', {branch='main'})           -- completion plugin
+Plug('hrsh7th/cmp-path', {branch='main'})             -- completion plugin
+Plug('hrsh7th/cmp-cmdline', {branch='main'})          -- completion plugin
+Plug('hrsh7th/nvim-cmp', {branch='main'})             -- completion plugin
 Plug 'L3MON4D3/LuaSnip'             -- luasnip
 Plug 'saadparwaiz1/cmp_luasnip'     -- luasnip
-Plug 'rafamadriz/friendly-snippets' -- collection of snippets
-Plug 'andersevenrud/cmp-tmux'       -- complete from TMUX
-Plug 'williamboman/nvim-lsp-installer' -- install language servers easily
+Plug('rafamadriz/friendly-snippets', {branch='main'}) -- collection of snippets
+Plug('andersevenrud/cmp-tmux', {branch='main'})       -- complete from TMUX
+Plug('williamboman/nvim-lsp-installer',{branch='main'}) -- install language servers easily
 Plug 'ray-x/lsp_signature.nvim'        -- display function sig
-
-Plug 'nvim-lualine/lualine.nvim'
-Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} })
+-- misc
+Plug 'nvim-lualine/lualine.nvim' -- better status line
+Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} }) -- easy html
 Plug 'romainl/vim-cool'                                 -- disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 -- display CSS colors inline
 Plug 'osyo-manga/vim-over'                              -- preview search & replace
@@ -63,7 +63,7 @@ Plug 'dkarter/bullets.vim'                              -- list formatting
 Plug 'xarthurx/taskwarrior.vim'
 
 -- additional syntax / lang support plugins
-Plug 'cespare/vim-toml'
+Plug('cespare/vim-toml', {branch='main'})
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'saltstack/salt-vim'
 Plug 'leafgarland/typescript-vim'          -- Typescript syntax
@@ -83,7 +83,7 @@ Plug 'pwntester/octo.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'elianiva/gitgud.nvim'
-Plug 'EdenEast/nightfox.nvim'
+Plug('EdenEast/nightfox.nvim', {branch='main'})
 Plug 'sainnhe/sonokai'
 
 vim.call('plug#end')
