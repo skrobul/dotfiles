@@ -132,7 +132,7 @@ nnoremap <silent> ,rf :TestFile<cr>
 nnoremap <silent> ,rn :TestNearest<cr>
 nnoremap <silent> ,rr :TestLast<cr>
 nnoremap <silent> ,rv :TestVisit<cr>
-let test#strategy = "neovim"
+let test#strategy = "dispatch"
 let test#neovim#term_position = "vert"
 if has('nvim')
   tmap <C-o> <C-\><C-n>
