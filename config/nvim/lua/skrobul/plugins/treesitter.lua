@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup({
     highlight = {
         enable = true,
     },
@@ -12,7 +12,7 @@ require'nvim-treesitter.configs'.setup {
         },
     },
     indent = { enable =  true },
-    ensure_installed = "maintained",
+    ensure_installed = "all",
     textobjects = {
         select = {
             enable = true,
@@ -30,8 +30,5 @@ require'nvim-treesitter.configs'.setup {
                 ["ob"] = "@block.outer",
             }
         }
-    },
-    matchup = {
-        enable = true
     }
-}
+})
