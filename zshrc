@@ -21,6 +21,7 @@ zplug "greymd/docker-zsh-completion"
 zplug "arzzen/calc.plugin.zsh"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
+zplug "mbenford/zsh-tmux-auto-title"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -189,3 +190,7 @@ function change_commit_date() {
 
 eval "$(direnv hook zsh)"
 
+# tmux auto title - https://github.com/mbenford/zsh-tmux-auto-title#configuration
+ZSH_TMUX_AUTO_TITLE_SHORT=true
+ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE=""
+ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
