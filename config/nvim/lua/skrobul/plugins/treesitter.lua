@@ -2,6 +2,7 @@ require'nvim-treesitter.configs'.setup({
     highlight = {
         enable = true,
     },
+    ignore_install = { "phpdoc" },
     incremental_selection = {
         enable = true,
         keymaps = {
