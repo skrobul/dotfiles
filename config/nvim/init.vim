@@ -244,6 +244,10 @@ lua require('skrobul/plugins/telescope')
 " {{{ octo.nvim
 let g:octo_github_hostname = "github.rackspace.com"
 " }}}
+" {{{ vim-surround
+" Custom surrounds
+let b:surround_{char2nr('c')} = "```\r```"
+" }}}
 " end of plugin config }}}
 "{{{ colorscheme
 if has('termguicolors')
