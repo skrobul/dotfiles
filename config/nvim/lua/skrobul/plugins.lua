@@ -61,6 +61,8 @@ Plug('vimwiki/vimwiki', {on={'VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'Vimwi
 Plug 'AndrewRadev/splitjoin.vim'                        -- split one liners
 Plug 'dkarter/bullets.vim'                              -- list formatting
 Plug 'xarthurx/taskwarrior.vim'
+Plug 'folke/which-key.nvim'                             -- shows keyboard shortcut popup
+Plug 'ggandor/leap.nvim'                                -- sneak'alike jumping
 
 -- additional syntax / lang support plugins
 Plug('cespare/vim-toml', {branch='main'})
@@ -97,3 +99,4 @@ require 'skrobul.plugins.treesitter'
 require 'skrobul.plugins.lualine'
 require 'skrobul.plugins.gitsigns'
 require 'skrobul.plugins.blankline'
+require 'skrobul.plugins.which-key'

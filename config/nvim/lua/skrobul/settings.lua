@@ -17,6 +17,7 @@ set.smarttab = true
 set.nrformats:remove('octal')
 set.ttimeout = true
 set.ttimeoutlen = 800
+set.timeoutlen = 400
 set.incsearch = true
 set.spellfile = "~/dotfiles/vim/spell/en.utf-8.add"
 set.modelines=5         -- check for vim settings in X lines of read file
@@ -67,8 +68,9 @@ set.autoread = true -- reads the file when it has been changed outside vim
 
 -- files related
 set.backup = false
-set.listchars = { tab = ">~", eol = '↲', nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨' }
-set.list = false
+-- set.listchars = { tab = ">~", eol = '↲', nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨' }
+set.listchars = { tab = ">~", nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨' }
+set.list = true
 set.showbreak="↪"
 set.writebackup = false
 set.directory=vim.env.HOME .. "/.cache/vim/"
