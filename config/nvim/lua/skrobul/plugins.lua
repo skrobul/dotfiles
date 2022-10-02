@@ -63,6 +63,7 @@ Plug 'dkarter/bullets.vim'                              -- list formatting
 Plug 'xarthurx/taskwarrior.vim'
 Plug 'folke/which-key.nvim'                             -- shows keyboard shortcut popup
 Plug 'ggandor/leap.nvim'                                -- sneak'alike jumping
+Plug 'ahmedkhalf/project.nvim'                          -- project mgmt
 
 -- additional syntax / lang support plugins
 Plug('cespare/vim-toml', {branch='main'})
@@ -100,3 +101,5 @@ require 'skrobul.plugins.lualine'
 require 'skrobul.plugins.gitsigns'
 require 'skrobul.plugins.blankline'
 require 'skrobul.plugins.which-key'
+require 'skrobul.plugins.leap'
+require 'skrobul.plugins.project'

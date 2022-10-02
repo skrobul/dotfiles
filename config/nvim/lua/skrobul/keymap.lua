@@ -25,6 +25,7 @@ map {'n', '<Leader>fm',  '<cmd>Telescope man_pages<cr>'}
 map {'n', '<Leader>fc',  '<cmd>Telescope colorscheme<cr>'}
 map {'n', '<Leader>fk',  '<cmd>Telescope keymaps<cr>'}
 map {'n', '<Leader>fd',  '<cmd>Telescope lsp_definitions<cr>'}
+map {'n', '<Leader>fp',  '<cmd>Telescope projects<cr>'}
 map {'n', '<C-p>', '<cmd>Telescope find_files<cr>'}
 map {'n', "''",    '<cmd>Telescope buffers<cr>'}
 
