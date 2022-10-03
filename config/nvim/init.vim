@@ -255,8 +255,7 @@ if has('termguicolors')
 endif
 set background=dark
 
-colorscheme nightfox
-let g:sonokai_style = 'maia'
+colorscheme tokyonight-night
 
 " local modifications
 " search results blue instead of orange

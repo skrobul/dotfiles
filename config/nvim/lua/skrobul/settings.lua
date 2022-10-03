@@ -1,17 +1,17 @@
 local set = vim.opt
 
 set.bs = { "indent", "eol", "start" } -- Allow backspacing over everything in insert mode
-set.ai = true                  -- Always set auto-indenting on
-set.history=50          -- keep 50 lines of command history
-set.ts=4                -- 4 space wide tabs
+set.ai = true                         -- Always set auto-indenting on
+set.history=50                        -- keep 50 lines of command history
+set.ts=4                              -- 4 space wide tabs
 set.sw=4
-set.softtabstop=4     -- makes backspacing over spaced out tabs work real nice
-set.expandtab = true           -- expand tabs to spaces
+set.softtabstop=4                     -- makes backspacing over spaced out tabs work real nice
+set.expandtab = true                  -- expand tabs to spaces
 set.ignorecase = true
-set.background='dark'     --awesome for terminals with crappy colors (putty!)
-set.tagstack = true            --lets you push and pop your jumps with ctrl+]
-set.pastetoggle="<F11>"   --when you're pasting stuff this keeps it from getting
-                        --all whacked out with indentation
+set.background='dark'                 -- awesome for terminals with crappy colors (putty!)
+set.tagstack = true                   -- lets you push and pop your jumps with ctrl+]
+set.pastetoggle="<F11>"               -- when you're pasting stuff this keeps it from getting
+                                      -- all whacked out with indentation
 set.showmode = true
 set.smarttab = true
 set.nrformats:remove('octal')
@@ -20,12 +20,12 @@ set.ttimeoutlen = 800
 set.timeoutlen = 400
 set.incsearch = true
 set.spellfile = "~/dotfiles/vim/spell/en.utf-8.add"
-set.modelines=5         -- check for vim settings in X lines of read file
+set.modelines=5          -- check for vim settings in X lines of read file
 set.complete:remove("k") -- autocompletion - disable dictionary based
 set.hlsearch = true
 set.ignorecase = true
 set.smartcase = true
-set.hidden = true -- do not save history when leaving buffer
+set.hidden = true        -- do not save history when leaving buffer
 set.foldlevelstart=7
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
@@ -60,7 +60,6 @@ end
 -- Always hide the statusline
 set.laststatus=2
 set.ruler = true                -- Show the cursor position all the time
--- TODOset.rulerformat = '%30(%<%m%y%h%r%=%l,%c\ %P%)'
 set.showcmd = true
 set.wildmode = "longest,list,full"
 set.wildmenu = true
