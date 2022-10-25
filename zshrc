@@ -19,9 +19,9 @@ zplug "zsh-users/zsh-completions"
 zplug "greymd/docker-zsh-completion"
 #zplug "rupa/z", use:z.sh
 zplug "arzzen/calc.plugin.zsh"
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
-zplug "mbenford/zsh-tmux-auto-title"
+# zplug "mbenford/zsh-tmux-auto-title"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -42,6 +42,8 @@ autoload -U promptinit; promptinit
 SPACESHIP_CHAR_SYMBOL="❯ "
 SPACESHIP_NODE_DEFAULT_VERSION="v10.17.0"
 source ~/dotfiles/zsh/spaceship_sections/dockerenv.zsh
+SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_VERSION_SHOW=false
 
 SPACESHIP_PROMPT_ORDER=(
     time          # Time stampts section
@@ -70,12 +72,11 @@ SPACESHIP_PROMPT_ORDER=(
     # pyenv         # Pyenv section
     # dotnet        # .NET section
     # ember         # Ember.js section
-    # kubecontext   # Kubectl context section
+    kubectl
     # terraform     # Terraform workspace section
     exec_time     # Execution time
     line_sep      # Line break
     battery       # Battery level and status
-    vi_mode       # Vi-mode indicator
     jobs          # Background jobs indicator
     exit_code     # Exit code section
     char          # Prompt character
