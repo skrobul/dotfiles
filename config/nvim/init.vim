@@ -191,20 +191,7 @@ if has("nvim")
   endfunction
 endif
 " }}}
-" {{{ vimwiki
-" while g:vimwiki_global_ext is supposed to control creation of 'temporary
-" wikis' outside the defined directories, in reality this breaks markdown
-" files everywhere, so we set it to 0
-let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [{'path': '~/Sync/notes/wiki/',
-            \ 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_folding = 'expr'
-" these mappings are needed to enable lazy plugin loading and reduce vim
-" startup time
-nnoremap <silent><script> <leader>ww :VimwikiIndex<CR>
-nnoremap <silent><script> <leader>wi :VimwikiDiaryIndex<CR>
-nnoremap <silent><script> <leader>w\w :VimwikiMakeDiaryNote<CR>
+" {{{ vimgrep
 " switch vimgrep to use ag if available
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git

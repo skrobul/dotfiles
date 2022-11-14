@@ -41,7 +41,7 @@ map {'', '<Left>', '<Nop>'}
 map {'', '<Right>', '<Nop>'}
 
 -- clear search highlight
-map {'', '<cr>', '<cmd>noh<cr><cr>'}
+-- map {'', '<cr>', '<cmd>noh<cr><cr>'}
 
 -- buffer navigation
 map {'n', '<leader>bt', '<cmd>enew<cr>'}

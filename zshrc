@@ -21,7 +21,7 @@ zplug "greymd/docker-zsh-completion"
 zplug "arzzen/calc.plugin.zsh"
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
-# zplug "mbenford/zsh-tmux-auto-title"
+zplug "mbenford/zsh-tmux-auto-title"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then

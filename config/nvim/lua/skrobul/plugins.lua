@@ -58,7 +58,8 @@ Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} }) -- easy html
 Plug 'romainl/vim-cool'                                 -- disables search highlighting when you are done
 Plug 'ap/vim-css-color'                                 -- display CSS colors inline
 Plug 'osyo-manga/vim-over'                              -- preview search & replace
-Plug('vimwiki/vimwiki', {on={'VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'}})
+-- Plug('vimwiki/vimwiki', {on={'VimwikiMakeDiaryNote', 'VimwikiDiaryIndex', 'VimwikiIndex'}})
+Plug 'lervag/wiki.vim'
 Plug 'AndrewRadev/splitjoin.vim'                        -- split one liners
 Plug 'dkarter/bullets.vim'                              -- list formatting
 Plug 'xarthurx/taskwarrior.vim'
@@ -105,3 +106,4 @@ require 'skrobul.plugins.blankline'
 require 'skrobul.plugins.which-key'
 require 'skrobul.plugins.leap'
 require 'skrobul.plugins.project'
+require 'skrobul.plugins.wiki'
