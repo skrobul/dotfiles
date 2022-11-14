@@ -28,15 +28,16 @@ Plug 'mattn/gist-vim'                               -- create GIST from vim
 Plug 'mattn/webapi-vim'                             -- create GIST from vim
 Plug 'rking/ag.vim'                                 -- vim-ag
 Plug('lewis6991/gitsigns.nvim', {branch='main'})
-Plug 'hwartig/vim-seeing-is-believing'              -- inline ruby
-Plug 'kassio/neoterm'                               -- reuse terminal, repl integration
-Plug 'janko-m/vim-test'                             -- vim-test
-Plug 'shime/vim-livedown'                           -- live markdown preview
-Plug 'lambdalisue/suda.vim'                         -- sudo write(neovim needs it)
-Plug 'nvim-lua/popup.nvim'                          -- telescope
-Plug 'nvim-lua/plenary.nvim'                        -- telescope
-Plug 'nvim-telescope/telescope.nvim'                -- telescope
-Plug 'kyazdani42/nvim-web-devicons'                 -- telescope dep
+Plug 'hwartig/vim-seeing-is-believing'                  -- inline ruby
+Plug 'kassio/neoterm'                                   -- reuse terminal, repl integration
+Plug 'janko-m/vim-test'                                 -- vim-test
+Plug 'shime/vim-livedown'                               -- live markdown preview
+Plug 'ellisonleao/glow.nvim'                            -- markdown preview inside vim
+Plug 'lambdalisue/suda.vim'                             -- sudo write(neovim needs it)
+Plug 'nvim-lua/popup.nvim'                              -- telescope
+Plug 'nvim-lua/plenary.nvim'                            -- telescope
+Plug 'nvim-telescope/telescope.nvim'                    -- telescope
+Plug 'kyazdani42/nvim-web-devicons'                     -- telescope dep
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'                            -- built-in LSP
