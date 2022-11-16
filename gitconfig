@@ -39,7 +39,7 @@
 [user]
     name = Marek Skrobacki
     email = marek.skrobacki@rackspace.co.uk
-    signingkey = D7E0356D46EAA0A5
+	signingkey = 044AE8022992598DE07979348D921D0CB9A85565
 
 [commit]
     template = ~/.gitmessage
