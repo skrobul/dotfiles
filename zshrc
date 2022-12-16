@@ -193,9 +193,9 @@ function change_commit_date() {
 eval "$(direnv hook zsh)"
 
 # tmux auto title - https://github.com/mbenford/zsh-tmux-auto-title#configuration
-#ZSH_TMUX_AUTO_TITLE_SHORT=true
-#ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE=""
-#ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
+ZSH_TMUX_AUTO_TITLE_SHORT=true
+ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE=""
+ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
