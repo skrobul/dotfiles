@@ -41,7 +41,7 @@ report.next.filter=status:pending limit:100
 
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
-include /Users/marek.skrobacki/.task/taskrc.local
+include ../.taskrc.local
 context.personal.read=+personal
 context.work.read=+work
 context.work.write=+work
@@ -57,4 +57,6 @@ report._reviewed.description=Tasksh review report.  Adjust the filter to your ne
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
-context=work
+context.kubeswarm.read=project:kubeswarm +work
+context.kubeswarm.write=project:kubeswarm +work
+context=personal
