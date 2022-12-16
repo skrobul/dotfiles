@@ -37,7 +37,7 @@ taskd.server=tasks.skrobul.com:53580
 taskd.credentials=Public\/Marek Skrobacki\/d26efb46-e936-48c3-a498-841b01ba9337
 
 weekstart=Monday
-report.next.filter=status:pending limit:10
+report.next.filter=status:pending limit:100
 
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
