@@ -244,6 +244,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 
 # Screenshot
 bindsym $mod+Shift+m exec /home/skrobul/bin/rsa
+bindsym $mod+Meta+Shift+m exec /home/skrobul/bin/rsa
 bindsym Print exec flameshot gui
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
@@ -254,7 +255,7 @@ bindsym Ctrl+F9 exec guvcview -z -a none
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/i3exit suspend
 bindsym XF86Sleep exec --no-startup-id ~/bin/i3exit suspend
 # Apps
-bindsym $mod+t exec tuxcmd
+bindsym $mod+t exec nemo
 
 # Keyboard
 #exec --no-startup-id "setxkbmap pl,gb,us -option 'grp:alt_shift_toggle'"

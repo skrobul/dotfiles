@@ -1,5 +1,6 @@
 #!/bin/bash
 # Displays the default device, volume, and mute status for i3blocks
+BLOCK_BUTTON=$1
 set -a
 
 AUDIO_HIGH_SYMBOL=${AUDIO_HIGH_SYMBOL:-'  '}

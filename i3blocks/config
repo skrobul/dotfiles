@@ -87,7 +87,7 @@ interval=60
 color=#555555
 
 [datetime]
-command=/home/skrobul/dotfiles/i3blocks/scripts/date
+command=/home/skrobul/dotfiles/i3blocks/scripts/date $button
 interval=1
 
 [separator]
