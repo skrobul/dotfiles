@@ -160,34 +160,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    colors {
-        # background #0000003a
-        # statusline #ffffff
-        # separator #666666
-        #
-        # #  <colorclass> <border> <background> <text>
-        # focused_workspace  #4c7899 #132737 #ffffff
-        focused_workspace  #FDF51E #132737 #ffffff
-        # active_workspace   #333333 #5f676a #ffffff
-        # inactive_workspace #333333 #222222 #888888
-        # urgent_workspace   #2f343a #DC770F #ffffff
-        # binding_mode       #2f343a #900000 #ffffff
-        background #080808
-        statusline #808080
-        separator #808080
-        focused_workspace #080808 #222222 #808080
-        active_workspace #080808 #080808 #797979 
-        inactive_workspace #080808 #080808 #4F4F4F
-        urgent_workspace #080808 #080808 #EA4C59
-    }
-    #status_command i3status
-    status_command i3blocks -c ~/dotfiles/i3blocks/config
-    font pango:Dejavu Sans Mono, FontAwesome 10
-    #i3bar_command i3bar
-}
 
 for_window [title="VidyoDesktop$"] floating enable
 #for_window [title="Zoom"] floating enable 
@@ -272,6 +244,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xbindkeys
 exec --no-startup-id rescuetime &
 exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # needed for libvirt and KVM
 exec --no-startup-id lxpolkit
