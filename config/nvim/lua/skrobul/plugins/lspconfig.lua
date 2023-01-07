@@ -2,7 +2,6 @@ local lspconfig = require("lspconfig")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     -- Enable completion triggered by <c-x><c-o>
@@ -36,9 +35,9 @@ local on_attach = function(client, bufnr)
       K = { '<cmd>lua vim.lsp.buf.hover()<CR>', "Hover information. Call twice to jump", opts },
       ["<C-k>"] = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Display signature information", opts },
       ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol", opts },
-      ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", opts },
-      ["[d"] = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', "Previous diagnstic", opts },
-      ["]d"] = { '<cmd>lua vim.diagnostic.goto_next()<CR>', opts },
+      ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action", opts },
+      ["[d"] = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', "Previous diagnostic", opts },
+      ["]d"] = { '<cmd>lua vim.diagnostic.goto_next()<CR>', "Next diagnostic", opts },
     })
 end
 

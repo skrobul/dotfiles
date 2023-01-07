@@ -18,6 +18,7 @@ end
 local wk = require("which-key")
 
 wk.register({
+  name = "telescope",
   f = { '<cmd>Telescope find_files<cr>', "files (telescope)" },
   g = { '<cmd>Telescope live_grep<cr>', "Live grep (telescope)"},
   b = { '<cmd>Telescope buffers<cr>', "Buffers" },
@@ -48,6 +49,7 @@ wk.register({
   ["<leader>"] = {
       V = { '<cmd>source ~/.config/nvim/init.vim<cr><cmd>filetype detect<cr>', "Reload vimrc" },
       b = {
+        name = "buffer",
         n = { '<cmd>bnext<cr>', "Next buffer" },
         p = { '<cmd>bprevious<cr>', "Previous buffer" },
         c = { '<cmd>bp <BAR> bd #<cr>', "Close buffer and replace with prev" },
