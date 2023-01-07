@@ -103,12 +103,15 @@ wk.register({
   r = { "<cmd>Gread<CR>", "replace buffer with fugitive object" },
   w = { "<cmd>Gwrite<CR><CR>", "save and stage the file" },
   l = { "<cmd>silent! Glog<CR>:bot copen<CR>", "Open Glog in split below" },
-  p = { "<cmd>Ggrep<Space>", "Git Grep" },
+  g = { "<cmd>Ggrep<Space>", "Git Grep" },
   m = { "<cmd>GMove<Space>", "Git move and rename buffer" },
   b = { "<cmd>Git branch<Space>", "Switch branch" },
   o = { "<cmd>Git checkout<Space>", "Checkout" },
-  ["ps"] = { "<cmd>Git push<CR>", "Push" },
-  ["pl"] = { "<cmd>Git pull<CR>", "Pull" },
+  p = {
+    name = "Push/pull",
+    s = { "<cmd>Git push<CR>", "Push" },
+    l = { "<cmd>Git pull<CR>", "Pull" },
+  }
 }, { prefix = "<Leader>g", desc="Git" })
 
 -- mergetool
