@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     -- Enable completion triggered by <c-x><c-o>
@@ -23,7 +23,8 @@ local on_attach = function(client, bufnr)
       q = { '<cmd>lua vim.diagnostic.setloclist()<CR>', "Jump to definition of the type under the cursor", opts },
       f = { '<cmd>lua vim.lsp.buf.formatting()<CR>', "Formats the current buffer", opts },
       e = { '<cmd>lua vim.diagnostic.open_float()<CR>', "Show diagnostics in a floating window", opts },
-    }, { prefix = "<space>" })
+      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action", opts },
+    }, { prefix = "<leader>c" })
 
     wk.register({
       g = {
@@ -35,7 +36,6 @@ local on_attach = function(client, bufnr)
       K = { '<cmd>lua vim.lsp.buf.hover()<CR>', "Hover information. Call twice to jump", opts },
       ["<C-k>"] = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Display signature information", opts },
       ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol", opts },
-      ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action", opts },
       ["[d"] = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', "Previous diagnostic", opts },
       ["]d"] = { '<cmd>lua vim.diagnostic.goto_next()<CR>', "Next diagnostic", opts },
     })
@@ -115,7 +115,7 @@ if not configs.ls_emmet then
         'eruby',
         'erb'
       };
-      root_dir = function(fname)
+      root_dir = function(_)
         return vim.loop.cwd()
       end;
       settings = {};
