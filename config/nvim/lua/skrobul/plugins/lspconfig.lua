@@ -1,6 +1,6 @@
+local lspconfig = require("lspconfig")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -11,26 +11,35 @@ local on_attach = function(client, bufnr)
     require "lsp_signature".on_attach()
 
     -- Mappings.
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap=true, silent=true, mode="n" }
+    local wk = require("which-key")
 
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    wk.register({
+     w = {
+        a =  { '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "LSP Add workspace folder", opts },
+        r = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "LSP Remove workspace folder", opts },
+        l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "LSP print workspace folders", opts },
+      },
+      D = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', "Display type definition", opts },
+      q = { '<cmd>lua vim.diagnostic.setloclist()<CR>', "Jump to definition of the type under the cursor", opts },
+      f = { '<cmd>lua vim.lsp.buf.formatting()<CR>', "Formats the current buffer", opts },
+      e = { '<cmd>lua vim.diagnostic.open_float()<CR>', "Show diagnostics in a floating window", opts },
+    }, { prefix = "<space>" })
+
+    wk.register({
+      g = {
+        D = { '<cmd>lua vim.lsp.buf.declaration()<CR>', "LSP Declaration", opts },
+        d = { '<cmd>lua vim.lsp.buf.definition()<CR>', "LSP Definition", opts },
+        i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', "LSP Implementation", opts },
+        r = { '<cmd>lua vim.lsp.buf.references()<CR>', "References to a symbol", opts },
+      },
+      K = { '<cmd>lua vim.lsp.buf.hover()<CR>', "Hover information. Call twice to jump", opts },
+      ["<C-k>"] = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Display signature information", opts },
+      ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol", opts },
+      ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", opts },
+      ["[d"] = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', "Previous diagnstic", opts },
+      ["]d"] = { '<cmd>lua vim.diagnostic.goto_next()<CR>', opts },
+    })
 end
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -38,41 +47,25 @@ local lsp_installer = require("nvim-lsp-installer")
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
-    lsp_installer.on_server_ready(function(server)
-        local opts = { on_attach = on_attach, capabilities = capabilities }
+lsp_installer.on_server_ready(function(server)
+    local opts = { on_attach = on_attach, capabilities = capabilities }
 
-        -- (optional) Customize the options passed to the server
-        -- if server.name == "tsserver" then
-        --     opts.root_dir = function() ... end
-        -- end
-        -- if server.name == "solargraph" then
-        --   opts.settings = {
-        --     commandPath = "/home/skrobul/.asdf/shims/solargraph",
-        --     diagnostics = true,
-        --     completion = true,
-        --     formatting = true
-        --   }
-        -- end
-
-        if server.name == "sumneko_lua" then
-          opts.settings = {
-            Lua = {
-              diagnostics = {
-                globals = { 'vim' }
-              }
-            }
+    if server.name == "sumneko_lua" then
+      opts.settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' }
           }
-        end
+        }
+      }
+    end
 
-        -- This setup() function will take the provided server configuration and decorate it with the necessary properties
-        -- before passing it onwards to lspconfig.
-        -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-            server:setup(opts)
-        end)
+    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
+    -- before passing it onwards to lspconfig.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        server:setup(opts)
+    end)
 
-
--- manual solarpgraph setup
-local lspconfig = require'lspconfig'
 
 -- local function attacher(client)
 --   print('Attaching LSP: ' .. client.name)
@@ -93,7 +86,7 @@ lspconfig.solargraph.setup{
   on_attach = on_attach
 }
 
-local configs = require'lspconfig.configs'
+local configs = require('lspconfig.configs')
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -133,6 +126,18 @@ end
 
 local caps = vim.lsp.protocol.make_client_capabilities()
 lspconfig.ls_emmet.setup { capabilities = caps }
+
+-- lspconfig for jsonls
+lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
+
+
 
 vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 vim.diagnostic.config({
@@ -206,5 +211,4 @@ function M.setup()
 end
 
 return M
-
 

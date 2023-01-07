@@ -20,7 +20,6 @@ Plug 'tpope/vim-eunuch'                             -- Chmod, rename, delete etc
 Plug 'henrik/vim-qargs'                             -- adds :Qargs command
 Plug 'dhruvasagar/vim-table-mode'                   -- helps with creating tables
 Plug 'benmills/vimux'                               -- interact with tmux
-Plug 'gregsexton/gitv'                              -- gitk for vim
 Plug 'lukas-reineke/indent-blankline.nvim'          -- visual indent
 Plug 'idanarye/vim-merginal'                        -- help with merges and rebase
 Plug 'junegunn/vim-easy-align'                      -- easy alignment
@@ -53,6 +52,7 @@ Plug('andersevenrud/cmp-tmux', {branch='main'})         -- complete from TMUX
 Plug('williamboman/nvim-lsp-installer',{branch='main'}) -- install language servers easily
 Plug 'ray-x/lsp_signature.nvim'                         -- display function sig
 Plug 'folke/trouble.nvim'                               -- better diagnostics
+Plug 'b0o/schemastore.nvim'                             -- access to the SchemaStore catalog
 -- misc
 Plug 'nvim-lualine/lualine.nvim' -- better status line
 Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} }) -- easy html

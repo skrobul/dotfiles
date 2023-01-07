@@ -37,35 +37,6 @@ map <F4> :NERDTreeToggle<CR>
 " instant markdown {{{
 let g:instant_markdown_slow = 1
 " "}}}
-" fugitive {{{
-nnoremap <Leader>ga :Git add %:p<CR><CR>
-nnoremap <Leader>gs :Git<CR>
-nnoremap <Leader>gc :Gcommit -v -q<CR>
-nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>ge :Gedit<CR>
-nnoremap <Leader>gr :Gread<CR>
-nnoremap <Leader>gw :Gwrite<CR><CR>
-nnoremap <Leader>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <Leader>gp :Ggrep<Space>
-nnoremap <Leader>gm :Gmove<Space>
-nnoremap <Leader>gb :Git branch<Space>
-nnoremap <Leader>go :Git checkout<Space>
-nnoremap <Leader>gps :Git push<CR>
-nnoremap <Leader>gpl :Git pull<CR>
-" git merges
-" map <silent> <leader>2 :diffget //2<CR> :diffupdate<CR>
-" map <silent> <leader>3 :diffget //3<CR> :diffupdate<CR>
-
-map <silent> <leader>1 :diffget BA<CR> :diffupdate<CR>
-map <silent> <leader>2 :diffget LO<CR> :diffupdate<CR>
-map <silent> <leader>3 :diffget RE<CR> :diffupdate<CR>
-" gitv
-nnoremap <Leader>gv :Gitv --all<CR>
-nnoremap <Leader>gV :Gitv! --all<CR>
-vmap <leader>gV :Gitv! --all<cr>
-
-" }}}
 " {{{2 prosession configuration
 let g:prosession_dir = '~/.vim/session/'
 let g:prosession_tmux_title = 1
