@@ -52,6 +52,7 @@ Plug('rafamadriz/friendly-snippets', {branch='main'})   -- collection of snippet
 Plug('andersevenrud/cmp-tmux', {branch='main'})         -- complete from TMUX
 Plug('williamboman/nvim-lsp-installer',{branch='main'}) -- install language servers easily
 Plug 'ray-x/lsp_signature.nvim'                         -- display function sig
+Plug 'folke/trouble.nvim'                               -- better diagnostics
 -- misc
 Plug 'nvim-lualine/lualine.nvim' -- better status line
 Plug('mattn/emmet-vim', { ['for'] = {'html', 'erb', 'vue'} }) -- easy html
@@ -109,3 +110,4 @@ require 'skrobul.plugins.project'
 require 'skrobul.plugins.wiki'
 require 'skrobul.plugins.vim-markdown'
 require 'skrobul.plugins.jenkinsfile-linter'
+require 'skrobul.plugins.trouble'
