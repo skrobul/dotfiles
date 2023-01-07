@@ -83,7 +83,7 @@ Plug 'junegunn/goyo.vim'                     -- distraction free writing
 Plug 'sheerun/vim-polyglot'                  -- lot of extra languages
 Plug 'famiu/bufdelete.nvim'                  -- handles buffer deletion much better
 Plug 'towolf/vim-helm'                       -- helm templates
-
+Plug 'ckipp01/nvim-jenkinsfile-linter'       -- Jenkinsfiles
 -- colorscheme packages
 Plug 'pwntester/octo.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
@@ -108,3 +108,4 @@ require 'skrobul.plugins.leap'
 require 'skrobul.plugins.project'
 require 'skrobul.plugins.wiki'
 require 'skrobul.plugins.vim-markdown'
+require 'skrobul.plugins.jenkinsfile-linter'
