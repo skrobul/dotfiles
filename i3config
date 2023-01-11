@@ -74,16 +74,28 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $tag1 "1:  term"
-set $tag2 "2:  web"
-set $tag3 "3:  comms"
+# set $tag1 "1:  term"
+# set $tag2 "2:  web"
+# set $tag3 "3:  comms"
+# set $tag4 "4"
+# set $tag5 "5:  videoconf"
+# set $tag6 "6:  mail"
+# set $tag7 "7"
+# set $tag8 "8:  spotify"
+# set $tag9 "9:  vpn"
+# set $tag10 "10"
+
+set $tag1 "1: term"
+set $tag2 "2: web"
+set $tag3 "3: comms"
 set $tag4 "4"
-set $tag5 "5:  videoconf"
-set $tag6 "6:  mail"
+set $tag5 "5: videoconf"
+set $tag6 "6: mail"
 set $tag7 "7"
-set $tag8 "8:  spotify"
-set $tag9 "9:  vpn"
+set $tag8 "8: spotify"
+set $tag9 "9: vpn"
 set $tag10 "10"
+
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
