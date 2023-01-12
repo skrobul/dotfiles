@@ -21,7 +21,7 @@ zplug "greymd/docker-zsh-completion"
 zplug "arzzen/calc.plugin.zsh"
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
-zplug "mbenford/zsh-tmux-auto-title"
+zplug "skrobul/zsh-tmux-auto-title"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -94,7 +94,7 @@ CASE_SENSITIVE="false"
 DISABLE_LS_COLORS="false"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -193,8 +193,8 @@ function change_commit_date() {
 eval "$(direnv hook zsh)"
 
 # tmux auto title - https://github.com/mbenford/zsh-tmux-auto-title#configuration
-ZSH_TMUX_AUTO_TITLE_SHORT=true
-ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE=""
+ZSH_TMUX_AUTO_TITLE_SHORT="true"
+#ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE="unconfigured"
 ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
