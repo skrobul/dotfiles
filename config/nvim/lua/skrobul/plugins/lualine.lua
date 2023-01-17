@@ -17,6 +17,7 @@ require('lualine').setup({
                 path = 1,                -- 0: Just the filename
                 -- 1: Relative path
                 -- 2: Absolute path
+                -- 3: Absolute with tilde
 
                 shorting_target = 40,    -- Shortens path to leave 40 spaces in the window
                 -- for other components. (terrible name, any suggestions?)
