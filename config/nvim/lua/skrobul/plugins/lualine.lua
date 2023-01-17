@@ -1,3 +1,7 @@
+local function nvim_treesitter_status()
+  return require("nvim-treesitter").statusline()
+end
+
 require('lualine').setup({
     options = {
         icons_enabled = true,
@@ -29,15 +33,15 @@ require('lualine').setup({
             }
         },
         lualine_x = {'filetype'},
-        lualine_y = {},
-        lualine_z = {'location'}
+        lualine_y = { nvim_treesitter_status },
+        lualine_z = {'location', }
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {'filename'},
         lualine_x = {'location'},
-        lualine_y = {},
+        lualine_y = { },
         lualine_z = {}
     },
     tabline = {},
