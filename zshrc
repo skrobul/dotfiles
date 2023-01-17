@@ -21,7 +21,7 @@ zplug "greymd/docker-zsh-completion"
 zplug "arzzen/calc.plugin.zsh"
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
-zplug "skrobul/zsh-tmux-auto-title"
+zplug "skrobul/zsh-tmux-auto-title", at:prerelease
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -200,3 +200,8 @@ ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+#
+#
+pandoc_debug() {
+    pandoc -s -t native -f markdown -o - $1
+}
