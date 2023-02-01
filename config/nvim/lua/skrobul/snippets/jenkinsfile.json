@@ -1,0 +1,11 @@
+{
+  "Build Container on Kubernetes": {
+    "prefix": "buildcontainer",
+    "body": [
+      "buildContainerImageOnKubernetes(",
+      "    dockerfile: \"${1:Dockerfile}\",",
+      "    target: \"${2:target}\"",
+      ")"
+    ]
+  }
+}

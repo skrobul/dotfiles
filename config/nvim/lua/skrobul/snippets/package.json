@@ -8,6 +8,10 @@
       {
         "language": "ruby",
         "path": "./ruby.json"
+      },
+      {
+        "language": "Jenkinsfile",
+        "path": "./jenkinsfile.json"
       }
     ]
   }

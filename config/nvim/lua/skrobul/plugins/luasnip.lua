@@ -18,3 +18,5 @@ local date = function() return {os.date('%Y-%m-%d')} end
 ls.config.set_config({
   store_selection_keys = '<c-s>',
 })
+
+vim.api.nvim_create_user_command('LuaSnipEdit', ':lua require("luasnip.loaders").edit_snippet_files()', {})
