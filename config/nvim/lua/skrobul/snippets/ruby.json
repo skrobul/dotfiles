@@ -36,5 +36,13 @@
             "# frozen_string_literal: true",
             "${0}"
         ]
+    },
+    "if main program": {
+        "prefix": "ifmain",
+        "body": [
+            "if $PROGRAM_NAME == __FILE__",
+            "  ${TM_SELECTED_TEXT}",
+            "end"
+        ]
     }
 }

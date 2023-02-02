@@ -7,5 +7,25 @@
       "    target: \"${2:target}\"",
       ")"
     ]
+  },
+  "Teams build failed": {
+    "prefix": "teamsBuildFailed",
+    "body": [
+      "teamsBuildFailed(",
+      "// both message and commit are optional",
+      "  message: \"$1\"",
+      "  commit: \"${2:HEAD}\",",
+      ")"
+    ]
+  },
+  "Teams generic message": {
+    "prefix": "teamsGenericMessage",
+    "body": [
+      "teamsGenericMessage(",
+      "  message: \"$1\"",
+      "  color: \"$2\"",
+      "  status: \"$3\"",
+      ")"
+    ]
   }
 }
