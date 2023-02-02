@@ -4,7 +4,8 @@
     "body": [
       "buildContainerImageOnKubernetes(",
       "    dockerfile: \"${1:Dockerfile}\",",
-      "    target: \"${2:target}\"",
+      "    target: \"${2:production}\"",
+      "    context: \"${3}\"",
       ")"
     ]
   },
@@ -12,7 +13,6 @@
     "prefix": "teamsBuildFailed",
     "body": [
       "teamsBuildFailed(",
-      "// both message and commit are optional",
       "  message: \"$1\"",
       "  commit: \"${2:HEAD}\",",
       ")"
