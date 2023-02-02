@@ -1,0 +1,27 @@
+{
+  "Meeting notes": {
+    "prefix": "meetingnotes",
+    "body": [
+      "# Meeting notes: ${1:Title} - ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "",
+      "## Notes",
+      "",
+      "$2",
+      "",
+      "",
+      "## Action items",
+      "$3"
+    ]
+  },
+  "conference talk notes": {
+    "prefix": "talknotes",
+    "body": [
+      "# Talk: ${1:Title} - ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "Speaker: ${2:Name}",
+      "",
+      "## Notes",
+      "",
+      "$3"
+    ]
+  }
+}

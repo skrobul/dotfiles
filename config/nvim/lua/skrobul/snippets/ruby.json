@@ -40,8 +40,8 @@
     "if main program": {
         "prefix": "ifmain",
         "body": [
-            "if $PROGRAM_NAME == __FILE__",
-            "  ${TM_SELECTED_TEXT}",
+            "if \\$PROGRAM_NAME == __FILE__",
+            "  ${TM_SELECTED_TEXT}$0",
             "end"
         ]
     }

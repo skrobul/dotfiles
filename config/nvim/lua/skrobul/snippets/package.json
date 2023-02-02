@@ -12,6 +12,10 @@
       {
         "language": "Jenkinsfile",
         "path": "./jenkinsfile.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
       }
     ]
   }
