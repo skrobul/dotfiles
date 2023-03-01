@@ -150,7 +150,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+e mode "$mode_system"
-bindsym $mod+Shift+x mode "$mode_system"
+# bindsym $mod+Shift+x mode "$mode_system"
 
 
 # resize window (you can also use the mouse for that)
