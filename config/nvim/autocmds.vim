@@ -34,7 +34,7 @@ augroup git
   autocmd FileType gitcommit set sw=2 ts=2 tw=72 aw complete+=k
   " enable spelling and autowrap on pull requests
   autocmd VimEnter .git/PULLREQ_EDITMSG nested setlocal filetype=markdown tw=150
-  autocmd FileType gitrebase noremap <CR> :Cycle<CR>
+  "autocmd FileType gitrebase noremap <CR> :Cycle<CR>
 augroup end
 
 "
