@@ -82,7 +82,7 @@ Plug 'godlygeek/tabular'                     -- dependency for plasticboy/vim-ma
 Plug 'plasticboy/vim-markdown'               -- markdown - extra actions, folding
 Plug 'junegunn/goyo.vim'                     -- distraction free writing
 Plug 'sheerun/vim-polyglot'                  -- lot of extra languages
-Plug 'famiu/bufdelete.nvim'                  -- handles buffer deletion much better
+Plug 'kazhala/close-buffers.nvim'            -- allows to delete multiple buffers based on the conditions provided.
 Plug 'towolf/vim-helm'                       -- helm templates
 Plug 'ckipp01/nvim-jenkinsfile-linter'       -- Jenkinsfiles
 -- colorscheme packages

@@ -53,7 +53,7 @@ wk.register({
         n = { '<cmd>bnext<cr>', "Next buffer" },
         p = { '<cmd>bprevious<cr>', "Previous buffer" },
         c = { '<cmd>bp <BAR> bd #<cr>', "Close buffer and replace with prev" },
-        d = { '<cmd>Bdelete<cr>', "Close buffer" },
+        d = { '<cmd>BDelete this<cr>', "Close buffer" },
         t = { '<cmd>enew<cr>', 'New buffer' }
       },
     n = { '<cmd>bnext<cr>', "Next buffer" },
