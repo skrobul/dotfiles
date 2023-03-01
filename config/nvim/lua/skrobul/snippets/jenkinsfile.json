@@ -6,6 +6,7 @@
       "    dockerfile: \"${1:Dockerfile}\",",
       "    target: \"${2:production}\"",
       "    context: \"${3}\"",
+      "  $0",
       ")"
     ]
   },
@@ -15,6 +16,7 @@
       "teamsBuildFailed(",
       "  message: \"$1\"",
       "  commit: \"${2:HEAD}\",",
+      "  $0",
       ")"
     ]
   },
@@ -25,6 +27,7 @@
       "  message: \"$1\"",
       "  color: \"$2\"",
       "  status: \"$3\"",
+      "  $0",
       ")"
     ]
   }
