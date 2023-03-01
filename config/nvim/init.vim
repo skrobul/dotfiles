@@ -31,8 +31,8 @@ let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_folding_style_pythonic = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
 " }}}
-" NERDTree - autoclose when last buffer {{{
-map <F4> :NERDTreeToggle<CR>
+" nvimtree {{{
+map <F4> :NvimTreeToggle<CR>
 " }}}
 " instant markdown {{{
 let g:instant_markdown_slow = 1

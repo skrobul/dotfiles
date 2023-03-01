@@ -10,7 +10,7 @@ Plug 'tpope/vim-endwise'                            -- wisely 'end' functions et
 Plug 'kchmck/vim-coffee-script'                     -- coffe script support
 Plug 'tpope/vim-repeat'                             -- extend support for repeating with .
 Plug 'tpope/vim-surround'                           -- quickly surround
-Plug('scrooloose/nerdtree' , {on='NERDTreeToggle'}) -- file manager
+Plug 'nvim-tree/nvim-tree.lua'                      -- file manager for neovim
 Plug 'tpope/vim-dispatch'                           -- start stuff in background
 Plug 'nelstrom/vim-textobj-rubyblock'               -- text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'                        -- dependency for vim-textobj-rubyblock
@@ -111,3 +111,4 @@ require 'skrobul.plugins.wiki'
 require 'skrobul.plugins.vim-markdown'
 require 'skrobul.plugins.jenkinsfile-linter'
 require 'skrobul.plugins.trouble'
+require 'skrobul.plugins.nvim-tree'
