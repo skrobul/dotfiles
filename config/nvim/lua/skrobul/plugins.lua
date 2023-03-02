@@ -49,7 +49,7 @@ Plug 'L3MON4D3/LuaSnip'                                 -- luasnip
 Plug 'saadparwaiz1/cmp_luasnip'                         -- luasnip
 Plug('rafamadriz/friendly-snippets', {branch='main'})   -- collection of snippets
 Plug('andersevenrud/cmp-tmux', {branch='main'})         -- complete from TMUX
-Plug('williamboman/nvim-lsp-installer',{branch='main'}) -- install language servers easily
+Plug('williamboman/mason.nvim',{branch='main'})         -- install language servers easily
 Plug 'ray-x/lsp_signature.nvim'                         -- display function sig
 Plug 'folke/trouble.nvim'                               -- better diagnostics
 Plug 'b0o/schemastore.nvim'                             -- access to the SchemaStore catalog
