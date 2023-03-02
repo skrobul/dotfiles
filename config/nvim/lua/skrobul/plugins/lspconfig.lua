@@ -1,6 +1,6 @@
-local lspconfig = require("lspconfig")
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 local on_attach = function(_, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -41,27 +41,66 @@ local on_attach = function(_, bufnr)
     })
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function (server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup { on_attach=on_attach}
+    end,
+    -- Next, you can provide a dedicated handler for specific servers.
+    ["lua_ls"] = function ()
+        require("lspconfig")["lua_ls"].setup {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = {'vim'}
+              }
+            }
+          }
+        }
+    end,
 
-require("mason").setup()
+    ["solargraph"] = function()
+      require("lspconfig")["solargraph"].setup {
+        settings = {
+          solargraph = {
+            commandPath = '/home/skrobul/.asdf/shims/solargraph',
+            diagnostics = true,
+            completion = true,
+            formatting = true,
+            useBundler = true
+          }
+        }, on_attach = on_attach
+      }
+    end,
+
+    ["jsonls"] = function()
+      require("lspconfig")["jsonls"].setup {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      }
+    end,
+
+    ["emmet_ls"] = function()
+      require("lspconfig")["emmet_ls"].setup {
+        capabilities = vim.lsp.protocol.make_client_capabilities()
+      }
+    end
+}
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- local function attacher(client)
 --   print('Attaching LSP: ' .. client.name)
 -- end
 
-lspconfig.solargraph.setup{
-  settings = {
-    solargraph = {
-      commandPath = '/home/skrobul/.asdf/shims/solargraph',
-      diagnostics = true,
-      completion = true,
-      formatting = true,
-      useBundler = true
-    }
-  },
-
-  on_attach = on_attach
-}
 
 local configs = require('lspconfig.configs')
 
@@ -100,21 +139,6 @@ if not configs.ls_emmet then
     };
   }
 end
-
-local caps = vim.lsp.protocol.make_client_capabilities()
-lspconfig.ls_emmet.setup { capabilities = caps }
-
--- lspconfig for jsonls
-lspconfig.jsonls.setup {
-  settings = {
-    json = {
-      schemas = require('schemastore').json.schemas(),
-      validate = { enable = true },
-    },
-  },
-}
-
-
 
 vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 vim.diagnostic.config({
@@ -188,4 +212,3 @@ function M.setup()
 end
 
 return M
-
