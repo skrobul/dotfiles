@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 local map = function(key)
   -- get the extra options
   local opts = {noremap = true}
