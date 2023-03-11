@@ -128,6 +128,7 @@ bindsym $hyper+B exec pgrep firefox && i3-msg '[class="firefox"] focus' || firef
 bindsym $hyper+I exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
 bindsym $hyper+O exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obsidian
 bindsym $hyper+Z exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
+bindsym $hyper+M exec --no-startup-id ~/dotfiles/mute_zoom.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -330,7 +331,7 @@ mode "$mode_gaps_outer" {
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #9FD521 #28F248 #ffffff #2e9ef4   #1FD2FF
+client.focused          #4684ad #4b8fba #ffffff #2e9ef4   #1FD2FF
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
