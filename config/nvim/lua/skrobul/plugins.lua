@@ -51,7 +51,6 @@ Plug 'L3MON4D3/LuaSnip'                                 -- luasnip
 Plug 'saadparwaiz1/cmp_luasnip'                         -- luasnip
 Plug('rafamadriz/friendly-snippets', {branch='main'})   -- collection of snippets
 Plug('andersevenrud/cmp-tmux', {branch='main'})         -- complete from TMUX
-Plug 'ray-x/lsp_signature.nvim'                         -- display function sig
 Plug 'folke/trouble.nvim'                               -- better diagnostics
 Plug 'b0o/schemastore.nvim'                             -- access to the SchemaStore catalog
 -- misc
@@ -82,7 +81,6 @@ Plug 'jceb/vim-orgmode'                      -- emacs' org-mode
 Plug 'godlygeek/tabular'                     -- dependency for plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'               -- markdown - extra actions, folding
 Plug 'junegunn/goyo.vim'                     -- distraction free writing
-Plug 'sheerun/vim-polyglot'                  -- lot of extra languages
 Plug 'kazhala/close-buffers.nvim'            -- allows to delete multiple buffers based on the conditions provided.
 Plug 'towolf/vim-helm'                       -- helm templates
 Plug 'ckipp01/nvim-jenkinsfile-linter'       -- Jenkinsfiles
