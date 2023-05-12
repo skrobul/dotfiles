@@ -123,12 +123,23 @@ bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
 bindsym $mod+Shift+0 move container to workspace $tag10
 
+# corne specific moves
+bindsym $hyper+y move container to workspace $tag1
+bindsym $hyper+u move container to workspace $tag2
+bindsym $hyper+i move container to workspace $tag3
+bindsym $hyper+o move container to workspace $tag4
+bindsym $hyper+p move container to workspace $tag5
+bindsym $hyper+h move container to workspace $tag6
+bindsym $hyper+j move container to workspace $tag7
+bindsym $hyper+k move container to workspace $tag8
+bindsym $hyper+l move container to workspace $tag9
+
 # focus specific applications with hyper key
 bindsym $hyper+B exec pgrep firefox && i3-msg '[class="firefox"] focus' || firefox
-bindsym $hyper+I exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
-bindsym $hyper+O exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obsidian
-bindsym $hyper+Z exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
-bindsym $hyper+M exec --no-startup-id ~/dotfiles/mute_zoom.sh
+bindsym $hyper+. exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
+bindsym $hyper+N exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obsidian
+# bindsym $hyper+j exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
+# bindsym $hyper+k exec --no-startup-id ~/dotfiles/mute_zoom.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
