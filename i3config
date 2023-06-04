@@ -123,6 +123,9 @@ bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
 bindsym $mod+Shift+0 move container to workspace $tag10
 
+# move window to scratchpad
+bindsym $mod+slash move scratchpad
+
 # corne specific moves
 bindsym $hyper+y move container to workspace $tag1
 bindsym $hyper+u move container to workspace $tag2
@@ -233,6 +236,14 @@ assign [class="kitty"] $tag1
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# sonos control
+bindsym $mod+braceleft exec --no-startup-id /home/skrobul/.local/bin/sonos 192.168.1.121 rv -2
+bindsym $mod+braceright exec --no-startup-id /home/skrobul/.local/bin/sonos 192.168.1.121 rv +2
+bindsym $mod+backslash exec --no-startup-id /home/skrobul/.local/bin/sonos 192.168.1.121 mute on
+bindsym $mod+shift+backslash exec --no-startup-id /home/skrobul/.local/bin/sonos 192.168.1.121 mute off
+
+
 
 # Spotify media keys
 bindsym Ctrl+F5 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -351,4 +362,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 
-focus_follow_mouse no
+focus_follows_mouse no
