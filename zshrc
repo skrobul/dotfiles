@@ -206,3 +206,8 @@ export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
 pandoc_debug() {
     pandoc -s -t native -f markdown -o - $1
 }
+
+# Enable Ctrl+arrow key bindings for word jumping
+bindkey '^[[1;5C' forward-word     # Ctrl+right arrow
+bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
+
