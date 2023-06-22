@@ -125,6 +125,7 @@ bindsym $mod+Shift+0 move container to workspace $tag10
 
 # move window to scratchpad
 bindsym $mod+slash move scratchpad
+bindsym $mod+Shift+slash scratchpad show
 
 # corne specific moves
 bindsym $hyper+y move container to workspace $tag1
