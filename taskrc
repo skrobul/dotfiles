@@ -28,7 +28,7 @@ data.location=~/.task
 #include /usr/local/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/local/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/share/doc/task/rc/no-color.theme
-include $HOME/dotfiles/dark-violets-256.theme
+include $HOME/dotfiles/dark-gray-256.theme
 
 taskd.certificate=$HOME\/.task\/marek_skrobacki.cert.pem
 taskd.key=$HOME\/.task\/marek_skrobacki.key.pem
@@ -59,4 +59,8 @@ report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
 context.kubeswarm.read=project:kubeswarm +work
 context.kubeswarm.write=project:kubeswarm +work
-context=personal
+context=work
+report.scrum.description=List of tasks completed since yesterday
+report.scrum.columns=uuid.short,tags,project,modified,description
+report.scrum.sort=project+\/,entry+
+report.scrum.filter=status:completed +work end.after:today-1d
