@@ -1,2 +1,5 @@
 mpd_host = apollo.home
 mpd_music_dir = /nas/download/others
+
+media_library_sort_by_mtime = yes
+media_library_primary_tag = album_artist
