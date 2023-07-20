@@ -140,7 +140,7 @@ bindsym $hyper+l move container to workspace $tag9
 
 # focus specific applications with hyper key
 bindsym $hyper+B exec pgrep firefox && i3-msg '[class="firefox"] focus' || firefox
-bindsym $hyper+. exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
+#bindsym $hyper+. exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
 bindsym $hyper+N exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obsidian
 # bindsym $hyper+j exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
 # bindsym $hyper+k exec --no-startup-id ~/dotfiles/mute_zoom.sh
@@ -260,7 +260,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 
 # Screenshot
 bindsym $mod+Shift+m exec /home/skrobul/bin/rsa
-bindsym $mod+Meta+Shift+m exec /home/skrobul/bin/rsa
+bindsym $mod+Alt_L+Shift+m exec /home/skrobul/bin/rsa
 bindsym Print exec flameshot gui
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
@@ -285,13 +285,14 @@ exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 # exec --no-startup-id start-pulseaudio-x11
 # exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
-exec --no-startup-id xbindkeys
+# exec --no-startup-id xbindkeys &
 exec --no-startup-id rescuetime &
 exec_always --no-startup-id xfce4-power-manager
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id waybar&
 
 # needed for libvirt and KVM
-exec --no-startup-id lxpolkit
+exec --no-startup-id lxpolkit &
 
 
 # Gaps
@@ -364,3 +365,10 @@ client.background       #ffffff
 
 
 focus_follows_mouse no
+
+# No borders
+default_border none
+default_floating_border none
+font pango:monospace 0
+titlebar_padding 1
+titlebar_border_thickness 0
