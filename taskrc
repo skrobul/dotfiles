@@ -28,7 +28,8 @@ data.location=~/.task
 #include /usr/local/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/local/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/share/doc/task/rc/no-color.theme
-include $HOME/dotfiles/dark-gray-256.theme
+#include $HOME/dotfiles/dark-gray-256.theme
+include $HOME/dotfiles/skrobul-tw-256.theme
 
 taskd.certificate=$HOME\/.task\/marek_skrobacki.cert.pem
 taskd.key=$HOME\/.task\/marek_skrobacki.key.pem
