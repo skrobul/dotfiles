@@ -41,7 +41,7 @@ report.next.filter=status:pending limit:100
 
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
-include ../.taskrc.local
+include $HOME/.taskrc.local
 context.personal.read=+personal
 context.work.read=+work
 context.work.write=+work
