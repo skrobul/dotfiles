@@ -21,7 +21,7 @@ zplug "greymd/docker-zsh-completion"
 zplug "arzzen/calc.plugin.zsh"
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
-zplug "skrobul/zsh-tmux-auto-title", at:prerelease
+#zplug "skrobul/zsh-tmux-auto-title", at:prerelease
 zplug 'zsh-users/zsh-autosuggestions'
 
 # Install packages that have not been installed yet
