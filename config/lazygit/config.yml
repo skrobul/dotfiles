@@ -1,0 +1,2 @@
+services:
+  'github.rackspace.com': 'github:github.rackspace.com'
