@@ -128,12 +128,14 @@ alias ns-cli="~/devel/nscli/ns_cli.py"
 alias nscli="~/devel/nscli/ns_cli.py"
 alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
-alias pbcopy="xclip -selection clip -i"
 alias agenda="LC_ALL=en_US.UTF-8 gcalcli agenda"
 alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com\""
 alias kd="kitty +kitten diff"
 alias t="task"
 alias tt="taskwarrior-tui"
+if ! [[ $(uname) == "Darwin" ]]; then
+alias pbcopy="xclip -selection clip -i"
+fi
 
 timedping()
 {
@@ -197,10 +199,6 @@ eval "$(direnv hook zsh)"
 ZSH_TMUX_AUTO_TITLE_SHORT="true"
 #ZSH_TMUX_AUTO_TITLE_SHORT_EXCLUDE="unconfigured"
 ZSH_TMUX_AUTO_TITLE_IDLE_TEXT="%pwd"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 #
 #
 pandoc_debug() {
