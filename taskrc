@@ -48,19 +48,14 @@ context.work.write=+work
 news.version=2.6.0
 context.personal.write=+personal
 
-# taskwarrior-tui
-uda.taskwarrior-tui.background_process=task sync
-uda.taskwarrior-tui.background_process_period=60
-uda.reviewed.type=date
-uda.reviewed.label=Reviewed
 report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
 context.kubeswarm.read=project:kubeswarm +work
 context.kubeswarm.write=project:kubeswarm +work
-context=work
 report.scrum.description=List of tasks completed since yesterday
 report.scrum.columns=uuid.short,tags,project,modified,description
 report.scrum.sort=project+\/,entry+
 report.scrum.filter=status:completed +work end.after:today-1d
+context=work
