@@ -105,33 +105,34 @@ cmd + alt - right : yabai -m window --warp east
 
 
 # move focused window to next/prev workspace
-cmd + shift - 1 : yabai -m window --space 1
-cmd + shift - 2 : yabai -m window --space 2
-cmd + shift - 3 : yabai -m window --space 3
-cmd + shift - 4 : yabai -m window --space 4
-cmd + shift - 5 : yabai -m window --space 5
-cmd + shift - 6 : yabai -m window --space 6
-cmd + shift - 7 : yabai -m window --space 7
-cmd + shift - 8 : yabai -m window --space 8
-cmd + shift - 9 : yabai -m window --space 9
-cmd + shift - 0 : yabai -m window --space 10
-cmd + shift - space : yabai -m window --toggle float
+hyper - 1 : yabai -m window --space 1
+hyper - 2 : yabai -m window --space 2
+hyper - 3 : yabai -m window --space 3
+hyper - 4 : yabai -m window --space 4
+hyper - 5 : yabai -m window --space 5
+hyper - 6 : yabai -m window --space 6
+hyper - 7 : yabai -m window --space 7
+hyper - 8 : yabai -m window --space 8
+hyper - 9 : yabai -m window --space 9
+hyper - 0 : yabai -m window --space 10
+hyper - space : yabai -m window --toggle float
 
 # split window horizontally
 
 cmd + shift - v : yabai -m window --split west
 
-cmd - 1 : yabai -m space --focus 1
-cmd - 2 : yabai -m space --focus 2
-cmd - 3 : yabai -m space --focus 3
-cmd - 4 : yabai -m space --focus 4
-cmd - 5 : yabai -m space --focus 5
-cmd - 6 : yabai -m space --focus 6
-cmd - 7 : yabai -m space --focus 7
-cmd - 8 : yabai -m space --focus 8
-cmd - 9 : yabai -m space --focus 9
-cmd - 0 : yabai -m space --focus 10
-
+# SIP NOT WORKIGN
+# hyper - 1 : yabai -m space --focus 1
+# hyper - 2 : yabai -m space --focus 2
+# hyper - 3 : yabai -m space --focus 3
+# hyper - 4 : yabai -m space --focus 4
+# hyper - 5 : yabai -m space --focus 5
+# hyper - 6 : yabai -m space --focus 6
+# hyper - 7 : yabai -m space --focus 7
+# hyper - 8 : yabai -m space --focus 8
+# hyper - 9 : yabai -m space --focus 9
+# hyper - 0 : yabai -m space --focus 10
+#
 # focus window
 # alt - h : yabai -m window --focus west
 
