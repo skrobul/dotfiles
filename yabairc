@@ -40,4 +40,13 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
+
+# ignore these apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+#yabai -m rule --add app="Microsoft Teams$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Appgate SDP$" manage=off
+
 echo "yabai configuration loaded.."
