@@ -133,6 +133,7 @@ alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com
 alias kd="kitty +kitten diff"
 alias t="task"
 alias tt="taskwarrior-tui"
+alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
 if ! [[ $(uname) == "Darwin" ]]; then
 alias pbcopy="xclip -selection clip -i"
 fi
@@ -190,7 +191,7 @@ pg_in_docker_by_name() {
 
 function change_commit_date() {
     GIT_COMMITTER_DATE="$1" git commit --no-edit --amend -S --date="$1" && \
-        git log --format=fuller HEAD~1..HEAD 
+        git log --format=fuller HEAD~1..HEAD
 }
 
 eval "$(direnv hook zsh)"
