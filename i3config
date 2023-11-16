@@ -87,14 +87,14 @@ bindsym $mod+a focus parent
 # set $tag9 "9:  vpn"
 # set $tag10 "10"
 
-set $tag1 "1: term"
+set $tag1 "1"
 set $tag2 "2: web"
 set $tag3 "3: comms"
 set $tag4 "4"
 set $tag5 "5: videoconf"
-set $tag6 "6: mail"
+set $tag6 "6"
 set $tag7 "7"
-set $tag8 "8: spotify"
+set $tag8 "8: music"
 set $tag9 "9: vpn"
 set $tag10 "10"
 
@@ -153,13 +153,14 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, Notifications(n)
 mode "$mode_system" {
     bindsym l exec --no-startup-id ~/bin/i3exit lock, mode "default"
     bindsym e exec --no-startup-id ~/bin/i3exit logout, mode "default"
     bindsym s exec --no-startup-id ~/bin/i3exit suspend, mode "default"
     bindsym h exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id ~/bin/i3exit reboot, mode "default"
+    bindsym n exec --no-startup-id ~/bin/toggle-notifications, mode "default"
     bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
@@ -287,6 +288,8 @@ exec --no-startup-id nitrogen --restore
 # exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec --no-startup-id xbindkeys
 exec --no-startup-id rescuetime &
+exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects --gapplication-service &
+exec --no-startup-id /usr/bin/kopia-ui &
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
