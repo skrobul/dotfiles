@@ -133,9 +133,10 @@ alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com
 alias kd="kitty +kitten diff"
 alias t="task"
 alias tt="taskwarrior-tui"
+alias disablehistory="function zshaddhistory() {  return 1 }"
 alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
 if ! [[ $(uname) == "Darwin" ]]; then
-alias pbcopy="xclip -selection clip -i"
+    alias pbcopy="xclip -selection clip -i"
 fi
 
 timedping()
@@ -209,4 +210,5 @@ pandoc_debug() {
 # Enable Ctrl+arrow key bindings for word jumping
 bindkey '^[[1;5C' forward-word     # Ctrl+right arrow
 bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
+
 
