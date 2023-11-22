@@ -145,6 +145,16 @@ bindsym $hyper+N exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obs
 # bindsym $hyper+j exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
 # bindsym $hyper+k exec --no-startup-id ~/dotfiles/mute_zoom.sh
 
+set $MICROPHONE alsa_input.usb-046d_HD_Pro_Webcam_C920_A06EA99F-02.analog-stereo
+# push-to-talk
+bindsym Mod1+space exec --no-startup-id "pactl set-source-mute $MICROPHONE 0 ; pkill -USR1 mic.sh"
+bindsym --release Mod1+space exec --no-startup-id "pactl set-source-mute $MICROPHONE 1 ; pkill -USR1 mic.sh"
+# continous mode
+bindsym Mod1+Shift+space exec --no-startup-id "pactl set-source-mute $MICROPHONE 0 ; pkill -USR1 mic.sh"
+
+# mute on login to avoid surprises
+exec_always --no-startup-id /usr/bin/pactl set-source-mute $MICROPHONE 1 &
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -256,7 +266,7 @@ bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 # Brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 
 # Screenshot
@@ -272,7 +282,7 @@ bindsym Ctrl+F9 exec guvcview -z -a none
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/i3exit suspend
 bindsym XF86Sleep exec --no-startup-id ~/bin/i3exit suspend
 # Apps
-bindsym $mod+t exec nemo
+#bindsym $mod+t exec nemo
 
 # Keyboard
 #exec --no-startup-id "setxkbmap pl,gb,us -option 'grp:alt_shift_toggle'"
