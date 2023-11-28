@@ -145,7 +145,8 @@ bindsym $hyper+N exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obs
 # bindsym $hyper+j exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
 # bindsym $hyper+k exec --no-startup-id ~/dotfiles/mute_zoom.sh
 
-set $MICROPHONE alsa_input.usb-046d_HD_Pro_Webcam_C920_A06EA99F-02.analog-stereo
+set $MICROPHONE alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone_REV8-00.iec958-stereo
+# alsa_input.usb-046d_HD_Pro_Webcam_C920_A06EA99F-02.analog-stereo
 # push-to-talk
 bindsym Mod1+space exec --no-startup-id "pactl set-source-mute $MICROPHONE 0 ; pkill -USR1 mic.sh"
 bindsym --release Mod1+space exec --no-startup-id "pactl set-source-mute $MICROPHONE 1 ; pkill -USR1 mic.sh"
