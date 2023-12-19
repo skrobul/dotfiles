@@ -1,4 +1,5 @@
 bindkey -e
+eval "$(rtx activate zsh)"
 #########################
 # Zgen plugin manager
 #########################
@@ -18,8 +19,6 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "greymd/docker-zsh-completion"
 #zplug "rupa/z", use:z.sh
-zplug "arzzen/calc.plugin.zsh"
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug plugins/taskwarrior, from:oh-my-zsh
 #zplug "skrobul/zsh-tmux-auto-title", at:prerelease
 zplug 'zsh-users/zsh-autosuggestions'
@@ -36,52 +35,8 @@ fi
 
 zplug load
 ############# ZPLUG end #############
+eval "$(starship init zsh)"
 
-
-autoload -U promptinit; promptinit
-#prompt spaceship
-SPACESHIP_CHAR_SYMBOL="❯ "
-SPACESHIP_NODE_DEFAULT_VERSION="v10.17.0"
-source ~/dotfiles/zsh/spaceship_sections/dockerenv.zsh
-SPACESHIP_KUBECTL_SHOW=true
-SPACESHIP_KUBECTL_VERSION_SHOW=false
-
-SPACESHIP_PROMPT_ORDER=(
-    time          # Time stampts section
-    user          # Username section
-    dir           # Current directory section
-    host          # Hostname section
-    git           # Git section (git_branch + git_status)
-    # hg            # Mercurial section (hg_branch  + hg_status)
-    # package       # Package version (local package.json)
-    node          # Node.js section
-    ruby          # Ruby section
-    # elm           # Elm section
-    # elixir        # Elixir section
-    # xcode         # Xcode section
-    # swift         # Swift section
-    golang        # Go section
-    # php           # PHP section
-    # rust          # Rust section
-    # haskell       # Haskell Stack section
-    # julia         # Julia section
-    # docker        # Docker section(docker-compose stuff)
-    dockerenv
-    # aws           # Amazon Web Services section
-    venv          # virtualenv section
-    # conda         # conda virtualenv section
-    # pyenv         # Pyenv section
-    # dotnet        # .NET section
-    # ember         # Ember.js section
-    kubectl
-    # terraform     # Terraform workspace section
-    exec_time     # Execution time
-    line_sep      # Line break
-    battery       # Battery level and status
-    jobs          # Background jobs indicator
-    exit_code     # Exit code section
-    char          # Prompt character
-)
 #########################
 # visual command edit
 #########################
@@ -117,19 +72,11 @@ source ~/.zshrc.local
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-PERL_MB_OPT="--install_base \"/Users/marek.skrobacki/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/marek.skrobacki/perl5"; export PERL_MM_OPT;
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
-alias irc='tmux new-session -s shared "tmux new-window -n irc weechat"'
 alias ag='ag --color-path "1;36"'
-alias ns-cli="~/devel/nscli/ns_cli.py"
-alias nscli="~/devel/nscli/ns_cli.py"
 alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
-alias agenda="LC_ALL=en_US.UTF-8 gcalcli agenda"
-alias gcal_personal="LC_ALL=en_US.UTF-8 gcalcli --calendar=\"skrobul@skrobul.com\""
 alias kd="kitty +kitten diff"
 alias t="task"
 alias tt="taskwarrior-tui"
