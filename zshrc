@@ -1,5 +1,5 @@
 bindkey -e
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 #########################
 # Zgen plugin manager
 #########################
