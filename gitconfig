@@ -69,7 +69,7 @@
 [init]
 	defaultBranch = master
 [credential]
-	credentialStore = secretservice
+#	credentialStore = secretservice
 	helper = 
 	helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
