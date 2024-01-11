@@ -95,10 +95,9 @@ timedpingtcp()
 {
     while :; do echo -n "$(date): "; tcping -t 1 $1 $2 ; sleep 1; done
 }
-# Fasd
-eval "$(fasd --init posix-alias zsh-hook)"
-alias j="fasd_cd -d"
-alias jj="fasd -d -i"
+# Zoxide instead of fasd
+eval "$(zoxide init zsh)"
+alias j=z
 #
 #bindkey '^[[A' history-beginning-search-backward
 #bindkey '^[[B' history-beginning-search-forward
