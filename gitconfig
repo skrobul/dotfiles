@@ -74,3 +74,5 @@
 	helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[rebase]
+	autosquash = true
