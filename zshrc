@@ -1,4 +1,5 @@
 bindkey -e
+export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$PATH"
 eval "$(mise activate zsh)"
 #########################
 # Zgen plugin manager
