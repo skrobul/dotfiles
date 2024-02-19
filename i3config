@@ -216,6 +216,7 @@ for_window [class="Vpnui"] floating enable
 for_window [class="Guvcview"] floating enable
 #for_window [class="VirtualBox"] floating enable border normal
 for_window [class="^Chrome$" title=" - Chrome"] border none
+for_window [class="^albert$"] border none
 #for_window [class="^Firefox$" ] border none
 #for_window [class="(?i)virtualbox"] floating enable border normal
 
@@ -293,7 +294,7 @@ bindsym $mod+Shift+o exec xkb-switch -n
 # Startup
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
-#exec --no-startup-id compton --config ~/dotfiles/compton.conf
+exec --no-startup-id picom
 #exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/dotfiles/compton.conf
 exec --no-startup-id nitrogen --restore
 # exec --no-startup-id start-pulseaudio-x11
