@@ -59,4 +59,7 @@ report.scrum.description=List of tasks completed since yesterday
 report.scrum.columns=uuid.short,tags,project,modified,description
 report.scrum.sort=project+\/,entry+
 report.scrum.filter=status:completed +work end.after:today-1d
+
+# include hours and minutes
+rc.dateformat=Y-M-DTH:N
 context=work
