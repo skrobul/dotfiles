@@ -295,7 +295,7 @@ bindsym $mod+Shift+o exec xkb-switch -n
 # Startup
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
-exec --no-startup-id picom
+exec_always --no-startup-id picom &
 #exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/dotfiles/compton.conf
 exec --no-startup-id nitrogen --restore
 # exec --no-startup-id start-pulseaudio-x11
