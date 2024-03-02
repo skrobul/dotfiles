@@ -161,3 +161,7 @@ bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 # poetry completions
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
