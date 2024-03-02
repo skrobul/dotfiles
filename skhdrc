@@ -72,7 +72,7 @@ cmd - return : open -na /Applications/kitty.app/
 # change focus
 cmd - h : yabai -m window --focus west
 cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
+# cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
 # (cmd) change focus (using arrow keys)
 cmd - left  : yabai -m window --focus west
