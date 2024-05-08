@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sink="$1"
 sleep_pid=0
 
