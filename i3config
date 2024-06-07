@@ -5,6 +5,8 @@
 #exec udiskie &
 
 ###########################################
+# Mod4 - super
+# Mod1 - alt
 set $mod Mod4
 set $hyper Mod4+shift+control+Mod1
 
@@ -163,7 +165,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+p exec "bwm -a '{PASSWORD}{ENTER}'"
+bindsym $mod+Mod1+p exec "bwm"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, Notifications(n)
