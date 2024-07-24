@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
+config.default_prog = { "/usr/local/bin/zsh", "-l" }
 
 config.color_scheme = "Tokyo Night"
 config.key_tables = {
@@ -192,14 +193,14 @@ config.key_tables = {
 				{ CopyMode = "Close" },
 			}),
 		},
-    -- copy and paste immediately
+		-- copy and paste immediately
 		{
 			key = "s",
 			mods = "NONE",
 			action = act.Multiple({
-        { CopyTo = "PrimarySelection" },
+				{ CopyTo = "PrimarySelection" },
 				{ CopyMode = "Close" },
-        { PasteFrom = "PrimarySelection" },
+				{ PasteFrom = "PrimarySelection" },
 			}),
 		},
 		{ key = "PageUp", mods = "NONE", action = act.CopyMode("PageUp") },
@@ -232,6 +233,21 @@ config.key_tables = {
 		},
 		{ key = "UpArrow", mods = "NONE", action = act.CopyMode("MoveUp") },
 		{ key = "DownArrow", mods = "NONE", action = act.CopyMode("MoveDown") },
+		{
+			key = "R",
+			mods = "CTRL|ALT",
+			action = act.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
 	},
 }
 
