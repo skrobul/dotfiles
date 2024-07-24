@@ -66,8 +66,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 
 
-# Store device specific settings like DEFAULT_USER
-source ~/.zshrc.local
 
 # Key mappings
 bindkey '^[[1;9C' forward-word
@@ -83,6 +81,7 @@ alias t="task"
 alias tt="taskwarrior-tui"
 alias disablehistory="function zshaddhistory() {  return 1 }"
 alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
+alias k=kubectl
 if ! [[ $(uname) == "Darwin" ]]; then
     alias pbcopy="xclip -selection clip -i"
 fi
@@ -161,7 +160,13 @@ bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 # poetry completions
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+[[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
+fpath=($ZSH_CACHE_DIR/completions $fpath)
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+#
+# Store device specific settings like DEFAULT_USER
+source ~/.zshrc.local
