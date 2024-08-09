@@ -76,3 +76,5 @@
 	useHttpPath = true
 [rebase]
 	autosquash = true
+[credential "https://opendev.org"]
+	provider = generic

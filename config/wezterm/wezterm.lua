@@ -1,9 +1,244 @@
 local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
-config.default_prog = { "/usr/local/bin/zsh", "-l" }
+config.font = wezterm.font("Cascadia Code NF", {weight="Regular", stretch="Normal", italic=false})
+config.font_size = 14.0
 
-config.color_scheme = "Tokyo Night"
+-- config.default_prog = { "/usr/local/bin/zsh", "-l" }
+config.hide_tab_bar_if_only_one_tab = true
+config.tab_max_width = 25
+config.cursor_blink_rate = 800
+
+config.inactive_pane_hsb = {
+	saturation = 0.24,
+	brightness = 0.5,
+}
+
+config.color_scheme = "tokyonight"
+config.leader  = {
+	key = 'b',
+	mods = 'CTRL',
+	timeout_miliseconds = 2000
+}
+
+config.keys = {
+	{ key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
+	{ key = "Tab", mods = "SHIFT|CTRL", action = act.ActivateTabRelative(-1) },
+	{ key = "Enter", mods = "ALT", action = act.ToggleFullScreen },
+	{ key = "!", mods = "CTRL", action = act.ActivateTab(0) },
+	{ key = "!", mods = "SHIFT|CTRL", action = act.ActivateTab(0) },
+	{ key = '"', mods = "ALT|CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = '"', mods = "SHIFT|ALT|CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "#", mods = "CTRL", action = act.ActivateTab(2) },
+	{ key = "#", mods = "SHIFT|CTRL", action = act.ActivateTab(2) },
+	{ key = "$", mods = "CTRL", action = act.ActivateTab(3) },
+	{ key = "$", mods = "SHIFT|CTRL", action = act.ActivateTab(3) },
+	{ key = "%", mods = "CTRL", action = act.ActivateTab(4) },
+	{ key = "%", mods = "SHIFT|CTRL", action = act.ActivateTab(4) },
+	{ key = "%", mods = "ALT|CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "%", mods = "SHIFT|ALT|CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "&", mods = "CTRL", action = act.ActivateTab(6) },
+	{ key = "&", mods = "SHIFT|CTRL", action = act.ActivateTab(6) },
+	{ key = "'", mods = "SHIFT|ALT|CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "(", mods = "CTRL", action = act.ActivateTab(-1) },
+	{ key = "(", mods = "SHIFT|CTRL", action = act.ActivateTab(-1) },
+	{ key = ")", mods = "CTRL", action = act.ResetFontSize },
+	{ key = ")", mods = "SHIFT|CTRL", action = act.ResetFontSize },
+	{ key = "*", mods = "CTRL", action = act.ActivateTab(7) },
+	{ key = "*", mods = "SHIFT|CTRL", action = act.ActivateTab(7) },
+	{ key = "+", mods = "CTRL", action = act.IncreaseFontSize },
+	{ key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
+	{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
+	{ key = "-", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
+	{ key = "-", mods = "SUPER", action = act.DecreaseFontSize },
+	{ key = "0", mods = "CTRL", action = act.ResetFontSize },
+	{ key = "0", mods = "SHIFT|CTRL", action = act.ResetFontSize },
+	{ key = "0", mods = "SUPER", action = act.ResetFontSize },
+	{ key = "1", mods = "SHIFT|CTRL", action = act.ActivateTab(0) },
+	{ key = "1", mods = "SUPER", action = act.ActivateTab(0) },
+	{ key = "2", mods = "SHIFT|CTRL", action = act.ActivateTab(1) },
+	{ key = "2", mods = "SUPER", action = act.ActivateTab(1) },
+	{ key = "3", mods = "SHIFT|CTRL", action = act.ActivateTab(2) },
+	{ key = "3", mods = "SUPER", action = act.ActivateTab(2) },
+	{ key = "4", mods = "SHIFT|CTRL", action = act.ActivateTab(3) },
+	{ key = "4", mods = "SUPER", action = act.ActivateTab(3) },
+	{ key = "5", mods = "SHIFT|CTRL", action = act.ActivateTab(4) },
+	{ key = "5", mods = "SHIFT|ALT|CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "5", mods = "SUPER", action = act.ActivateTab(4) },
+	{ key = "6", mods = "SHIFT|CTRL", action = act.ActivateTab(5) },
+	{ key = "6", mods = "SUPER", action = act.ActivateTab(5) },
+	{ key = "7", mods = "SHIFT|CTRL", action = act.ActivateTab(6) },
+	{ key = "7", mods = "SUPER", action = act.ActivateTab(6) },
+	{ key = "8", mods = "SHIFT|CTRL", action = act.ActivateTab(7) },
+	{ key = "8", mods = "SUPER", action = act.ActivateTab(7) },
+	{ key = "9", mods = "SHIFT|CTRL", action = act.ActivateTab(-1) },
+	{ key = "9", mods = "SUPER", action = act.ActivateTab(-1) },
+	{ key = "=", mods = "CTRL", action = act.IncreaseFontSize },
+	{ key = "=", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
+	{ key = "=", mods = "SUPER", action = act.IncreaseFontSize },
+	{ key = "@", mods = "CTRL", action = act.ActivateTab(1) },
+	{ key = "@", mods = "SHIFT|CTRL", action = act.ActivateTab(1) },
+	{ key = "C", mods = "CTRL", action = act.CopyTo("Clipboard") },
+	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+	{
+		key = "E",
+		mods = "CTRL|SHIFT",
+		action = act.PromptInputLine({
+			description = "Enter new name for tab",
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
+	{ key = "F", mods = "CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
+	{ key = "F", mods = "SHIFT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
+	{ key = "K", mods = "CTRL", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "K", mods = "SHIFT|CTRL", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "L", mods = "CTRL", action = act.ShowDebugOverlay },
+	{ key = "L", mods = "SHIFT|CTRL", action = act.ShowDebugOverlay },
+	{ key = "M", mods = "CTRL", action = act.Hide },
+	{ key = "M", mods = "SHIFT|CTRL", action = act.Hide },
+	{ key = "N", mods = "CTRL", action = act.SpawnWindow },
+	{ key = "N", mods = "SHIFT|CTRL", action = act.SpawnWindow },
+	{ key = "P", mods = "CTRL", action = act.ActivateCommandPalette },
+	{ key = "P", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
+	{ key = "R", mods = "CTRL", action = act.ReloadConfiguration },
+	{ key = "R", mods = "SHIFT|CTRL", action = act.ReloadConfiguration },
+	{ key = "S", mods = "CTRL", action = act.PasteFrom("PrimarySelection") },
+	{ key = "T", mods = "CTRL", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "T", mods = "SHIFT|CTRL", action = act.SpawnTab("CurrentPaneDomain") },
+	{
+		key = "U",
+		mods = "CTRL",
+		action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }),
+	},
+	{
+		key = "U",
+		mods = "SHIFT|CTRL",
+		action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }),
+	},
+	{ key = "V", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
+	{ key = "W", mods = "CTRL", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "W", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "X", mods = "CTRL", action = act.ActivateCopyMode },
+	{ key = "X", mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
+	{ key = "Z", mods = "CTRL", action = act.TogglePaneZoomState },
+	{ key = "Z", mods = "SHIFT|CTRL", action = act.TogglePaneZoomState },
+	{ key = "[", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(-1) },
+	{ key = "]", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(1) },
+	{ key = "^", mods = "CTRL", action = act.ActivateTab(5) },
+	{ key = "^", mods = "SHIFT|CTRL", action = act.ActivateTab(5) },
+	{ key = "_", mods = "CTRL", action = act.DecreaseFontSize },
+	{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
+	{ key = "c", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+	{ key = "c", mods = "SUPER", action = act.CopyTo("Clipboard") },
+	{ key = "f", mods = "SHIFT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
+	{ key = "f", mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
+	{ key = "k", mods = "SHIFT|CTRL", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "k", mods = "SUPER", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "l", mods = "SHIFT|CTRL", action = act.ShowDebugOverlay },
+	{ key = "m", mods = "SHIFT|CTRL", action = act.Hide },
+	{ key = "m", mods = "SUPER", action = act.Hide },
+	{ key = "n", mods = "SHIFT|CTRL", action = act.SpawnWindow },
+	{ key = "n", mods = "SUPER", action = act.SpawnWindow },
+	{ key = "p", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
+	{ key = "r", mods = "SHIFT|CTRL", action = act.ReloadConfiguration },
+	{ key = "r", mods = "SUPER", action = act.ReloadConfiguration },
+	{ key = "t", mods = "SHIFT|CTRL", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "t", mods = "SUPER", action = act.SpawnTab("CurrentPaneDomain") },
+	{
+		key = "u",
+		mods = "SHIFT|CTRL",
+		action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }),
+	},
+	{ key = "v", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
+	{ key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
+	{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "w", mods = "SUPER", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "x", mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
+	{ key = "z", mods = "SHIFT|CTRL", action = act.TogglePaneZoomState },
+	{ key = "{", mods = "SUPER", action = act.ActivateTabRelative(-1) },
+	{ key = "{", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(-1) },
+	{ key = "}", mods = "SUPER", action = act.ActivateTabRelative(1) },
+	{ key = "}", mods = "SHIFT|SUPER", action = act.ActivateTabRelative(1) },
+	{ key = "phys:Space", mods = "SHIFT|CTRL", action = act.QuickSelect },
+	{ key = "PageUp", mods = "SHIFT", action = act.ScrollByPage(-1) },
+	{ key = "PageUp", mods = "CTRL", action = act.ActivateTabRelative(-1) },
+	{ key = "PageUp", mods = "SHIFT|CTRL", action = act.MoveTabRelative(-1) },
+	{ key = "PageDown", mods = "SHIFT", action = act.ScrollByPage(1) },
+	{ key = "PageDown", mods = "CTRL", action = act.ActivateTabRelative(1) },
+	{ key = "PageDown", mods = "SHIFT|CTRL", action = act.MoveTabRelative(1) },
+	{ key = "LeftArrow", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Left") },
+	{ key = "LeftArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
+	{ key = "RightArrow", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Right") },
+	{ key = "RightArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
+	{ key = "UpArrow", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Up") },
+	{ key = "UpArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
+	{ key = "DownArrow", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Down") },
+	{ key = "DownArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
+	{ key = "Insert", mods = "SHIFT", action = act.PasteFrom("PrimarySelection") },
+	{ key = "Insert", mods = "CTRL", action = act.CopyTo("PrimarySelection") },
+	{ key = "Copy", mods = "NONE", action = act.CopyTo("Clipboard") },
+	{ key = "Paste", mods = "NONE", action = act.PasteFrom("Clipboard") },
+	{
+		key = "R",
+		mods = "CTRL|ALT",
+		action = act.PromptInputLine({
+			description = "Enter new name for tab",
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
+	-- leader based keymap starts here
+	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
+	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+		{
+			key = ",",
+			mods = "LEADER",
+			action = act.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+		{
+    key = 'w',
+    mods = 'LEADER',
+    action = act.ShowTabNavigator,
+  },
+	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
+	-- { key = 'v', mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	-- { key = 's', mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{
+			key = ';',
+			mods = 'LEADER',
+			action = act.ActivatePaneDirection('Prev'),
+		},
+		{
+			key = 'o',
+			mods = 'LEADER',
+			action = act.ActivatePaneDirection('Next'),
+		},
+}
+
 config.key_tables = {
 	copy_mode = {
 		{ key = "Tab", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
@@ -233,22 +468,23 @@ config.key_tables = {
 		},
 		{ key = "UpArrow", mods = "NONE", action = act.CopyMode("MoveUp") },
 		{ key = "DownArrow", mods = "NONE", action = act.CopyMode("MoveDown") },
-		{
-			key = "R",
-			mods = "CTRL|ALT",
-			action = act.PromptInputLine({
-				description = "Enter new name for tab",
-				action = wezterm.action_callback(function(window, pane, line)
-					-- line will be `nil` if they hit escape without entering anything
-					-- An empty string if they just hit enter
-					-- Or the actual line of text they wrote
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
+	},
+	search_mode = {
+		{ key = "Enter", mods = "NONE", action = act.CopyMode("PriorMatch") },
+		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
+		{ key = "n", mods = "CTRL", action = act.CopyMode("NextMatch") },
+		{ key = "p", mods = "CTRL", action = act.CopyMode("PriorMatch") },
+		{ key = "r", mods = "CTRL", action = act.CopyMode("CycleMatchType") },
+		{ key = "u", mods = "CTRL", action = act.CopyMode("ClearPattern") },
+		{ key = "PageUp", mods = "NONE", action = act.CopyMode("PriorMatchPage") },
+		{ key = "PageDown", mods = "NONE", action = act.CopyMode("NextMatchPage") },
+		{ key = "UpArrow", mods = "NONE", action = act.CopyMode("PriorMatch") },
+		{ key = "DownArrow", mods = "NONE", action = act.CopyMode("NextMatch") },
 	},
 }
+
+local smart_splits = wezterm.plugin.require('https://github.com/mrjones2014/smart-splits.nvim')
+-- -- you can put the rest of your Wezterm config here
+smart_splits.apply_to_config(config)
 
 return config
