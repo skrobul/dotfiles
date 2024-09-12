@@ -9,6 +9,8 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_max_width = 25
 config.cursor_blink_rate = 800
 
+scrollback_lines = 20000
+
 config.inactive_pane_hsb = {
 	saturation = 0.24,
 	brightness = 0.5,
@@ -159,8 +161,8 @@ config.keys = {
 	},
 	{ key = "v", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 	{ key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
-	{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = true }) },
-	{ key = "w", mods = "SUPER", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentPane({ confirm = true }) },
+	{ key = "w", mods = "SUPER", action = act.CloseCurrentPane({ confirm = true }) },
 	{ key = "x", mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
 	{ key = "z", mods = "SHIFT|CTRL", action = act.TogglePaneZoomState },
 	{ key = "{", mods = "SUPER", action = act.ActivateTabRelative(-1) },
