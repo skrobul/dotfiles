@@ -49,7 +49,7 @@
 [hub]
     host = github.rackspace.com
 [mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd b' -c 'wincmd J'
+    cmd = nvim -f -c \"DiffviewOpen\"
 [github]
     user = skrobul
 
