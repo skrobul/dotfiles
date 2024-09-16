@@ -361,6 +361,7 @@ config.key_tables = {
 		},
 		{ key = "b", mods = "NONE", action = act.CopyMode("MoveBackwardWord") },
 		{ key = "b", mods = "ALT", action = act.CopyMode("MoveBackwardWord") },
+		{ key = "b", mods = "SHIFT", action = act.CopyMode("MoveBackwardWord") },
 		{ key = "b", mods = "CTRL", action = act.CopyMode("PageUp") },
 		{ key = "c", mods = "CTRL", action = act.CopyMode("Close") },
 		{
@@ -371,6 +372,11 @@ config.key_tables = {
 		{
 			key = "e",
 			mods = "NONE",
+			action = act.CopyMode("MoveForwardWordEnd"),
+		},
+		{
+			key = "e",
+			mods = "SHIFT",
 			action = act.CopyMode("MoveForwardWordEnd"),
 		},
 		{
@@ -422,6 +428,7 @@ config.key_tables = {
 			action = act.CopyMode({ SetSelectionMode = "Block" }),
 		},
 		{ key = "w", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
+		{ key = "w", mods = "SHIFT", action = act.CopyMode("MoveForwardWord") },
 		{
 			key = "y",
 			mods = "NONE",
