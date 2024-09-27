@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local session_manager = require("wezterm-session-manager/session-manager")
 local config = {}
 local act = wezterm.action
 config.font = wezterm.font("Cascadia Code NF", { weight = "Regular", stretch = "Normal", italic = false })
@@ -40,7 +41,7 @@ local close_copy_mode = act.Multiple({
 	act.CopyMode("ClearPattern"),
 	act.CopyMode("Close"),
 })
-local copy_to = act.Multiple({ act.CopyTo("Clipboard"), act.CopyMode("ClearSelectionMode"), act.CopyMode("Close")})
+local copy_to = act.Multiple({ act.CopyTo("Clipboard"), act.CopyMode("ClearSelectionMode"), act.CopyMode("Close") })
 local default_keys = wezterm.gui.default_key_tables()
 local function extend_keys(target, source)
 	local map = {}
@@ -61,20 +62,20 @@ local function extend_keys(target, source)
 end
 
 local function complete_search(should_clear)
-    return wezterm.action_callback(function(window, pane, _)
-        if should_clear then
-            window:perform_action(act.CopyMode('ClearPattern'), pane)
-        end
-        window:perform_action(act.CopyMode('AcceptPattern'), pane)
-        window:perform_action(act.EmitEvent('update-status'), pane)
+	return wezterm.action_callback(function(window, pane, _)
+		if should_clear then
+			window:perform_action(act.CopyMode("ClearPattern"), pane)
+		end
+		window:perform_action(act.CopyMode("AcceptPattern"), pane)
+		window:perform_action(act.EmitEvent("update-status"), pane)
 
-        -- For some reason this just does not work unless we retry a few times.
-        -- Probably something to do with state management between Search/Copy mode.
-        for _ = 1, 3, 1 do
-            wezterm.sleep_ms(100)
-            window:perform_action(act.CopyMode('ClearSelectionMode'), pane)
-        end
-    end)
+		-- For some reason this just does not work unless we retry a few times.
+		-- Probably something to do with state management between Search/Copy mode.
+		for _ = 1, 3, 1 do
+			wezterm.sleep_ms(100)
+			window:perform_action(act.CopyMode("ClearSelectionMode"), pane)
+		end
+	end)
 end
 
 local search = act.Multiple({
@@ -87,7 +88,14 @@ config.keys = {
 		key = ",",
 		mods = "LEADER",
 		action = act.PromptInputLine({
-			action = { EmitEvent = "user-defined-2" },
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
 			description = "Enter\u{20}new\u{20}name\u{20}for\u{20}tab",
 		}),
 	},
@@ -114,6 +122,22 @@ config.keys = {
 	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "o", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+	-- session manager
+	{ key = "S", mods = "LEADER", action = act({ EmitEvent = "save_session" }) },
+	{ key = "L", mods = "LEADER", action = act({ EmitEvent = "load_session" }) },
+	{ key = "R", mods = "LEADER", action = act({ EmitEvent = "restore_session" }) },
+
+  -- focusing
+  { key = "1", mods = "LEADER", action = act.ActivateTab(1) },
+  { key = "2", mods = "LEADER", action = act.ActivateTab(2) },
+  { key = "3", mods = "LEADER", action = act.ActivateTab(3) },
+  { key = "4", mods = "LEADER", action = act.ActivateTab(4) },
+  { key = "5", mods = "LEADER", action = act.ActivateTab(5) },
+  { key = "6", mods = "LEADER", action = act.ActivateTab(6) },
+  { key = "7", mods = "LEADER", action = act.ActivateTab(7) },
+  { key = "8", mods = "LEADER", action = act.ActivateTab(8) },
+  { key = "9", mods = "LEADER", action = act.ActivateTab(9) },
+  { key = "0", mods = "LEADER", action = act.ActivateTab(10) },
 }
 config.key_tables = {
 	copy_mode = extend_keys(default_keys.copy_mode, {
@@ -142,7 +166,7 @@ config.key_tables = {
 				{ PasteFrom = "PrimarySelection" },
 			}),
 		},
-    -- uppercased vim motions
+		-- uppercased vim motions
 		{ key = "B", mods = "NONE", action = act.CopyMode("MoveBackwardWord") },
 		{ key = "E", mods = "NONE", action = act.CopyMode("MoveForwardWordEnd") },
 		{ key = "W", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
@@ -157,5 +181,16 @@ config.key_tables = {
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 -- -- you can put the rest of your Wezterm config here
 smart_splits.apply_to_config(config)
+
+-- session manager hooks
+wezterm.on("save_session", function(window)
+	session_manager.save_state(window)
+end)
+wezterm.on("load_session", function(window)
+	session_manager.load_state(window)
+end)
+wezterm.on("restore_session", function(window)
+	session_manager.restore_state(window)
+end)
 
 return config
