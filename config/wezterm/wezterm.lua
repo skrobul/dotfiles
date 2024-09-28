@@ -127,17 +127,70 @@ config.keys = {
 	{ key = "L", mods = "LEADER", action = act({ EmitEvent = "load_session" }) },
 	{ key = "R", mods = "LEADER", action = act({ EmitEvent = "restore_session" }) },
 
-  -- focusing
-  { key = "1", mods = "LEADER", action = act.ActivateTab(1) },
-  { key = "2", mods = "LEADER", action = act.ActivateTab(2) },
-  { key = "3", mods = "LEADER", action = act.ActivateTab(3) },
-  { key = "4", mods = "LEADER", action = act.ActivateTab(4) },
-  { key = "5", mods = "LEADER", action = act.ActivateTab(5) },
-  { key = "6", mods = "LEADER", action = act.ActivateTab(6) },
-  { key = "7", mods = "LEADER", action = act.ActivateTab(7) },
-  { key = "8", mods = "LEADER", action = act.ActivateTab(8) },
-  { key = "9", mods = "LEADER", action = act.ActivateTab(9) },
-  { key = "0", mods = "LEADER", action = act.ActivateTab(10) },
+	-- focusing
+	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
+	{ key = "2", mods = "LEADER", action = act.ActivateTab(1) },
+	{ key = "3", mods = "LEADER", action = act.ActivateTab(2) },
+	{ key = "4", mods = "LEADER", action = act.ActivateTab(3) },
+	{ key = "5", mods = "LEADER", action = act.ActivateTab(4) },
+	{ key = "6", mods = "LEADER", action = act.ActivateTab(5) },
+	{ key = "7", mods = "LEADER", action = act.ActivateTab(6) },
+	{ key = "8", mods = "LEADER", action = act.ActivateTab(7) },
+	{ key = "9", mods = "LEADER", action = act.ActivateTab(8) },
+
+	-- pane rotation
+	{
+		mods = "LEADER",
+		key = "Space",
+		action = wezterm.action.RotatePanes("Clockwise"),
+	},
+  -- show the pane selection mode, but have it swap the active and selected panes
+  {
+    mods = 'LEADER',
+    key = '0',
+    action = wezterm.action.PaneSelect {
+      mode = 'SwapWithActive',
+    },
+  },
+
+  -- mux
+  --
+  -- -- Attach to muxer
+  {
+    key = 'a',
+    mods = 'LEADER',
+    action = act.AttachDomain 'unix',
+  },
+
+  -- Detach from muxer
+  {
+    key = 'd',
+    mods = 'LEADER',
+    action = act.DetachDomain { DomainName = 'unix' },
+  },
+  {
+    key = '$',
+    mods = 'LEADER|SHIFT',
+    action = act.PromptInputLine {
+      description = 'Enter new name for session',
+      action = wezterm.action_callback(
+        function(window, pane, line)
+          if line then
+            mux.rename_workspace(
+              window:mux_window():get_workspace(),
+              line
+            )
+          end
+        end
+      ),
+    },
+  },
+  -- Show list of workspaces
+  {
+    key = 's',
+    mods = 'LEADER',
+    action = act.ShowLauncherArgs { flags = 'WORKSPACES' },
+  },
 }
 config.key_tables = {
 	copy_mode = extend_keys(default_keys.copy_mode, {
@@ -192,5 +245,20 @@ end)
 wezterm.on("restore_session", function(window)
 	session_manager.restore_state(window)
 end)
+
+
+-- sessions
+config.unix_domains = {
+  {
+    name = 'unix',
+  },
+}
+
+-- This causes `wezterm` to act as though it was started as
+-- `wezterm connect unix` by default, connecting to the unix
+-- domain on startup.
+-- If you prefer to connect manually, leave out this line.
+-- config.default_gui_startup_args = { 'connect', 'unix' }
+
 
 return config
