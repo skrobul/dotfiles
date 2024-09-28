@@ -2,7 +2,39 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 config.font = wezterm.font("Cascadia Code NF", { weight = "Regular", stretch = "Normal", italic = false })
-config.font_size = 14.0
+config.font_size = 12.0
+
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+
+resurrect.set_encryption({
+	enable = true,
+	method = "gpg", -- "age" is the default encryption method, but you can also specify "rage" or "gpg"
+	public_key = "8D921D0CB9A85565",
+})
+
+-- ressurect toasts
+local resurrect_event_listeners = {
+	"resurrect.error",
+	"resurrect.save_state.finished",
+}
+local is_periodic_save = false
+wezterm.on("resurrect.periodic_save", function()
+	is_periodic_save = true
+end)
+for _, event in ipairs(resurrect_event_listeners) do
+	wezterm.on(event, function(...)
+		if event == "resurrect.save_state.finished" and is_periodic_save then
+			is_periodic_save = false
+			return
+		end
+		local args = { ... }
+		local msg = event
+		for _, v in ipairs(args) do
+			msg = msg .. " " .. tostring(v)
+		end
+		wezterm.gui.gui_windows()[1]:toast_notification("Wezterm - resurrect", msg, nil, 4000)
+	end)
+end
 
 -- config.default_prog = { "/usr/local/bin/zsh", "-l" }
 config.hide_tab_bar_if_only_one_tab = true
@@ -23,19 +55,12 @@ config.leader = {
 	timeout_miliseconds = 2000,
 }
 
-local function clear_and_move(cmd)
-	return act.Multiple({
-		act.CopyMode("ClearPattern"),
-		cmd,
-	})
-end
---
 local function next_match(int)
 	local m = act.CopyMode(int == -1 and "PriorMatch" or "NextMatch")
 	return act.Multiple({ m, act.CopyMode("ClearSelectionMode") })
 end
+
 local close_copy_mode = act.Multiple({
-	-- act.EmitEvent("update-status"),
 	act.CopyMode("ClearSelectionMode"),
 	act.CopyMode("ClearPattern"),
 	act.CopyMode("Close"),
@@ -123,53 +148,113 @@ config.keys = {
 		key = "Space",
 		action = wezterm.action.RotatePanes("Clockwise"),
 	},
-  -- show the pane selection mode, but have it swap the active and selected panes
-  {
-    mods = 'LEADER',
-    key = '0',
-    action = wezterm.action.PaneSelect {
-      mode = 'SwapWithActive',
-    },
-  },
+	-- show the pane selection mode, but have it swap the active and selected panes
+	{
+		mods = "LEADER",
+		key = "0",
+		action = wezterm.action.PaneSelect({
+			mode = "SwapWithActive",
+		}),
+	},
 
-  -- mux
-  --
-  -- -- Attach to muxer
-  {
-    key = 'a',
-    mods = 'LEADER',
-    action = act.AttachDomain 'unix',
-  },
+	-- mux
+	--
+	-- -- Attach to muxer
+	{
+		key = "a",
+		mods = "LEADER",
+		action = act.AttachDomain("unix"),
+	},
 
-  -- Detach from muxer
-  {
-    key = 'd',
-    mods = 'LEADER',
-    action = act.DetachDomain { DomainName = 'unix' },
-  },
-  {
-    key = '$',
-    mods = 'LEADER|SHIFT',
-    action = act.PromptInputLine {
-      description = 'Enter new name for session',
-      action = wezterm.action_callback(
-        function(window, pane, line)
-          if line then
-            mux.rename_workspace(
-              window:mux_window():get_workspace(),
-              line
-            )
-          end
-        end
-      ),
-    },
-  },
-  -- Show list of workspaces
-  {
-    key = 's',
-    mods = 'LEADER',
-    action = act.ShowLauncherArgs { flags = 'WORKSPACES' },
-  },
+	-- Detach from muxer
+	{
+		key = "d",
+		mods = "LEADER",
+		action = act.DetachDomain({ DomainName = "unix" }),
+	},
+	{
+		key = "$",
+		mods = "LEADER|SHIFT",
+		action = act.PromptInputLine({
+			description = "Enter new name for workspace",
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+					resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+				end
+			end),
+		}),
+	},
+	-- Show list of workspaces
+	{
+		key = "q",
+		mods = "LEADER",
+		action = act.ShowLauncherArgs({ flags = "WORKSPACES" }),
+	},
+	-- ressurect keys
+	{
+		key = "w", -- save whole workspace
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+		end),
+	},
+	{
+		key = "W", -- save single window
+		mods = "LEADER|SHIFT",
+		action = resurrect.window_state.save_window_action(),
+	},
+	{
+		key = "s",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+			resurrect.window_state.save_window_action()
+		end),
+	},
+	{
+		key = "l",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.fuzzy_load(win, pane, function(id, label)
+				local type = string.match(id, "^([^/]+)") -- match before '/'
+				id = string.match(id, "([^/]+)$") -- match after '/'
+				id = string.match(id, "(.+)%..+$") -- remove file extension
+				local state
+				if type == "workspace" then
+					state = resurrect.load_state(id, "workspace")
+					resurrect.workspace_state.restore_workspace(state, {
+						relative = true,
+						restore_text = true,
+						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+					})
+				elseif type == "window" then
+					state = resurrect.load_state(id, "window")
+					resurrect.window_state.restore_window(pane:window(), state, {
+						relative = true,
+						restore_text = true,
+						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+						-- uncomment this line to use active tab when restoring
+						-- tab = win:active_tab(),
+					})
+				end
+			end)
+		end),
+	},
+	{
+		key = "D",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.fuzzy_load(win, pane, function(id)
+				resurrect.delete_state(id)
+			end, {
+				title = "Delete State",
+				description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+				fuzzy_description = "Search State to Delete: ",
+				is_fuzzy = true,
+			})
+		end),
+	},
 }
 config.key_tables = {
 	copy_mode = extend_keys(default_keys.copy_mode, {
@@ -216,9 +301,9 @@ smart_splits.apply_to_config(config)
 
 -- sessions
 config.unix_domains = {
-  {
-    name = 'unix',
-  },
+	{
+		name = "unix",
+	},
 }
 
 -- This causes `wezterm` to act as though it was started as
@@ -226,6 +311,30 @@ config.unix_domains = {
 -- domain on startup.
 -- If you prefer to connect manually, leave out this line.
 -- config.default_gui_startup_args = { 'connect', 'unix' }
+--
 
+wezterm.on("augment-command-palette", function(window, pane)
+	local workspace_state = resurrect.workspace_state
+	return {
+		-- {
+		-- 	brief = "Window | Workspace: Switch Workspace",
+		-- 	icon = "md_briefcase_arrow_up_down",
+		-- 	action = workspace_switcher.switch_workspace(),
+		-- },
+		{
+			brief = "Window | Workspace: Rename Workspace",
+			icon = "md_briefcase_edit",
+			action = wezterm.action.PromptInputLine({
+				description = "Enter new name for workspace",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+						resurrect.save_state(workspace_state.get_workspace_state())
+					end
+				end),
+			}),
+		},
+	}
+end)
 
 return config
