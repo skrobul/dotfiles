@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local session_manager = require("wezterm-session-manager/session-manager")
 local config = {}
 local act = wezterm.action
 config.font = wezterm.font("Cascadia Code NF", { weight = "Regular", stretch = "Normal", italic = false })
@@ -100,32 +99,12 @@ config.keys = {
 		}),
 	},
 	{ key = ";", mods = "LEADER", action = act.ActivatePaneDirection("Prev") },
-	{
-		key = "E",
-		mods = "CTRL",
-		action = act.PromptInputLine({
-			action = { EmitEvent = "user-defined-0" },
-			description = "Enter\u{20}new\u{20}name\u{20}for\u{20}tab",
-		}),
-	},
-	{
-		key = "R",
-		mods = "ALT|CTRL",
-		action = act.PromptInputLine({
-			action = { EmitEvent = "user-defined-1" },
-			description = "Enter\u{20}new\u{20}name\u{20}for\u{20}tab",
-		}),
-	},
 	{ key = "w", mods = "LEADER", action = act.ShowTabNavigator },
 	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 	{ key = ";", mods = "LEADER", action = act.ActivatePaneDirection("Prev") },
 	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "o", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
-	-- session manager
-	{ key = "S", mods = "LEADER", action = act({ EmitEvent = "save_session" }) },
-	{ key = "L", mods = "LEADER", action = act({ EmitEvent = "load_session" }) },
-	{ key = "R", mods = "LEADER", action = act({ EmitEvent = "restore_session" }) },
 
 	-- focusing
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
@@ -234,18 +213,6 @@ config.key_tables = {
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 -- -- you can put the rest of your Wezterm config here
 smart_splits.apply_to_config(config)
-
--- session manager hooks
-wezterm.on("save_session", function(window)
-	session_manager.save_state(window)
-end)
-wezterm.on("load_session", function(window)
-	session_manager.load_state(window)
-end)
-wezterm.on("restore_session", function(window)
-	session_manager.restore_state(window)
-end)
-
 
 -- sessions
 config.unix_domains = {
