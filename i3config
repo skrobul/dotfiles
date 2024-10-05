@@ -322,8 +322,8 @@ for_window [class="^.*"] border pixel 2
 set $mode_gaps gaps
 set $mode_gaps_outer outer gaps
 set $mode_gaps_inner inner gaps
-set $default_gaps_inner 15
-set $default_gaps_outer 15
+set $default_gaps_inner 30
+set $default_gaps_outer 25
 
 
 gaps inner $default_gaps_inner
