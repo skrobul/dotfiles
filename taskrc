@@ -60,6 +60,8 @@ report.scrum.columns=uuid.short,tags,project,modified,description
 report.scrum.sort=project+\/,entry+
 report.scrum.filter=status:completed +work end.after:today-1d
 
+context.undercloud.read=project:undercloud +work
+context.undercloud.write=project:undercloud +work
 # include hours and minutes
 rc.dateformat=Y-M-DTH:N
 context=work
