@@ -18,7 +18,9 @@ font pango:Droid Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id gnome-terminal
+bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Shift+y exec --no-startup-id pavucontrol &
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -166,7 +168,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+p exec "rofi-rbw --action type --target password"
+bindsym $mod+Shift+p exec "rofi-rbw --action type --target password --typing-key-delay 6"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, Notifications(n)
@@ -227,8 +229,8 @@ for_window [class="^Microsoft-edge$"] move to workspace $tag3
 #for_window [class="^Firefox$" ] border none
 #for_window [class="(?i)virtualbox"] floating enable border normal
 
-#for_window [class="(?i)pavucontrol"] floating enable, move position mouse
-#for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -308,13 +310,14 @@ exec --no-startup-id nitrogen --restore
 # exec --no-startup /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
 exec --no-startup-id xbindkeys
 exec --no-startup-id rescuetime &
-exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects --gapplication-service &
+# exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects --gapplication-service &
 exec --no-startup-id /usr/bin/kopia-ui &
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # needed for libvirt and KVM
 exec --no-startup-id lxpolkit
+
 
 
 # Gaps
