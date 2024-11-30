@@ -1,7 +1,8 @@
 ! Xft.autohint: 0
 ! ! Xft.dpi: 180
-Xft.dpi: 110
+! Xft.dpi: 110
 !Xft.dpi: 192
+Xft.dpi: 137
 !Xcursor.size: 32
 ! Xft.antialias: true
 ! Xft.rgba: rgb
