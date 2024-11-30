@@ -82,6 +82,10 @@ alias tt="taskwarrior-tui"
 alias disablehistory="function zshaddhistory() {  return 1 }"
 alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
 alias k=kubectl
+alias ironic_conductor_logs="kubectl logs ironic-conductor-0  -f | grep -Evi 'periodic|power state sync|hash rings|shared lock|exclusive lock|heartbeat|ironic.drivers.modules.redfish.management' | tspin "
+alias strip_colors="sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g'"
+
+
 if ! [[ $(uname) == "Darwin" ]]; then
     alias pbcopy="xclip -selection clip -i"
 fi
