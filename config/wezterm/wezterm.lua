@@ -2,7 +2,8 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 config.font = wezterm.font("JetBrains Mono NF", { weight = "Medium", stretch = "Normal", italic = false })
-config.font_size = 12.0
+config.font_size = 14.0
+config.enable_wayland = false
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
