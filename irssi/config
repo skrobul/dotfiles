@@ -327,3 +327,11 @@ settings = {
   "fe-common/core" = { theme = "agon"; autolog = "yes"; };
   "fe-text" = { term_force_colors = "no"; };
 };
+logs = { };
+ignores = (
+  { level = "JOINS PARTS QUITS"; channels = ( "#openstack-ironic" ); },
+  { 
+    level = "JOINS PARTS QUITS";
+    channels = ( "#openstack-neutron" );
+  }
+);
