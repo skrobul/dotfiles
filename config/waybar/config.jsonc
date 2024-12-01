@@ -1,49 +1,42 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 30,
+  "height": 40,
   "margin": "0 0 0 0",
   //"width": 1350, // Waybar width
   // Choose the order of the modules idle_inhibitor
   "modules-left": [
     "hyprland/workspaces",
     "tray",
-    "hyprland/mode",
+    "hyprland/submap",
     "custom/cava-internal"
   ],
-  "modules-center": ["clock"],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
+    "mpris",
     "backlight",
     "pulseaudio",
     "temperature",
+    "cpu",
     "memory",
     "network",
     "custom/power"
   ],
-
   // Modules configuration
   "hyprland/workspaces": {
-    "format": "{icon} {name} ",
+    "format": "{id}",
     "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "active": "",
-      "default": ""
-    },
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
     }
   },
-
-  "hyprland/mode": {
+  "hyprland/submap": {
     "format": "<span style=\"italic\">{}</span>"
   },
   "hyprland/window": {
@@ -84,7 +77,7 @@
       "on-scroll-down": "shift_down"
     },
     // "format": "  {:%a %d %b  %I:%M %p}", //12 hour format
-    "format": " {:%Y-%m-%d   %H:%M}",	//24 hour format
+    "format": " {:%A %b %d   %H:%M}", //24 hour format
     "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
     // //"timezones": [ "Kolkata" ],
     // //"max-length": 200
@@ -118,8 +111,10 @@
   //     "interval": 1
   // },
   "cpu": {
-    "format": "﬙ {usage: >3}%",
-    "on-click": "kitty top"
+    "format": "  {usage}%",
+    "tooltip": true,
+    "on-click": "kitty top",
+    "interval": 1
   },
   "memory": {
     // "format": " {: >3}%",
@@ -136,7 +131,10 @@
   "backlight": {
     // "device": "acpi_video1",
     "format": "{icon} {percent: >3}%",
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     // "on-scroll-down": "brightnessctl -c backlight set 5%-",
     "on-scroll-down": "light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob",
     // "on-scroll-up": "brightnessctl -c backlight set +5%"
@@ -151,7 +149,13 @@
     "format": "{icon} {capacity: >3}%",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
     //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
   },
   "network": {
@@ -177,7 +181,10 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": [
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
@@ -192,5 +199,20 @@
     "format": " ",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false
+  },
+  "mpris": {
+    "player": "spotify",
+    "dynamic-order": [
+      "artist",
+      "title"
+    ],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "status-icons": {
+      "paused": ""
+    },
+    "player-icons": {
+      "default": ""
+    }
   }
 }
