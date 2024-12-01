@@ -22,6 +22,7 @@
     "cpu",
     "memory",
     "network",
+    "idle_inhibitor",
     "custom/power"
   ],
   // Modules configuration
@@ -192,7 +193,7 @@
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "nwgbar",
+    "on-click": "wlogout --protocol layer-shell",
     "tooltip": false
   },
   "custom/launcher": {

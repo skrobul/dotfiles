@@ -54,6 +54,7 @@ window#waybar {
 #memory,
 #network,
 #window,
+#idle_inhibitor,
 #mpris {
   min-height: 0;
   min-width: 0;
