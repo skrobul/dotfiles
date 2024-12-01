@@ -71,6 +71,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
+# [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5C' forward-word
+# [Ctrl-LeftArrow] - move backward one word
+bindkey '^[[1;5D' backward-word
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 alias ag='ag --color-path "1;36"'
