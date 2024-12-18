@@ -179,3 +179,5 @@ export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
 #
 # Store device specific settings like DEFAULT_USER
 source ~/.zshrc.local
+
+export ARGOCD_OPTS="--grpc-web"
