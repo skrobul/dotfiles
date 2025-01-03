@@ -14,31 +14,11 @@
 data.location=~/.task
 
 # Color theme (uncomment one to use)
-#include /usr/local/share/doc/task/rc/light-16.theme
-#include /usr/local/share/doc/task/rc/light-256.theme
-#include /usr/local/share/doc/task/rc/dark-16.theme
-#include /usr/local/share/doc/task/rc/dark-256.theme
-#include /usr/local/share/doc/task/rc/dark-red-256.theme
-#include /usr/local/share/doc/task/rc/dark-green-256.theme
-#include /usr/local/share/doc/task/rc/dark-blue-256.theme
-#include /usr/local/share/doc/task/rc/dark-violets-256.theme
-#include /usr/local/share/doc/task/rc/dark-yellow-green.theme
-#include /usr/local/share/doc/task/rc/dark-gray-256.theme
-#include /usr/local/share/doc/task/rc/dark-gray-blue-256.theme
-#include /usr/local/share/doc/task/rc/solarized-dark-256.theme
-#include /usr/local/share/doc/task/rc/solarized-light-256.theme
-#include /usr/local/share/doc/task/rc/no-color.theme
-#include $HOME/dotfiles/dark-gray-256.theme
 include $HOME/dotfiles/skrobul-tw-256.theme
 
-taskd.certificate=$HOME\/.task\/marek_skrobacki.cert.pem
-taskd.key=$HOME\/.task\/marek_skrobacki.key.pem
-taskd.ca=$HOME\/.task\/ca.cert.pem
-taskd.server=tasks.skrobul.com:53580
-taskd.credentials=Public\/Marek Skrobacki\/d26efb46-e936-48c3-a498-841b01ba9337
-
 weekstart=Monday
-report.next.filter=status:pending limit:100
+#report.next.filter=status:pending limit:100
+report.next.columns =  id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,urgency
 
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
@@ -46,7 +26,7 @@ include $HOME/.taskrc.local
 context.personal.read=+personal
 context.work.read=+work
 context.work.write=+work
-news.version=2.6.0
+news.version=3.1.0
 context.personal.write=+personal
 
 report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
@@ -64,4 +44,9 @@ context.undercloud.read=project:undercloud +work
 context.undercloud.write=project:undercloud +work
 # include hours and minutes
 rc.dateformat=Y-M-DTH:N
-context=work
+sync.server.url=https:\/\/tw.skrobul.com
+sync.server.client_id=eab45e4e-fad6-40b0-8321-c6db41bbbfba
+
+# run the task sync periodically in taskwarrior-tui
+uda.taskwarrior-tui.background_process=task sync
+uda.taskwarrior-tui.background_process_period=30
