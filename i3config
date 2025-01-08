@@ -219,6 +219,8 @@ default_border pixel 0
 for_window [title="VidyoDesktop$"] floating enable
 #for_window [title="Zoom"] floating enable 
 for_window [class="Vpnui"] floating enable
+for_window [class="screenkey"] floating enable
+for_window [title="^screenkey"] floating enable
 for_window [class="Guvcview"] floating enable
 #for_window [class="VirtualBox"] floating enable border normal
 for_window [class="^Chrome$" title=" - Chrome"] border none
