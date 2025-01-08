@@ -1,20 +1,13 @@
-# [Created by task 2.5.1 4/19/2021 10:05:55]
-# Taskwarrior program configuration file.
-# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
-# 'man task-sync' or 'man taskrc'
-
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
-# Use the command 'task show' to see all defaults and overrides
 
 # Files
 data.location=~/.task
 
 # Color theme (uncomment one to use)
-include $HOME/dotfiles/skrobul-tw-256.theme
+#include $HOME/dotfiles/skrobul-tw-256.theme
+#include $HOME/dotfiles/taskwarrior/antiglare.theme
+#include $HOME/dotfiles/taskwarrior/rose-pine-moon-256.theme
+include $HOME/dotfiles/taskwarrior/dark-blue-256.theme
+
 
 weekstart=Monday
 #report.next.filter=status:pending limit:100
@@ -23,18 +16,16 @@ report.next.columns =  id,start.age,entry.age,depends,priority,project,tags,recu
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
 include $HOME/.taskrc.local
-context.personal.read=+personal
-context.work.read=+work
+context.personal.read=+personal,+inbox
+context.personal.write=+personal
+context.work.read=+work,+inbox
 context.work.write=+work
 news.version=3.1.0
-context.personal.write=+personal
 
 report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
-context.kubeswarm.read=project:kubeswarm +work
-context.kubeswarm.write=project:kubeswarm +work
 report.scrum.description=List of tasks completed since yesterday
 report.scrum.columns=uuid.short,tags,project,modified,description
 report.scrum.sort=project+\/,entry+
@@ -48,5 +39,42 @@ sync.server.url=https:\/\/tw.skrobul.com
 sync.server.client_id=eab45e4e-fad6-40b0-8321-c6db41bbbfba
 
 # run the task sync periodically in taskwarrior-tui
-uda.taskwarrior-tui.background_process=task sync
-uda.taskwarrior-tui.background_process_period=30
+#
+#uda.taskwarrior-tui.background_process_period=30
+# uda.taskwarrior-tui.background_process.type=string
+# uda.taskwarrior-tui.background_process=task sync
+
+# taskwarrior-tui configuration
+# uda.taskwarrior-tui.selection.indicator=•
+# uda.taskwarrior-tui.selection.bold=yes
+# uda.taskwarrior-tui.selection.italic=no
+# uda.taskwarrior-tui.selection.dim=no
+# uda.taskwarrior-tui.selection.blink=yes
+# uda.taskwarrior-tui.selection.reverse=yes
+# uda.taskwarrior-tui.mark.indicator=✔
+# uda.taskwarrior-tui.unmark.indicator=
+# uda.taskwarrior-tui.mark-selection.indicator=⦿
+# uda.taskwarrior-tui.unmark-selection.indicator=⦾
+# uda.taskwarrior-tui.calendar.months-per-row=4
+# uda.taskwarrior-tui.task-report.show-info=true
+# uda.taskwarrior-tui.task-report.looping=true
+# uda.taskwarrior-tui.task-report.jump-on-task-add=true
+# uda.taskwarrior-tui.task-report.prompt-on-undo=false
+# uda.taskwarrior-tui.task-report.prompt-on-delete=false
+# uda.taskwarrior-tui.task-report.prompt-on-done=false
+# uda.taskwarrior-tui.style.report.selection=
+# uda.taskwarrior-tui.style.context.active=black on rgb444
+# uda.taskwarrior-tui.style.calendar.title=black on rgb444
+# uda.taskwarrior-tui.style.report.scrollbar=black
+# uda.taskwarrior-tui.scrollbar.indicator=█
+# uda.taskwarrior-tui.style.report.scrollbar.area=white
+# uda.taskwarrior-tui.scrollbar.area=║
+# uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=true
+# uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-annotate=true
+# uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-log=true
+# uda.taskwarrior-tui.task-report.reset-filter-on-esc=true
+# uda.taskwarrior-tui.context-menu.select-on-move=false
+# uda.taskwarrior-tui.tabs.change-focus-rotate=false
+#uda.taskwarrior-tui.background_process=task sync
+#uda.taskwarrior-tui.background_process_period=30
+context=personal
