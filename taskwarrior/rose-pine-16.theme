@@ -1,0 +1,72 @@
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=color7                              # Text
+color.label.sort=bold color7                    # Bold Text
+color.alternate=color7 on color0                # Text on Overlay
+color.header=color6                             # Rose
+color.footnote=color6                           # Rose
+color.warning=bold color3                       # Bold Gold
+color.error=bold color1                         # Bold Love
+color.debug=bold color4                         # Bold Pine
+
+# Task state
+color.completed=rgb112                          # Highlight High
+color.deleted=rgb112                            # Highlight High
+color.active=gray2 on color6                    # Base on Rose
+color.recurring=color4                          # Pine
+color.scheduled=color2                          # Foam
+color.until=
+color.blocked=gray2 on rgb112                   # Surface on Highlight High
+color.blocking=color7 on rgb112                 # Text on Highlight High
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=color7                     # Text
+color.uda.priority.L=rgb112                     # Muted
+color.uda.priority.M=rgb223                     # Subtle
+
+# Tags
+color.tag.next=color3                           # Gold
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=color5                                # Iris
+color.due.today=gray2 on color5                 # Base on Iris
+color.overdue=gray2 on color1                   # Base on Love
+
+# Report: burndown
+color.burndown.done=gray2 on color2             # Base on Foam
+color.burndown.pending=gray2 on color1          # Base on Love
+color.burndown.started=gray2 on color3          # Base on Gold
+
+# Report: history
+color.history.add=gray2 on color1               # Base on Love
+color.history.delete=gray2 on color3            # Base on Gold
+color.history.done=gray2 on color2              # Base on Foam
+
+# Report: summary
+color.summary.background=color7 on gray2        # Text on Base
+color.summary.bar=gray2 on color2               # Base on Foam
+
+# Command: calendar
+color.calendar.due=color5                       # Iris
+color.calendar.due.today=gray2 on color5        # Base on Iris
+color.calendar.holiday=gray2 on color3          # Base on Gold
+color.calendar.overdue=gray2 on color1          # Base on Love
+color.calendar.scheduled=underline color2       # Underline Foam
+color.calendar.today=gray2 on color4            # Base on Pine
+color.calendar.weekend=color7 on color0         # Text on Overlay
+color.calendar.weeknumber=rgb112                # Highlight High
+
+# Command: sync
+color.sync.added=color2                         # Foam
+color.sync.changed=color3                       # Gold
+color.sync.rejected=color1                      # Love
+
+# Command: undo
+color.undo.after=color2                         # Foam
+color.undo.before=color1                        # Love
