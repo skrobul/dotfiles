@@ -16,9 +16,9 @@ report.next.columns =  id,start.age,entry.age,depends,priority,project,tags,recu
 # https://github.com/GothenburgBitFactory/taskserver/issues/46#issuecomment-364795523
 recurrence=off
 include $HOME/.taskrc.local
-context.personal.read=+personal,+inbox
+context.personal.read=+personal or +inbox
 context.personal.write=+personal
-context.work.read=+work,+inbox
+context.work.read=+work or +inbox
 context.work.write=+work
 news.version=3.1.0
 
@@ -77,4 +77,11 @@ sync.server.client_id=eab45e4e-fad6-40b0-8321-c6db41bbbfba
 # uda.taskwarrior-tui.tabs.change-focus-rotate=false
 #uda.taskwarrior-tui.background_process=task sync
 #uda.taskwarrior-tui.background_process_period=30
-context=personal
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+context=work
+report.projectstatus.description=Displays pending and recently completed
+report.projectstatus.context=1
+report.projectstatus.columns=id,uuid.short,end,depends,priority,description
+report.projectstatus.labels=ID,UUID,Completed,Deps,P,Description
+report.projectstatus.filter=((status:completed end.after:today-1d) or (status:pending)) -WAITING
