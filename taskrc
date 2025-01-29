@@ -45,12 +45,12 @@ sync.server.client_id=eab45e4e-fad6-40b0-8321-c6db41bbbfba
 # uda.taskwarrior-tui.background_process=task sync
 
 # taskwarrior-tui configuration
-# uda.taskwarrior-tui.selection.indicator=•
-# uda.taskwarrior-tui.selection.bold=yes
+uda.taskwarrior-tui.selection.indicator=>
+uda.taskwarrior-tui.selection.bold=yes
 # uda.taskwarrior-tui.selection.italic=no
 # uda.taskwarrior-tui.selection.dim=no
 # uda.taskwarrior-tui.selection.blink=yes
-# uda.taskwarrior-tui.selection.reverse=yes
+uda.taskwarrior-tui.selection.reverse=yes
 # uda.taskwarrior-tui.mark.indicator=✔
 # uda.taskwarrior-tui.unmark.indicator=
 # uda.taskwarrior-tui.mark-selection.indicator=⦿
