@@ -450,11 +450,12 @@ tab_bar_style fade
 #: title. If you wish to include the tab-index as well, use something
 #: like: {index}: {title}. Useful if you have shortcuts mapped for
 #: goto_tab N.
-# active_tab_foreground   #fff
-# active_tab_background   #EF5350
+
+active_tab_foreground   #fff
+active_tab_background   #EF5350
 active_tab_font_style   bold-italic
-# inactive_tab_foreground #444
-# inactive_tab_background #64B5F6
+inactive_tab_foreground #444
+inactive_tab_background #64B5F6
 inactive_tab_font_style normal
 
 #: Tab bar colors and styles
@@ -1121,23 +1122,17 @@ map ctrl+left kitten pass_keys.py relative_resize left  3 ctrl+left
 map ctrl+right kitten pass_keys.py relative_resize right 3 ctrl+right
 
 
+
+include ~/.config/kitty/tokyonight.conf
 # tabs
 tab_bar_style powerline
 tab_powerline_style slanted
-#tab_title_template "{' #' if layout_name == 'stack' else '  '}{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{title}"
-tab_title_template "{fmt.fg.red if layout_name == 'stack' else ''}{title}{fmt.fg.tab}{bell_symbol}{activity_symbol}"
-
+tab_title_template "{' #' if layout_name == 'stack' else '  '}{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{title}"
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='JetBrainsMono Nerd Font' style=Regular
-bold_font        family='JetBrainsMono Nerd Font' style=SemiBold
+font_family      family='JetBrainsMono Nerd Font' style=SemiBold
+bold_font        family='JetBrainsMono Nerd Font' style=Bold
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
-
-
-# BEGIN_KITTY_THEME
-# Rosé Pine
-include current-theme.conf
-# END_KITTY_THEME

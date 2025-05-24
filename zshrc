@@ -87,8 +87,9 @@ alias tt="taskwarrior-tui"
 alias disablehistory="function zshaddhistory() {  return 1 }"
 alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
 alias k=kubectl
-alias ironic_conductor_logs="kubectl logs ironic-conductor-0  -f | grep -Evi 'periodic|power state sync|hash rings|shared lock|exclusive lock|heartbeat|ironic.drivers.modules.redfish.management' | tspin "
+# alias ironic_conductor_logs="kubectl logs ironic-conductor-0  -f | grep -Evi 'periodic|power state sync|hash rings|shared lock|exclusive lock|heartbeat|ironic.drivers.modules.redfish.management|sensors' | sed -e 's/req-[a-f0-9 -]\+//g' | tspin --config-path ~/.config/tailspin/openstack.toml --disable uuids "
 alias strip_colors="sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g'"
+alias kubepods_cpu_limits='kubectl get pods --all-namespaces -o custom-columns="NAMESPACE:.metadata.namespace,POD:.metadata.name,CPU_LIMIT:.spec.containers[*].resources.limits.cpu"'
 
 
 if ! [[ $(uname) == "Darwin" ]]; then

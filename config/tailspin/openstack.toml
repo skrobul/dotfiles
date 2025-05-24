@@ -1,0 +1,47 @@
+[[keywords]]
+words = ['DOWN',
+        "enroll",
+        "verifying",
+        "manageable",
+        "inspecting",
+        "inspect wait",
+        "inspect failed",
+        "cleaning",
+        "clean wait",
+        "clean failed",
+        "available",
+        "deploying",
+        "wait call-back",
+        "deploy failed",
+        "active",
+        "deleting",
+        "error",
+        "adopting",
+        "rescuing",
+        "rescue wait",
+        "rescue failed",
+        "rescue",
+        "unrescuing",
+        "unrescue failed",
+        "servicing",
+        "service wait",
+        "service failed"]
+style = { fg = "red" }
+
+[paths]
+segment = { fg = "green", faint = true }
+
+[uuids]
+number = { fg = "blue", italic = true }
+letter = { fg = "blue", italic = true }
+separator = { fg = "red" }
+
+
+[[regexes]]
+regex = ' ([a-z_]+_(?:pre|post)commit)'
+style = { fg = "red", bg="black" }
+
+# short uuids
+[[regexes]]
+regex = "[0-9a-f]{32}"
+style = { fg = "green" }
