@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Check for dependencies
+if ! command -v curl &> /dev/null; then
+echo "curl is not installed. Please install it and run again."
+exit 1
+fi
+
+if ! command -v jq &> /dev/null; then
+echo "jq is not installed. Please install it and run again."
+exit 1
+fi
+
+# Read authentication token
+TOKEN_FILE=~/.hass_token
+if [ ! -f "${TOKEN_FILE}" ]; then
+echo "Authentication token file not found"
+exit 1
+fi
+TOKEN=$(cat "${TOKEN_FILE}")
+
+# Home Assistant instance URL
+HA_URL="http://192.168.1.80:8123"
+
+# Entity IDs
+ENTITY_IDS=("sensor.marek_desk_temperature" "sensor.entryway_temperature" "sensor.balcony_temperature")
+
+# Fetch temperature values
+declare -A temperatures
+for entity_id in "${ENTITY_IDS[@]}"; do
+response=$(curl -s -X GET \
+"${HA_URL}/api/states/${entity_id}" \
+-H "Authorization: Bearer ${TOKEN}" \
+-H "Content-Type: application/json")
+
+temperature=$(echo "${response}" | jq -r '.state')
+if [ -n "${temperature}" ]; then
+temperatures[${entity_id}]="$(printf "%.0f" "${temperature}")"
+else
+echo "No data found for entity ${entity_id}" >&2
+fi
+done
+
+# Format output for polybar
+if [ ${#temperatures[@]} -eq 3 ]; then
+ inside_temp=${temperatures["sensor.marek_desk_temperature"]}
+ outside_temp=${temperatures["sensor.entryway_temperature"]}
+ balcony_temp=${temperatures["sensor.balcony_temperature"]}
+ echo "Inside ${inside_temp}°C Outside ${outside_temp}°C Balcony ${balcony_temp}°C"
+else
+ echo "Failed to retrieve temperature values" >&2
+fi

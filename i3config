@@ -146,7 +146,7 @@ bindsym $hyper+l move container to workspace $tag9
 
 # focus specific applications with hyper key
 bindsym $hyper+B exec pgrep firefox && i3-msg '[class="firefox"] focus' || firefox
-bindsym $hyper+. exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
+#bindsym $hyper+. exec pgrep kitty && i3-msg '[class="kitty"] focus' || kitty
 bindsym $hyper+N exec pgrep obsidian && i3-msg '[class="obsidian"] focus' || obsidian
 # bindsym $hyper+j exec pgrep zoom && i3-msg '[class="zoom"] focus' || zoom
 # bindsym $hyper+k exec --no-startup-id ~/dotfiles/mute_zoom.sh
@@ -168,7 +168,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+p exec "rofi-rbw --selector-args 'rofi -theme ~/.config/rofi/launchers/type-1/style-5' --action type --target password --typing-key-delay 30"
+#bindsym $mod+Shift+p exec "rofi-rbw --selector-args 'rofi -theme ~/.config/rofi/launchers/type-1/style-5' --action type --target password"
+bindsym $mod+Shift+p exec "~/bin/rofi-brbw"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, Notifications(n)
@@ -284,8 +285,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 
 # Screenshot
-bindsym $mod+Shift+m exec /home/skrobul/bin/rsa
-bindsym $mod+Meta+Shift+m exec /home/skrobul/bin/rsa
 bindsym Print exec flameshot gui
 bindsym --release $mod+Shift+Print exec scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/screenshots/'
 
