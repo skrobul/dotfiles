@@ -30,6 +30,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi -theme ~/.config/rofi/launchers/type-1/style-5"
 bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/launchers/type-1/style-5"
 bindsym $mod+Shift+d exec --no-startup-id "dmenu"
+bindsym $mod+Shift+a exec --no-startup-id "/home/skrobul/dotfiles/i3addtodoist.sh"
 
 # change focus
 bindsym $mod+h focus left
