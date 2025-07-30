@@ -41,9 +41,10 @@ eval "$(starship init zsh)"
 #########################
 # visual command edit
 #########################
-export VISUAL=vim
+export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+bindkey '^X^E' edit-command-line
 # core configuration
 CASE_SENSITIVE="false"
 
