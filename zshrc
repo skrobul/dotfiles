@@ -183,3 +183,5 @@ export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
 source ~/.zshrc.local
 
 export ARGOCD_OPTS="--grpc-web"
+
+export GROFF_NO_SGR=1

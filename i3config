@@ -170,7 +170,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #bindsym $mod+Shift+p exec "rofi-rbw --selector-args 'rofi -theme ~/.config/rofi/launchers/type-1/style-5' --action type --target password"
-bindsym $mod+Shift+p exec "~/bin/rofi-brbw"
+bindsym --release $mod+Shift+p exec --no-startup-id  "~/bin/rofi-brbw"
+#bindsym --release Control+Mod1+p exec --no-startup-id  "~/bin/rofi-brbw"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, Notifications(n)
