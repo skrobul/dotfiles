@@ -49,7 +49,7 @@ config.inactive_pane_hsb = {
 	brightness = 0.5,
 }
 
-config.color_scheme = "tokyonight"
+config.color_scheme = "Rosé Pine (Gogh)"
 config.leader = {
 	key = "b",
 	mods = "CTRL",
@@ -125,12 +125,12 @@ config.keys = {
 		}),
 	},
 	{ key = ";", mods = "LEADER", action = act.ActivatePaneDirection("Prev") },
-	{ key = "w", mods = "LEADER", action = act.ShowTabNavigator },
+	{ key = "t", mods = "LEADER", action = act.ShowTabNavigator },
 	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
-	{ key = ";", mods = "LEADER", action = act.ActivatePaneDirection("Prev") },
 	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "o", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+  { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 
 	-- focusing
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
@@ -263,6 +263,7 @@ config.key_tables = {
 		{ key = "q", mods = "NONE", action = close_copy_mode },
 		{ key = "Escape", mods = "NONE", action = close_copy_mode },
 		{ key = "Space", mods = "CTRL", action = act.CopyMode("ClearPattern") },
+    { key = "Enter", mods = "NONE", action = copy_to },
 		{ key = "y", mods = "NONE", action = copy_to },
 
 		{ key = "h", mods = "NONE", action = act.CopyMode("MoveLeft") },
