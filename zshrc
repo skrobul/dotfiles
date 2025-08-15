@@ -185,3 +185,7 @@ source ~/.zshrc.local
 export ARGOCD_OPTS="--grpc-web"
 
 export GROFF_NO_SGR=1
+
+# gpg-agent for ssh keys
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
