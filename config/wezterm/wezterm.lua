@@ -42,7 +42,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_max_width = 25
 config.cursor_blink_rate = 800
 
-scrollback_lines = 20000
+config.scrollback_lines = 20000
 
 config.inactive_pane_hsb = {
 	saturation = 0.24,
@@ -68,22 +68,30 @@ local close_copy_mode = act.Multiple({
 })
 local copy_to = act.Multiple({ act.CopyTo("Clipboard"), act.CopyMode("ClearSelectionMode"), act.CopyMode("Close") })
 local default_keys = wezterm.gui.default_key_tables()
-local function extend_keys(target, source)
-	local map = {}
-	for i = 1, #target do
-		local item = target[i]
-		map[item.key] = item
+
+-- allows to reuse default wezterm mappings without having to define everything
+-- from scratch
+local function merge_key_table(defaults, customs)
+	local customs_map = {}
+	-- Add your custom keys to a map for quick lookup
+	for _, item in ipairs(customs) do
+		customs_map[item.key .. item.mods] = item
 	end
-	for i = 1, #source do
-		local item = source[i]
-		local key = item.key
-		if map[key] ~= nil then
-			table[i] = map[key]
-		else
-			table.insert(target, source[i])
+
+	local final_table = {}
+	-- Add the defaults only if they aren't in your custom list
+	for _, item in ipairs(defaults) do
+		if not customs_map[item.key .. item.mods] then
+			table.insert(final_table, item)
 		end
 	end
-	return target
+
+	-- Add all of your custom keys
+	for _, item in ipairs(customs) do
+		table.insert(final_table, item)
+	end
+
+	return final_table
 end
 
 local function complete_search(should_clear)
@@ -130,7 +138,7 @@ config.keys = {
 	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "o", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
-  { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+	{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 
 	-- focusing
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
@@ -258,24 +266,29 @@ config.keys = {
 	},
 }
 config.key_tables = {
-	copy_mode = extend_keys(default_keys.copy_mode, {
+	copy_mode = merge_key_table(default_keys.copy_mode, {
+		-- close copy mode
 		{ key = "c", mods = "CTRL", action = close_copy_mode },
 		{ key = "q", mods = "NONE", action = close_copy_mode },
 		{ key = "Escape", mods = "NONE", action = close_copy_mode },
+		-- clear pattern
 		{ key = "Space", mods = "CTRL", action = act.CopyMode("ClearPattern") },
-    { key = "Enter", mods = "NONE", action = copy_to },
+
+		-- accept selection and copy
+		{ key = "Enter", mods = "NONE", action = copy_to },
 		{ key = "y", mods = "NONE", action = copy_to },
 
+		-- navigation
 		{ key = "h", mods = "NONE", action = act.CopyMode("MoveLeft") },
 		{ key = "j", mods = "NONE", action = act.CopyMode("MoveDown") },
 		{ key = "k", mods = "NONE", action = act.CopyMode("MoveUp") },
 		{ key = "l", mods = "NONE", action = act.CopyMode("MoveRight") },
 		{ key = "/", mods = "NONE", action = search },
 		{ key = "?", mods = "SHIFT", action = search },
-		{ key = "p", mods = "CTRL", action = next_match(-1) },
-		{ key = "n", mods = "CTRL", action = next_match(1) },
 		{ key = "n", mods = "NONE", action = next_match(1) },
 		{ key = "N", mods = "NONE", action = next_match(-1) },
+
+		-- copy and paste immediately
 		{
 			key = "s",
 			mods = "NONE",
@@ -290,9 +303,10 @@ config.key_tables = {
 		{ key = "E", mods = "NONE", action = act.CopyMode("MoveForwardWordEnd") },
 		{ key = "W", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
 	}),
-	search_mode = extend_keys(default_keys.search_mode, {
+	search_mode = merge_key_table(default_keys.search_mode, {
 		{ key = "Escape", mods = "NONE", action = complete_search(true) },
 		{ key = "Enter", mods = "NONE", action = complete_search(false) },
+		-- case sensitive, insensitive, regex
 		{ key = "r", mods = "CTRL", action = act.CopyMode("CycleMatchType") },
 	}),
 }
