@@ -12,6 +12,7 @@ resurrect.set_encryption({
 	method = "gpg", -- "age" is the default encryption method, but you can also specify "rage" or "gpg"
 	public_key = "8D921D0CB9A85565",
 })
+resurrect.set_max_nlines(3000) -- Or even lower if needed
 
 -- ressurect toasts
 local resurrect_event_listeners = {
@@ -33,7 +34,7 @@ for _, event in ipairs(resurrect_event_listeners) do
 		for _, v in ipairs(args) do
 			msg = msg .. " " .. tostring(v)
 		end
-		wezterm.gui.gui_windows()[1]:toast_notification("Wezterm - resurrect", msg, nil, 4000)
+		wezterm.gui.gui_windows()[1]:toast_notification("Wezterm - resurrect", msg, nil, 10000)
 	end)
 end
 
@@ -166,6 +167,25 @@ config.keys = {
 		}),
 	},
 
+	-- extra bindings for easier splits without Alt
+	{
+		mods = "CTRL|SHIFT",
+		key = "%",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = '"',
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+
+	-- muscle memory ctrl+shift+s immediate copy&paste
+	{
+		key = "S",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.PasteFrom("PrimarySelection"),
+	},
+
 	-- mux
 	--
 	-- -- Attach to muxer
@@ -221,6 +241,7 @@ config.keys = {
 			resurrect.window_state.save_window_action()
 		end),
 	},
+	-- fuzzy load a state (workspace or window)
 	{
 		key = "l",
 		mods = "LEADER",
@@ -250,6 +271,7 @@ config.keys = {
 			end)
 		end),
 	},
+	-- delete a state
 	{
 		key = "D",
 		mods = "LEADER",
