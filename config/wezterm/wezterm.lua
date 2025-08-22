@@ -41,7 +41,8 @@ end
 -- config.default_prog = { "/usr/local/bin/zsh", "-l" }
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_max_width = 25
-config.cursor_blink_rate = 800
+config.cursor_blink_rate = 500
+config.default_cursor_style = "BlinkingBlock"
 
 config.scrollback_lines = 20000
 
