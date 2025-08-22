@@ -192,6 +192,13 @@ config.keys = {
 		repeat_times = 2,
 		action = wezterm.action.SendKey({ key = "b", mods = "CTRL" }),
 	},
+  -- end of leader keys
+
+  -- resizing panes
+  { key = "LeftArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Left", 5 } },
+  { key = "RightArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Right", 5 } },
+  { key = "UpArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Up", 5 } },
+  { key = "DownArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Down", 5 } },
 
 	-- mux
 	--
