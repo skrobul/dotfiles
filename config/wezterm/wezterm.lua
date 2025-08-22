@@ -185,6 +185,13 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.PasteFrom("PrimarySelection"),
 	},
+	-- pass-through ctrl+b
+	{
+		key = "b",
+		mods = "CTRL|LEADER",
+		repeat_times = 2,
+		action = wezterm.action.SendKey({ key = "b", mods = "CTRL" }),
+	},
 
 	-- mux
 	--
