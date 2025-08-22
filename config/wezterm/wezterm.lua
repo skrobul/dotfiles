@@ -192,6 +192,9 @@ config.keys = {
 		repeat_times = 2,
 		action = wezterm.action.SendKey({ key = "b", mods = "CTRL" }),
 	},
+  -- splits (reversed on purpose to follow vim behavior)
+  { key = "s", mods = "LEADER", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "v", mods = "LEADER", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
   -- end of leader keys
 
   -- resizing panes
@@ -247,8 +250,9 @@ config.keys = {
 		mods = "LEADER|SHIFT",
 		action = resurrect.window_state.save_window_action(),
 	},
+  -- save both window and namespace
 	{
-		key = "s",
+		key = "r",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
