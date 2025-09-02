@@ -4,6 +4,8 @@ local act = wezterm.action
 config.font = wezterm.font("JetBrains Mono NF", { weight = "Medium", stretch = "Normal", italic = false })
 config.font_size = 14.0
 config.enable_wayland = false
+config.window_background_opacity = 0.4
+config.text_background_opacity = 0.4
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
