@@ -1,2 +1,2 @@
-[manager]
+[mgr]
 prepend_keymap = [{ on = [ "p" ], run = "plugin --sync smart-paste" }]
