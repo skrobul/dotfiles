@@ -193,16 +193,16 @@ config.keys = {
 		repeat_times = 2,
 		action = wezterm.action.SendKey({ key = "b", mods = "CTRL" }),
 	},
-  -- splits (reversed on purpose to follow vim behavior)
-  { key = "s", mods = "LEADER", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-  { key = "v", mods = "LEADER", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  -- end of leader keys
+	-- splits (reversed on purpose to follow vim behavior)
+	{ key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	-- end of leader keys
 
-  -- resizing panes
-  { key = "LeftArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Left", 5 } },
-  { key = "RightArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Right", 5 } },
-  { key = "UpArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Up", 5 } },
-  { key = "DownArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize { "Down", 5 } },
+	-- resizing panes
+	{ key = "LeftArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "RightArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize({ "Right", 5 }) },
+	{ key = "UpArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "DownArrow", mods = "CTRL|ALT", action = act.AdjustPaneSize({ "Down", 5 }) },
 
 	-- mux
 	--
@@ -232,6 +232,27 @@ config.keys = {
 			end),
 		}),
 	},
+	{
+		key = "N",
+		mods = "LEADER|SHIFT",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Foreground = { AnsiColor = "Fuchsia" } },
+				{ Text = "Enter name for a new workspace" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					window:perform_action(
+						act.SwitchToWorkspace({
+							name = line,
+						}),
+						pane
+					)
+				end
+			end),
+		}),
+	},
 	-- Show list of workspaces
 	{
 		key = "q",
@@ -251,7 +272,7 @@ config.keys = {
 		mods = "LEADER|SHIFT",
 		action = resurrect.window_state.save_window_action(),
 	},
-  -- save both window and namespace
+	-- save both window and namespace
 	{
 		key = "r",
 		mods = "LEADER",
