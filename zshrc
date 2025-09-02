@@ -1,5 +1,4 @@
 bindkey -e
-export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$PATH"
 eval "$(mise activate zsh)"
 #########################
 # Zgen plugin manager
@@ -43,8 +42,8 @@ eval "$(starship init zsh)"
 #########################
 export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-bindkey '^X^E' edit-command-line
+#bindkey -M vicmd v edit-command-line
+#bindkey '^X^E' edit-command-line
 # core configuration
 CASE_SENSITIVE="false"
 
@@ -83,14 +82,18 @@ alias ag='ag --color-path "1;36"'
 alias weather="curl -4 http://wttr.in/London"
 alias push_and_open_pr="git push -u marek && hub pull-request"
 alias kd="kitty +kitten diff"
-alias t="task"
-alias tt="taskwarrior-tui"
 alias disablehistory="function zshaddhistory() {  return 1 }"
 alias container_healthcheck_inspect="jq '.[0].State.Health + .[0].Config.Healthcheck'"
 alias k=kubectl
 # alias ironic_conductor_logs="kubectl logs ironic-conductor-0  -f | grep -Evi 'periodic|power state sync|hash rings|shared lock|exclusive lock|heartbeat|ironic.drivers.modules.redfish.management|sensors' | sed -e 's/req-[a-f0-9 -]\+//g' | tspin --config-path ~/.config/tailspin/openstack.toml --disable uuids "
 alias strip_colors="sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g'"
 alias kubepods_cpu_limits='kubectl get pods --all-namespaces -o custom-columns="NAMESPACE:.metadata.namespace,POD:.metadata.name,CPU_LIMIT:.spec.containers[*].resources.limits.cpu"'
+
+# Docker exec bug with wrapping
+# https://github.com/moby/moby/pull/37172
+# https://github.com/moby/moby/issues/35407
+alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
+alias docker-deactivate="unset DOCKER_CERT_PATH DOCKER_TLS_VERIFY DOCKER_HOST"
 
 
 if ! [[ $(uname) == "Darwin" ]]; then
@@ -127,12 +130,7 @@ setopt inc_append_history
 setopt share_history # share command history data
 setopt autocd
 
-# Docker exec bug with wrapping
-# https://github.com/moby/moby/pull/37172
-# https://github.com/moby/moby/issues/35407
-alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
-alias docker-deactivate="unset DOCKER_CERT_PATH DOCKER_TLS_VERIFY DOCKER_HOST"
-
+# PATH configuration
 export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$PATH"
 
 [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -175,17 +173,13 @@ ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/marek.skrobacki/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-#
-# Store device specific settings like DEFAULT_USER
-source ~/.zshrc.local
-
 export ARGOCD_OPTS="--grpc-web"
-
 export GROFF_NO_SGR=1
 
 # gpg-agent for ssh keys
 export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# Disabled because we need gnome-keyring-daemon for git-credential-manager anyway
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#
+# Store device specific settings like DEFAULT_USER
+source ~/.zshrc.local
