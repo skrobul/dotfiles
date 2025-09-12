@@ -11,6 +11,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+    whitespace = trailing-space
 [alias]
     d  = diff
     dc = diff --cached
@@ -66,6 +67,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [branch]
 	autoSetupMerge = true
+    sort = -committerdate
 [init]
 	defaultBranch = master
 [credential]
@@ -78,3 +80,7 @@
 	autosquash = true
 [credential "https://opendev.org"]
 	provider = generic
+[tag]
+    sort = -version:refname
+[pull]
+    rebase = true
