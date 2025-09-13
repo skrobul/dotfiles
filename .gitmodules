@@ -13,3 +13,6 @@
 [submodule "config/yazi/flavors/vscode-dark-plus.yazi"]
 	path = config/yazi/flavors/vscode-dark-plus.yazi
 	url = https://github.com/956MB/vscode-dark-plus.yazi
+[submodule "config/yazi/plugins/epub-preview.yazi"]
+	path = config/yazi/plugins/epub-preview.yazi
+	url = https://github.com/kirasok/epub-preview.yazi.git

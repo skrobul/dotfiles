@@ -1,14 +1,14 @@
 -- ~/.config/yazi/init.lua
 require("bookmarks"):setup({
-	last_directory = { enable = false, persist = false, mode="dir" },
-	persist = "none",
+	last_directory = { enable = true, persist = false, mode="dir" },
+	persist = "all",
 	desc_format = "full",
 	file_pick_mode = "hover",
 	custom_desc_input = false,
-	show_keys = false,
+	show_keys = true,
 	notify = {
 		enable = false,
-		timeout = 1,
+		timeout = 3,
 		message = {
 			new = "New bookmark '<key>' -> '<folder>'",
 			delete = "Deleted bookmark in '<key>'",
