@@ -1,15 +1,9 @@
 [submodule "zgen"]
 	path = zgen
 	url = https://github.com/tarjoilija/zgen.git
-[submodule "config/yazi/plugins/ouch.yazi"]
-	path = config/yazi/plugins/ouch.yazi
-	url = https://github.com/ndtoan96/ouch.yazi.git
 [submodule "config/yazi/plugins/bookmarks.yazi"]
 	path = config/yazi/plugins/bookmarks.yazi
 	url = https://github.com/dedukun/bookmarks.yazi.git
-[submodule "config/yazi/plugins/smart-enter.yazi"]
-	path = config/yazi/plugins/smart-enter.yazi
-	url = https://github.com/Ape/smart-enter.yazi.git
 [submodule "config/yazi/flavors/vscode-dark-plus.yazi"]
 	path = config/yazi/flavors/vscode-dark-plus.yazi
 	url = https://github.com/956MB/vscode-dark-plus.yazi

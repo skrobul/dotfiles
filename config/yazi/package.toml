@@ -8,6 +8,11 @@ use = "dedukun/bookmarks"
 rev = "9ef1254"
 hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "d7588f6"
+hash = "a8050052e59f3952abe0b3e27a5843de"
+
 [[flavor.deps]]
 use = "Mintass/rose-pine"
 rev = "8343340"

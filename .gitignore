@@ -5,3 +5,7 @@ weechat/sec.conf
 vim/bundle
 weechat
 irssi/config
+# managed through nixpkgs
+config/yazi/plugins/smart-paste.yazi
+config/yazi/plugins/smart-enter.yazi
+config/yazi/plugins/ouch.yazi
