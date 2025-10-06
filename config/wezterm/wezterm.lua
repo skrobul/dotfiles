@@ -3,9 +3,11 @@ local config = {}
 local act = wezterm.action
 config.font = wezterm.font("JetBrains Mono NF", { weight = "Medium", stretch = "Normal", italic = false })
 config.font_size = 14.0
-config.enable_wayland = false
-config.window_background_opacity = 0.4
-config.text_background_opacity = 0.4
+
+-- make sure that relevant NVIDIA
+config.enable_wayland = true
+config.window_background_opacity = 0.7
+config.text_background_opacity = 0.7
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
@@ -417,4 +419,10 @@ wezterm.on("augment-command-palette", function(window, pane)
 	}
 end)
 
+config.quick_select_patterns = {
+  -- match things that look like sha1 hashes
+  -- (this is actually one of the default patterns)
+  -- '[0-9a-f]{7,40}',
+  '([a-z0-9-]+) +[0-9]+/[0-9]+ +(?:Running|Completed|Error|Init|ImagePullBackOff|Error|Pending|CrashLoopBackOff)', -- deployment pod names
+}
 return config
