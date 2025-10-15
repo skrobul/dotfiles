@@ -58,10 +58,7 @@ tooltip {
 
 
 #workspaces button.active {
-
-
-    /* background-image: url("/home/anik/Documents/bar1.png");*/
-    color: #A1BDCE;
+    color: #E34848;
     transition: all 0.3s ease;
     padding-left: 4px;
     padding-right: 4px;
@@ -120,13 +117,15 @@ tooltip {
     min-height: 10px
 }
 
-#temperature, #cpu, #memory, #language, #custom-power {
+#temperature, #cpu, #memory, #language, #custom-power, #bluetooth {
     padding-left: 5px;
     padding-right: 5px;
+    color: #777777;
 }
 
 #idle_inhibitor {
-    color: #24966e;
+    /* color: #24966e; */
+    color: #777777;
     opacity: 1;
     margin: 4px 0px 4px 0px;
     padding-left: 10px;
@@ -148,7 +147,7 @@ tooltip {
 }
 
 #wireplumber, #pulseaudio {
-    color: #6F8FDB;
+    color: #A1BDCE;
     background: rgba(22, 19, 32, 0.0);
     opacity: 1;
     margin: 0px 0px 0px 0px;
@@ -157,7 +156,8 @@ tooltip {
 }
 
 #mpris {
-    color: white;
+    /* color: white; */
+    color: #777777;
     /* animation: repeat; */
     /* animation-name: blink; */
     /* animation-duration: 4s; */
@@ -187,10 +187,4 @@ tooltip {
 
 #taskbar {
     padding: 1px;
-}
-
-
-#bluetooth {
-    padding-left: 10px;
-    color: #A1BDCE;
 }

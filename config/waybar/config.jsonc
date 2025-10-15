@@ -21,7 +21,7 @@
     "temperature",
     "cpu",
     "memory",
-    "network",
+    // "network",
     "bluetooth",
     "tray",
     "idle_inhibitor",
