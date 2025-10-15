@@ -1,15 +1,15 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 40,
-  "margin": "0 0 0 0",
+  "height": 33,
+  "margin": "7 10 0 10",
+  "exclusive": true,
+  "reload_style_on_change": true,
   //"width": 1350, // Waybar width
   // Choose the order of the modules idle_inhibitor
   "modules-left": [
     "hyprland/workspaces",
-    "tray",
-    "hyprland/submap",
-    "custom/cava-internal"
+    "hyprland/submap"
   ],
   "modules-center": [
     "clock"
@@ -17,12 +17,15 @@
   "modules-right": [
     "mpris",
     "backlight",
-    "pulseaudio",
+    "wireplumber",
     "temperature",
     "cpu",
     "memory",
     "network",
+    "bluetooth",
+    "tray",
     "idle_inhibitor",
+    "hyprland/language",
     "custom/power"
   ],
   // Modules configuration
@@ -43,6 +46,10 @@
   "hyprland/window": {
     "format": "~ {app_id}"
   },
+  "hyprland/language": {
+    "format-en": "EN",
+    "format-pl": "PL"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -51,7 +58,7 @@
     }
   },
   "tray": {
-    "icon-size": 14,
+    "icon-size": 16,
     "spacing": 5
   },
   "clock": {
@@ -112,9 +119,9 @@
   //     "interval": 1
   // },
   "cpu": {
-    "format": "  {usage}%",
+    "format": " {usage}%",
     "tooltip": true,
-    "on-click": "kitty top",
+    "on-click": "wezterm top",
     "interval": 1
   },
   "memory": {
@@ -127,7 +134,7 @@
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C ",
-    "format": "  {temperatureC}°C"
+    "format": " {temperatureC}°C"
   },
   "backlight": {
     // "device": "acpi_video1",
@@ -191,14 +198,28 @@
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
     "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
   },
+  "wireplumber": {
+    "scroll-step": 2,
+    "format": "{icon} {volume: >3}%",
+    "format-bluetooth": "{icon} {volume: >3}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
   "custom/power": {
     "format": "⏻",
     "on-click": "wlogout --protocol layer-shell",
-    "tooltip": false
-  },
-  "custom/launcher": {
-    "format": " ",
-    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false
   },
   "mpris": {
@@ -215,5 +236,10 @@
     "player-icons": {
       "default": ""
     }
+  },
+  "bluetooth": {
+    "format": "{num_connections}",
+    "tooltip": true,
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   }
 }
