@@ -58,7 +58,8 @@ tooltip {
 
 
 #workspaces button.active {
-    color: #E34848;
+    /* color: #E34848; */
+    color: #C64949;
     transition: all 0.3s ease;
     padding-left: 4px;
     padding-right: 4px;

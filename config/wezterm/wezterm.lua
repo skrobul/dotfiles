@@ -6,8 +6,8 @@ config.font_size = 14.0
 
 -- make sure that relevant NVIDIA
 config.enable_wayland = true
-config.window_background_opacity = 0.7
-config.text_background_opacity = 0.7
+config.window_background_opacity = 0.9
+config.text_background_opacity = 0.9
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 

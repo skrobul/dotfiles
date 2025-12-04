@@ -25,7 +25,6 @@
     "bluetooth",
     "tray",
     "idle_inhibitor",
-    "hyprland/language",
     "custom/power"
   ],
   // Modules configuration
@@ -45,10 +44,6 @@
   },
   "hyprland/window": {
     "format": "~ {app_id}"
-  },
-  "hyprland/language": {
-    "format-en": "EN",
-    "format-pl": "PL"
   },
   "idle_inhibitor": {
     "format": "{icon}",
