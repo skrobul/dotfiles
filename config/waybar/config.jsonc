@@ -9,7 +9,8 @@
   // Choose the order of the modules idle_inhibitor
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/submap"
+    "hyprland/submap",
+    "hyprland/window"
   ],
   "modules-center": [
     "clock"
@@ -43,7 +44,8 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "hyprland/window": {
-    "format": "~ {app_id}"
+    "format": "{}",
+    "max-length": 50
   },
   "idle_inhibitor": {
     "format": "{icon}",

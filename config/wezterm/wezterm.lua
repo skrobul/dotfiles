@@ -438,6 +438,12 @@ wezterm.on("augment-command-palette", function(window, pane)
 	}
 end)
 
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+  local ws = wezterm.mux.get_active_workspace() or 'default'
+  -- You can also just return ws if you only want the session name
+  return string.format('[%s] %s', ws, pane.title)
+end)
+
 config.quick_select_patterns = {
 	-- match things that look like sha1 hashes
 	-- (this is actually one of the default patterns)
