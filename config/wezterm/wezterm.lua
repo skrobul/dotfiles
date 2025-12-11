@@ -14,6 +14,7 @@ local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.
 resurrect.set_encryption({
 	enable = true,
 	method = "gpg", -- "age" is the default encryption method, but you can also specify "rage" or "gpg"
+  -- private_key = "8D921D0CB9A85565",
 	public_key = "8D921D0CB9A85565",
 })
 resurrect.set_max_nlines(3000) -- Or even lower if needed
@@ -279,15 +280,33 @@ config.keys = {
 	-- save both window and namespace
 	{
 		key = "r",
-		mods = "LEADER",
+		mods = "ALT",
 		action = wezterm.action_callback(function(win, pane)
-			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
-			resurrect.window_state.save_window_action()
+			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
+				local type = string.match(id, "^([^/]+)") -- match before '/'
+				id = string.match(id, "([^/]+)$") -- match after '/'
+				id = string.match(id, "(.+)%..+$") -- remove file extention
+				local opts = {
+					relative = true,
+					restore_text = true,
+					on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+				}
+				if type == "workspace" then
+					local state = resurrect.state_manager.load_state(id, "workspace")
+					resurrect.workspace_state.restore_workspace(state, opts)
+				elseif type == "window" then
+					local state = resurrect.state_manager.load_state(id, "window")
+					resurrect.window_state.restore_window(pane:window(), state, opts)
+				elseif type == "tab" then
+					local state = resurrect.state_manager.load_state(id, "tab")
+					resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+				end
+			end)
 		end),
 	},
 	-- fuzzy load a state (workspace or window)
 	{
-		key = "l",
+		key = "r",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_load(win, pane, function(id, label)
@@ -420,9 +439,9 @@ wezterm.on("augment-command-palette", function(window, pane)
 end)
 
 config.quick_select_patterns = {
-  -- match things that look like sha1 hashes
-  -- (this is actually one of the default patterns)
-  -- '[0-9a-f]{7,40}',
-  '([a-z0-9-]+) +[0-9]+/[0-9]+ +(?:Running|Completed|Error|Init|ImagePullBackOff|Error|Pending|CrashLoopBackOff)', -- deployment pod names
+	-- match things that look like sha1 hashes
+	-- (this is actually one of the default patterns)
+	-- '[0-9a-f]{7,40}',
+	"([a-z0-9-]+) +[0-9]+/[0-9]+ +(?:Running|Completed|Error|Init|ImagePullBackOff|Error|Pending|CrashLoopBackOff)", -- deployment pod names
 }
 return config
