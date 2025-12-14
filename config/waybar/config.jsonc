@@ -25,9 +25,13 @@
     // "network",
     "bluetooth",
     "tray",
+    "niri/language",
     "idle_inhibitor",
     "custom/power"
   ],
+  "niri/language": {
+    "format": "{short}"
+  },
   // Modules configuration
   "hyprland/workspaces": {
     "format": "{id}",
