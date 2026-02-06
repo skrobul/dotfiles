@@ -6,9 +6,12 @@ config.font = wezterm.font_with_fallback({
   { family="JetBrains Mono", weight = "Medium", stretch = "Normal", italic = false },
 })
 config.font_size = 14.0
-config.enable_wayland = false
-config.window_background_opacity = 1 -- 0.8
-config.text_background_opacity = 1 -- 0.8
+
+-- make sure that relevant NVIDIA
+config.enable_wayland = true
+config.window_background_opacity = 1
+config.text_background_opacity = 1
+config.mux_enable_ssh_agent = false
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
@@ -147,6 +150,7 @@ config.keys = {
 	{ key = "o", mods = "LEADER", action = act.ActivatePaneDirection("Next") },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
 	{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+  { key = "]", mods = "LEADER", action = act.PasteFrom("Clipboard")},
 
 	-- focusing
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
