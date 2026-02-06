@@ -6,30 +6,49 @@ mise() {
   mise "$@"
 }
 #########################
-# Zgen plugin manager
+# Antidote plugin manager (fast zsh plugin manager)
 #########################
 ZSH_THEME=""
 fpath=($fpath "/home/skrobul/.zfunctions")
 
-############# ZINIT start #############
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [[ ! -d $ZINIT_HOME ]]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+############# ANTIDOTE start #############
+# Check if antidote is installed
+if [[ ! -d ~/.antidote ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
 fi
-source "${ZINIT_HOME}/zinit.zsh"
 
-zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions \
-    greymd/docker-zsh-completion
+# Source antidote
+source ~/.antidote/antidote.zsh
 
-zinit snippet OMZP::taskwarrior
-############# ZINIT end #############
-eval "$(starship init zsh)"
+# Define plugins
+plugins=(
+  zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-completions
+  zsh-users/zsh-autosuggestions
+)
+
+# Generate static plugin file in zsh cache directory
+ANTIDOTE_HOME=${ANTIDOTE_HOME:-~/.antidote}
+ZSH_plugins=${ZDOTDIR:-~}/.zsh_plugins.txt
+ZSH_FUNCTIONS=${ZDOTDIR:-~}/.zsh_plugins.zsh
+
+# Create the plugin file if it doesn't exist
+if [[ ! -f "$ZSH_plugins" ]]; then
+  cat > "$ZSH_plugins" <<'PLUGINS'
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+PLUGINS
+fi
+
+# Load plugins (will generate the .zsh_plugins.zsh file if needed)
+antidote load
+############# ANTIDOTE end #############
+if [ -z "$DEMO" ]; then
+    eval "$(starship init zsh)"
+else
+    PS1="❯ "
+fi
 
 #########################
 # visual command edit
@@ -88,6 +107,9 @@ alias kubepods_cpu_limits='kubectl get pods --all-namespaces -o custom-columns="
 # https://github.com/moby/moby/issues/35407
 alias dexec='docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti $1'
 alias docker-deactivate="unset DOCKER_CERT_PATH DOCKER_TLS_VERIFY DOCKER_HOST"
+alias devco-down="devcontainer --workspace-folder  .  up  | jq -r .containerId | xargs docker rm -f"
+alias devco-up="devcontainer --workspace-folder  .  up"
+
 
 
 if ! [[ $(uname) == "Darwin" ]]; then
@@ -167,6 +189,17 @@ bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 
 # Setup completion paths (compinit handled by zinit)
 fpath+=~/.zfunc
+
+# Speed up compinit by caching and skipping audit
+ZSH_COMPDUMP="${ZDOTDIR:-$HOME}/.zcompdump"
+# Skip compaudit for speed (set to true for safety check)
+SKIP_COMP_AUDIT=true
+# Only rebuild dump if it's missing or >1 day old
+if [[ -f "$ZSH_COMPDUMP" && $(date +'%j') != $(date -r "$ZSH_COMPDUMP" +'%j') ]] || [[ ! -f "$ZSH_COMPDUMP" ]]; then
+  autoload -Uz compinit && compinit -d "$ZSH_COMPDUMP"
+else
+  autoload -Uz compinit && compinit -C -d "$ZSH_COMPDUMP"
+fi
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
