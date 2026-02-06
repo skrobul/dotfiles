@@ -11,6 +11,7 @@
     "hyprland/workspaces",
     "hyprland/submap",
     "hyprland/window"
+    // "wlr/taskbar"
   ],
   "modules-center": [
     "clock"
@@ -31,6 +32,10 @@
   ],
   "niri/language": {
     "format": "{short}"
+  },
+  "wlr/taskbar": {
+    "format": "{icon} {title}",
+    "tooltip-format": "{title} | {app_id}"
   },
   // Modules configuration
   "hyprland/workspaces": {
