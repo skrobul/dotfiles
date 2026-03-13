@@ -1,40 +1,34 @@
 bindkey -e
-eval "$(mise activate zsh)"
+# Lazy-load mise
+mise() {
+  unset -f mise
+  eval "$(command mise activate zsh)"
+  mise "$@"
+}
 #########################
 # Zgen plugin manager
 #########################
 ZSH_THEME=""
 fpath=($fpath "/home/skrobul/.zfunctions")
 
-############# ZPLUG start #############
-# Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update --self
+############# ZINIT start #############
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
-source ~/.zplug/init.zsh
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Make sure to use double quotes to prevent shell expansion
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
-zplug "greymd/docker-zsh-completion"
-#zplug "rupa/z", use:z.sh
-zplug plugins/taskwarrior, from:oh-my-zsh
-#zplug "skrobul/zsh-tmux-auto-title", at:prerelease
-zplug 'zsh-users/zsh-autosuggestions'
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions \
+    greymd/docker-zsh-completion
 
-# Install packages that have not been installed yet
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
-
-zplug load
-############# ZPLUG end #############
+zinit snippet OMZP::taskwarrior
+############# ZINIT end #############
 eval "$(starship init zsh)"
 
 #########################
@@ -150,7 +144,12 @@ function change_commit_date() {
         git log --format=fuller HEAD~1..HEAD
 }
 
-eval "$(direnv hook zsh)"
+# Lazy-load direnv
+_direnv_hook() {
+  eval "$(direnv export zsh 2>/dev/null)"
+}
+typeset -ag precmd_functions
+precmd_functions+=(_direnv_hook)
 
 # tmux auto title - https://github.com/mbenford/zsh-tmux-auto-title#configuration
 ZSH_TMUX_AUTO_TITLE_SHORT="true"
@@ -176,8 +175,9 @@ if [[ ! -f ~/.zcompdump ]] || \
 else
   compinit -C -d ~/.zcompdump
 fi
+
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-[[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
+[[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
 
 export ARGOCD_OPTS="--grpc-web"
