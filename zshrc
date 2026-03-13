@@ -165,17 +165,8 @@ pandoc_debug() {
 bindkey '^[[1;5C' forward-word     # Ctrl+right arrow
 bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 
-# poetry completions
+# Setup completion paths (compinit handled by zinit)
 fpath+=~/.zfunc
-autoload -Uz compinit
-
-if [[ ! -f ~/.zcompdump ]] || \
-   [[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]]; then
-  compinit -d ~/.zcompdump
-else
-  compinit -C -d ~/.zcompdump
-fi
-
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
