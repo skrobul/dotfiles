@@ -168,7 +168,14 @@ bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 
 # poetry completions
 fpath+=~/.zfunc
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+
+if [[ ! -f ~/.zcompdump ]] || \
+   [[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]]; then
+  compinit -d ~/.zcompdump
+else
+  compinit -C -d ~/.zcompdump
+fi
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
 fpath=($ZSH_CACHE_DIR/completions $fpath)
