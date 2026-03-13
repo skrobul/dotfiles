@@ -71,9 +71,9 @@
 [init]
 	defaultBranch = master
 [credential]
-#	credentialStore = secretservice
 	helper = 
-  helper = /run/current-system/sw/bin/git-credential-manager
+	helper = /usr/local/share/gcm-core/git-credential-manager
+#	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [rebase]
@@ -84,3 +84,5 @@
     sort = -version:refname
 [pull]
     rebase = true
+[gitreview]
+	username = skrobul

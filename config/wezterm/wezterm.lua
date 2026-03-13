@@ -1,23 +1,24 @@
 local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
-config.font = wezterm.font("JetBrains Mono NF", { weight = "Medium", stretch = "Normal", italic = false })
+config.font = wezterm.font_with_fallback({
+  -- { family="JetBrains Mono NF", weight = "Medium", stretch = "Normal", italic = false },
+  { family="JetBrains Mono", weight = "Medium", stretch = "Normal", italic = false },
+})
 config.font_size = 14.0
-
--- make sure that relevant NVIDIA
-config.enable_wayland = true
-config.window_background_opacity = 0.9
-config.text_background_opacity = 0.9
+config.enable_wayland = false
+config.window_background_opacity = 1 -- 0.8
+config.text_background_opacity = 1 -- 0.8
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
-resurrect.set_encryption({
+resurrect.state_manager.set_encryption({
 	enable = true,
 	method = "gpg", -- "age" is the default encryption method, but you can also specify "rage" or "gpg"
   -- private_key = "8D921D0CB9A85565",
 	public_key = "8D921D0CB9A85565",
 })
-resurrect.set_max_nlines(3000) -- Or even lower if needed
+resurrect.state_manager.set_max_nlines(3000) -- Or even lower if needed
 
 -- ressurect toasts
 local resurrect_event_listeners = {
@@ -349,6 +350,12 @@ config.keys = {
 			})
 		end),
 	},
+
+
+    -- Option + Left Arrow to jump back by word
+    { key = "LeftArrow", mods = "OPT", action = wezterm.action{SendString="\x1bb"} },
+    -- Option + Right Arrow to jump forward by word
+    { key = "RightArrow", mods = "OPT", action = wezterm.action{SendString="\x1bf"} },
 }
 config.key_tables = {
 	copy_mode = merge_key_table(default_keys.copy_mode, {

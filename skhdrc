@@ -67,7 +67,7 @@
 
 
 
-cmd - return : open -na /Applications/kitty.app/
+# cmd - return : open -na /Applications/kitty.app/
 # focus window
 # change focus
 cmd - h : yabai -m window --focus west
