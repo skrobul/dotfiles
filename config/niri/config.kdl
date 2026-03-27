@@ -320,6 +320,17 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+  match title="Albert"
+  // border false
+  focus-ring {
+    off
+  }
+  border {
+    off
+  }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -365,7 +376,12 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    //     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show combi -combi-modi window,drun -modi combi"; }
+    Mod+D { spawn-sh "rofi -combi-modi window,drun -show combi -modes 'window,drun,calc' -sidebar-mode -theme ~/.config/rofi/launchers/type-1/style-6 -match -no-sort"; }
+    // Mod+Sfhit+D { spawn-sh "albert show"; }
+
+
+
     Mod+Shift+C hotkey-overlay-title="Calculator" { spawn "menu-qalc"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -560,7 +576,9 @@ binds {
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
-    Mod+Shift+R { switch-preset-window-height; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    Mod+Shift+R { set-column-width "50%"; }
+
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
