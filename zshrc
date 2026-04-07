@@ -1,10 +1,4 @@
 bindkey -e
-# Lazy-load mise
-mise() {
-  unset -f mise
-  eval "$(command mise activate zsh)"
-  mise "$@"
-}
 #########################
 # Antidote plugin manager (fast zsh plugin manager)
 #########################
@@ -213,4 +207,28 @@ export GPG_TTY=$(tty)
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 #
 # Store device specific settings like DEFAULT_USER
+eval "$(mise activate zsh)"
+
+# Controls which anthropic subscription to use in CC
+anthropic-connection() {
+  case "$1" in
+    z.ai)
+      export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
+      export ANTHROPIC_AUTH_TOKEN="$(rbw get "z.ai claude API key")"
+      ;;
+    flair)
+      export ANTHROPIC_BASE_URL="$(rbw get --field ENDPOINT "flair-qa API key")"
+      export ANTHROPIC_AUTH_TOKEN="$(rbw get "flair-qa API key")"
+      ;;
+    enterprise)
+      unset ANTHROPIC_BASE_URL
+      unset ANTHROPIC_AUTH_TOKEN
+      ;;
+    *)
+      echo "Usage: anthropic-connection [z.ai|flair|enterprise]" >&2
+      return 1
+      ;;
+  esac
+}
+
 source ~/.zshrc.local
