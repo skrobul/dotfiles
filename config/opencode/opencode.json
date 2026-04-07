@@ -30,7 +30,14 @@
     }
   },
   "permission": {
-    "bash": "ask",
+    "bash": {
+      "*": "ask",
+      "kubectl get *": "allow",
+      "kubectl wait *": "allow",
+      "git status": "allow",
+      "git diff*": "allow",
+      "git log*": "allow"
+    },
     "edit": "ask"
   },
   "$schema": "https://opencode.ai/config.json",
@@ -51,7 +58,7 @@
       "name": "Rackspace Flair QA",
       "options": {
         "baseURL": "https://flair-qa.rackspace.net/v1",
-        "apiKey": "{env:FLAIR_SONNET46}",
+        "apiKey": "{env:FLAIR_SONNET46}"
       },
       "models": {
         "claude-sonnet-4.6": {
@@ -63,7 +70,7 @@
             "context": 0,
             "output": 10000
           }
-        },
+        }
       }
     },
     "ollama-local": {
@@ -440,5 +447,5 @@
   "plugin": [
     "opencode-openai-codex-auth",
     "@zhafron/opencode-kiro-auth"
-  ],
+  ]
 }
