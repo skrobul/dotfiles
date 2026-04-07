@@ -72,7 +72,8 @@
 	defaultBranch = master
 [credential]
 	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
+#	helper = /usr/local/share/gcm-core/git-credential-manager
+  helper = /run/current-system/sw/bin/git-credential-manager
 #	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
